@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard - SB AdminMAQUINOTEEEEEEEEEEEEEEE</title>
+    <title>Dashboard - SB Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>media/css/bootstrap.css" rel="stylesheet">
@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">MAQUINOOOOTEEEEEE</a>
+          <a class="navbar-brand" href="index.html">SB Admin</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
