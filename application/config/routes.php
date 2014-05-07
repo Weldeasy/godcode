@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "vista_principal_c";
+$route['default_controller'] = "vista_principal";
 $route['404_override'] = '';
 
 
