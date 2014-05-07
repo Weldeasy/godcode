@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Simple Login with CodeIgniter</title>
-    <link href="../css/style.form.css" rel="stylesheet">
+    <link href="css/style.form.css" rel="stylesheet">
   </head>
   <body>
     <h1>Simple 2 2 Login with CodeIgniter-Anton willy</h1>
