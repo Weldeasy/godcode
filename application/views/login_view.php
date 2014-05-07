@@ -7,7 +7,7 @@
     <h1>Simple 2 2 Login with CodeIgniter-Anton willy</h1>
     <?php echo validation_errors()."hOLA"; ?>
     <?php 
-      $attributes = array('id' => 'form_login');
+      $attributes = array('class' => 'email', 'id' => 'myform');
       echo form_open('verifylogin', $attributes); 
     ?>
       <label for="username">Username:</label>
