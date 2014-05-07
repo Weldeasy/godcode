@@ -6,7 +6,10 @@
   <body>
     <h1>Simple 2 2 Login with CodeIgniter-Anton willy</h1>
     <?php echo validation_errors()."hOLA"; ?>
-    <?php echo form_open('verifylogin'); ?>
+    <?php 
+      $attributes = array('id' => 'form_login');
+      echo form_open('verifylogin', $attributes); 
+    ?>
       <label for="username">Username:</label>
       <input type="text" size="20" id="username" name="username"/>
       <br/>
