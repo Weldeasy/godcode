@@ -4,7 +4,7 @@
     <title>Simple Login with CodeIgniter</title>
   </head>
   <body>
-    <h1>Simple Login with CodeIgniter</h1>
+    <h1>Simple Login with CodeIgniter-Anton</h1>
     <?php echo validation_errors()."hOLA"; ?>
     <?php echo form_open('verifylogin'); ?>
       <label for="username">Username:</label>
