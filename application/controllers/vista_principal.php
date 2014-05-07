@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Vista_principal_c extends CI_Controller {
+class Vista_principal extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
