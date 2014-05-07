@@ -37,12 +37,7 @@
 | in the URL cannot be matched to a valid routes.
 |
 */
-
-<<<<<<< HEAD
 $route['default_controller'] = "login";
-=======
-$route['default_controller'] = "vista_principal";
->>>>>>> ec3d057ee6d1f753e9a345372c9e49b37dceae9d
 $route['404_override'] = '';
 
 
