@@ -10,7 +10,7 @@ class Login extends CI_Controller {
   function index()
   {
     $this->load->helper('form');
-    $this->load->view('vista_principal');
+    $this->load->view('login');
   }
 
 }
