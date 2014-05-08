@@ -59,6 +59,8 @@
             <li><a href="http://mambocar.com/perfil/acceso" class="last-child">Acceso a miembros</a></li>
     </ul>
 <a href="http://mambocar.com/publicar-coche/registro" id="bt_como_publicar_tu_coche">Publica tu coche</a>            </div>
+
+<a href="./admin/admin.php" id="bt_como_publicar_tu_coche">Admin</a></div>
           </div>
         </div>
         <div class="parte_derecha"></div>
