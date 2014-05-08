@@ -9,8 +9,8 @@
                   <link rel="stylesheet" href="http://mambocar.com/css/bd0b869.css">
           
         
-        <script type="text/javascript" async="" src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/ga.js"></script><script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/translator.min.js"></script>
-    <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/es"></script>
+        <script type="text/javascript" async="" src="<?php echo base_url()?>media/js/ga.js"></script><script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/translator.min.js"></script>
+    <script src="<?php echo base_url()?>media/js/es"></script>
 
         <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/router.js"></script>
     <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/routing"></script>
