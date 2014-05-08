@@ -9,13 +9,13 @@
                   <link rel="stylesheet" href="http://mambocar.com/css/bd0b869.css">
           
         
-        <script type="text/javascript" async="" src="<?php echo base_url()?>media/js/ga.js"></script><script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/translator.min.js"></script>
+        <script type="text/javascript" async="" src="<?php echo base_url()?>media/js/ga.js"></script><script src="<?php echo base_url()?>media/translator.min.js"></script>
     <script src="<?php echo base_url()?>media/js/es"></script>
 
-        <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/router.js"></script>
-    <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/routing"></script>
+        <script src="<?php echo base_url()?>media/js/router.js"></script>
+    <script src="<?php echo base_url()?>media/js/routing"></script>
 
-    <link href="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()?>media/css/css" rel="stylesheet" type="text/css">
 
         <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -29,14 +29,13 @@
         })();
     </script>
 
-        <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/js" type="text/javascript"></script>
+        <script src="<?php echo base_url()?>media/js/js" type="text/javascript"></script>
     <script type="text/javascript">try{ clicky.init(100633132); }catch(e){}</script>
     <noscript>&lt;p&gt;&lt;img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100633132ns.gif" /&gt;&lt;/p&gt;</noscript> 
 
     <title>Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals</title>
-  <script type="text/javascript" async="" src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/in.php"></script><script type="text/javascript" async="" src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/in(1).php"></script><script type="text/javascript" async="" src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/in(2).php"></script>
     <title>Simple Login with CodeIgniter</title>
-    <link href="../css/style.form.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>media/css/style.form.css" rel="stylesheet">
   </head>
   <body>
     
@@ -47,8 +46,8 @@
         <div class="parte_central">
           <div class="contenido_cabecera">
             <div class="imagen_cabecera">
-            <a href="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals.htm">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/logo-mambocar.png">
+            <a href="<?php echo base_url()?>media/Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals.htm">
+              <img src="<?php echo base_url()?>media/logo-mambocar.png">
             </a>
             </div>
             <div class="menu_cabecera">
@@ -246,27 +245,27 @@
           <h1>Ciudades Mambocar</h1>
           <p>Prepara un viaje aún mejor, vive unas ciudades más auténticas y especiales con Mambocar</p>
           <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-madrid.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-madrid.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches ></a>-->
           </div>
           <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-mallorca.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-mallorca.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches></a>-->
           </div>
           <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-alicante.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-alicante.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches ></a>-->
           </div>
            <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-malaga.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-malaga.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches ></a>-->
           </div>
            <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-barcelona.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-barcelona.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches ></a>-->
           </div>
            <div class="col">
-            <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/foto-gran-canaria.jpg" class="imagen_ciudades_portada">
+            <img src="<?php echo base_url()?>media/foto-gran-canaria.jpg" class="imagen_ciudades_portada">
             <!--<a href="#" class="enlace_ver_coches">Ver coches ></a>-->
           </div>
         </div>
@@ -279,21 +278,21 @@
           <h1>Han publicado sobre Mambocar:</h1>
           <p>Mucho más que un alquiler de coches, Mambocar es una nueva manera de viajar y de conocer como un local ciudades como Madrid, Barcelona, Málaga, Mallorca, Alicante, Gran Canaria y Tenerife.</p>
           <div class="empresas_han_publicado">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/cadena-ser.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/abc.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/tnooz.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/techchurch.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/tve.jpg">
+              <img src="<?php echo base_url()?>media/cadena-ser.jpg">
+              <img src="<?php echo base_url()?>media/abc.jpg">
+              <img src="<?php echo base_url()?>media/tnooz.jpg">
+              <img src="<?php echo base_url()?>media/techchurch.jpg">
+              <img src="<?php echo base_url()?>media/tve.jpg">
           </div>
           <div class="col_partners">
               <h2>Partners:</h2>
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/partner-pleyade.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/partner-axa.jpg">
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/partner-plus-ultra.jpg">
+              <img src="<?php echo base_url()?>media/partner-pleyade.jpg">
+              <img src="<?php echo base_url()?>media/partner-axa.jpg">
+              <img src="<?php echo base_url()?>media/partner-plus-ultra.jpg">
           </div>
           <div class="col_participada">
               <h2>Mambocar está participada por:</h2>
-              <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/participa-wayra.jpg">
+              <img src="<?php echo base_url()?>media/participa-wayra.jpg">
           </div>
         </div>
       </center>
@@ -321,7 +320,7 @@
     <div class="seccion pie">
       <center>
         <div class="contenido_seccion">
-          <img src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/imagen-pie.jpg">
+          <img src="<?php echo base_url()?>media/imagen-pie.jpg">
           <p class="texto_pie">Made with love in Alicante, Mediterranean + Madrid</p>
         </div>
       </center>
@@ -342,15 +341,15 @@
     </div>
 
 
-                    <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/jquery.js"></script>
+                    <script src="<?php echo base_url()?>media/jquery.js"></script>
           
       <script>
     var cities = [{"id":1,"label":"Madrid","value":"Madrid","realValue":"madrid"},{"id":2,"label":"Alicante","value":"Alicante","realValue":"alicante"},{"id":3,"label":"Barcelona","value":"Barcelona","realValue":"barcelona"},{"id":4,"label":"Sevilla","value":"Sevilla","realValue":"sevilla"},{"id":5,"label":"Valencia","value":"Valencia","realValue":"valencia"},{"id":6,"label":"Santiago de Compostela","value":"Santiago de Compostela","realValue":"santiago-compostela"},{"id":7,"label":"Zaragoza","value":"Zaragoza","realValue":"zaragoza"},{"id":8,"label":"Santander","value":"Santander","realValue":"santander"},{"id":9,"label":"M\u00e1laga","value":"M\u00e1laga","realValue":"malaga"},{"id":10,"label":"Palma de Mallorca","value":"Palma de Mallorca","realValue":"mallorca"},{"id":11,"label":"Gran Canaria","value":"Gran Canaria","realValue":"gran-canaria"},{"id":12,"label":"Tenerife","value":"Tenerife","realValue":"tenerife"},{"id":13,"label":"Ibiza","value":"Ibiza","realValue":"ibiza"},{"id":14,"label":"Lanzarote","value":"Lanzarote","realValue":"lanzarote"},{"id":15,"label":"Fuenteventura","value":"Fuenteventura","realValue":"fuerteventura"},{"id":16,"label":"Bilbao","value":"Bilbao","realValue":"bilbao"},{"id":17,"label":"Gerona","value":"Gerona","realValue":"gerona"}];
   </script>
 
-        <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/fddb13b.js"></script>
+        <script src="<?php echo base_url()?>media/fddb13b.js"></script>
   
-                    <script src="./Mambocar Alquiler de Coches Únicos para Viajeros en Mallorca Madrid Barcelona Alicante Málaga. Car Hire in Spain from locals_files/17aee8d.js"></script>
+                    <script src="<?php echo base_url()?>media/17aee8d.js"></script>
             
 <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 389px; left: 521.5px; z-index: 1; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">May</span>&nbsp;<span class="ui-datepicker-year">2014</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled  ui-datepicker-today"><span class="ui-state-default">6</span></td><td class=" ui-datepicker-days-cell-over " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default ui-state-hover" href="http://mambocar.com/#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">9</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">10</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">11</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">16</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">17</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">18</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">23</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">24</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">25</a></td></tr><tr><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">30</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="4" data-year="2014"><a class="ui-state-default" href="http://mambocar.com/#">31</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul>
   </body>
