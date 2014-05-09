@@ -6,7 +6,7 @@
   <body>
     <h1>Primera vista</h1>
 	<div>
-	<?php echo $login_form; ?>
+	<?php echo $this->load->view('login_form'); ?>
 	</div>
   </body>
 </html>
