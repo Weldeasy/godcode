@@ -4,6 +4,9 @@
     <title>Primera vista</title>
   </head>
   <body>
-    <h1>Home</h1>
+    <h1>Primera vista</h1>
+	<div>
+	<?php echo $data; ?>
+	</div>
   </body>
 </html>

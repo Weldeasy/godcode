@@ -9,7 +9,8 @@ class Inicio extends CI_Controller {
 
   function index()
   {
-    $this->load->view('inicio');
+	$data = $this->load->view('login-form');
+    $this->load->view('inicio', $data);
   }
 
 }
