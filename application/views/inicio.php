@@ -6,7 +6,7 @@
   <body>
     <h1>Primera vista</h1>
 	<div>
-	<?php echo $data; ?>
+	<?php echo $login_form; ?>
 	</div>
   </body>
 </html>
