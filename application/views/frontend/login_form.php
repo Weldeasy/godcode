@@ -12,4 +12,3 @@
 	<br/>
 	<input type="submit" value="Login"/>
 </form>
-<a href="xD">LOGIN</a>
