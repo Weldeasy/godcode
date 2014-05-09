@@ -1,8 +1,8 @@
 <?php
-//echo validation_errors();
+
 //$attributes = array('class' => 'email', 'id' => 'form_login');
-//echo form_open('verifylogin', $attributes); 
-echo "hola";
+//echo form_open('verifylogin', $attributes);
+if (isset(validation_errors()) {echo validation_errors();};
 ?>
 <form action="verifylogin" class="email" id="form_login">
 	<label for="username">Username:</label>
