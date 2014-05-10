@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+session_start();
 class Inicio extends CI_Controller {
 
   function __construct()
@@ -10,7 +10,8 @@ class Inicio extends CI_Controller {
   function index()
   {
 	$data = array();
-	$data['login_form'] = 'forntend/login_form';
+	$this->load->library('form_validation');
+	$data['login_form'] = 'frontend/login_form';
 	//$data['login_form'] = $this->load->view('frontend/login_form', null, TRUE);
     $this->load->view('frontend/inicio', $data);
   }
