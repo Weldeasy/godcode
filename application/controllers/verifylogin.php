@@ -19,14 +19,13 @@ class VerifyLogin extends CI_Controller {
     if($this->form_validation->run() == FALSE)
     {
       //Field validation failed.  User redirected to login page
-      redirect('inici', 'refresh');
+      $data['login_form'] = 'frontend/login_form';
     }
     else
     {
-      //Go to private area
-      redirect('inici', 'refresh');
+	 $data['login_form'] = 'frontend/logued';
     }
-    
+    $this->load->view('frontend/inicio', $data);
   }
   
   function check_database($password)
