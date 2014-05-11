@@ -3,7 +3,6 @@ Class Login extends CI_Model
 {
 	function login($email, $password)
 	{
-		$this->db->query('SELECT u.id, l.email, l.password, u.es_admin FROM login l, usuari u WHERE l.email = "'.$email.'" AND l.password = "'.$password.'" AND l.id = u.id');
 		/*$this -> db -> select('usuari.id, login.email, login.password, es_admin');
 		$this -> db -> from('login');
 		$this -> db -> from('usuari');
@@ -14,7 +13,7 @@ Class Login extends CI_Model
 		$this -> db -> limit(1);
 
 		$query = $this -> db -> get();*/
-		$query = $this->db->query('SELECT u.id, l.email, l.password, u.es_admin FROM login l, usuari u WHERE l.emai = "'.$email.'" AND l.password = "'.$password.'" AND l.id = u.id');
+		$query = $this->db->query('SELECT u.id, l.email, l.password, u.es_admin FROM login l, usuari u WHERE l.email = "'.$email.'" AND l.password = "'.$password.'" AND l.id = u.id');
 		if($query -> num_rows() == 1)
 		{
 			return $query->result();
