@@ -3,7 +3,7 @@ Class Login extends CI_Model
 {
 	function login($email, $password)
 	{
-		$this -> db -> select('usuari.id, login.email, login.passwd, usuari.es_admin');
+		$this -> db -> select('usuari.id, email, login.passwd, usuari.es_admin');
 		$this -> db -> from('login');
 		$this -> db -> from('usuari');
 		$this -> db -> where('email = ' . "'" . $email . "'"); 
