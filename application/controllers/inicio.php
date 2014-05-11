@@ -25,6 +25,12 @@ class Inicio extends CI_Controller {
     $this->load->view('frontend/inicio', $data);
 	
   }
+  function logout()
+	 {
+	   $this->session->unset_userdata('logged_in');
+   session_destroy();
+	   redirect('home', 'refresh');
+	 }
 
 }
 
