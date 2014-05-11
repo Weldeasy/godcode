@@ -6,8 +6,8 @@ Class Login extends CI_Model
 		$this -> db -> select('usuari.id, login.email, login.password, es_admin');
 		$this -> db -> from('login');
 		$this -> db -> from('usuari');
-		$this -> db -> where('login.email = ' . "'" . $email . "'"); 
-		$this -> db -> where('login.password = ' . "'" . MD5($password) . "'"); 
+		$this -> db -> where('login.email =', $email); 
+		$this -> db -> where('login.password = ', MD5($password)); 
 		$this -> db -> where('login.id = usuari.id'); 
 		
 		$this -> db -> limit(1);
