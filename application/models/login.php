@@ -1,7 +1,7 @@
 <?php
 Class Login extends CI_Model
 {
-	function login($email, $password)
+	function index($email, $password)
 	{
 		$this -> db -> select('id, email, password');
 		$this -> db -> from('login');
