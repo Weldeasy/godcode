@@ -9,7 +9,7 @@ Class Login extends CI_Model
 		$this -> db -> where('login.email =', $email); 
 		$this -> db -> where('login.password = ', MD5($password)); 
 		$this -> db -> where('login.id = usuari.id'); 
-		
+		/* a*/
 		$this -> db -> limit(1);
 
 		$query = $this -> db -> get();
