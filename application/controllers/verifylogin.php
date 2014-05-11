@@ -23,6 +23,8 @@ class VerifyLogin extends CI_Controller {
     }
     else
     {
+	 $session_data = $this->session->userdata('logged_in');
+	$data['username'] = $session_data['username'];
 	 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);
