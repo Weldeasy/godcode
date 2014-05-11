@@ -16,8 +16,8 @@
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
 	   <li class='active'><a href='#'><span>SOBRE GODCODE</span></a></li>
 	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
+	   <li><?php echo $this->load->view($login_form); ?></li>
 	</ul>
-	<?php echo $this->load->view($login_form); ?>
  </div>
  <div id="busqueda">
  <div class="seccion zona_busqueda">
