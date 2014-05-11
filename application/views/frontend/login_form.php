@@ -1,7 +1,6 @@
 <?php
 echo validation_errors();
-$attributes = array('class' => 'email', 'id' => 'form_login');
-echo form_open('verifylogin', $attributes); 
+echo form_open('verifylogin'); 
 ?>
 <label for="email">Email:</label>
 	<input type="text" size="20" id="email" name="email"/>

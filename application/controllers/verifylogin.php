@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->model('login', null, TRUE);
+    $this->load->model('login', '', TRUE);
   }
 
   function index()
@@ -23,8 +23,6 @@ class VerifyLogin extends CI_Controller {
     }
     else
     {
-	 $session_data = $this->session->userdata('logged_in');
-	 $data['email'] = $session_data['email'];
 	 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);

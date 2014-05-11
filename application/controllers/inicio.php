@@ -10,8 +10,6 @@ class Inicio extends CI_Controller {
   function index()
   {
 	$data = array();
-	$this->load->library('form_validation');
-	$this->load->helper(array('form'));
 	if($this->session->userdata('logged_in')) {
 		$session_data = $this->session->userdata('logged_in');
 		$data['email'] = $session_data['email'];
@@ -25,12 +23,6 @@ class Inicio extends CI_Controller {
     $this->load->view('frontend/inicio', $data);
 	
   }
-	function logout()
-	 {
-	   $this->session->unset_userdata('logged_in');
-	   session_destroy();
-	   redirect('inicio', 'refresh');
-	 }
 }
 
 ?>
