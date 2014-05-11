@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->model('login', null, TRUE);
+    $this->load->model('user', null, TRUE);
   }
 
   function index()
@@ -19,12 +19,12 @@ class VerifyLogin extends CI_Controller {
     if($this->form_validation->run() == FALSE)
     {
       //Field validation failed.  User redirected to login page
-      $this->load->view('frontend/inici');
+      redirect('inici', 'refresh');
     }
     else
     {
       //Go to private area
-      redirect('home', 'refresh');
+      redirect('inici', 'refresh');
     }
     
   }
