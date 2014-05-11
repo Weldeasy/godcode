@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->model('user', null, TRUE);
+    $this->load->model('login', null, TRUE);
   }
 
   function index()
@@ -13,7 +13,7 @@ class VerifyLogin extends CI_Controller {
     //This method will have the credentials validation
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
 	
     if($this->form_validation->run() == FALSE)
@@ -24,7 +24,7 @@ class VerifyLogin extends CI_Controller {
     else
     {
 	 $session_data = $this->session->userdata('logged_in');
-	$data['username'] = $session_data['username'];
+	 $data['email'] = $session_data['email'];
 	 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);
@@ -33,10 +33,10 @@ class VerifyLogin extends CI_Controller {
   function check_database($password)
   {
     //Field validation succeeded.  Validate against database
-    $username = $this->input->post('username');
+    $email = $this->input->post('email');
     
     //query the database
-    $result = $this->user->login($username, $password);
+    $result = $this->user->login($email, $password);
     
     if($result)
     {
@@ -45,7 +45,7 @@ class VerifyLogin extends CI_Controller {
       {
         $sess_array = array(
           'id' => $row->id,
-          'username' => $row->username
+          'email' => $row->email
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
@@ -53,7 +53,7 @@ class VerifyLogin extends CI_Controller {
     }
     else
     {
-      $this->form_validation->set_message('check_database', 'Invalid username or password');
+      $this->form_validation->set_message('check_database', 'Invalid email or password');
       return false;
     }
   }

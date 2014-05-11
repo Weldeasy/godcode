@@ -14,7 +14,7 @@ class Inicio extends CI_Controller {
 	$this->load->helper(array('form'));
 	if($this->session->userdata('logged_in')) {
 		$session_data = $this->session->userdata('logged_in');
-		$data['username'] = $session_data['username'];
+		$data['email'] = $session_data['email'];
         $data['login_form'] = 'frontend/logued';
     } else {
 		$data['login_form'] = 'frontend/login_form';
@@ -25,12 +25,6 @@ class Inicio extends CI_Controller {
     $this->load->view('frontend/inicio', $data);
 	
   }
-  function logout()
-	 {
-	   $this->session->unset_userdata('logged_in');
-	   session_destroy();
-	   redirect('inicio', 'refresh');
-	 }
 
 }
 
