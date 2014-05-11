@@ -13,7 +13,6 @@ Class Login extends CI_Model
 		$this -> db -> limit(1);
 
 		$query = $this -> db -> get();
-		//$query = $this->db->query('SELECT u.id, l.email, l.password, u.es_admin FROM login l, usuari u WHERE l.email = "'.$email.'" AND l.password = "'.$password.'" AND l.id = u.id');
 		if($query -> num_rows() == 1)
 		{
 			return $query->result();
