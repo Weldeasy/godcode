@@ -19,7 +19,7 @@
 	   <li><?php echo "Hello, ".$email; ?></li>
 	</ul>
  </div>
- <a href="logout">Logout</a>
+ <a href="index.php/logout">Logout</a>
  <div id="busqueda">
  <div class="seccion zona_busqueda">
       <center>
