@@ -14,7 +14,7 @@ class VerifyLogin extends CI_Controller {
     $this->load->library('form_validation');
 
     $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
-    $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
+    $this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean|callback_check_database');
 	
     if($this->form_validation->run() == FALSE)
     {
@@ -30,13 +30,13 @@ class VerifyLogin extends CI_Controller {
     $this->load->view('frontend/inicio', $data);
   }
   
-  function check_database($password)
+  function check_database($passwd)
   {
     //Field validation succeeded.  Validate against database
     $email = $this->input->post('email');
     
     //query the database
-    $result = $this->login->login($email, $password);
+    $result = $this->login->login($email, $passwd);
     
     if($result)
     {

@@ -7,7 +7,7 @@ echo form_open('verifylogin', $attributes);
 	<input type="text" size="20" id="email" name="email"/>
 	<br/>
 	<label for="passwd">Password:</label>
-	<input type="passwd" size="20" id="passowd" name="passwd"/>
+	<input type="passwd" size="20" id="passwd" name="passwd"/>
 	<br/>
 	<input type="submit" value="Login"/>
 </form>
