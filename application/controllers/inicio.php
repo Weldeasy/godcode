@@ -10,6 +10,8 @@ class Inicio extends CI_Controller {
   function index()
   {
 	$data = array();
+	$this->load->library('form_validation');
+	$this->load->helper(array('form'));
 	if($this->session->userdata('logged_in')) {
 		$session_data = $this->session->userdata('logged_in');
 		$data['email'] = $session_data['email'];
