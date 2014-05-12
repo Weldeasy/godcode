@@ -47,10 +47,10 @@
     <div id="contenido_principal">
     <div class="sombra_zona_busqueda"></div>
     <div id="contenido_principal_izquierda">
-      <a link="#"><img src="/images/frontend/mas_votados.png" align="center" alt="Top votados" width="100%"></a>
+      <a link="#"><img src="<?= base_url()?>media/images/frontend/mas_votados.png" align="center" alt="Top votados" width="100%"></a>
     </div>
     <div id="contenido_principal_derecha">
-      <a link="#"><img src="/images/frontend/categories.png" align="center" alt="Top votados" width="100%"></a>
+      <a link="#"><img src="<?= base_url()?>media/images/frontend/categories.png" align="center" alt="Top votados" width="100%"></a>
     </div>
   </div>
 </div>
