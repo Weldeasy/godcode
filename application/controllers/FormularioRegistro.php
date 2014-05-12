@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class FormularioRegistro extends CI_Controller {
+class Formularioregistro extends CI_Controller {
     
     public function __construct()
     {
