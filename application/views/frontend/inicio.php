@@ -7,11 +7,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="">
-<<<<<<< HEAD
-    <link href="<?= base_url();?> /media/css/style.css" rel="stylesheet">
-=======
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
->>>>>>> 4ab742bb9b5bfacc1186ff2bf041259fbd892448
     <link href="navbar-fixed-top.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   </head>
