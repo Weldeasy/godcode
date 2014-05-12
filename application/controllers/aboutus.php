@@ -1,17 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Aboutus extends CI_Controller {
-	session_start();
-	function __construct() {
+	 session_start();
+	 function __construct()
+	  {
 		parent::__construct();
-	}
+	  }
 	 
-	public function index() {
-	
+	public function index()
+	{
 		$data = array();
 		$this->load->library('form_validation');
 		$this->load->helper(array('form'));
-		
 		if($this->session->userdata('logged_in')) {
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
@@ -19,7 +19,10 @@ class Aboutus extends CI_Controller {
 		} else {
 			$data['login_form'] = 'frontend/login_form';
 		}
-		
+
 		$this->load->view('frontend/aboutus', $data);
 	}
 }
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */
