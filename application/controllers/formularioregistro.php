@@ -42,7 +42,6 @@ class Formularioregistro extends CI_Controller {
 		$data['poblacions'] = $this->poblacions->get_poblacions();
 		
 		$this->load->view('frontend/registro_nuevo_usuario', $data);
-		$this->load->view('frontend/registro_nuevo_usuario');
 	}
 	
 	
