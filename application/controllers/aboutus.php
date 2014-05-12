@@ -5,7 +5,7 @@ class Aboutus extends CI_Controller {
 	 
 	public function index() {
 	
-		/*$data = array();
+		$data = array();
 		$this->load->library('form_validation');
 		$this->load->helper(array('form'));
 		
@@ -15,8 +15,8 @@ class Aboutus extends CI_Controller {
 			$data['login_form'] = 'frontend/logued';
 		} else {
 			$data['login_form'] = 'frontend/login_form';
-		}*/
+		}
 		
-		$this->load->view('frontend/aboutus');//, $data);
+		$this->load->view('frontend/aboutus', $data);
 	}
 }
