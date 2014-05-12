@@ -30,7 +30,7 @@ class Formularioregistro extends CI_Controller {
 	 */
 	public function index()
 	{
-		/*$this->load->library(array('provincies', 'poblacions'));
+		$this->load->library(array('provincies', 'poblacions'));
 		
 		$provincies = $this->provincies->get_provincies();
 		$prov = array();
@@ -42,7 +42,7 @@ class Formularioregistro extends CI_Controller {
 		$data['poblacions'] = $this->poblacions->get_poblacions();
 		
 		$this->load->view('frontend/registro_nuevo_usuario', $data);*/
-		echo "aa"; //$this->load->view('frontend/registro_nuevo_usuario');
+		$this->load->view('frontend/registro_nuevo_usuario');
 	}
 	
 	
