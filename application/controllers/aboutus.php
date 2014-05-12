@@ -2,9 +2,6 @@
 
 class Aboutus extends CI_Controller {
 	session_start();
-	function __construct() {
-		parent::__construct();
-	}
 	 
 	public function index() {
 	
