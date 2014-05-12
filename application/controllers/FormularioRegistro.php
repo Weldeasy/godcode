@@ -103,7 +103,7 @@ class Formularioregistro extends CI_Controller {
 				$this->user->add_user("anonimo.jpg", $code);
 			}
 			
-			$data = array('mensaje'=>$mensaje);
+			$data['mensaje'] = $mensaje;
 			$this->load->view('frontend/registro_completado', $data);
         }
         
