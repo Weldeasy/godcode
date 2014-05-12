@@ -7,18 +7,18 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   </head>
  <body>
  <div id='cssmenu'>
    <ul>
-     <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-     <li class='active'><a href='#'><span>SOBRE GODCODE</span></a></li>
-     <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-  </ul>
-  <?php echo $this->load->view($login_form); ?>
+	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+	   <li class='active'><a href='#'><span>SOBRE GODCODE</span></a></li>
+	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
+	</ul>
+	<?php echo $this->load->view($login_form); ?>
  </div>
  <div id="busqueda">
  <div class="seccion zona_busqueda">
@@ -28,7 +28,7 @@
               <h1>Búsqueda servicios</h1>
               <h3>Encuentra los servicios que hay disponibles en tu zona</h3>
               <hr>
-              <br>
+			        <br>
               <div class="contenido_formulario_busqueda">
                 <form id="landingForm" action="" method="post">
                     <input id="city_id" type="hidden" value="0">
@@ -47,10 +47,10 @@
     <div id="contenido_principal">
     <div class="sombra_zona_busqueda"></div>
     <div id="contenido_principal_izquierda">
-      <a link="#"><img src="/images/frontend/mas_votados.png" align="center" alt="Top votados" width="100%"></a>
+      <a link="#"><img src="mas_votados.png" align="center" alt="Top votados" width="100%"></a>
     </div>
     <div id="contenido_principal_derecha">
-      <a link="#"><img src="/images/frontend/categories.png" align="center" alt="Top votados" width="100%"></a>
+      <a link="#"><img src="categories.png" align="center" alt="Top votados" width="100%"></a>
     </div>
   </div>
 </div>
