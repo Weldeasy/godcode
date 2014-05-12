@@ -7,6 +7,7 @@ class Aboutus extends CI_Controller {
 	
 		$data = array();
 		$this->load->library('form_validation');
+		$this->load->helper('url');
 		$this->load->helper(array('form'));
 		
 		if($this->session->userdata('logged_in')) {
