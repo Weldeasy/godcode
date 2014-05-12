@@ -1,5 +1,5 @@
 body{
-  background-color: #FBFAFA;
+  background-color: #f6f6f6;
 }
 #cssmenu {
   margin: 0px;
@@ -7,15 +7,18 @@ body{
   font-size: 14px;
   font-weight: bold;
   width: auto;
-  border-bottom: solid 2px #92ce39;
+  border-bottom: solid 2px white;
+  
+  font-size: 15px;
   float:middle;
-  height: 48px;
+  height: 45px;
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
+
 #cssmenu ul {
-  background-color: #7A7575;
-  border-bottom: 3px solid #85081D;
-  height: 48px;
+  background-color: #6c0000 ;
+  border-bottom: 2px solid #640000  ;
+  height: 44px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -28,8 +31,11 @@ body{
 #cssmenu li a {
   background:  url('images/seperator.gif') bottom right no-repeat;
   display: block;
+  font-size: 14px;
   font-weight: normal;
+  border-right: 1px solid white;
   line-height: 45px;
+  font-family: 'Droid Sans', sans-serif;
   margin: 0px;
   padding: 0px 25px;
   text-align: center;
@@ -43,8 +49,8 @@ body{
 }
 #cssmenu li > a:hover,
 #cssmenu ul li:hover > a {
-  background: #85081D url('images/hover.png') bottom center no-repeat;
-  color: white;
+  background: white url('images/hover.png') bottom center no-repeat;
+  color: #6c0000;
   text-decoration: none;
 }
 #cssmenu li ul {
@@ -117,7 +123,7 @@ body{
   -moz-border-radius: 6px;
   border-radius: 6px;
   text-align: center;
-  background-color: #85081D;
+  background-color: #6c0000;
 }
 
 .zona_busqueda .caja_busqueda h1 {
@@ -222,7 +228,7 @@ body{
 }
 
 .sombra_zona_busqueda {
-  border-top: 1px solid #fff;
+  border-top: 1px solid #b6b6b6;
   position: relative;
   margin: 0 auto;
   min-width: 1020px;
@@ -253,8 +259,20 @@ body{
 }
 #contenido_principal{
   width: 100%;
+}
+#contenido_principal_izquierda{
+  width: auto;
   height: 100%;
+  display: block;
   color:black;
-  margin-left: 5%;
-  margin-right: 15%;
+  margin-left: 20%;  
+  float:left;
+  padding-top: 20px;
+}
+#contenido_principal_derecha{
+  display: block;
+  float: right;
+  width: auto;
+  margin-right: 20%;
+  padding-top: 20px;
 }
