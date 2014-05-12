@@ -14,7 +14,7 @@
  <div id='cssmenu'>
    <ul>
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-	   <li class='active'><a href='aboutus.php'><span>SOBRE GODCODE</span></a></li>
+	   <li class='active'><a href='#'><span>SOBRE GODCODE</span></a></li>
 	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
 	   <li><?php echo $this->load->view($login_form); ?></li>
 	</ul>
@@ -24,7 +24,7 @@
       <center>
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
-              <h1>Búsqueda servicios</h1>
+              <h1>SOBRE GODCODE</h1>
               <h3>Encuentra los servicios que hay disponibles en tu zona</h3>
               <hr>
 			        <br>
