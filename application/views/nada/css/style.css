@@ -1,0 +1,278 @@
+body{
+  background-color: #f6f6f6;
+}
+#cssmenu {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  width: auto;
+  border-bottom: solid 2px white;
+  
+  font-size: 15px;
+  float:middle;
+  height: 45px;
+  z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
+}
+
+#cssmenu ul {
+  background-color: #6c0000 ;
+  border-bottom: 2px solid #640000  ;
+  height: 44px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 20px;
+}
+#cssmenu li {
+  float: left;
+  padding: 0px;
+}
+#cssmenu li a {
+  background:  url('images/seperator.gif') bottom right no-repeat;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  border-right: 1px solid white;
+  line-height: 45px;
+  font-family: 'Droid Sans', sans-serif;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+#cssmenu > ul > li > a {
+  color: white;
+}
+#cssmenu ul ul a {
+  color: white;
+}
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a {
+  background: white url('images/hover.png') bottom center no-repeat;
+  color: #6c0000;
+  text-decoration: none;
+}
+#cssmenu li ul {
+  background: #85081D;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 225px;
+  z-index: 200;
+  /*top:1em;
+  /*left:0;*/
+
+}
+#cssmenu li:hover ul {
+  display: block;
+}
+#cssmenu li li {
+  background: url('images/sub_sep.gif') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 225px;
+}
+#cssmenu li:hover li a {
+  background: none;
+}
+#cssmenu li ul a {
+  display: block;
+  height: 35px;
+  font-size: 13px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: left;
+}
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+  background: #92ce39 url('images/hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: white;
+  text-decoration: none;
+}
+#cssmenu p {
+  clear: left;
+}
+
+.zona_busqueda {
+  background: url(../bundles/mambocarassets/img/redesign/landscape.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 490px;
+  text-align: center;
+}
+
+.zona_busqueda .caja_busqueda {
+  position: absolute;
+  background: url(../bundles/mambocarassets/img/redesign/fondo-pastilla-busqueda.png) repeat-x;
+  top: 200px;
+  left: 50%;
+  width: 960px;
+  height: 210px;
+  margin-left: -480px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  text-align: center;
+  background-color: #6c0000;
+}
+
+.zona_busqueda .caja_busqueda h1 {
+  margin-top: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24pt;
+  font-weight: 400;
+  letter-spacing: 1px;
+  //text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
+  color: #fff;
+}
+
+.zona_busqueda .caja_busqueda h3 {
+  margin-top: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  //text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
+  color: #fff;  
+}
+
+.zona_busqueda .caja_busqueda hr {
+  margin-top: 16px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  width: 550px;
+  border-color: #fff;
+  margin-bottom: 24px;
+}
+
+.zona_busqueda .caja_busqueda .contenido_formulario_busqueda {
+  overflow: auto;
+  margin-bottom: 15px;
+  height: 50px;
+}
+
+.zona_busqueda .caja_busqueda #landingForm input {
+  float: left;
+  position: relative;
+  font-size: 12px;
+  border: 0px;
+  border-radius: 5px;
+  height: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #505050;
+  box-shadow: 0px 2px 0px 0px rgba(150, 150, 150, 0.53);
+
+}
+
+.zona_busqueda .caja_busqueda #landingForm .input_ciudad {
+  width: 260px;
+  background: url('../bundles/mambocarassets/img/redesign/landing_input_ciudad.png') no-repeat scroll 7px 7px #FFFFFF;
+  margin-left: 15px;
+  padding-left: 35px;
+  margin-right: 17px;
+}
+
+.zona_busqueda .caja_busqueda #landingForm .input_fecha {
+  width: 174px;
+  background: url('../bundles/mambocarassets/img/redesign/landing_input_calendar.png') no-repeat scroll 7px 7px #FFFFFF;
+  padding-left: 45px;
+  margin-right: 17px;
+}
+
+.zona_busqueda .caja_busqueda #landingForm .bt_ver_coches {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12pt;
+  text-indent:0;
+  color:#ffffff;
+  width:138px;
+  line-height:38px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:0px 2px 0px #498853;
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  /*
+  -moz-box-shadow:inset 0px 0px 0px 1px #cc7618;
+  -webkit-box-shadow:inset 0px 0px 0px 1px #cc7618;
+  */
+  box-shadow: 0px 2px 0px 0px #498853;
+  background-color: #5baa68;
+}
+
+.zona_busqueda .caja_busqueda #landingForm .bt_ver_coches:hover {
+  background-color: #62b770;
+}
+
+.zona_busqueda .caja_busqueda .pie_texto_busqueda {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0px;
+  color:#ffffff;
+}
+
+.sombra_zona_busqueda {
+  border-top: 1px solid #b6b6b6;
+  position: relative;
+  margin: 0 auto;
+  min-width: 1020px;
+  width: 100%;
+  background-image: url(../bundles/mambocarassets/img/redesign/sombra-abajo.png);
+  background-repeat:repeat-x;
+  height: 5px;
+}
+
+.degradado_superior_seccion_fondo_gris {
+  position: relative;
+  margin: 0 auto;
+  min-width: 1020px;
+  width: 100%;
+  background-image: url(../bundles/mambocarassets/img/redesign/degradado-superior.png);
+  background-repeat:repeat-x;
+  height: 5px;
+}
+
+.degradado_inferior_seccion_fondo_gris {
+  position: relative;
+  margin: 0 auto;
+  min-width: 1020px;
+  width: 100%;
+  background-image: url(../bundles/mambocarassets/img/redesign/degradado-inferior.png);
+  background-repeat:repeat-x;
+  height: 5px;
+}
+#contenido_principal{
+  width: 100%;
+}
+#contenido_principal_izquierda{
+  width: auto;
+  height: 100%;
+  display: block;
+  color:black;
+  margin-left: 20%;  
+  float:left;
+  padding-top: 20px;
+}
+#contenido_principal_derecha{
+  display: block;
+  float: right;
+  width: auto;
+  margin-right: 20%;
+  padding-top: 20px;
+}
