@@ -80,10 +80,12 @@ Class User extends CI_Model
 	
 	function login($email, $password)
 	{
-		$this -> db -> select('id, email, password');
-		$this -> db -> from('login');
+		$this -> db -> select('l.id, l.email, l.password, u.es_admin, u.esta_congelat');
+		$this -> db -> from('login l');
+		$this -> db -> from('usuari u');
 		$this -> db -> where('email', $email); 
 		$this -> db -> where('password', MD5($password)); 
+		$this -> db -> where('l.id = u.id'); 
 		/* a*/
 		$this -> db -> limit(1);
 

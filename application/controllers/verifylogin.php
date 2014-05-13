@@ -5,6 +5,10 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
+	define("USUARI", 1);
+	define("ADMIN", 2);
+	define("CONGELAT", 3);
+	define("NOVERIFICAT", 4);
     $this->load->model('user', '', TRUE);
   }
 
@@ -15,17 +19,28 @@ class VerifyLogin extends CI_Controller {
 
     $this->form_validation->set_rules('email', 'Email', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
-	
-    if($this->form_validation->run() == FALSE)
+	$estat = $this->form_validation->run();
+    if($estat == FALSE)
     {
       //Field validation failed.  User redirected to login page
       $data['login_form'] = 'frontend/login_form';
-    }
-    else
-    {
-	 $session_data = $this->session->userdata('logged_in');
-	 $data['email'] = $session_data['email'];
-	 $data['login_form'] = 'frontend/logued';
+    } else {
+		 $session_data = $this->session->userdata('logged_in');
+		 switch($estat) {
+			case ADMIN:
+				redirect('/admin/admin', 'refresh');
+				break;
+			case CONGELAT:
+				redirect('/frontent/congelat', 'refresh');
+				break;
+			case NOVERIFICAT:
+				redirect('/frontent/verifica', 'refresh');
+				break;
+			default:
+				$data['email'] = $session_data['email'];
+				$data['login_form'] = 'frontend/logued';
+				break;
+		 }
     }
     $this->load->view('frontend/inicio', $data);
   }
@@ -49,13 +64,39 @@ class VerifyLogin extends CI_Controller {
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
-      return TRUE;
+	  
+      return estat_usuari($result);
+		
     }
     else
     {
       $this->form_validation->set_message('check_database', 'Invalid email or password');
       return false;
     }
+  }
+  /*
+  estat_usuari($usuari) devuelve el estado del usuario en funcion si es admin o no, y si la cuenta no esta congelada o no validada.
+  */
+  function estat_usuari($result) {
+	$info = array();
+	
+    foreach($result as $row) {
+        $info = array(
+          'es_admin' => $row->es_admin,
+          'esta_congelat' => $row->esta_congelat
+        );
+     }
+	if ($info['es_admin']) {
+		return ADMIN;
+	} else {
+		if($info['esta_congelad']==NOVERIFICAT) {
+			return NOVERIFICAT;
+		} else if($info['esta_congelad']==CONGELAT) {
+			return CONGELAT;
+		} else {
+			return USUARI;
+		}
+	}
   }
 }
 ?>
