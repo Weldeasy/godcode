@@ -9,6 +9,25 @@
     <meta name="author" content="">
     <link href="<?=base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
+	<style>
+	.welcome_msg {
+		color:white;
+		right:5px;
+		position:absolute;
+	}
+	.logout_b {
+		right:5px;
+		position:absolute;
+	}
+	.user_settings {
+		right:40px;
+		position:absolute;
+	}
+	.user_settings img {
+		margin-top:2px;
+		width:20px;
+	}
+	</style>
  </head>
  <body>
  <div id='cssmenu'>
