@@ -62,6 +62,7 @@
 	<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
 	<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 	<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
 </head>
