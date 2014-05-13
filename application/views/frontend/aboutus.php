@@ -29,7 +29,7 @@
       <center>
         <div id="about_us">
               <h1>SOBRE NOSALTRES</h1>
-              <h3></h3>
+              <p>Som un jove grup de programadors.</p>
               <hr>
               <br>                 
         </div>
