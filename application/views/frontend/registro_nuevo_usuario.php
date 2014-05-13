@@ -58,74 +58,23 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="es" />
-	<title>Formulario registro nuevo usuario</title>
-	<style>
-	input[type=radio]{
-		display:none;
-	}
-	label > img:hover {
-		cursor:pointer;
-	}
-	.checkedd {
-		border-bottom:2px solid blue;
-	}
-	input {
-		width:190px;
-	}
-	textarea {
-		resize:vertical;
-	}
-	</style>
+	<title>Formulari registre nou usuari</title>
+	<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+	<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
 	<script src="<?= base_url(); ?>media/js/jquery.js"></script>
-	<script>
-		function changeClass(element) {
-			var radios = document.getElementsByName("sexo");
-			if (element.name == "sexo1") {
-				document.getElementById("sexo1").className = "checkedd";
-				document.getElementById("sexo2").className = "";
-				radios[0].checked = true;
-				radios[1].checked = false;
-			} else {
-				document.getElementById("sexo2").className = "checkedd";
-				document.getElementById("sexo1").className = "";
-				radios[0].checked = false;
-				radios[1].checked = true;
-			}
-		}
-		
-		function loadPoblacions() {
-			var provincia_id = $("#provincies").val();
-			var poblacions_select = document.getElementById("poblacio");
-			poblacions_select.length = 0;
-			var contador = true;
-			for (var i = 0; i < poblacions.length; i++) {
-				if (poblacions[i]['idprovincia'] == provincia_id) {
-					var opt = document.createElement('option');
-					opt.value = poblacions[i]['idpoblacion'];
-					opt.innerHTML = poblacions[i]['poblacion'];
-					poblacions_select.appendChild(opt);
-					if (contador) {
-						document.getElementById("cp").value = poblacions[i]['postal'];
-						contador = false;
-					}
-				}
-			}
-		}
-		function loadCP() {
-			var poblacio_id = $("#poblacio").val();
-			var index;
-			for (var i = 0; i < poblacions.length; i++) {
-				if (poblacions[i]['idpoblacion'] == poblacio_id) {
-					index = i;
-					break;
-				}
-			}
-			$("#cp").val(poblacions[index]['postal']);
-		}
-	</script>
+	<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
 </head>
 <body onLoad="loadPoblacions()">
+	<div id='cssmenu'>
+		<ul>
+			<li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
+			<li class='active'><a href='#'><span>CONTACTA</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE</span></a></li>
+		</ul>
+	</div>
 	<div id="container">
+		<center><h1><u>Formulari nou usuari</u></h1></center>
 		<?= form_open_multipart(base_url().'index.php/formularioregistro/validar', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
 		<table>
 		
@@ -143,23 +92,6 @@
     		<?= form_input($cognoms_opts); ?>
             </td><td>
     		<?= form_error("apellidos"); ?>
-            </td></tr>
-            
-            <tr><td>
-            <?= form_label("Sexe:", "", array('for'=>'sexo', 'class'=>$label_class)); ?>
-            </td><td colspan="2">
-            <label id="sexo1" <?php if ($sex_selected == "0") echo 'class="checkedd"'; ?> for="sexo1"><img src="<?= base_url(); ?>media/images/frontend/sr.png" title="Home" name="sexo1" onClick="changeClass(this)" /></label>
-			&nbsp;
-    		<label id="sexo2" <?php if ($sex_selected == "1") echo 'class="checkedd"'; ?> for="sexo2"><img src="<?= base_url(); ?>media/images/frontend/sra.png" title="Dona" name="sexo2" onClick="changeClass(this)" /></label>
-			<?php
-				if ($sex_selected == "0") {
-					print form_radio("sexo", "0", TRUE, "id = 'sexo1_r'");
-					print form_radio("sexo", "1", FALSE, "id = 'sexo2_r'");
-				} else {
-					print form_radio("sexo", "0", FALSE, "id = 'sexo1_r'");
-					print form_radio("sexo", "1", TRUE, "id = 'sexo2_r'");
-				}
-			?>
             </td></tr>
 			
 			<tr><td>
@@ -179,12 +111,33 @@
             </td></tr>
 			
 			<tr><td>
-            <?= form_label("Confirmar contrasenya:", "", array('for'=>'confirm_pass', 'class'=>$label_class)); ?>
+            <?= form_label("Confirmar contrasenya:", "", array('for'=>'confirm_pass', 'class'=>$label_class)); ?>&nbsp;
             </td><td>
     		<?= form_password($confirm_pass_opts); ?>
             </td><td>
     		<?= form_error("confirm_pass"); ?>
             </td></tr>
+			
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
+			<tr><td>
+            <?= form_label("Sexe:", "", array('for'=>'sexo', 'class'=>$label_class)); ?>
+            </td><td colspan="2">
+            <label id="sexo1" <?php if ($sex_selected == "0") echo 'class="checkedd"'; ?> for="sexo1"><img src="<?= base_url(); ?>media/images/frontend/sr.png" title="Home" name="sexo1" onClick="changeClass(this)" /></label>
+			&nbsp;
+    		<label id="sexo2" <?php if ($sex_selected == "1") echo 'class="checkedd"'; ?> for="sexo2"><img src="<?= base_url(); ?>media/images/frontend/sra.png" title="Dona" name="sexo2" onClick="changeClass(this)" /></label>
+			<?php
+				if ($sex_selected == "0") {
+					print form_radio("sexo", "0", TRUE, "id = 'sexo1_r'");
+					print form_radio("sexo", "1", FALSE, "id = 'sexo2_r'");
+				} else {
+					print form_radio("sexo", "0", FALSE, "id = 'sexo1_r'");
+					print form_radio("sexo", "1", TRUE, "id = 'sexo2_r'");
+				}
+			?>
+            </td></tr>
+			
+			<tr><td colspan="3">&nbsp;</td></tr>
 			
 			<tr><td>
             <?= form_label("Provincia:", "", array('for'=>'provincia', 'class'=>$label_class)); ?>
@@ -192,30 +145,35 @@
     		<?= form_dropdown('provincia', $provincies, 'large', $provincia_opts); ?>
             </td></tr>
 			
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
 			<tr><td>
-            <?= form_label("Població:", "", array('for'=>'poblacio', 'class'=>$label_class)); ?>
+            <?= form_label("Poblaci&oacute;:", "", array('for'=>'poblacio', 'class'=>$label_class)); ?>
             </td><td colspan="2">
 			<select name="poblacio" id="poblacio" onChange="loadCP(this)"></select>
 			<input type="hidden" id="cp" name="cp" />
             </td></tr>
-			<?php
-				//print_r($poblacions);
-			?>
+			
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
 			<tr><td>
     		<?= form_label("Foto:", "", array('for'=>'foto', 'class'=>$label_class)); ?>
             </td><td colspan="2">
-    		<input type="file" name="foto" accept='image/*' />
+			<label id="image" for="foto"><img src="<?= base_url(); ?>media/images/frontend/user_image.png" id="img" title="Imatge perfil" /></label>
+    		<input type="file" name="foto" id="foto" accept='image/*' />
             </td></tr>
             
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
             <tr><td colspan="3">
             <?= form_label("Descriu-te:", "", array('for'=>'descrivete', 'class'=>$label_class)); ?>
             </td></tr>
-            <tr><td colspan="2">
+            <tr><td colspan="3">
     		<?= form_textarea($desc_opts); ?>
-            </td><td>
-    		<?= form_error("descrivete"); ?>
             </td></tr>
             
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
             <tr><td colspan="3">
                 <?= form_submit('submit', 'Registre\'m', 'class = '.$submit); ?>
             </td></tr>
