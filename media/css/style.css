@@ -276,3 +276,21 @@ body{
   margin-right: 20%;
   padding-top: 20px;
 }
+
+.welcome_msg {
+	color:white;
+	right:5px;
+	position:absolute;
+}
+.logout_b {
+	right:5px;
+	position:absolute;
+}
+.user_settings {
+	right:40px;
+	position:absolute;
+}
+.user_settings img {
+	margin-top:2px;
+	width:20px;
+}
