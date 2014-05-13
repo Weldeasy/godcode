@@ -5,7 +5,7 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->model('login', '', TRUE);
+    $this->load->model('user', '', TRUE);
   }
 
   function index()
@@ -13,8 +13,8 @@ class VerifyLogin extends CI_Controller {
     //This method will have the credentials validation
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
-    $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
 	
     if($this->form_validation->run() == FALSE)
     {
@@ -36,7 +36,7 @@ class VerifyLogin extends CI_Controller {
     $email = $this->input->post('email');
     
     //query the database
-    $result = $this->login->index($email, $password);
+    $result = $this->user->login($email, $password);
     
     if($result)
     {
