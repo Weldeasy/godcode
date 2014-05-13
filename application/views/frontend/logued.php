@@ -14,8 +14,9 @@
  <div id='cssmenu'>
    <ul>
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-	   <li class='active'><a href='#'><span>SOBRE GODCODE</span></a></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
 	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li>
 	   <li><?php echo "Hello, ".$email; ?></li>
 	</ul>
  </div>
