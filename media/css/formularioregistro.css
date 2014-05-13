@@ -53,7 +53,7 @@ table tr:last-child td {
 input[type=file] {
 	display:none;
 }
-input[type=submit] {
+.formulario_registro_submit {
 	border-top: 1px solid #000000;
 	border-left: 1px solid #000000;
 	background: #6c0000;
@@ -76,11 +76,11 @@ input[type=submit] {
 	text-decoration: none;
 	vertical-align: middle;
 }
-input[type=submit]:hover {
+.formulario_registro_submit:hover {
 	color: white;
 	cursor:pointer;
 }
-input[type=submit]:active {
+.formulario_registro_submit:active {
 	border-top-color: #6c0000;
 	background: #6c0000;
 }

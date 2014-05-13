@@ -1,12 +1,8 @@
 <?php
 echo validation_errors();
-echo form_open('verifylogin'); 
+echo form_open('verifylogin',array('class'=>'login_form')); 
 ?>
-<label for="email">Email:</label>
-	<input type="text" size="20" id="email" name="email"/>
-	<br/>
-	<label for="password">Password:</label>
-	<input type="password" size="20" id="password" name="password"/>
-	<br/>
+	<input class="user_opt" type="text" size="20" id="email" name="email"/>
+	<input class="user_opt_p" type="password" size="20" id="password" name="password"/>
 	<input type="submit" value="Login"/>
 </form>

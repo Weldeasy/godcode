@@ -61,6 +61,7 @@
 	<title>Formulari registre nou usuari</title>
 	<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
+	<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
 	<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 	<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
 </head>
@@ -73,6 +74,7 @@
 			<li class='active'><a href='#'><span>CONTACTA</span></a></li>
 			<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li>
 		</ul>
+		<?php echo $this->load->view($login_form); ?>
 	</div>
 	<div id="container">
 		<center><h1><u>Formulari nou usuari</u></h1></center>

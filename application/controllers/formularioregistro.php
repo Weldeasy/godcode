@@ -10,6 +10,7 @@ class Formularioregistro extends CI_Controller {
 		$this->load->helper('url');
         $this->load->library('form_validation');
 		$this->load->model('user');
+		$this->load->library('form_validation');
         
     }
 
@@ -40,6 +41,7 @@ class Formularioregistro extends CI_Controller {
 		
 		$data['provincies'] = $prov;
 		$data['poblacions'] = $this->poblacions->get_poblacions();
+		$data['login_form'] = 'frontend/login_form';
 		
 		$this->load->view('frontend/registro_nuevo_usuario', $data);
 	}
