@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="">
-    <link href="<?php echo base_url();?>media/css/style.css" rel="stylesheet">
+    <link href="<?=base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
  </head>
  <body>
