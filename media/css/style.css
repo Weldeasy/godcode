@@ -276,3 +276,9 @@ body{
   margin-right: 20%;
   padding-top: 20px;
 }
+#about_us{
+  width: 80%;
+  display:block;
+  float:left;
+  background-color: black;
+}
