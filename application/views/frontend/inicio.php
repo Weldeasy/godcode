@@ -23,6 +23,7 @@
   </ul>
   <?php echo $this->load->view($login_form); ?>
  </div>
+ <?php echo $estado_login; ?>
  <div id="busqueda">
  <div class="seccion zona_busqueda">
       <center>

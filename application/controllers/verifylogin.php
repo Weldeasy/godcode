@@ -47,6 +47,7 @@ class VerifyLogin extends CI_Controller {
 				break;
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
+		 $data['estado_login'] = "feo";
     }
     $this->load->view('frontend/inicio', $data);
   }
