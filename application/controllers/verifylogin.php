@@ -107,7 +107,7 @@ class VerifyLogin extends CI_Controller {
 			$this->estat =  1;
 		}
 	}
-	return true;
+	return 5;
   }
 }
 ?>
