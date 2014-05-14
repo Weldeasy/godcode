@@ -20,7 +20,8 @@ class VerifyLogin extends CI_Controller {
     $this->form_validation->set_rules('email', 'Email', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
 	$estat = $this->form_validation->run();
-	//error.log("test");
+	$estat = 2;
+
     if($estat == FALSE)
     {
       //Field validation failed.  User redirected to login page
