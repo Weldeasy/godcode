@@ -305,12 +305,20 @@ h1{
   height: 500px;
   margin-left: 20%;
   margin-right: 20%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
   
   background-color: white;
 }
 #about_us p{
    font-family: 'Open Sans', sans-serif;
    font-size: 14px;
+}
+#table {
+  width: 100%;
+  height: auto;
+}
+#table td{
+  width: 25%;
+  height: auto;
 }
