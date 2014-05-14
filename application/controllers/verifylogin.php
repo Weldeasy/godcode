@@ -2,6 +2,8 @@
 
 class VerifyLogin extends CI_Controller {
 
+	private estat = 0;
+	
   function __construct()
   {
     parent::__construct();
@@ -10,7 +12,6 @@ class VerifyLogin extends CI_Controller {
 	define("CONGELAT", 3);
 	define("NOVERIFICAT", 4);
     $this->load->model('user', '', TRUE);
-	$this->estat = 0;
   }
 
   function index()
@@ -29,7 +30,6 @@ class VerifyLogin extends CI_Controller {
 
     } else {
 		 $session_data = $this->session->userdata('logged_in');
-		 $estat = $this->estat_usuari();
 		 /*switch($estat) {
 			case ADMIN:
 				
