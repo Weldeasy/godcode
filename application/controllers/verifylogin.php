@@ -25,6 +25,7 @@ class VerifyLogin extends CI_Controller {
     {
       //Field validation failed.  User redirected to login page
       $data['login_form'] = 'frontend/login_form';
+	  	$data['estat'] = 'asf';
     } else {
 		 $session_data = $this->session->userdata('logged_in');
 		 /*switch($estat) {
@@ -47,9 +48,8 @@ class VerifyLogin extends CI_Controller {
 				break;
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
-		
+			$data['estat'] = 'asf';
     }
-	$data['estat'] = 'asf';
     $this->load->view('frontend/inicio', $data);
   }
   
