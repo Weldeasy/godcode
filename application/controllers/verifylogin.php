@@ -86,7 +86,7 @@ class VerifyLogin extends CI_Controller {
 				$this->estat = 1;
 			}
 		}*/
-		$this->estat = $sess_array['esta_congelat'];
+		$this->estat = intval($sess_array['esta_congelat']);
 		
 		
       }
