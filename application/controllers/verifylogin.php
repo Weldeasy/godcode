@@ -10,6 +10,7 @@ class VerifyLogin extends CI_Controller {
 	define("CONGELAT", 3);
 	define("NOVERIFICAT", 4);
     $this->load->model('user', '', TRUE);
+	$this->estat = 0;
   }
 
   function index()
@@ -19,8 +20,7 @@ class VerifyLogin extends CI_Controller {
 
     $this->form_validation->set_rules('email', 'Email', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
-	$estat = $this->form_validation->run();
-	$estat = 2;
+	$this->form_validation->run();
 
     if($estat == FALSE)
     {
@@ -29,6 +29,7 @@ class VerifyLogin extends CI_Controller {
 
     } else {
 		 $session_data = $this->session->userdata('logged_in');
+		 $estat = $this->estat_usuari();
 		 /*switch($estat) {
 			case ADMIN:
 				
@@ -50,7 +51,7 @@ class VerifyLogin extends CI_Controller {
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
     }
-	$data['estat'] = $estat;
+	$data['estat'] = $this->estat;
     //$this->load->view('frontend/inicio', $data);
 	var_dump($data);
   }
@@ -70,14 +71,12 @@ class VerifyLogin extends CI_Controller {
       {
         $sess_array = array(
           'id' => $row->id,
-          'email' => $row->email,
-		  'es_admin' => $row->es_admin,
-		  'esta_congelat' => $row->esta_congelat
+          'email' => $row->email
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
-      //return $this->estat_usuari($result);
-	  return $sess_array;
+      return true;
+		
     }
     else
     {
@@ -98,16 +97,17 @@ class VerifyLogin extends CI_Controller {
         );
      }
 	if ($info['es_admin']) {
-		return "2";
+		$this->estat = 2;
 	} else {
 		if($info['esta_congelat']==4) {
-			return "4";
+			$this->estat =  4;
 		} else if($info['esta_congelat']==3) {
-			return "3";
+			$this->estat =  3;
 		} else {
-			return "1";
+			$this->estat =  1;
 		}
 	}
+	return true;
   }
 }
 ?>
