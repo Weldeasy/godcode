@@ -95,17 +95,16 @@ class VerifyLogin extends CI_Controller {
         );
      }
 	if ($info['es_admin']) {
-		return ADMIN;
+		return 2;
 	} else {
-		if($info['esta_congelat']==NOVERIFICAT) {
-			return NOVERIFICAT;
-		} else if($info['esta_congelat']==CONGELAT) {
-			return CONGELAT;
+		if($info['esta_congelat']==4) {
+			return 4;
+		} else if($info['esta_congelat']==3) {
+			return 3;
 		} else {
-			return USUARI;
+			return 1;
 		}
 	}
-	return true;
   }
 }
 ?>
