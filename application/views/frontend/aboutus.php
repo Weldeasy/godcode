@@ -68,11 +68,13 @@
         </div>
       </center>
     </div>
-    <div >
+    <div id="footer">
       <div id="separador_degradado">
-        <p>hola</p>
+        
       </div>
-
+      <div class="contenido_footer">
+        <p>Esto es el footer</p>
+      </div>
     </div>
     
 </div>
