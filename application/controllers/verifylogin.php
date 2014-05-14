@@ -27,7 +27,7 @@ class VerifyLogin extends CI_Controller {
       $data['login_form'] = 'frontend/login_form';
     } else {
 		 $session_data = $this->session->userdata('logged_in');
-		 switch($estat) {
+		 /*switch($estat) {
 			case ADMIN:
 				
 				//redirect('admin/admin', 'refresh');
@@ -45,7 +45,7 @@ class VerifyLogin extends CI_Controller {
 				$data['email'] = $session_data['email'];
 				$data['login_form'] = 'frontend/logued';
 				break;
-		 }
+		 }*/
     }
     $this->load->view('frontend/inicio', $data);
   }
@@ -102,7 +102,7 @@ class VerifyLogin extends CI_Controller {
 			return USUARI;
 		}
 	}*/
-	print "hola";
+	return true;
   }
 }
 ?>
