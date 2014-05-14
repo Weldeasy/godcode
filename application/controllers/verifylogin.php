@@ -70,11 +70,23 @@ class VerifyLogin extends CI_Controller {
       {
         $sess_array = array(
           'id' => $row->id,
-          'email' => $row->email
+          'email' => $row->email,
+		  'es_admin' => $row->es_admin,
+          'esta_congelat' => $row->esta_congelat
         );
         $this->session->set_userdata('logged_in', $sess_array);
+		if ($sess_array['es_admin']) {
+			$this->estat = 2;
+		} else {
+			if($sess_array['esta_congelat']==4) {
+				$this->estat = 4;
+			} else if($sess_array['esta_congelat']==3) {
+				$this->estat = 3;
+			} else {
+				$this->estat = 1;
+			}
+		}
       }
-	  $this->estat = estat_usuari($result);
       return true;
 		
     }
@@ -83,31 +95,6 @@ class VerifyLogin extends CI_Controller {
       $this->form_validation->set_message('check_database', 'Invalid email or password');
       return false;
     }
-  }
-  /*
-  estat_usuari($usuari) devuelve el estado del usuario en funcion si es admin o no, y si la cuenta no esta congelada o no validada.
-  */
-  function estat_usuari($result) {
-	$info = array();
-	
-    foreach($result as $row) {
-        $info = array(
-          'es_admin' => $row->es_admin,
-          'esta_congelat' => $row->esta_congelat
-        );
-     }
-	if ($info['es_admin']) {
-		$this->estat = 2;
-	} else {
-		if($info['esta_congelat']==4) {
-			$this->estat =  4;
-		} else if($info['esta_congelat']==3) {
-			$this->estat =  3;
-		} else {
-			$this->estat =  1;
-		}
-	}
-	return 5;
   }
 }
 ?>
