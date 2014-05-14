@@ -74,7 +74,7 @@ class VerifyLogin extends CI_Controller {
         $this->session->set_userdata('logged_in', $sess_array);
       }
 	  
-      return 1; //estat_usuari($result);
+      return estat_usuari($result);
 		
     }
     else
