@@ -305,7 +305,12 @@ h1{
   height: 500px;
   margin-left: 20%;
   margin-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+  background-color: white;
+}
+#about_us p{
    font-family: 'Open Sans', sans-serif;
-
-
+   font-size: 14px;
 }
