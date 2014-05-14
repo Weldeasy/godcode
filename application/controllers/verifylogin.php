@@ -88,7 +88,7 @@ class VerifyLogin extends CI_Controller {
   function estat_usuari($result) {
 	$info = array();
 	
-    foreach($result as $row) {
+   /* foreach($result as $row) {
         $info = array(
           'es_admin' => $row->es_admin,
           'esta_congelat' => $row->esta_congelat
@@ -104,7 +104,8 @@ class VerifyLogin extends CI_Controller {
 		} else {
 			return 1;
 		}
-	}
+	}*/
+	return 66;
   }
 }
 ?>
