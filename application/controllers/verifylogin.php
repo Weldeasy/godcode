@@ -78,9 +78,9 @@ class VerifyLogin extends CI_Controller {
 		if ($sess_array['es_admin']) {
 			$this->estat = 2;
 		} else {
-			if($sess_array['esta_congelat']==4) {
+			if($sess_array['esta_congelat']==2) {
 				$this->estat = 4;
-			} else if($sess_array['esta_congelat']==3) {
+			} else if($sess_array['esta_congelat']==1) {
 				$this->estat = 3;
 			} else {
 				$this->estat = 1;
