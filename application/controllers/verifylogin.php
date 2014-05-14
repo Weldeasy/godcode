@@ -2,7 +2,7 @@
 
 class VerifyLogin extends CI_Controller {
 
-	private estat = 0;
+	private $estat = 0;
 	
   function __construct()
   {
