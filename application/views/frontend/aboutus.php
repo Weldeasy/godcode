@@ -9,8 +9,9 @@
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
   </head>
  <body>
  <div id='cssmenu'>
