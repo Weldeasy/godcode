@@ -10,7 +10,7 @@
 	color:red;
 	font-size:14px;
 }
-.formulario_registro_input_text:hover, :focus {
+.formulario_registro_input_text:hover, .formulario_registro_input_text:focus {
 	-webkit-box-shadow: 0 0 4px 1px #6C0000;
 	-moz-box-shadow: 0 0 4px 1px #6C0000;
 	-o-box-shadow: 0 0 4px 1px #6C0000;

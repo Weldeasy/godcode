@@ -13,11 +13,11 @@ class Aboutus extends CI_Controller {
 		if($this->session->userdata('logged_in')) {
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
-			$data['login_form'] = 'frontend/logued';
+			$data['login_form'] = null;
+			$this->load->view('frontend/aboutus', $data);
 		} else {
 			$data['login_form'] = 'frontend/login_form';
 		}
-		
 		$this->load->view('frontend/aboutus', $data);
 	}
 }

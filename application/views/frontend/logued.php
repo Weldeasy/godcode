@@ -36,9 +36,7 @@
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
 	   <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
 	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-	   <li class="welcome_msg"><?php echo "Hola, ".$email; ?></li><br/>
-	   <a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><img src="<?= base_url()?>media/images/frontend/close_session.png" /></a>
-	   <a class="user_settings" title="La meva conte" href="<?= base_url()?>index.php/user_settings"><img src="<?= base_url()?>media/images/frontend/user_settings.png" /></a>
+	   <?= $this->load->view('frontend/welcome');?>
 	</ul>
  </div>
  <div id="busqueda">
@@ -66,9 +64,15 @@
         </div>
       </center>
     </div>
-    <div class="sombra_zona_busqueda"></div>
     <div id="contenido_principal">
-      <h1>Contenido de página principal</h1>
-      <p>Contenido principal por definir.</p>
+		<div class="sombra_zona_busqueda"></div>
+      <div id="contenido_principal_izquierda">
+      <a link="#"><img src="<?= base_url()?>media/images/frontend/mas_votados.png" align="center" alt="Top votados" width="100%"></a>
+    </div>
+    <div id="contenido_principal_derecha">
+      <a link="#"><img src="<?= base_url()?>media/images/frontend/categories.png" align="center" alt="Top votados" width="100%"></a>
+    </div>
     </div>
 </div>
+</body>
+</html>

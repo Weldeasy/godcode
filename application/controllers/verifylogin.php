@@ -20,7 +20,7 @@ class VerifyLogin extends CI_Controller {
     $this->form_validation->set_rules('email', 'Email', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
 	$estat = $this->form_validation->run();
-	error.log("test");
+	//error.log("test");
     if($estat == FALSE)
     {
       //Field validation failed.  User redirected to login page
@@ -91,9 +91,9 @@ class VerifyLogin extends CI_Controller {
 	if ($info['es_admin']) {
 		return ADMIN;
 	} else {
-		if($info['esta_congelad']==NOVERIFICAT) {
+		if($info['esta_congelat']==NOVERIFICAT) {
 			return NOVERIFICAT;
-		} else if($info['esta_congelad']==CONGELAT) {
+		} else if($info['esta_congelat']==CONGELAT) {
 			return CONGELAT;
 		} else {
 			return USUARI;

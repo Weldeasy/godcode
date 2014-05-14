@@ -9,11 +9,11 @@
     <title>Dashboard - SB Admin</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="<?= base_url()?>media/css/bootstrap-user.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="<?= base_url()?>media/css/sb-admin-user.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url()?>media/font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
   </head>
 
@@ -24,8 +24,11 @@
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
+		<a href="<?= base_url()?>index.php/inicio" title="Tornar">
         <div class="navbar-header">
+			&nbsp;&nbsp;<img src="<?= base_url()?>media/images/frontend/volver.png" />&nbsp;&nbsp;TORNAR
         </div>
+		</a>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
@@ -36,12 +39,12 @@
 
           <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;John Smith&nbsp;&nbsp;<b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;<?= $email?>&nbsp;&nbsp;<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#"><i class="fa fa-user"></i> Perfil</a></li>
                 <li><a href="#"><i class="fa fa-gear"></i> Opcions</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                <li><a href="<?= base_url()?>index.php/logout"><i class="fa fa-power-off"></i>&nbsp;Log Out</a></li>
               </ul>
             </li>
           </ul>
@@ -55,10 +58,8 @@
     </div><!-- /#wrapper -->
 
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="<?= base_url()?>media/js/jquery-1.10.2.js"></script>
+    <script src="<?= base_url()?>media/js/bootstrap.js"></script>
 
-    <!-- Page Specific Plugins -->
-    <script src="js/morris/chart-data-morris.js"></script>
   </body>
 </html>
