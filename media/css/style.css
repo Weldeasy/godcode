@@ -324,7 +324,7 @@ h1{
   width: 25%;
   height: auto;
 }
-.separador_degradado{
+#separador_degradado{
   background: rgb(246,246,246); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(246,246,246,1) 17%, rgba(142,142,142,1) 99%, rgba(51,51,51,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(17%,rgba(246,246,246,1)), color-stop(99%,rgba(142,142,142,1)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
