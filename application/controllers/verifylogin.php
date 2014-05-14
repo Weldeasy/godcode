@@ -95,14 +95,14 @@ class VerifyLogin extends CI_Controller {
         );
      }
 	if ($info['es_admin']) {
-		return 2;
+		return "2";
 	} else {
 		if($info['esta_congelat']==4) {
-			return 4;
+			return "4";
 		} else if($info['esta_congelat']==3) {
-			return 3;
+			return "3";
 		} else {
-			return 1;
+			return "1";
 		}
 	}
   }
