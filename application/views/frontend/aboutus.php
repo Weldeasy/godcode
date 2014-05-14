@@ -1,4 +1,6 @@
-<? include(BASE_URI . 'php/head.php');?>
+<?
+ define ('BASE_URI', '/godcode/');
+ include(BASE_URI . '/application/views/frontend/php/head.php');?>
  <body>
  <div id='cssmenu'>
    <ul>
