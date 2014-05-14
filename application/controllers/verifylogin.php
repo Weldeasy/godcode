@@ -69,12 +69,14 @@ class VerifyLogin extends CI_Controller {
       {
         $sess_array = array(
           'id' => $row->id,
-          'email' => $row->email
+          'email' => $row->email,
+		  'es_admin' => $row->es_admin,
+		  'esta_congelat' => $row->esta_congelat
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
-      return $this->estat_usuari($result);
-		
+      //return $this->estat_usuari($result);
+	  return $sess_array;
     }
     else
     {
