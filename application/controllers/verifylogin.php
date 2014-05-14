@@ -75,19 +75,17 @@ class VerifyLogin extends CI_Controller {
           'esta_congelat' => $row->esta_congelat
         );
         $this->session->set_userdata('logged_in', $sess_array);
-		/*if ($sess_array['es_admin']) {
+		if ($sess_array['es_admin']) {
 			$this->estat = 2;
 		} else {
-			if($sess_array['esta_congelat']==0) {
+			if($sess_array['esta_congelat']==2) {
 				$this->estat = 4;
 			} else if($sess_array['esta_congelat']==1) {
 				$this->estat = 3;
 			} else {
 				$this->estat = 1;
 			}
-		}*/
-		$this->estat = intval($sess_array['esta_congelat']);
-		
+		}		
 		
       }
       return true;
