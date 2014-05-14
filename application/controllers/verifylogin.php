@@ -83,7 +83,7 @@ class VerifyLogin extends CI_Controller {
   estat_usuari($usuari) devuelve el estado del usuario en funcion si es admin o no, y si la cuenta no esta congelada o no validada.
   */
   function estat_usuari($result) {
-	$info = array();
+	/*$info = array();
 	
     foreach($result as $row) {
         $info = array(
@@ -101,7 +101,8 @@ class VerifyLogin extends CI_Controller {
 		} else {
 			return USUARI;
 		}
-	}
+	}*/
+	print "hola";
   }
 }
 ?>
