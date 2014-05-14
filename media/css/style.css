@@ -324,6 +324,11 @@ h1{
   width: 25%;
   height: auto;
 }
+#footer{
+  height: auto;
+  width: 100%;
+  background-color: white;
+}
 #separador_degradado{
   background: rgb(246,246,246); /* Old browsers */
 background: -moz-linear-gradient(top, rgba(246,246,246,1) 17%, rgba(142,142,142,1) 99%, rgba(51,51,51,1) 100%); /* FF3.6+ */
@@ -335,4 +340,12 @@ background: linear-gradient(to bottom, rgba(246,246,246,1) 17%,rgba(142,142,142,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
 height: 50px;
 width: 100%;
+}
+.contenido_footer{
+  width: 80%;
+  height: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
 }
