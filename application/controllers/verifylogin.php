@@ -49,7 +49,7 @@ class VerifyLogin extends CI_Controller {
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
     }
-	$data['estat'] = 'asf';
+	$data['estat'] = $estat;
     $this->load->view('frontend/inicio', $data);
   }
   
