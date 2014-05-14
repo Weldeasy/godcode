@@ -298,6 +298,8 @@ h1{
 	width:20px;
 }
 #about_us{
+  width: 60%;
+  margin-top: 5%;
   box-shadow: 2px 2px 5px #999;
   border-radius: 15px;
   height: 500px;
