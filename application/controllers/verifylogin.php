@@ -50,7 +50,8 @@ class VerifyLogin extends CI_Controller {
 		 $data['login_form'] = 'frontend/logued';
     }
 	$data['estat'] = $estat;
-    $this->load->view('frontend/inicio', $data);
+    //$this->load->view('frontend/inicio', $data);
+	var_dump($data);
   }
   
   function check_database($password)
@@ -73,7 +74,7 @@ class VerifyLogin extends CI_Controller {
         $this->session->set_userdata('logged_in', $sess_array);
       }
 	  
-      return estat_usuari($result);
+      return 1; //estat_usuari($result);
 		
     }
     else
