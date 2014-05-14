@@ -68,7 +68,7 @@
         </div>
       </center>
     </div>
-    <div id="footer">
+    <div >
       <div id="separador_degradado">
         <p>hola</p>
       </div>
