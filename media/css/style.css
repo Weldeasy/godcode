@@ -316,11 +316,12 @@ h1{
    font-size: 14px;
 }
 #table {
+  font-family: 'Open Sans', sans-serif;
   width: 100%;
   height: auto;
 }
 #table td{
-  font-family: 'Open Sans', sans-serif;
+  
   width: 25%;
   height: auto;
 }
