@@ -46,6 +46,7 @@ class VerifyLogin extends CI_Controller {
 				$data['login_form'] = 'frontend/logued';
 				break;
 		 }*/
+		 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);
   }
@@ -70,7 +71,7 @@ class VerifyLogin extends CI_Controller {
         $this->session->set_userdata('logged_in', $sess_array);
       }
 	  
-      return estat_usuari($result);
+      return true; //estat_usuari($result);
 		
     }
     else
@@ -83,7 +84,7 @@ class VerifyLogin extends CI_Controller {
   estat_usuari($usuari) devuelve el estado del usuario en funcion si es admin o no, y si la cuenta no esta congelada o no validada.
   */
   function estat_usuari($result) {
-	/*$info = array();
+	$info = array();
 	
     foreach($result as $row) {
         $info = array(
@@ -101,7 +102,7 @@ class VerifyLogin extends CI_Controller {
 		} else {
 			return USUARI;
 		}
-	}*/
+	}
 	return true;
   }
 }
