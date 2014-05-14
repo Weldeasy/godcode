@@ -1,4 +1,4 @@
-<?
+<?php
  define ('BASE_URI', '/godcode');
  include(BASE_URI . '/application/views/frontend/php/head.php');?>
  <body>
