@@ -162,3 +162,12 @@ table.tablesorter thead tr th:hover {
   }
 
 }
+/*-------------------------- Admim css  -------------------------------*/
+.f{
+  border: 0;
+}
+.detail{
+  color:#15428B;
+  margin-left: 15px;
+  border: 0;
+}
