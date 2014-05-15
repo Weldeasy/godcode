@@ -310,7 +310,7 @@ h1{
   padding-right: 3%;
   display: block;
   background-color: white;
-  clear:both;
+
 }
 #about_us p{
    font-family: 'Open Sans', sans-serif;
@@ -328,6 +328,8 @@ h1{
 }
 
 #footer{
+  clear:both;
+  position: relative;
   margin-top: 40px;
   height: auto;
   width: 100%;
