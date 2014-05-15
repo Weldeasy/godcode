@@ -12,8 +12,7 @@ class Admin extends CI_Controller {
     	parent::__construct();
     	$estat = $this->session->userdata('estat');
 		if(!$this->session->userdata('logged_in') || $estat!=2) {
-			//$this->load->view("");
-			print "No tens permis";
+			$this->load->view("backend/pages/no_autentificat");
 		}else{	
 			$this->load->database();
 			$this->load->model('adm','',TRUE);
