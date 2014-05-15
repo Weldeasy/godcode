@@ -333,18 +333,19 @@ h1{
   height: auto;
   background: #939396;
     position: relative;
+    border-top: 2px solid white;
   margin-top: 200px;
   clear: both;
 
 }
 
 .contenido_footer{
-  width: 80%;
+  width: 100%;
   height: auto;
-  margin-top: 
+  text-align:center;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 10px;
+  padding-top: 3px;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   color: white;
