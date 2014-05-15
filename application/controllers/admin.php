@@ -6,12 +6,13 @@ class Admin extends CI_Controller {
 	/**
 	 * [__construct del Admin]
 	 */
-	 private $session_data = $this->session->userdata('logged_in');
+	 private $session_data; 
 	 
 	function __construct(){
     	parent::__construct();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
+		$this->session_data = $this->session->userdata('logged_in');
 	}
 
 
