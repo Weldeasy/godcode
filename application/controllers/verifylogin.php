@@ -2,6 +2,8 @@
 
 class VerifyLogin extends CI_Controller {
 
+	private $estat = 0;
+	
   function __construct()
   {
     parent::__construct();
@@ -19,12 +21,12 @@ class VerifyLogin extends CI_Controller {
 
     $this->form_validation->set_rules('email', 'Email', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
-	$estat = $this->form_validation->run();
-	//error.log("test");
-    if($estat == FALSE)
+
+    if($this->form_validation->run() == FALSE)
     {
       //Field validation failed.  User redirected to login page
       $data['login_form'] = 'frontend/login_form';
+
     } else {
 		 $session_data = $this->session->userdata('logged_in');
 		 /*switch($estat) {
@@ -47,10 +49,10 @@ class VerifyLogin extends CI_Controller {
 				break;
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
-		
     }
-	$data['estado'] = 1;
-    $this->load->view('frontend/inicio', $data);
+	$data['estat'] = $this->estat;
+    //$this->load->view('frontend/inicio', $data);
+	var_dump($data);
   }
   
   function check_database($password)
@@ -68,12 +70,25 @@ class VerifyLogin extends CI_Controller {
       {
         $sess_array = array(
           'id' => $row->id,
-          'email' => $row->email
+          'email' => $row->email,
+		  'es_admin' => $row->es_admin,
+          'esta_congelat' => $row->esta_congelat
         );
         $this->session->set_userdata('logged_in', $sess_array);
+		if ($sess_array['es_admin']) {
+			$this->estat = 2;
+		} else {
+			if($sess_array['esta_congelat']==2) {
+				$this->estat = 4;
+			} else if($sess_array['esta_congelat']==1) {
+				$this->estat = 3;
+			} else {
+				$this->estat = 1;
+			}
+		}		
+		
       }
-	  
-      return true; //estat_usuari($result);
+      return true;
 		
     }
     else
@@ -81,31 +96,6 @@ class VerifyLogin extends CI_Controller {
       $this->form_validation->set_message('check_database', 'Invalid email or password');
       return false;
     }
-  }
-  /*
-  estat_usuari($usuari) devuelve el estado del usuario en funcion si es admin o no, y si la cuenta no esta congelada o no validada.
-  */
-  function estat_usuari($result) {
-	$info = array();
-	
-    foreach($result as $row) {
-        $info = array(
-          'es_admin' => $row->es_admin,
-          'esta_congelat' => $row->esta_congelat
-        );
-     }
-	if ($info['es_admin']) {
-		return ADMIN;
-	} else {
-		if($info['esta_congelat']==NOVERIFICAT) {
-			return NOVERIFICAT;
-		} else if($info['esta_congelat']==CONGELAT) {
-			return CONGELAT;
-		} else {
-			return USUARI;
-		}
-	}
-	return true;
   }
 }
 ?>

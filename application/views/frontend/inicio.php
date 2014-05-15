@@ -29,7 +29,7 @@
       <center>
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
-              <h1>Búsqueda servicios: ESTADO: <?php echo $login_form; ?></h1>
+              <h1>Búsqueda servicios: ESTADO: <?php if(isset($estat)) {echo $estat;} ?></h1>
               <h3>Encuentra los servicios que hay disponibles en tu zona</h3>
               <hr>
               <br>
