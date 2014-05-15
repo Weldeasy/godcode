@@ -10,10 +10,10 @@ class Admin extends CI_Controller {
 	 
 	function __construct(){
     	parent::__construct();
- 
+    	
+ 		$this->es_autentificat();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
-		$this->es_autentificat();
 	
 	}
 	function es_autentificat(){
@@ -25,7 +25,6 @@ class Admin extends CI_Controller {
 			return TRUE;
 		}
 	}
-
 
 	/**
 	 * [index  admin panel]
