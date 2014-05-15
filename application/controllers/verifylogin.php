@@ -46,7 +46,7 @@ class VerifyLogin extends CI_Controller {
 				$data['email'] = $session_data['email'];
 				$data['login_form'] = 'frontend/logued';
 				break;
-		 }*/
+		 }
 		 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);
