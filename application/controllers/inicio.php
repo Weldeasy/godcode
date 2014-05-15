@@ -13,11 +13,12 @@ class Inicio extends CI_Controller {
 	$data = array();
 	$this->load->library('form_validation');
 	$this->load->helper(array('form'));
+	$data['estat'] = $this->session->userdata('estat');
 	if($this->session->userdata('logged_in')) {
 		$session_data = $this->session->userdata('logged_in');
 		
 		$data['email'] = $session_data['email'];
-		$data['estat'] = $this->session->userdata('estat');
+		
 		$this->load->view('frontend/logued', $data);
     } else {
 		$data['login_form'] = 'frontend/login_form';
