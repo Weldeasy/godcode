@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
     	parent::__construct();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
-		$session_data = $this->session->userdata('logged_in');
+		//$session_data = $this->session->userdata('logged_in');
 	}
 
 
