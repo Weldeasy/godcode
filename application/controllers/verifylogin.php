@@ -75,17 +75,16 @@ class VerifyLogin extends CI_Controller {
           'esta_congelat' => $row->esta_congelat
         );
         $this->session->set_userdata('logged_in', $sess_array);
-		if ($sess_array['es_admin']) {
-			$this->estat = 2;
+		if ($sess_array['esta_congelat']==1) {
+			$this->estat = 3; //Cuenta congelada
+		} else if($sess_array['esta_congelat']==2) {
+			$this->estat = 4; //Cuenta no verificada
 		} else {
-			if($sess_array['esta_congelat']==2) {
-				$this->estat = 4;
-			} else if($sess_array['esta_congelat']==1) {
-				$this->estat = 3;
+			if($sess_array['es_admin']==1) {
+				$this->estat = 2; //Es admin
 			} else {
-				$this->estat = 1;
+				$this->estat = 1; //Es usuario
 			}
-			$this->estat = $sess_array['email'];
 		}		
 		
       }
