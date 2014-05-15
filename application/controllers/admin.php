@@ -14,10 +14,11 @@ class Admin extends CI_Controller {
 		if(!$this->session->userdata('logged_in') || $estat!=2) {
 			//$this->load->view("");
 			print "No tens permis";
-		}	
-		$this->load->database();
-		$this->load->model('adm','',TRUE);
-		$this->session_data = $this->session->userdata('logged_in');
+		}else{	
+			$this->load->database();
+			$this->load->model('adm','',TRUE);
+			$this->session_data = $this->session->userdata('logged_in');
+		}
 	}
 
 
