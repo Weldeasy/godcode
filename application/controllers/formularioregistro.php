@@ -55,7 +55,6 @@ class Formularioregistro extends CI_Controller {
 	{
 	   
         $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
-	   
 		$this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|callback__alpha_dash_space');
         $this->form_validation->set_rules('apellidos', 'Apellidos', 'callback__alpha_dash_space');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[usuari.email]');
