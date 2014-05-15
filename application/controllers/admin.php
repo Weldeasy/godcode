@@ -10,15 +10,17 @@ class Admin extends CI_Controller {
 	 
 	function __construct(){
     	parent::__construct();
-    	
  		$this->es_autentificat();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
 	
 	}
+
 	function es_autentificat(){
 		$estat= $this->session->userdata('estat');
-		if(!$this->session->userdata('logged_in') || $estat!=2) {
+		$this->session_data = $this->session->userdata('logged_in');
+
+		if(!$session_data || $estat!=2) {
 			 redirect('no_autentificat', 'refresh');
 			return FALSE;
 		}else{
