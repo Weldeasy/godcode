@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
 	function es_autentificat(){
 		$estat= $this->session->userdata('estat');
 		if(!$this->session->userdata('logged_in') || $estat!=2) {
-			$this->load->view("backend/pages/no_autentificat");
+			 redirect('backend/pages/no_autentificat', 'refresh');
 			return FALSE;
 		}else{
 			return TRUE;
