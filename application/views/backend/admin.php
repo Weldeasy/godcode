@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -5,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Godcode Time Bank">
     <meta name="author" content="Godcode">
+=======
+<?php echo $this->load->view($header)?>
+>>>>>>> 14aec0cc284b0b0bff51486747a6f07fb1363f9d
 
     <title>Bank Time Admin</title>
 
