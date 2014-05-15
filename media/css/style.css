@@ -334,6 +334,9 @@ h1{
   border-top: 2px solid #000;
   position: relative;
   margin-top: -150px;
+  clear: both; 
+  text-align: center; 
+  margin-top: 15%;
 }
 
 .contenido_footer{
