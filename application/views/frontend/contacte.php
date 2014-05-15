@@ -33,11 +33,12 @@
 <input class="form-field" type="text" name="telefono" /><?= form_error("telefono"); ?><br />
 <div class="form-title">Telefono</div>
 <input class="form-field" type="text-area" name="telefono" /><?= form_error("telefono"); ?><br />
+<textarea name="comment" form="form_contacte">Escriu el teu missatge</textarea>
+
 <div class="submit-container">
 <input class="submit-button" type="submit" value="Submit" />
 </div>
 </form>
-<textarea name="comment" form="form_contacte">Escriu el teu missatge</textarea>
 
 <div id="footer">
       <div id="separador_degradado">
