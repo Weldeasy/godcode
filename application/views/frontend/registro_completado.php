@@ -15,5 +15,13 @@
 		?>
 		<a href="<?= base_url(); ?>">Sortir</a>
 	</div>
+	<div id="footer">
+      <div id="separador_degradado">
+        
+      </div>
+      <div class="contenido_footer">
+        <p>Esto es el footer</p>
+      </div>
+    </div>
 </body>
 </html>
