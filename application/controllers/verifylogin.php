@@ -29,9 +29,8 @@ class VerifyLogin extends CI_Controller {
 
     } else {
 		 $session_data = $this->session->userdata('logged_in');
-		 /*switch($estat) {
+		 switch($estat) {
 			case ADMIN:
-				
 				//redirect('admin/admin', 'refresh');
 				print "admin";
 				break;
@@ -50,8 +49,7 @@ class VerifyLogin extends CI_Controller {
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
     }
-    /*$this->load->view('frontend/inicio', $data);*/
-	var_dump($this->estat);
+    $this->load->view('frontend/inicio', $data);
   }
   
   function check_database($password)
