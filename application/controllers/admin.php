@@ -8,19 +8,10 @@ class Admin extends CI_Controller {
 	 */
 	function __construct(){
     	parent::__construct();
-		$this->data=$this->headerSidebar();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
 	}
-	/**
-	 * [headerSidebar header, sidebar]
-	 * @return [array] [diferent vistes]
-	 */
-	public function headerSidebar(){
-		$data["header"]="backend/sections/head";
-		$data["sidebar"]=$this->load->view('backend/pages/sidebar',null,TRUE);   
-		return $data; 
-	}
+
 
 	/**
 	 * [index  admin panel]
@@ -32,8 +23,7 @@ class Admin extends CI_Controller {
 		$estat = $this->session->userdata('estat');
 		if($this->session->userdata('logged_in') && $estat==2) {
 
-			$data=$this->data;
-			$data['panel_admin']=$this->load->view('backend/pages/panel_admin');
+			$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
 			$this->load->view('backend/admin',$data);
 		} else {
 			echo "No tienes permisos";
