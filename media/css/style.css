@@ -12,7 +12,7 @@ h1{
   font-size: 16px;
   font-weight: bold;
   width: auto;
-  border-bottom: solid 2px white;
+  border-bottom: solid 2px #585c54 ;
   
   font-size: 15px;
   float:middle;
@@ -22,7 +22,6 @@ h1{
 
 #cssmenu ul {
   background-color: #05b5f5 ;
-  border-bottom: 2px solid #585c54  ;
   height: 44px;
   list-style: none;
   margin: 0;
@@ -331,7 +330,7 @@ h1{
 #footer{
   width: 100%;
   height: auto;
-  background: #bad4de;
+  background: #585c54;
     position: relative;
     border-top: 2px solid white;
   margin-top: 10%;
