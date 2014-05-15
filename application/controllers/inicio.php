@@ -15,7 +15,9 @@ class Inicio extends CI_Controller {
 	$this->load->helper(array('form'));
 	if($this->session->userdata('logged_in')) {
 		$session_data = $this->session->userdata('logged_in');
+		
 		$data['email'] = $session_data['email'];
+		$data['estat'] = $this->session->estat('estat');
 		$this->load->view('frontend/logued', $data);
     } else {
 		$data['login_form'] = 'frontend/login_form';
