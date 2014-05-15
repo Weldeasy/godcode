@@ -9,7 +9,7 @@ h1{
 #cssmenu {
   margin: 0px;
   padding: 0px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   width: auto;
   border-bottom: solid 2px white;
@@ -128,7 +128,7 @@ h1{
   -moz-border-radius: 6px;
   border-radius: 6px;
   text-align: center;
-  background-color: #05b5f5;
+  background-color: #1b8eb8;
 }
 
 .zona_busqueda .caja_busqueda h1 {
