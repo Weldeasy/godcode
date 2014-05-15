@@ -13,10 +13,11 @@ class Admin extends CI_Controller {
  
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
-		$this->session_data = $this->session->userdata('logged_in');
+		$this->es_autentificat();
 	
 	}
 	function es_autentificat(){
+		$estat= $this->session->userdata('estat');
 		if(!$this->session->userdata('logged_in') || $estat!=2) {
 			$this->load->view("backend/pages/no_autentificat");
 			return FALSE;
@@ -33,22 +34,16 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-			if($this->es_autentificat()){
-				$data['email'] = $this->session_data['email'];
-				$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
-				$this->load->view('backend/admin',$data);
-			}
-		
+		$data['email'] = $this->session_data['email'];
+		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
+		$this->load->view('backend/admin',$data);	
 	}
 
 	public function denuncies(){
-
-		if($this->es_autentificat()){
 			$data = array();
 			$data['email'] = $this->session_data['email'];
 			$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
 			$this->load->view('backend/admin',$data);
-		}
 	}
 	/**
 	 * [json llista denuncies]
