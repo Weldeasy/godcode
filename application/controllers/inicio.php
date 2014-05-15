@@ -21,15 +21,11 @@ class Inicio extends CI_Controller {
 				$data['email'] = $session_data['email'];
 				$this->load->view('frontend/logued', $data);
 				break;
-			case '2':
-				redirect('admin/admin', 'refresh');
-				break;
 			case '3':
 				$this->load->view('frontend/congelat', $data);
 			case '4':
 				$this->load->view('frontend/verifica', $data);
 				break;
-			
 		}
 		
     } else {
