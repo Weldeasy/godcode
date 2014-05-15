@@ -30,9 +30,9 @@ class VerifyLogin extends CI_Controller {
     } else {
 		 $session_data = $this->session->userdata('logged_in');
 		 $data['email'] = $session_data['email'];
-		 $data['estat'] = $this->session->userdata('estat');
 		 $data['login_form'] = 'frontend/logued';
     }
+	$data['estat'] = $this->session->userdata('estat');
     $this->load->view('frontend/inicio', $data);
   }
   
