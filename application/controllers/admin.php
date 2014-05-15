@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$estat = $this->session->userdata('estat');
-		if ($estat==2) {
+		if($this->session->userdata('logged_in') && $estat==2) {
 			$this->load->view('backend/admin');
 		} else {
 			echo "No tienes permisos";
