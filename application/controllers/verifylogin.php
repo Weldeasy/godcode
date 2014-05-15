@@ -50,9 +50,8 @@ class VerifyLogin extends CI_Controller {
 		 }*/
 		 $data['login_form'] = 'frontend/logued';
     }
-	$data['estat'] = $this->estat;
-    //$this->load->view('frontend/inicio', $data);
-	var_dump($data);
+    /*$this->load->view('frontend/inicio', $data);*/
+	var_dump($this->estat);
   }
   
   function check_database($password)
