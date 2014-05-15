@@ -63,7 +63,7 @@
         
       </div>
       <div class="contenido_footer">
-        <p>Esto es el footer</p>
+        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> <</p>
       </div>
     </div>
 </body>
