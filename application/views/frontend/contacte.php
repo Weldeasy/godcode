@@ -23,6 +23,7 @@
   </ul>
   <?php echo $this->load->view($login_form); ?>
  </div>
+ <div id="contenido_principal">
  <form class="form-container">
 <div class="form-title"><h2>Contacte</h2></div>
 <div class="form-title">Nombre</div>
@@ -39,6 +40,7 @@
 <input class="submit-button" type="submit" value="Submit" />
 </div>
 </form>
+</div>
 
 <div id="footer">
       <div id="separador_degradado">

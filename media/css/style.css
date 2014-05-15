@@ -128,7 +128,7 @@ h1{
   -moz-border-radius: 6px;
   border-radius: 6px;
   text-align: center;
-  background-color: #6c0000;
+  background-color: #05b5f5;
 }
 
 .zona_busqueda .caja_busqueda h1 {
@@ -331,7 +331,7 @@ h1{
 #footer{
   width: 100%;
   height: auto;
-  background: #939396;
+  background: #bad4de;
     position: relative;
     border-top: 2px solid white;
   margin-top: 10%;
