@@ -14,7 +14,8 @@ class Inicio extends CI_Controller {
 	$this->load->library('form_validation');
 	$this->load->helper(array('form'));
 	$estat = $this->session->userdata('estat');
-	if($this->session->userdata('logged_in')) {
+	var_dump($estat);
+	/*if($this->session->userdata('logged_in')) {
 		switch($estat) {
 			case 1:
 				$session_data = $this->session->userdata('logged_in');
@@ -35,7 +36,7 @@ class Inicio extends CI_Controller {
     } else {
 		$data['login_form'] = 'frontend/login_form';
 		$this->load->view('frontend/inicio', $data);
-	}
+	}*/
 	
 
 	//$data['login_form'] = $this->load->view('frontend/login_form', null, TRUE);
