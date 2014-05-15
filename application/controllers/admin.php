@@ -36,6 +36,7 @@ class Admin extends CI_Controller {
 
 	public function denuncies(){
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -66,6 +67,7 @@ class Admin extends CI_Controller {
 	 */
 	public function congelarusuaris(){  
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -76,6 +78,7 @@ class Admin extends CI_Controller {
 	 */
 	public function crearcategories(){
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -85,6 +88,7 @@ class Admin extends CI_Controller {
 	 */
 	public function configSaldo(){
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -94,6 +98,7 @@ class Admin extends CI_Controller {
 	 */
 	public function zona(){
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -103,6 +108,7 @@ class Admin extends CI_Controller {
 	 */
 	public function numServeis(){	
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
@@ -112,6 +118,7 @@ class Admin extends CI_Controller {
 	 */
 	public function numServeisConsumit(){
 		$data = array();
+		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
