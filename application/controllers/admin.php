@@ -33,7 +33,8 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('logged_in') && $estat==2) {
 
 			$data=$this->data;
-			$this->load->view('backend/pages/panel_admin',$data);
+			$data['panel_admin']=$this->load->view('backend/pages/panel_admin');
+			$this->load->view('backend/admin',$data);
 		} else {
 			echo "No tienes permisos";
 		}
