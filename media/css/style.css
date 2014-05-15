@@ -334,7 +334,7 @@ h1{
   background: #939396;
     position: relative;
     border-top: 2px solid white;
-  margin-top: 200px;
+  margin-top: 100%;
   clear: both;
 
 }
@@ -342,7 +342,7 @@ h1{
 .contenido_footer{
   width: 100%;
   height: auto;
-  margin-top: 
+  margin-top: 50px;
   text-align:center;
   padding-left: 5%;
   padding-right: 5%;
