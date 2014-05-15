@@ -1,4 +1,4 @@
-<?php echo $this->load->view($header)?>
+<?php echo $header?>
 
   <body>
     <div id="wrapper">
