@@ -3,7 +3,6 @@
  * Class Admin
  */
 class Admin extends CI_Controller {
-	private $data=array();
 	/**
 	 * [__construct del Admin]
 	 */
