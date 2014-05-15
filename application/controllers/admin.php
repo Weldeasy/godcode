@@ -25,7 +25,7 @@ class Admin extends CI_Controller {
 		$estat = $this->session->userdata('estat');
 		if($this->session->userdata('logged_in') && $estat==2) {
 			
-			$data['email'] = $this->session_data['email'];
+			$data['email'] = $this->session->userdata('logged_in')['email']; //$this->session_data['email'];
 			$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
 			$this->load->view('backend/admin',$data);
 		} else {
