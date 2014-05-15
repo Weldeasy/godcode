@@ -42,10 +42,13 @@ class Admin extends CI_Controller {
 	}
 
 	public function denuncies(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
-		$this->load->view('backend/admin',$data);
+
+		if($this->es_autentificat()){
+			$data = array();
+			$data['email'] = $this->session_data['email'];
+			$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
+			$this->load->view('backend/admin',$data);
+		}
 	}
 	/**
 	 * [json llista denuncies]
