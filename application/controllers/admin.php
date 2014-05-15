@@ -17,7 +17,7 @@ class Admin extends CI_Controller {
 	 * @return [array] [diferent vistes]
 	 */
 	public function headerSidebar(){
-		$data["header"]=$this->load->view('"backend/sections/head',null,TRUE);
+		$data["header"]=$this->load->view('backend/sections/head',null,TRUE);
 		$data["sidebar"]=$this->load->view('backend/pages/sidebar',null,TRUE);   
 		return $data; 
 	}
