@@ -85,7 +85,7 @@ class VerifyLogin extends CI_Controller {
 			} else {
 				$this->estat = 1;
 			}*/
-			$this->estat = $sess_array;
+			$this->estat = $sess_array['email'];
 		}		
 		
       }
