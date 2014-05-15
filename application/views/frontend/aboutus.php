@@ -15,19 +15,12 @@
   </head>
  <body>
  <div id='cssmenu'>
-   <ul>
-	<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
-     <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-     <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-     <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-	 <?php
-	if ($login_form != null) {
-		echo $this->load->view($login_form);
-		?><li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li><?php
-	} else {
-		echo $this->load->view('frontend/welcome');
-	}
-?>
+	<ul>
+		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
+		<li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li>
   </ul>
  </div>
  <div id="contenido_principal">
