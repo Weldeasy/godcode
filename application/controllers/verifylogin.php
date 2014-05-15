@@ -29,7 +29,7 @@ class VerifyLogin extends CI_Controller {
 
     } else {
 		 $session_data = $this->session->userdata('logged_in');
-		 switch($estat) {
+		 switch($this->estat) {
 			case ADMIN:
 				//redirect('admin/admin', 'refresh');
 				print "admin";
