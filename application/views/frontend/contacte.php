@@ -23,7 +23,7 @@
   </ul>
   <?php echo $this->load->view($login_form); ?>
  </div>
- <form class="form-container" id="form_contacte">
+ <form class="form-container">
 <div class="form-title"><h2>Contacte</h2></div>
 <div class="form-title">Nombre</div>
 <input class="form-field" type="text" name="firstname" /><?= form_error("firstname"); ?><br />
@@ -33,7 +33,7 @@
 <input class="form-field" type="text" name="telefono" /><?= form_error("telefono"); ?><br />
 <div class="form-title">Telefono</div>
 <input class="form-field" type="text-area" name="telefono" /><?= form_error("telefono"); ?><br />
-<textarea name="comment" form="form_contacte">Escriu el teu missatge</textarea>
+<textarea name="comment">Escriu el teu missatge</textarea>
 
 <div class="submit-container">
 <input class="submit-button" type="submit" value="Submit" />
