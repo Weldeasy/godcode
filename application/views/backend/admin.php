@@ -1,4 +1,4 @@
-<?php echo $header?>
+<?php echo $header ?>
 
   <body>
     <div id="wrapper">
