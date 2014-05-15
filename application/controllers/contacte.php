@@ -16,7 +16,7 @@ class Aboutus extends CI_Controller {
 			$data['login_form'] = null;
 			$this->load->view('frontend/contacte', $data);
 		} else {
-			$data['login_form'] = 'frontend/contacte';
+			$data['login_form'] = 'frontend/login_form';
 		}
 		$this->load->view('frontend/contacte', $data);
 	}
