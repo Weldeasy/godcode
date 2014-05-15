@@ -10,13 +10,18 @@ class Admin extends CI_Controller {
 	 
 	function __construct(){
     	parent::__construct();
-    	$estat = $this->session->userdata('estat');
+ 
+		$this->load->database();
+		$this->load->model('adm','',TRUE);
+		$this->session_data = $this->session->userdata('logged_in');
+	
+	}
+	function es_autentificat(){
 		if(!$this->session->userdata('logged_in') || $estat!=2) {
 			$this->load->view("backend/pages/no_autentificat");
-		}else{	
-			$this->load->database();
-			$this->load->model('adm','',TRUE);
-			$this->session_data = $this->session->userdata('logged_in');
+			return FALSE;
+		}else{
+			return TRUE;
 		}
 	}
 
@@ -28,9 +33,11 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-			$data['email'] = $this->session_data['email'];
-			$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
-			$this->load->view('backend/admin',$data);
+			if($this->es_autentificat()){
+				$data['email'] = $this->session_data['email'];
+				$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
+				$this->load->view('backend/admin',$data);
+			}
 		
 	}
 
