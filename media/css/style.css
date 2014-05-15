@@ -332,11 +332,9 @@ h1{
   width: 100%;
   height: auto;
   background: #939396;
-  border-top: 2px solid #000;
-  position: relative;
-  margin-top: 40px;
+    position: relative;
+  margin-top: 100px;
   clear: both;
-  padding-top: 50px;
 
 }
 
