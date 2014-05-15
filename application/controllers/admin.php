@@ -10,6 +10,11 @@ class Admin extends CI_Controller {
 	 
 	function __construct(){
     	parent::__construct();
+    	$estat = $this->session->userdata('estat');
+		if(!$this->session->userdata('logged_in') || $estat!=2) {
+			//$this->load->view("");
+			print "No tens permis";
+		}	
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
 		$this->session_data = $this->session->userdata('logged_in');
@@ -23,14 +28,10 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$estat = $this->session->userdata('estat');
-		if($this->session->userdata('logged_in') && $estat==2) {
 			$data['email'] = $this->session_data['email'];
 			$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
 			$this->load->view('backend/admin',$data);
-		} else {
-			echo "No tienes permisos";
-		}
+		
 	}
 
 	public function denuncies(){
