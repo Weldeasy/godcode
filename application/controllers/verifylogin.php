@@ -31,16 +31,13 @@ class VerifyLogin extends CI_Controller {
 		 $session_data = $this->session->userdata('logged_in');
 		 switch($this->estat) {
 			case ADMIN:
-				//redirect('admin/admin', 'refresh');
-				print "admin";
+				redirect('admin/admin', 'refresh');
 				break;
 			case CONGELAT:
-				//redirect('frontent/congelat', 'refresh');
-				print "congelat";
+				redirect('frontent/congelat', 'refresh');
 				break;
 			case NOVERIFICAT:
-				//redirect('frontent/verifica', 'refresh');
-				print "no verificat";
+				redirect('frontent/verifica', 'refresh');
 				break;
 			default:
 				$data['email'] = $session_data['email'];
