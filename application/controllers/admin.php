@@ -10,8 +10,7 @@ class Admin extends CI_Controller {
     	parent::__construct();
 		$this->load->database();
 		$this->load->model('adm','',TRUE);
-		$session_data = array();
-		$session_data = $this->session->userdata('logged_in');
+
 
 	}
 
@@ -25,8 +24,8 @@ class Admin extends CI_Controller {
 	{
 		$estat = $this->session->userdata('estat');
 		if($this->session->userdata('logged_in') && $estat==2) {
-			
-			$data['email'] = $this->session_data['email'];
+			$session_data = $this->session->userdata('logged_in');
+			$data['email'] = $session_data['email'];
 			$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
 			$this->load->view('backend/admin',$data);
 		} else {
