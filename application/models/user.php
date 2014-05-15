@@ -85,7 +85,7 @@ Class User extends CI_Model
 		$this -> db -> from('usuari u');
 		$this -> db -> where('l.email', $email); 
 		$this -> db -> where('l.password', MD5($password)); 
-		$this -> db -> where('l.id = u.id'); 
+		$this -> db -> where('l.email = u.email'); 
 		/* a*/
 		$this -> db -> limit(1);
 
