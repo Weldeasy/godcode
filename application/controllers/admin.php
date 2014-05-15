@@ -30,8 +30,9 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function denuncies(){   
-		$data['panel_admin']= $this->load->view('backend/pages/denuncies',null, TRUE);
+	public function denuncies(){
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
 		$this->load->view('backend/admin',$data);
 	}
 	/**
