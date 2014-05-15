@@ -29,21 +29,8 @@ class VerifyLogin extends CI_Controller {
 
     } else {
 		 $session_data = $this->session->userdata('logged_in');
-		 /*switch($this->estat) {
-			case ADMIN:
-				redirect('admin/admin', 'refresh');
-				break;
-			case CONGELAT:
-				redirect(site_url('frontent/congelat'), 'refresh');
-				break;
-			case NOVERIFICAT:
-				redirect(site_url('frontent/verifica'), 'refresh');
-				break;
-			default:
-				$data['email'] = $session_data['email'];
-				$data['login_form'] = 'frontend/logued';
-				break;
-		 }*/
+		 $data['email'] = $session_data['email'];
+		 $data['estat'] = $this->session->userdata('estat');
 		 $data['login_form'] = 'frontend/logued';
     }
     $this->load->view('frontend/inicio', $data);
