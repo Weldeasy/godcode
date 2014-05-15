@@ -3,9 +3,21 @@
 	right:5px;
 	top:10px;
 }
+.login_form input[type=submit] {
+	border-radius:4px;
+	background-color:silver;
+	color:black;
+	border:1px solid black;
+	padding-top:2.5px;
+	padding-bottom:2px;
+}
+.login_form input[type=submit]:hover {
+	cursor:pointer;
+	background-color:#FADA5E;
+}
 .user_opt {
     background-image:url(../images/frontend/username.gif);
-	color:blue;
+	color:purple;
 	background-position: 2px 3px;
 	background-repeat:no-repeat;
 	padding-left:25px;
@@ -13,10 +25,11 @@
 	height:20px;
 	FONT-SIZE: 12px;
 	border:1px solid black;
+	border-radius:4px;
 }
 .user_opt_p {
 	background-image:url(../images/frontend/password.gif);
-	color:blue;
+	color:purple;
 	background-position: 2px 3px;
 	background-repeat:no-repeat;
 	padding-left:25px;
@@ -24,4 +37,5 @@
 	height:20px;
 	FONT-SIZE: 12px;
 	border:1px solid black;
+	border-radius:4px;
 }
