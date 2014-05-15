@@ -18,7 +18,6 @@ class Admin extends CI_Controller {
 	 */
 	public function headerSidebar(){
 		$data["header"]="backend/sections/head";
-		$data["panel_admin"]=$this->load->view('backend/pages/panel_admin',null,TRUE);
 		$data["sidebar"]=$this->load->view('backend/pages/sidebar',null,TRUE);   
 		return $data; 
 	}
@@ -32,8 +31,8 @@ class Admin extends CI_Controller {
 	{
 		$estat = $this->session->userdata('estat');
 		if($this->session->userdata('logged_in') && $estat==2) {
-
-			$data=$this->data;
+			
+			$data["header"]="backend/sections/head";
 			$this->load->view('backend/pages/panel_admin',$data);
 		} else {
 			echo "No tienes permisos";
