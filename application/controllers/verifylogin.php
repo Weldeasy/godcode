@@ -34,10 +34,10 @@ class VerifyLogin extends CI_Controller {
 				redirect('admin/admin', 'refresh');
 				break;
 			case CONGELAT:
-				redirect('frontent/congelat', 'refresh');
+				redirect(site_url('frontent/congelat'), 'refresh');
 				break;
 			case NOVERIFICAT:
-				redirect('frontent/verifica', 'refresh');
+				redirect(site_url('frontent/verifica'), 'refresh');
 				break;
 			default:
 				$data['email'] = $session_data['email'];
