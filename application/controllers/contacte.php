@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Aboutus extends CI_Controller {
+class Contacte extends CI_Controller {
 	//session_start();
 	 
 	public function index() {
