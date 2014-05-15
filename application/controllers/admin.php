@@ -63,8 +63,9 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista congelarusuaris]
 	 */
 	public function congelarusuaris(){  
-		$data=$this->data;     
-		$this->load->view('backend/pages/congelarusuaris',$data);	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 
 	/**
@@ -72,40 +73,45 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista crearcategories]
 	 */
 	public function crearcategories(){
-	    $data=$this->data;  
-		$this->load->view('backend/pages/crearcategories',$data);	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 	/**
 	 * [configSaldo vista]
 	 * @return [void] [Es carrega la vista configSaldo]
 	 */
 	public function configSaldo(){
-		$data=$this->data;        
-		$this->load->view('backend/pages/configSaldo',$data);	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 	/**
 	 * [zona vista]
 	 * @return [void] [Es carrega la vista zona]
 	 */
 	public function zona(){
-		$data=$this->data;        
-		$this->load->view('backend/pages/zona',$data);	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 	/**
 	 * [numServeis vista]
 	 * @return [void] [Es carrega la vista numServeis]
 	 */
-	public function numServeis(){
-		$data=$this->data;         
-		$this->load->view('backend/pages/numServeis',$data);	
+	public function numServeis(){	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 	/**
 	 * [numServeisConsumit vista]
 	 * @return [void] [Es carrega la vista numServeisConsumit]
 	 */
 	public function numServeisConsumit(){
-		$data=$this->data;        
-		$this->load->view('backend/pages/numServeisConsumit',$data);	
+		$data = array();
+		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
+		$this->load->view('backend/admin',$data);
 	}
 }
 
