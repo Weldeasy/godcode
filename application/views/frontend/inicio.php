@@ -8,7 +8,6 @@
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
 <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
   </head>
  <body>
