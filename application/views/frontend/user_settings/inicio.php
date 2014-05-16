@@ -24,7 +24,7 @@
 		<div id="sidebar">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
-				<span>TORNAR</span>
+				<span><a href="<?= base_url()?>">TORNAR</a></span>
 			</div>
 			<div class="sidebar-option-none">
 			</div>

@@ -4,6 +4,24 @@ body {
 body, html {
   height: 100%;
 }
+a {
+	text-decoration:none;
+}
+a::visited {
+	text-decoration:none;
+}
+a:link {
+	text-decoration:none;
+}
+a:active {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;
+}
+a:focus {
+	text-decoration:none;
+}
 
 #up-bar {
 	width:100%;
@@ -18,6 +36,12 @@ body, html {
 	color:white;
 	text-align:center;
 	line-height:50px;
+}
+#back a {
+	color:white;
+}
+#back a:hover {
+	color:#05B5F5;
 }
 #back img {
 	position:absolute;
