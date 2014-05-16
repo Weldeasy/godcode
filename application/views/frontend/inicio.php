@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,8 @@
     <meta name="keywords" content="" />
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
-<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+    <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+    <title>Time Bank</title>
   </head>
  <body>
  <div id='cssmenu'>
