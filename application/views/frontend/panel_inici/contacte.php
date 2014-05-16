@@ -1,3 +1,4 @@
+
 <div id="contenido_principal">
  <form class="form-container">
 <div class="form-title"><h2>Contacte</h2></div>
@@ -17,13 +18,3 @@
 </form>
 </div>
 
-<div id="footer">
-      <div id="separador_degradado">
-        
-      </div>
-      <div class="contenido_footer">
-        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> </p>
-      </div>
-    </div>
-</body>
-</html>
