@@ -22,7 +22,7 @@
 		</div>
 		
 		<div id="sidebar">
-			<a href="<?= base_url()?>">
+			<a class="back" href="<?= base_url()?>">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
 				<span>TORNAR</span>

@@ -52,6 +52,9 @@ a:focus {
 	color:#05B5F5;
 	cursor:pointer;
 }
+.back:hover {
+	color:#05B5F5;
+}
 
 
 #user {
