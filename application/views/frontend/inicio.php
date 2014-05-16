@@ -21,7 +21,7 @@
 		<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
 	</ul>
-  <?php echo $this->load->view($login_form); echo $foto; ?>
+  <?php echo $this->load->view($login_form); if (isset($foto)) {echo $foto;} ?>
  </div>
 
  <div id="busqueda">
