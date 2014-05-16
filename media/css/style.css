@@ -455,7 +455,7 @@ h1{
    
 #redondo {
 border: 2px solid grey;
-margin-left:30%: 0;
+float:left;
 padding: 0;
 border-radius: 800px;
 overflow: hidden;
