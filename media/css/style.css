@@ -460,3 +460,9 @@ padding: 0;
 border-radius: 800px;
 overflow: hidden;
 }
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(../fonts/DroidSans.woff) format('woff');
+}
