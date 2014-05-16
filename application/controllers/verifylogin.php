@@ -30,6 +30,7 @@ class VerifyLogin extends CI_Controller {
     } else {
 		 $session_data = $this->session->userdata('logged_in');
 		 $data['email'] = $session_data['email'];
+		 $data['foto'] = $session_data['foto'];
 		 $data['login_form'] = 'frontend/logued';
     }
 	$data['estat'] = $this->session->userdata('estat');
