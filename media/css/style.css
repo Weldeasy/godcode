@@ -452,3 +452,11 @@ h1{
    background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
    color: #fff;
    }
+   
+.redondo {
+border: 2px solid grey;
+margin: 0;
+padding: 0;
+border-radius: 800px;
+overflow: hidden;
+}
