@@ -1,15 +1,13 @@
 <?php
-Class Adm extends CI_Model
+Class Administrador extends CI_Model
 {
 	/**
 	 * [llistarDenuncies description]
 	 * @return [objecte] [json]
 	 */
 	function llistarDenuncies(){      
-		$this->db->select('*');
-		$this->db->from('usuari');
-		$query=$this->db->get();
-		return json_encode($query->result());
+		$query = $this->db->get_where('usuari', array('es_admin' => 0));
+		 return json_encode($query->result());
 	}
 	/**
 	 * [coneglarUsuaris description]

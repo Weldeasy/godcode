@@ -4,18 +4,24 @@
  */
 class Admin extends CI_Controller {
 	/**
-	 * [__construct del Admin]
+	 * [$session_data té la informació del login]
+	 * @var [array]
 	 */
 	 private $session_data; 
 	 
+	 /**
+	  * [__construct del Admin]
+	  */
 	function __construct(){
     	parent::__construct();
- 		$this->es_autentificat();
-		$this->load->database();
-		$this->load->model('adm','',TRUE);
-	
+ 		$this->es_autentificat();//crida la funció aqui, perquè es validar tots els controladors del admin.
+		$this->load->database();//es carrega la BD
+		$this->load->model('administrador','adm',TRUE);//també el model del admin
 	}
-
+	/**
+	 * [es_autentificat si comprova si usuari es admin amb el estat es igual a 2]
+	 * @return [boolean] [description]
+	 */
 	function es_autentificat(){
 		$estat= $this->session->userdata('estat');
 		$this->session_data = $this->session->userdata('logged_in');
@@ -27,6 +33,15 @@ class Admin extends CI_Controller {
 			return TRUE;
 		}
 	}
+	/**
+	 * [passemVistaAlPanelAdmin description]
+	 * @param  [array] $data [alla es guarda una vista carregada]
+	 * @return [void]       [es carrega una vista del panel del admin]
+	 */
+	public function passemVistaAlPanelAdmin($data){ //passem una vista concreta al admin.php
+		$data['email'] = $this->session_data['email'];//també passem el email del admin
+		$this->load->view('backend/admin',$data);	
+	}
 
 	/**
 	 * [index  admin panel]
@@ -35,17 +50,67 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
-		$this->load->view('backend/admin',$data);	
+		$this->passemVistaAlPanelAdmin($data);
 	}
 
 	public function denuncies(){
-			$data = array();
-			$data['email'] = $this->session_data['email'];
-			$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
-			$this->load->view('backend/admin',$data);
+		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
 	}
+	/**
+	 * [congelarusuaris vista]
+	 * @return [void] [Es carrega la vista congelarusuaris]
+	 */
+	public function congelarusuaris(){  
+		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+
+	/**
+	 * [crearcategories vista]
+	 * @return [void] [Es carrega la vista crearcategories]
+	 */
+	public function crearcategories(){
+		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * [configSaldo vista]
+	 * @return [void] [Es carrega la vista configSaldo]
+	 */
+	public function configSaldo(){
+		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * [zona vista]
+	 * @return [void] [Es carrega la vista zona]
+	 */
+	public function zona(){
+		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * [numServeis vista]
+	 * @return [void] [Es carrega la vista numServeis]
+	 */
+	public function numServeis(){	
+		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * [numServeisConsumit vista]
+	 * @return [void] [Es carrega la vista numServeisConsumit]
+	 */
+	public function numServeisConsumit(){
+		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * SON LES VISTES QUE RETORNA JSON, UTILITZA PER CARREGAR-SE DATAGRID JEASYUI (/media/jquery/admin.js)
+	 */
+
 	/**
 	 * [json llista denuncies]
 	 * @return [void] [Es carrega la vista json ]
@@ -66,67 +131,6 @@ class Admin extends CI_Controller {
 	 */
 	function jsonllistarCategoria(){
 		echo $this->adm->llistarCategoria();	
-	}
-	/**
-	 * [congelarusuaris vista]
-	 * @return [void] [Es carrega la vista congelarusuaris]
-	 */
-	public function congelarusuaris(){  
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-
-	/**
-	 * [crearcategories vista]
-	 * @return [void] [Es carrega la vista crearcategories]
-	 */
-	public function crearcategories(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-	/**
-	 * [configSaldo vista]
-	 * @return [void] [Es carrega la vista configSaldo]
-	 */
-	public function configSaldo(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-	/**
-	 * [zona vista]
-	 * @return [void] [Es carrega la vista zona]
-	 */
-	public function zona(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-	/**
-	 * [numServeis vista]
-	 * @return [void] [Es carrega la vista numServeis]
-	 */
-	public function numServeis(){	
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-	/**
-	 * [numServeisConsumit vista]
-	 * @return [void] [Es carrega la vista numServeisConsumit]
-	 */
-	public function numServeisConsumit(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
-		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
-		$this->load->view('backend/admin',$data);
 	}
 }
 
