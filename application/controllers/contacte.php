@@ -14,7 +14,6 @@ class Contacte extends CI_Controller {
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
 			$data['login_form'] = null;
-			$this->load->view('frontend/contacte', $data);
 		} else {
 			$data['login_form'] = 'frontend/login_form';
 		}

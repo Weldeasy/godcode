@@ -75,7 +75,6 @@
 			<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
 			<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li>
 		</ul>
-		<?php echo $this->load->view($login_form); ?>
 	</div>
 	<div id="container">
 		<center><h1><u>Formulari nou usuari</u></h1></center>
