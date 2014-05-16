@@ -20,7 +20,7 @@ class Inicio extends CI_Controller {
 			case '2':
 				$session_data = $this->session->userdata('logged_in');
 				$data['email'] = $session_data['email'];
-				$data['foto'] = "hola";//$session_data['foto'];
+				$data['foto'] = $session_data['foto'];
 				$this->load->view('frontend/logued', $data);
 				break;
 			case '3':
