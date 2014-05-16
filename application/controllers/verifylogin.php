@@ -7,10 +7,10 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-	define("USUARI", 1);
-	define("ADMIN", 2);
-	define("CONGELAT", 3);
-	define("NOVERIFICAT", 4);
+  	define("USUARI", 1);
+  	define("ADMIN", 2);
+  	define("CONGELAT", 3);
+  	define("NOVERIFICAT", 4);
     $this->load->model('user', '', TRUE);
   }
 

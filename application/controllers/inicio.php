@@ -6,13 +6,14 @@ class Inicio extends CI_Controller {
   {
     parent::__construct();
 	$this->load->helper('url');
+	$this->load->library('form_validation');
+	$this->load->helper(array('form'));
   }
 
   function index()
   {
 	$data = array();
-	$this->load->library('form_validation');
-	$this->load->helper(array('form'));
+	
 	$estat = $this->session->userdata('estat');
 	if($this->session->userdata('logged_in')) {
 		switch($estat) {
@@ -32,12 +33,22 @@ class Inicio extends CI_Controller {
 		
     } else {
 		$data['login_form'] = 'frontend/login_form';
+		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',null,TRUE);
 		$this->load->view('frontend/inicio', $data);
 	}
-	
+  }
+  function aboutus(){
+		$data = array();
 
-	//$data['login_form'] = $this->load->view('frontend/login_form', null, TRUE);
-	
+		if($this->session->userdata('logged_in')) {
+			$session_data = $this->session->userdata('logged_in');
+			$data['email'] = $session_data['email'];
+			$data['login_form'] = null;
+		} else {
+			$data['login_form'] = 'frontend/login_form';
+		}
+		$data['contingut']=$this->load->view('frontend/panel_inici/aboutus',null,TRUE);
+		$this->load->view('frontend/inicio', $data);
   }
 }
 

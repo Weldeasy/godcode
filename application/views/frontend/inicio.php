@@ -17,47 +17,14 @@
 	<ul>
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 		<li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
 	</ul>
   <?php echo $this->load->view($login_form); ?>
  </div>
+<?php echo $contingut; ?>
 
- <div id="busqueda">
- <div class="seccion zona_busqueda">
-      <center>
-        <div class="contenido_zona_busqueda">
-            <div class="caja_busqueda">
-              <h1>Búsqueda servicios</h1>
-              <h3>Encuentra los servicios que hay disponibles en tu zona</h3>
-              <hr>
-              <br>
-              <div class="contenido_formulario_busqueda">
-                <form id="landingForm" action="" method="post">
-                    <input id="city_id" type="hidden" value="0">
-                    <input id="city_name" type="hidden" value="">
-
-                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="autocomplete_city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Código postal ciudad: " required="" title="Por favor selecciona una ciudad" autofocus="" autocomplete="off">
-                    <input id="date_from" class="input_fecha hasDatepicker" type="text" name="date_from" placeholder="" autocomplete="off" required="" title="Selecciona la fecha inicial de la reserva">
-                    <input id="date_to" class="input_fecha hasDatepicker" type="text" name="date_to" placeholder="" autocomplete="off" required="" title="Selecciona la fecha final de la reserva">
-                    <input type="submit" value="Buscar servicios" class="bt_ver_coches">
-                </form>
-              </div>
-            </div>
-        </div>
-      </center>
-    </div>
-    <div id="contenido_principal">
-    <div class="sombra_zona_busqueda"></div>
-    <div id="contenido_principal_izquierda">
-      <a link="#"><img src="<?= base_url()?>media/images/frontend/mas_votados.png" align="center" alt="Top votados" width="100%"></a>
-    </div>
-    <div id="contenido_principal_derecha">
-      <a link="#"><img src="<?= base_url()?>media/images/frontend/categories.png" align="center" alt="Top votados" width="100%"></a>
-    </div>
-  </div>
-</div>
 <div id="footer">
       <div id="separador_degradado">
         
