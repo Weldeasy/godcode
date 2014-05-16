@@ -33,7 +33,6 @@ class VerifyLogin extends CI_Controller {
 		 $data['foto'] = $session_data['foto'];
 		 $data['login_form'] = 'frontend/logued';
     }
-	$data['estat'] = $this->session->userdata('estat');
     redirect('inicio', 'refresh');
   }
   
