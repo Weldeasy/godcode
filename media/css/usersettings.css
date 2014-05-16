@@ -154,7 +154,7 @@ a:focus {
 .sidebar-option:hover {
 	background-color:white;
 	cursor:pointer;
-	border-right:1px solid #05B5F5;
+	border-right:2px solid #05B5F5;
 }
 .sidebar-option-none {
 	height:50px;
