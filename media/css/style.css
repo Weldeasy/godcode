@@ -16,13 +16,13 @@ h1{
   
   font-size: 15px;
   float:middle;
-  height: 75px;
+  height: 45px;
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
 
 #cssmenu ul {
   background-color: #05b5f5 ;
-  height: 74px;
+  height: 44px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -87,7 +87,7 @@ h1{
 }
 #cssmenu li ul a {
   display: block;
-  height: 65px;
+  height: 35px;
   font-size: 13px;
   font-style: normal;
   margin: 0px;
@@ -469,3 +469,4 @@ height:45px;
   font-weight: 400;
   src: local('Droid Sans'), local('DroidSans'), url(../fonts/DroidSans.woff) format('woff');
 }
+
