@@ -31,27 +31,16 @@
  </head>
  <body>
  <div id='cssmenu'>
-   <ul id="menu">
+   <ul>
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
 	   <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
 	   <li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
 	   <li class="welcome_msg" id="redondo"><img id="userfoto" src="<?php echo base_url().'media/users_profile/thumbs/'.$foto; ?>" /></li>
-	   <li class="welcome_msg"><?php echo $email; ?>
-			<ul class="sub-menu">
-				<li><a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout">
-						<img src="<?= base_url()?>media/images/frontend/close_session.png" />
-					</a>
-				</li>
-				<li><a class="user_settings" title="La meva conte" href="<?= base_url()?>index.php/user_settings">
-						<img src="<?= base_url()?>media/images/frontend/user_settings.png" />
-					</a>
-				</li>
-			</ul>
-	   </li>
+	   <li class="welcome_msg"><?php echo "Hola, ".$email; ?></li>
 		<br/>
-		
-		
+		<a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><img src="<?= base_url()?>media/images/frontend/close_session.png" /></a>
+		<a class="user_settings" title="La meva conte" href="<?= base_url()?>index.php/user_settings"><img src="<?= base_url()?>media/images/frontend/user_settings.png" /></a>
 	</ul>
  </div>
  <div id="busqueda">
