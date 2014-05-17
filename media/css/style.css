@@ -478,14 +478,7 @@ ul#menu li, ul#menu ul.sub-menu li {
     list-style-type: none;
     display: inline-block;
 }
-/*Link Appearance*/
-ul#menu li a, ul#menu li ul.sub-menu li a {
-    text-decoration: none;
-    color: #fff;
-    background: #666;
-    padding: 5px;
-    display:inline-block;
-}
+
 /*Make the parent of sub-menu relative*/
 ul#menu li {
     position: relative;
