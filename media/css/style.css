@@ -470,12 +470,7 @@ height:45px;
   src: local('Droid Sans'), local('DroidSans'), url(../fonts/DroidSans.woff) format('woff');
 }
 
-ul#menu li, ul#menu ul.sub-menu li {
-    list-style-type: none;
-    display: inline-block;
-}
 
-/*Make the parent of sub-menu relative*/
 
 /*sub menu*/
 ul#menu li ul.sub-menu {
