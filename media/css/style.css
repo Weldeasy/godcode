@@ -476,9 +476,7 @@ ul#menu li, ul#menu ul.sub-menu li {
 }
 
 /*Make the parent of sub-menu relative*/
-ul#menu li {
-    position: relative;
-}
+
 /*sub menu*/
 ul#menu li ul.sub-menu {
     display:none;
