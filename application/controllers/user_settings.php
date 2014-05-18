@@ -10,8 +10,8 @@ class User_settings extends CI_Controller {
 	if ($this->session->userdata('logged_in') == FALSE)
 		redirect('inicio');
 	$this->load->helper(array('url', 'form'));
-	$this->load->model('user');
-	$this->load->library('form_validation');
+	$this->load->model(array('user', 'categorias'));
+	$this->load->library(array('form_validation', 'grocery_CRUD'));
 	
 	$session_data = $this->session->userdata('logged_in');
 	$this->data['email'] = $session_data['email'];
@@ -26,6 +26,7 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/resultat', $this->data);
   }
   
+  /***************************************************PERFIL*************************************************************/
   function perfil()
   {
 	$dades = array();
@@ -103,10 +104,48 @@ class User_settings extends CI_Controller {
 		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
 	}
 	
-function opcions()
+  /***************************************************PERFIL*************************************************************/
+  /***************************************************SERVEIS*************************************************************/
+  
+  function serveis() {
+	$data = array();
+	try{
+		$crud = new grocery_CRUD();
+
+		$crud->set_theme('twitter-bootstrap');
+		$crud->set_table('servei');
+	
+		$crud->fields('descripcio', 'preu', 'data_inici', 'data_fi', 'disp_horaria', 'categoria', 'usuari');
+		
+		$usuari = $this->user->get_user_by_email($this->data['email']);
+		$crud->field_type('usuari', 'hidden', $usuari->id);
+		
+		$categories = array();
+		$categorias = $this->categorias->get_categorias();
+		foreach ($categorias as $valor) {
+			$categories[$valor['id']] = $valor['nom'];
+		}
+		$crud->field_type('categoria', 'dropdown', $categories);
+		
+		$crud->required_fields('descripcio', 'preu', 'data_inici', 'data_fi', 'disp_horaria', 'categoria', 'usuari');
+
+		$this->data['output'] = $crud->render();
+		
+		$this->load->view('frontend/user_settings/serveis',$this->data);
+		//$this->_example_output($data);
+
+	}catch(Exception $e){
+		show_error($e->getMessage().' --- '.$e->getTraceAsString());
+	}
+  }
+  
+  /***************************************************SERVEIS*************************************************************/
+  /***************************************************OPCIONS*************************************************************/
+  function opcions()
   {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
   }
+  /***************************************************OPCIONS*************************************************************/
   
 }
 
