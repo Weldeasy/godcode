@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Time Banking | La meva conte</title>
+		<title>Time Banking | Opcions</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	</head>
-	<body>
+	<body onLoad="loadPP()">
 		
 		<div id="up-bar">
 			<div id="user">
@@ -24,7 +25,7 @@
 		</div>
 		
 		<div id="sidebar">
-			<a class="back" href="<?= base_url()?>">
+			<a class="back" href="<?= base_url()?>index.php/user_settings">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
 				<span>TORNAR</span>
@@ -41,6 +42,9 @@
 		</div>
 
 		<div id="page-wrapper">
+		
+			Opcions
+			
 		</div>
 
 	</body>

@@ -102,6 +102,11 @@ class User_settings extends CI_Controller {
 	{
 		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
 	}
+	
+function opcions()
+  {
+	$this->load->view('frontend/user_settings/opcions', $this->data);
+  }
   
 }
 
