@@ -6,7 +6,7 @@ $(document).ready(function() {
 			$("#user_nav").animate({
 				height:"120px"
 			}, 500, function() {
-				$("#user_nav").children().show();
+				$("#user_nav").children().css('display', 'block');
 			});
 		} else {
 			$("#user_nav").children().hide();
