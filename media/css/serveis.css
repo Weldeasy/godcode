@@ -14,7 +14,10 @@
 	display:inline-block;
 	width:150px;
 }
-
+.foto_servicio img{
+	height:100%;
+	width:150px;
+}
 .cuerpo_servicio {
 	float:right;
 	width:77%;
