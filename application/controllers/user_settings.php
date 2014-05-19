@@ -112,12 +112,22 @@ class User_settings extends CI_Controller {
 	$serveis = $this->servei->get_serveis($id);
 	if ($serveis) {
 		foreach($serveis as $row) {
-			$row->usuari;
+			$servei_camps = array(
+			  'id' => $row->id,
+			  'descripcio' => $row->descripcio,
+			  'preu' => $row->preu,
+			  'data_inici' => $row->data_inici,
+			  'data_fi' => $row->data_fi,
+			  'disp_horaria' => $row->disp_horaria,
+			  'categoria' => $row->categoria,
+			  'usuari' => $row->usuari
+			);
+			echo "<pre>";
+			var_dump($servei_camps['usuari']);
+			echo "<pre>";
 		}
 	}
-	/*echo "<pre>";
-	var_dump($serveis);
-	echo "<pre>";*/
+
 	
 
   }
