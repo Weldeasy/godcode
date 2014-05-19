@@ -42,55 +42,6 @@ class Inicio extends CI_Controller {
 	}
   }
 
-  function aboutus(){
-		$data = array();
-		if($this->session->userdata('logged_in')) {
-			$session_data = $this->session->userdata('logged_in');
-			$data['email'] = $session_data['email'];
-			$data['login_form'] = null;
-		}else{
-			$data['login_form'] = 'frontend/login_form';
-		}
-		$data['contingut']=$this->load->view('frontend/panel_inici/aboutus',null,TRUE);
-		$this->load->view('frontend/inicio', $data);
-  }
-
-  function contacte(){
-  		$data = array();
-
-		if($this->session->userdata('logged_in')) {
-			$session_data = $this->session->userdata('logged_in');
-			$data['email'] = $session_data['email'];
-			$data['login_form'] = null;
-		} else {
-			$data['login_form'] = 'frontend/login_form';
-		}
-		$data['contingut']=$this->load->view('frontend/panel_inici/contacte',null,TRUE);
-		$this->load->view('frontend/inicio', $data);
-  }
- 	public function validar(){
-        $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
-		$this->form_validation->set_rules('firstname', 'Nombre', 'trim|required|callback__alpha_dash_space');
-        $this->form_validation->set_rules('telefon', 'Telefon', 'trim' );
-		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('comentari', 'Comentari', 'trim|required|callback__alpha_dash_space');
-        
-        $this->form_validation->set_message('required', "Aquest camp es obligatori");
-        $this->form_validation->set_message('alpha', "Només s'accepten lletres");
-		$this->form_validation->set_message('valid_email', "Això no és una direcció de correu electronic.");
-		$this->form_validation->set_message('very_correo', "Aquesta direcció de correu electronic no existeix.");
-
-        
-        if ($this->form_validation->run() == FALSE){
-        
-        }else{			
-        	$this->load->view('frontend/mis_enviat');
-        }
-	}
-
-    function alpha_dash_space($str){
-		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
-	}
 }
 
 ?>
