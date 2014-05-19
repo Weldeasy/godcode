@@ -459,7 +459,7 @@ overflow: hidden;
 margin-top:5px;
 }
 
-#redondo>img, #redondo>a{
+#redondo>a>img, #redondo>a{
 height:35px;    
 border-radius:50%;
 }
