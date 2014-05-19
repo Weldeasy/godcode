@@ -1,4 +1,5 @@
 .servicio {
+	position:absolute;
 	border:1px solid;
 	height:150px;
 	width:700px;
