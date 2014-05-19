@@ -123,7 +123,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			$this->data['html'] = $this->load-view('frontend/vista_servicio', '', TRUE);
+			$this->data['html'] = $this->data['html'].$this->load-view('frontend/vista_servicio', '', TRUE);
 		}
 	}
 
