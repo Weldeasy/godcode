@@ -122,9 +122,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			echo "<pre>";
-			var_dump($servei_camps['usuari']);
-			echo "<pre>";
+			echo $servei_camps['usuari'];
 		}
 	}
 
