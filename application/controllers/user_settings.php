@@ -67,7 +67,7 @@ class User_settings extends CI_Controller {
 	$provincies = $this->provincies->get_provincies();
 	$prov = array();
 	foreach ($provincies as $valor) {
-		$prov[$valor['idprovincia']] = $valor['provincia'];
+		$prov[$valor['idprovincia']] = utf8_decode($valor['provincia']);
 	}
 	
 	$this->data['provincies'] = $prov;
