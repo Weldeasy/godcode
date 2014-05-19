@@ -5,7 +5,7 @@ Class Categorias extends CI_Model
 		$this->load->database();
 		$this->db->select('id, nom')->from('categoria_servei');
 		$query=$this->db->get();
-		return $query->result_array();
+		return $query->result();
 	}
 }
 ?>
