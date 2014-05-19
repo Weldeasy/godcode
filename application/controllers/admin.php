@@ -116,21 +116,41 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista json ]
 	 */
 	function jsonllistarDenuncies(){
-		echo $this->adm->llistarDenuncies();
+		echo json_encode($this->adm->llistarDenuncies());
 	}
 	/**
 	 * [jsonconeglarUsuaris description]
 	 * @return [void] [description]
 	 */
 	function jsonconeglarUsuaris(){
-		echo $this->adm->coneglarUsuaris();
+		echo json_encode($this->adm->coneglarUsuaris());
 	}
 	/**
 	 * [jsonllistarCategoria description]
 	 * @return [void] [description]
 	 */
 	function jsonllistarCategoria(){
-		echo $this->adm->llistarCategoria();	
+		echo json_encode($this->adm->llistarCategoria());	
+	}
+
+	function eliminarCategoria_control(){
+		if(isset($_POST['id'])){
+			$id=$_POST['id'];
+			echo json_encode($this->adm->eliminarCategoria($id));
+		}else{
+			echo json_encode("error al via post");
+		}
+	}
+	function crearCategoria_control(){
+		$nom=mysql_real_escape_string($_POST['nom_cat']);
+		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+		echo json_encode($this->adm->afegirCategoria($nom,$descripcio));
+	}
+	function actualitzarCategoria_control(){
+		$id=$_GET['id'];
+		$nom=mysql_real_escape_string($_POST['nom_cat']);
+		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+		echo json_encode($this->adm->actualitzarCategoria($nom,$descripcio,$id));
 	}
 }
 
