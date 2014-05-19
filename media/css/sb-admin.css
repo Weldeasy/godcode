@@ -203,6 +203,6 @@ legend{
   width:120px;
 }
 
-#esta_congelat_user{ /*Comobox */
+.easyui-combobox{ /*Comobox */
   height: 50px;
 }
