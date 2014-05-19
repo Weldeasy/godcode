@@ -110,7 +110,7 @@ class User_settings extends CI_Controller {
 	$data2 = array();
 	$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
-	$html = array();
+	$html = "";
 	if ($serveis) {
 		foreach($serveis as $row) {
 			$data2 = array(
@@ -123,10 +123,25 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			$this->data['html'] = $this->data['html'].$this->load-view('frontend/vista_servicio', '', TRUE);
+			$html += '<div class="servicio">
+						<div class="foto_servicio">
+							<img src="http://pesimoservicio.com/publicidad/QueBuenServicio.com.png" />
+						</div>
+						<div class="cuerpo_servicio">
+							<div class="titulo_servicio">
+								TITULO
+							</div>
+							<div class="descripcion_servicio">
+								DESCRIPCION
+								<div class="precio_servicio">
+									PRECIO
+								</div>
+							</div>
+						</div>
+					</div>';
 		}
 	}
-
+	$this->data['html'] = $html;
 	$this->load->view('frontend/user_settings/serveis', $this->data);
 
 	

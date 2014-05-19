@@ -3,6 +3,7 @@
 		<title>Time Banking | Els meus serveis</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		<!--
