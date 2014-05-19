@@ -19,7 +19,6 @@ h1{
   height: 45px;
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
-
 #cssmenu ul {
   background-color: #05b5f5 ;
   height: 44px;
@@ -459,6 +458,7 @@ padding: 0;
 overflow: hidden;
 margin-top:5px;
 }
+
 #redondo>img {
 height:35px;    
 border-radius:50%;
