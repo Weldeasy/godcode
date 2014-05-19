@@ -110,7 +110,11 @@ class User_settings extends CI_Controller {
 	$data = array();
 	$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
-	var_dump($serveis);
+	if ($serveis) {
+		foreach($serveis as $row) {
+			echo $row['usuari'];
+		}
+	}
 	
 
   }
