@@ -107,13 +107,13 @@ class User_settings extends CI_Controller {
   /***************************************************SERVEIS*************************************************************/
   
   function serveis() {
-	$data = array();
+	$data2 = array();
 	$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
 	$html = array();
 	if ($serveis) {
 		foreach($serveis as $row) {
-			$data = array(
+			$data2 = array(
 			  'id' => $row->id,
 			  'descripcio' => $row->descripcio,
 			  'preu' => $row->preu,
@@ -123,7 +123,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			$this->data['html'] += $this->load-view('frontend/vista_servicio', null, TRUE);
+			$this->data['html'] = $this->load-view('frontend/vista_servicio', '', TRUE);
 		}
 	}
 
