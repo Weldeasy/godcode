@@ -26,7 +26,7 @@
 	        <form id="formulariUsuari" method="post" novalidate>
 	            <div class="fitem">
 	                <label>Esta_Congelat:</label>
-	                <select id="esta_congelat_user" style='height:auto;' class="easyui-combobox" name="esta_congelat_user">
+	                <select id="esta_congelat_user" style='height:50px;' class="easyui-combobox" name="esta_congelat_user">
 					    <option value="1">Sí</option>
 					    <option value="0">No</option>
 					</select>
