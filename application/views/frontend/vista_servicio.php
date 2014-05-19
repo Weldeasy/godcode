@@ -1,5 +1,4 @@
-<html>
-	<head>
+
 		<style>
 			.servicio {
 				border:1px solid;
@@ -37,8 +36,7 @@
 				margin-top:70px;
 			}
 		</style>
-	</head>
-	<body>
+
 		<div class="servicio">
 			<div class="foto_servicio">
 				<img src="http://pesimoservicio.com/publicidad/QueBuenServicio.com.png" />
@@ -56,6 +54,3 @@
 			</div>
 			
 		</div>
-	</body>
-</html>
-
