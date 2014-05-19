@@ -456,12 +456,12 @@ h1{
 #redondo {
 margin-right:200px;
 padding: 0;
-border-radius: 800px;
 overflow: hidden;
+margin-top:5px;
 }
 #redondo>img {
-height:45px;    
-
+height:35px;    
+border-radius:50%;
 }
 @font-face {
   font-family: 'Droid Sans';
