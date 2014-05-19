@@ -7,9 +7,9 @@
 			TITULO
 		</div>
 		<div class="descripcion_servicio">
-				<?php echo $descripcio; ?>
+			<?php echo $descripcio; ?>
 			<div class="precio_servicio">
-				PRECIO
+				<?php echo $preu; ?>
 			</div>
 		</div>
 	</div>
