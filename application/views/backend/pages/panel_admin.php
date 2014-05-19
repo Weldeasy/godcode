@@ -30,12 +30,11 @@
           <a href="<?= base_url()?>index.php/admin/denuncies">
             <div class="panel-footer announcement-bottom">
               <div class="row">
-                <div class="col-xs-6">
-                  
-                </div>
-				Llistar Denúnices
+                
+				
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
+				  Llistar Denúnices
                 </div>
               </div>
             </div>
