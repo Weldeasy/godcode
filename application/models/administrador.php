@@ -7,7 +7,7 @@ Class Administrador extends CI_Model
 	 * @return [objecte] [description]
 	 */
 	function llistarDenuncies(){      
-		$query = $this->db->query('SELECT * FROM reclamacio');
+		$query = $this->db->query('SELECT * FROM `reclamacio`, usuari where reclamacio.usuari_denunciant=usuari.id');
 		return $query->result();
 	}
 	/**

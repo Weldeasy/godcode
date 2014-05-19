@@ -17,7 +17,8 @@ $(document).ready(function(){
 			width:'1250',
 		    columns:[[ 
 		        {field:'motiu',title:'Motiu',sortable:true,width:60,align:'left'},
-		        {field:'data_reclamacio',title:'Data reclamació',sortable:true,width:60,align:'left'}
+		        {field:'data_reclamacio',title:'Data reclamació',sortable:true,width:60,align:'left'},
+		        {field:'nom',title:'Denunciant',sortable:true,width:60,align:'left'},
 		    ]]
 	});
 	$('#congelarDatagrid').datagrid({
