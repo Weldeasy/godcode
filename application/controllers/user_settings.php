@@ -112,7 +112,7 @@ class User_settings extends CI_Controller {
 	$serveis = $this->servei->get_serveis($id);
 	if ($serveis) {
 		foreach($serveis as $row) {
-			echo $row['usuari'];
+			echo 1;
 		}
 	}
 	
