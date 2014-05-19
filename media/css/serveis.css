@@ -1,11 +1,10 @@
 .servicio {
-	position:absolute;
 	border:1px solid;
 	height:150px;
 	width:700px;
 	margin-top:30px;
 	margin-bottom:100px;
-	margin-left:100px;
+	margin-left:300px;
 }
 
 .foto_servicio {
