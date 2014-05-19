@@ -29,7 +29,6 @@
 	                <select id="esta_congelat_user" class="easyui-combobox" name="esta_congelat_user">
 					    <option value="1">Sí</option>
 					    <option value="0">No</option>
-					    <option value="2">Pendent</option>
 					</select>
 	            </div>
 	        </form>
