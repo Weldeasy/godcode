@@ -201,3 +201,22 @@ function modificarCategoria(){
 		}
 	}
 }
+
+function modificarUsuari(){
+	var fila=$('#congelarDatagrid').datagrid('getSelected');
+	if(!fila){
+		$.messager.show({
+			title:'Editar Usuari',
+			msg:'Selecciona una usuari a editar'
+		});
+	}else{
+		if(fila){
+			$('#finestraUsuari').dialog('open').dialog('setTitle','Editar Usuari');
+			$.each(fila,function(key,value){
+				if(key!='id')
+					$($('#'+key+"_user")).val(value);
+			});
+			url=urlGlobal+'/actualitzarUsuari_control?id='+fila.id;
+		}
+	}
+}

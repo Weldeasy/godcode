@@ -62,6 +62,15 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;
 	}
+	function actualitzarUsuari($esta_congelat,$id){
+		$query = $this->db->query('UPDATE usuari SET esta_congelat="'.$esta_congelat.'" WHERE id="'.$id.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;
+	}
 
 }
 ?>

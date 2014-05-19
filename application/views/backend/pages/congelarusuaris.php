@@ -25,12 +25,12 @@
 	    	<div class="ftitle">Usuari</div>
 	        <form id="formulariUsuari" method="post" novalidate>
 	            <div class="fitem">
-	                <label>Nom:</label>
-	                <input name="nom_user" id="nom_user" class="easyui-validatebox" required="true">
-	            </div>
-	            <div class="fitem">
-	                <label>Cognom:</label>
-	                <input name="cognom_user" id="cognom_user" class="easyui-validatebox" required="true">
+	                <label>Esta_Congelat:</label>
+	                <select id="esta_congelat_user" class="easyui-combobox" name="esta_congelat_user">
+					    <option value="1">Sí</option>
+					    <option value="0">No</option>
+					    <option value="2">Pendent</option>
+					</select>
 	            </div>
 	        </form>
 	    </div>
