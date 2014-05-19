@@ -37,7 +37,10 @@ class Inicio extends CI_Controller {
 				break;
 		}
     }else{
-		$data['categorias'] = $this->categorias->get_categorias();
+		$categorias = $this->categorias->get_categorias();
+		foreach($categorias as $row) {
+			$data['categorias'][$row['id']] = $row['nom'];
+		}
 		$data['login_form'] = 'frontend/login_form';
 		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
 		$this->load->view('frontend/inicio', $data);
