@@ -8,6 +8,7 @@ class Inicio extends CI_Controller {
 	$this->load->helper('url');
 	$this->load->library('form_validation');
 	$this->load->helper(array('form'));
+	$this->load->model('categorias');
   }
 
   function index()
@@ -36,9 +37,11 @@ class Inicio extends CI_Controller {
 				break;
 		}
     }else{
+		$categorias = $this->categorias->get_categorias();/*
 		$data['login_form'] = 'frontend/login_form';
 		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',null,TRUE);
-		$this->load->view('frontend/inicio', $data);
+		$this->load->view('frontend/inicio', $data);*/
+		var_dump($categorias);
 	}
   }
   function aboutus(){
