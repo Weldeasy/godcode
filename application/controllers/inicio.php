@@ -5,58 +5,59 @@ class Inicio extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->helper('url');
-    $this->load->library('form_validation');
-    $this->load->helper(array('form'));
-    $this->load->model('categorias');
+	$this->load->helper('url');
+	$this->load->library('form_validation');
+	$this->load->helper(array('form'));
+	$this->load->model('categorias');
   }
 
-  function index(){
-      $data = array();
-      
-      $estat = $this->session->userdata('estat');
-      if($this->session->userdata('logged_in')) {
-          switch($estat) {
-            case '1':
-            case '2':
-              $session_data = $this->session->userdata('logged_in');
-              $data['email'] = $session_data['email'];
-              $data['foto'] = $session_data['foto'];
-              $this->load->view('frontend/logued', $data);
-              break;
-            case '3':
-              $data['login_form'] = 'frontend/login_form';
-              $data['contingut']=$this->load->view('frontend/panel_inici/congelat',null,TRUE);
-              $this->load->view('frontend/inicio', $data);
-            case '4':
-              $data['login_form'] = 'frontend/login_form';
-              $data['contingut']=$this->load->view('frontend/panel_inici/verifica',null,TRUE);
-              $this->load->view('frontend/inicio', $data);
+  function index()
+  {
+	$data = array();
+	
+	$estat = $this->session->userdata('estat');
+	if($this->session->userdata('logged_in')) {
+		switch($estat) {
+			case '1':
+			case '2':
+				$session_data = $this->session->userdata('logged_in');
+				$data['email'] = $session_data['email'];
+				$data['foto'] = $session_data['foto'];
+				$this->load->view('frontend/logued', $data);
+				break;
+			case '3':
+				$data['login_form'] = 'frontend/login_form';
+				$data['contingut']=$this->load->view('frontend/panel_inici/congelat',null,TRUE);
+				$this->load->view('frontend/inicio', $data);
+			case '4':
+				$data['login_form'] = 'frontend/login_form';
+				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',null,TRUE);
+				$this->load->view('frontend/inicio', $data);
 
-              break;
-          }
-        }else{
-        $categorias = $this->categorias->get_categorias();
-      foreach($categorias as $row) {
-        $data['categorias'][$row['id']] = $row['nom'];
-      }
-    $data['login_form'] = 'frontend/login_form';
-    $data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
-    $this->load->view('frontend/inicio', $data);
-      }
+				break;
+		}
+    }else{
+		$categorias = $this->categorias->get_categorias();
+		foreach($categorias as $row) {
+			$data['categorias'][$row['id']] = $row['nom'];
+		}
+		$data['login_form'] = 'frontend/login_form';
+		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
+		$this->load->view('frontend/inicio', $data);
+	}
   }
   function aboutus(){
-      $data = array();
-      
-      if($this->session->userdata('logged_in')) {
-        $session_data = $this->session->userdata('logged_in');
-        $data['email'] = $session_data['email'];
-        $data['login_form'] = null;
-      }else{
-        $data['login_form'] = 'frontend/login_form';
-      }
-      $data['contingut']=$this->load->view('frontend/panel_inici/aboutus',null,TRUE);
-      $this->load->view('frontend/inicio', $data);
+    $data = array();
+    
+    if($this->session->userdata('logged_in')) {
+      $session_data = $this->session->userdata('logged_in');
+      $data['email'] = $session_data['email'];
+      $data['login_form'] = null;
+    }else{
+      $data['login_form'] = 'frontend/login_form';
+    }
+    $data['contingut']=$this->load->view('frontend/panel_inici/aboutus',null,TRUE);
+    $this->load->view('frontend/inicio', $data);
   }
    function contacte(){
       $data = array();
@@ -64,25 +65,12 @@ class Inicio extends CI_Controller {
         $session_data = $this->session->userdata('logged_in');
         $data['email'] = $session_data['email'];
         $data['login_form'] = null;
-      }else{
+      } else {
         $data['login_form'] = 'frontend/login_form';
       }
       $data['contingut']=$this->load->view('frontend/panel_inici/contacte',null,TRUE);
       $this->load->view('frontend/inicio', $data);
   }
-  function infousuari(){
-      $data = array();
-      if($this->session->userdata('logged_in')) {
-          $session_data = $this->session->userdata('logged_in');
-          $data['email'] = $session_data['email'];
-          $data['login_form'] = null;
-      }else{
-          $data['login_form'] = 'frontend/login_form';
-      }
-      $data['contingut']=$this->load->view('frontend/panel_inici/info_usuari',null,TRUE);
-      $this->load->view('frontend/inicio', $data);
-  }
-
 
   public function validar(){
         $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
@@ -97,7 +85,7 @@ class Inicio extends CI_Controller {
         $this->form_validation->set_message('very_correo', "Aquesta direcció de correu electronic no existeix.");
 
         
-        if($this->form_validation->run() == FALSE){
+        if ($this->form_validation->run() == FALSE){
         
         }else{      
           $this->load->view('frontend/mis_enviat');

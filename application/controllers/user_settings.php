@@ -67,7 +67,7 @@ class User_settings extends CI_Controller {
 	$provincies = $this->provincies->get_provincies();
 	$prov = array();
 	foreach ($provincies as $valor) {
-		$prov[$valor['idprovincia']] = utf8_decode($valor['provincia']);
+		$prov[$valor['idprovincia']] = $valor['provincia'];
 	}
 	
 	$this->data['provincies'] = $prov;
@@ -90,7 +90,16 @@ class User_settings extends CI_Controller {
 	}
 	else
 	{
-		if ($this->user->update_perfil($this->data['email'], $this->input->post('nombre'), $this->input->post('apellidos'), $this->input->post('sexo'), $this->input->post('provincia'), $this->input->post('poblacio'), $this->input->post('cp'), $this->input->post('descrivete')))
+		$temp = $this->user->get_user_by_email($this->data['email']);
+		$foto = $temp->foto;
+		if ($_FILES['foto']['name'] != '') {
+			$this->load->library('upload_img');
+			$this->upload_img->upload_image($temp->codigo_registro, $this->input->post('nombre'));
+			$img_type = substr($_FILES['foto']['type'], strrpos($_FILES['foto']['type'], '/') + 1);
+			$foto = $this->input->post('nombre')."_".$temp->codigo_registro.".".$img_type;
+		}
+		$temp = array();
+		if ($this->user->update_perfil($this->data['email'], $this->input->post('nombre'), $this->input->post('apellidos'), $this->input->post('sexo'), $this->input->post('provincia'), $this->input->post('poblacio'), $this->input->post('cp'), $this->input->post('descrivete'), $foto))
 			$mensaje = "Perfil actualitzat correctament";
 		else
 			$mensaje = "S'ha produit un error, torna a provar-ho més tard. Si segueix passant contacte amb l'administrador.";

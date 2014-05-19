@@ -17,7 +17,7 @@ Class User extends CI_Model
 		}
 	}
 	
-	public function update_perfil($email, $nom, $cognom, $sexe, $pr, $po, $cp, $desc) {
+	public function update_perfil($email, $nom, $cognom, $sexe, $pr, $po, $cp, $desc, $foto) {
 		$actualitzar = array(
 		   'nom' => $nom,
 		   'cognom' => $cognom,
@@ -25,7 +25,8 @@ Class User extends CI_Model
 		   'provincia' => $pr,
 		   'poblacio' => $po,
 		   'cp' => $cp,
-		   'presentacio' => $desc
+		   'presentacio' => $desc,
+		   'foto' => $foto
 		);
 		try {
 			$this->db->where('email', $email);
