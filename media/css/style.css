@@ -330,9 +330,9 @@ h1{
   width: 100%;
   height: auto;
   background: #585c54;
-    position: relative;
-    border-top: 2px solid white;
-  margin-top: 10%;
+  position: relative;
+  border-top: 2px solid white;
+  margin-top: 5%;
   clear: both;
 
 }
@@ -469,4 +469,12 @@ border-radius:50%;
   font-weight: 400;
   src: local('Droid Sans'), local('DroidSans'), url(../fonts/DroidSans.woff) format('woff');
 }
-
+.infousuari{
+  background-color:#1b8eb8;
+  border-radius:6px;
+  height: 500px;
+  margin-top: 100px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
