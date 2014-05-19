@@ -132,9 +132,9 @@ class User_settings extends CI_Controller {
 								TITULO
 							</div>
 							<div class="descripcion_servicio">
-								DESCRIPCION
+								'.$data2['descripcio'].'
 								<div class="precio_servicio">
-									PRECIO
+									'.$data2['preu'].'
 								</div>
 							</div>
 						</div>
