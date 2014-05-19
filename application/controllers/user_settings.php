@@ -108,7 +108,7 @@ class User_settings extends CI_Controller {
   
   function serveis() {
 	$data = array();
-	$id = $this->session->userdata('id');
+	/*$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
 	$html = array();
 	if ($serveis) {
@@ -125,7 +125,7 @@ class User_settings extends CI_Controller {
 			);
 			//$html['html'] += $this->load-view('frontend/vista_servicio', null, TRUE);
 		}
-	}
+	}*/
 	$data['html'] = $this->load-view('frontend/vista_servicio', null, TRUE);
 	$this->load->view('frontend/user_settings/serveis', $data);
 
