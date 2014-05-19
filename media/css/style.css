@@ -485,6 +485,7 @@ border-radius:40%;
     border-radius:12px;
     margin-top: 15px;
     height: auto;
+    max-width: 300px;
     min-width: 300px;
     margin-right: 15px;
     margin-left: 15px;
@@ -492,7 +493,10 @@ border-radius:40%;
    -webkit-box-shadow: 0 8px 6px -6px black;
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
+    word-wrap:break-word;
+
 }
+
 
 .label_title{
   text-align: center;
