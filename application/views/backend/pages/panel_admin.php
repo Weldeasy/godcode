@@ -33,8 +33,9 @@
                 
 				
                 <div class="col-xs-6 text-right">
+					Llistar Denúnices
                   <i class="fa fa-arrow-circle-right"></i>
-				  Llistar Denúnices
+				  
                 </div>
               </div>
             </div>
