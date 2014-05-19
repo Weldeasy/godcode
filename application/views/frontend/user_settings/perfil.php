@@ -54,6 +54,11 @@
 				$("#poblacio").val(poblacio);
 			}
 		</script>
+		<style>
+			.imatge_perfil {border:4px inset #05B5F5; margin-left:20px; margin-top:20px;float:left;}
+			.imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
+			.imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}
+		</style>
 	</head>
 	<body onLoad="loadPP()">
 		
@@ -86,7 +91,11 @@
 
 		<div id="page-wrapper">
 		
-			<?= form_open(base_url().'index.php/user_settings/validar_perfil', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
+			<?= form_open_multipart(base_url().'index.php/user_settings/validar_perfil', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
+			
+			
+			<label id="image" for="foto"><img src="<?= base_url()?>media/users_profile/thumbs/<?=$foto?>" title="Canviar imatge de perfil" class="imatge_perfil" id="imatge_perfil" /></label>
+			<input type="file" name="foto" id="foto" accept='image/*' onChange="document.getElementById('imatge_perfil').className='imatge_perfil_canviada'" />
 			
 			<table class="center">
 		
