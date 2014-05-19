@@ -123,7 +123,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			$html = $html.'<div class="servicio">
+			/*$html = $html.'<div class="servicio">
 						<div class="foto_servicio">
 							<img src="" />
 						</div>
@@ -138,11 +138,13 @@ class User_settings extends CI_Controller {
 								</div>
 							</div>
 						</div>
-					</div><br />';
+					</div><br />';*/
+			$html = $this->load->view('frontend/vista_servicio', '', true);
 		}
 	
 	
 	$this->data['html'] = $html;
+	
 	$this->load->view('frontend/user_settings/serveis', $this->data);
 
 	
