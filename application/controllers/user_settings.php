@@ -123,7 +123,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			$html += '<div class="servicio">
+			$html = $html.'<div class="servicio">
 						<div class="foto_servicio">
 							<img src="http://pesimoservicio.com/publicidad/QueBuenServicio.com.png" />
 						</div>
