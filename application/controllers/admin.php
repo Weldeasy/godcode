@@ -152,6 +152,7 @@ class Admin extends CI_Controller {
 		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
 		echo json_encode($this->adm->actualitzarCategoria($nom,$descripcio,$id));
 	}
+	
 	function actualitzarUsuari_control(){
 		$id=$_GET['id'];
 		$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);

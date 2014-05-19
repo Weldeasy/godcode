@@ -16,8 +16,8 @@ $(document).ready(function(){
 			height:'auto',
 			width:'1250',
 		    columns:[[ 
-		        {field:'nom',title:'Nom',sortable:true,width:60,align:'left'},
-		        {field:'cognom',title:'Cognom',sortable:true,width:60,align:'left'}
+		        {field:'motiu',title:'Nom',sortable:true,width:60,align:'left'},
+		        {field:'data_reclamacio',title:'Cognom',sortable:true,width:60,align:'left'}
 		    ]]
 	});
 	$('#congelarDatagrid').datagrid({
