@@ -28,8 +28,9 @@
             </div>
           </div>
           <a href="<?= base_url()?>index.php/admin/denuncies">
-            <div class="panel-footer announcement-bottom">
 			Llistar Denúnices
+            <div class="panel-footer announcement-bottom">
+			
               <div class="row">
                 
 				
