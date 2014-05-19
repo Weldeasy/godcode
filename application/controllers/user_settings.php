@@ -138,7 +138,7 @@ class User_settings extends CI_Controller {
 								</div>
 							</div>
 						</div>
-					</div>';
+					</div><br />';
 		}
 	
 	
