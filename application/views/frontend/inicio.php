@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
     <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+	<script src="<?= base_url()?>media/js/datepicker.js"></script>
     <title>Time Bank</title>
   </head>
  <body>

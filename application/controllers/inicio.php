@@ -33,6 +33,7 @@ class Inicio extends CI_Controller {
       				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',null,TRUE);
       				$this->load->view('frontend/inicio', $data);
 
+<<<<<<< HEAD
       				break;
       		}
         }else{
@@ -41,6 +42,19 @@ class Inicio extends CI_Controller {
     		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
     		$this->load->view('frontend/inicio', $data);
     	}
+=======
+				break;
+		}
+    }else{
+		$categorias = $this->categorias->get_categorias();
+		foreach($categorias as $row) {
+			$data['categorias'][$row['id']] = $row['nom'];
+		}
+		$data['login_form'] = 'frontend/login_form';
+		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
+		$this->load->view('frontend/inicio', $data);
+	}
+>>>>>>> 3c1af08bbd666df4cde855b971b1388433b0ee96
   }
   function aboutus(){
       $data = array();

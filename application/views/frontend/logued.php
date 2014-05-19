@@ -9,6 +9,9 @@
     <meta name="author" content="">
     <link href="<?=base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="<?=base_url()?>media/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="<?=base_url()?>media/js/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<style>
 	.welcome_msg {
 		color:white;
