@@ -126,9 +126,10 @@ class User_settings extends CI_Controller {
 			//$html['html'] += $this->load-view('frontend/vista_servicio', null, TRUE);
 		}
 	}*/
-	//$this->load-view('frontend/vista_servicio', null, TRUE);
+	//
 	$this->data['html'] = "hola";
-	$this->load->view('frontend/user_settings/serveis', $this->data);
+	var_dump($this->load-view('frontend/vista_servicio', null, TRUE));
+	//$this->load->view('frontend/user_settings/serveis', $this->data);
 
 	
 
