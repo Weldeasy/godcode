@@ -34,8 +34,8 @@
    <ul>
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-	   <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-	   <li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
 	   <li class="welcome_msg" id="redondo"><img id="userfoto" src="<?php echo base_url().'media/users_profile/thumbs/'.$foto; ?>" /></li>
 	   <li class="welcome_msg"><?php echo "Hola, 	".$email; ?></li>
 		<br/>
