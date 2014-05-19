@@ -29,12 +29,12 @@ Class Administrador extends CI_Model
 	
 	function llistarCategoria(){
 		$this->db->select('*');
-		$this->db->from('categoria');
+		$this->db->from('categoria_servei');
 		$query=$this->db->get();
 		return $query->result();
 	}
 	function eliminarCategoria($id){
-		$query = $this->db->query('DELETE FROM categoria WHERE id='.$id);
+		$query = $this->db->query('DELETE FROM categoria_servei WHERE id='.$id);
 		if($query){
 			$resultat=true;
 		}else{
@@ -45,7 +45,7 @@ Class Administrador extends CI_Model
 
 	function afegirCategoria($nom,$descripcio){
 		//antes de insertar comprova si existe
-		$query = $this->db->query('INSERT INTO categoria (nom,descripcio) VALUES("'.$nom.'","'.$descripcio.'")');
+		$query = $this->db->query('INSERT INTO categoria_servei (nom,descripcio) VALUES("'.$nom.'","'.$descripcio.'")');
 		if($query){
 			$resultat=true;
 		}else{
@@ -54,7 +54,7 @@ Class Administrador extends CI_Model
 		return $resultat;
 	}
 	function actualitzarCategoria($nom,$descripcio,$id){
-		$query = $this->db->query('UPDATE categoria SET nom="'.$nom.'",descripcio="'.$descripcio.'" WHERE id="'.$id.'"');
+		$query = $this->db->query('UPDATE categoria_servei SET nom="'.$nom.'",descripcio="'.$descripcio.'" WHERE id="'.$id.'"');
 		if($query){
 			$resultat=true;
 		}else{
