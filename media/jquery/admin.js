@@ -61,7 +61,7 @@ $(document).ready(function(){
 			pagination:true, // mostrar una barra d'eines a la part inferior de paginació DataGrid
 			loadMsg:'', //message per carregar-se
 			height:'auto',
-			width:'1250',
+			width:'1000',
 		    columns:[[ 
 		        {field:'nom',title:'Nom',sortable:true,width:60,align:'left'},
 		        {field:'descripcio',title:'Descripcio',sortable:true,width:60,align:'left'}
