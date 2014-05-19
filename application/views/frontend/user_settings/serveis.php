@@ -5,13 +5,13 @@
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
-		<?php
+		<?php/*
 		foreach($output->css_files as $file) {
 			print '<link type="text/css" rel="stylesheet" href="'.$file.'" />';
 		}
 		foreach($output->js_files as $file) {
 			print '<script src="'.$file.'"></script>';
-		}
+		}*/
 		?>
 	</head>
 	<body>
