@@ -18,6 +18,7 @@ Class Servei extends CI_Model {
 	 }
 	 
 	 
+	 
 	 public function add_servei() {
 		$this->db->insert("servei", array(
 			"descripcio"=>$this->input->post("descripcio", TRUE),

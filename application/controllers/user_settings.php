@@ -106,9 +106,10 @@ class User_settings extends CI_Controller {
   /***************************************************PERFIL*************************************************************/
   /***************************************************SERVEIS*************************************************************/
   
-  function serveis() {
-	$data = array();	
-	$serveis = $this->servei->get_serveis(null);
+  function serveisUsuari() {
+	$data = array();
+	$id = $this->session->userdata('id');
+	$serveis = $this->servei->get_serveis($id);
 	var_dump($serveis);
 	
 
