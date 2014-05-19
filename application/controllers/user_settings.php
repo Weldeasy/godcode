@@ -139,9 +139,10 @@ class User_settings extends CI_Controller {
 							</div>
 						</div>
 					</div>';
+			$html2 = "aa";
 		}
 	}
-	$this->data['html'] = $html;
+	$this->data['html'] = $html2;
 	$this->load->view('frontend/user_settings/serveis', $this->data);
 
 	
