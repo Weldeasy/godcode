@@ -4,6 +4,7 @@ var split=href.split("/");//to array
 split.pop();//eliminem ultim element perquè no necessitem
 var urlGlobal=split.join("/");//to string
 
+
 $(document).ready(function(){
 	$('#llistaDenuncies').datagrid({
 		    url:urlGlobal+'/jsonllistarDenuncies', //agafa dades des de servidor
@@ -29,9 +30,20 @@ $(document).ready(function(){
 		height:'auto',
 		width:'1250',
 	    columns:[[ 
-	        {field:'nom',title:'Nom',sortable:true,width:60,align:'left'},
-	        {field:'cognom',title:'Cognom',sortable:true,width:60,align:'left'},
-	    	{field:'esta_congelat',title:'Es_congelat',sortable:true,width:60,align:'left'}
+	        {field:'nom',title:'Nom',sortable:true,width:50,align:'left'},
+	        {field:'cognom',title:'Cognom',sortable:true,width:50,align:'left'},
+	    	{field:'esta_congelat',title:'Es_congelat',sortable:true,width:50,align:'left',
+				formatter:function(value,row,index){
+				
+						if(value==1){
+                  			return '<span style="background-color:red;">Sí</span>';
+						}else if(value==2){	
+                  			return '<span style="background-color:yellow;">Pendent</span>';
+						}else if(value==0){	
+                  			return '<span>No</span>';
+						}
+              	},
+	    	},
 	    ]],
 	    view: detailview,
 			detailFormatter:function(index,row){
