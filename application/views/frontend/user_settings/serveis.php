@@ -45,7 +45,7 @@
 
 		<div id="page-wrapper">
 			<h1>Els meus serveis</h1>
-			<?= $output->output?>
+			<?php echo $html; /*echo $output->output*/ ?>
 		</div>
 	</body>
 </html>
