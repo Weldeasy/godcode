@@ -13,7 +13,7 @@
                     <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="autocomplete_city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Código postal ciudad: " required="" title="Por favor selecciona una ciudad" autofocus="" autocomplete="off">
                     <input id="date_from" class="input_fecha hasDatepicker" type="text" name="date_from" placeholder="" autocomplete="off" required="" title="Selecciona la fecha inicial de la reserva">
                     <!--<input id="date_to" class="input_fecha hasDatepicker" type="text" name="date_to" placeholder="" autocomplete="off" required="" title="Selecciona la fecha final de la reserva">-->
-					<?php echo form_dropdown('categorias', $categorias); ?>
+					<?php echo form_dropdown('categorias', $categorias, 'placeholder="" autocomplete="off" class="input_fecha hasDatepicker"'); ?>
                     <input type="submit" value="Buscar servicios" class="bt_ver_coches">
                 </form>
               </div>
