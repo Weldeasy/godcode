@@ -125,7 +125,7 @@ class User_settings extends CI_Controller {
 			);
 			$html = $html.'<div class="servicio">
 						<div class="foto_servicio">
-							<img src="http://pesimoservicio.com/publicidad/QueBuenServicio.com.png" />
+							<img src="" />
 						</div>
 						<div class="cuerpo_servicio">
 							<div class="titulo_servicio">
