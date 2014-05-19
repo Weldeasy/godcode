@@ -112,7 +112,7 @@ class User_settings extends CI_Controller {
 	$serveis = $this->servei->get_serveis($id);
 	if ($serveis) {
 		foreach($serveis as $row) {
-			$servei_camps = array(
+			$data = array(
 			  'id' => $row->id,
 			  'descripcio' => $row->descripcio,
 			  'preu' => $row->preu,
@@ -122,7 +122,7 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-			echo $servei_camps['usuari'];
+			$this->load-view('frontend/vista_servicio');
 		}
 	}
 
