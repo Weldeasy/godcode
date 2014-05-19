@@ -6,6 +6,11 @@ body, html {
 }
 a {
 	text-decoration:none;
+	color:black;
+}
+a:visited {
+	text-decoration:none;
+	color:black;
 }
 a::visited {
 	text-decoration:none;
@@ -62,7 +67,7 @@ a:focus {
 	height:50px;
 	right:0px;
 	top:0px;
-	position:fixed;
+	position:absolute;
 	color:white;
 	text-align:center;
 	background-image:url(../images/frontend/down.png);
@@ -80,7 +85,7 @@ a:focus {
 }
 #user span {
 	right:40px;
-	position:fixed;
+	position:absolute;
 	line-height:50px;
 }
 #user img {
@@ -95,7 +100,7 @@ a:focus {
 	top:50px;
 	width:185px;
 	height:0px;
-	position:fixed;
+	position:absolute;
 	border-left:1px solid grey;
 	border-bottom:1px solid grey;
 	background-color:lightsilver;
@@ -103,6 +108,7 @@ a:focus {
 	padding-right:20px;
 	padding-bottom:10px;
 	padding-top:10px;
+	background-color:white;
 }
 #user_nav .option {
 	width:80%;
@@ -162,3 +168,19 @@ a:focus {
 	text-align:center;
 	text-decoration:underline;
 }
+
+/*INICI PERFIL*/
+input[type=radio]{
+	display:none;
+}
+label > img:hover {
+	cursor:pointer;
+}
+.formulario_registro_label {
+	color:black;
+	font-weight: bold;
+}
+.checkedd {
+	border-bottom:2px solid #05B5F5;
+}
+/*FI PERFIL*/
