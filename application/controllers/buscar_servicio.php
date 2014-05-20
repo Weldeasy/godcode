@@ -21,7 +21,7 @@ class Buscar_servicio extends CI_Controller {
   		$dataInici = $_POST['datainici'];
   	}
   	if (isset($_POST['datafi'])){
-  		$dataInici = $_POST['datafi'];
+  		$dataFi = $_POST['datafi'];
   	}
   	if (isset($_POST['categorias'])){
   		$categories = $_POST['categorias'];
