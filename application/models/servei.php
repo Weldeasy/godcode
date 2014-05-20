@@ -33,7 +33,7 @@ Class Servei extends CI_Model {
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
-		$this -> db -> select('*');
+		$this -> db -> select('DISTINCT *');
 		$this -> db -> from('servei s');
 		$this -> db -> from('poblacion p');
 
