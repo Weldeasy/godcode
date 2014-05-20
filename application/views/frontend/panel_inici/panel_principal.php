@@ -9,11 +9,10 @@
               <br>
               <div class="contenido_formulario_busqueda">
                 <form id="landingForm" action="<?php echo base_url(); ?>index.php/buscar_servicio" method="post">
-                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-					<input id="city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Códi postal o nom de la ciutat: " title="Per favor selecciona una ciutat" autofocus="" >
-					<input type="text" name="datainici" id="datepicker1" placeholder="disponibles desde: ">
-					<input type="text" name="datafi" id="datepicker2" placeholder="disponibles fins el: ">
-					<?php echo form_dropdown('categorias', $categorias, 'name="categories" id="categorias"'); ?>
+          					<input id="city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Códi postal o nom de la ciutat: " title="Per favor selecciona una ciutat" autofocus="" >
+          					<input type="text" name="datainici" id="datepicker1" placeholder="disponibles desde: ">
+          					<input type="text" name="datafi" id="datepicker2" placeholder="disponibles fins el: ">
+          					<?php echo form_dropdown('categorias', $categorias, 'name="categories" id="categorias"'); ?>
                     <input type="submit" value="Buscar servicios" class="bt_ver_coches">
                 </form>
               </div>
