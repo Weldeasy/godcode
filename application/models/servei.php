@@ -37,7 +37,7 @@ Class Servei extends CI_Model {
 		$this -> db -> from('servei s');
 		$this -> db -> from('usuari u');
 		$this -> db -> from('poblacion p');
-		
+
 		if (is_numeric($ciutat)) {
 			$this -> db -> where('s.cp', $ciutat); 
 		}
@@ -56,7 +56,7 @@ Class Servei extends CI_Model {
 		}
 
 		$query = $this -> db -> get();
-		return $query->result();
+		return $query->result_array();
 	 }
 }
 ?>
