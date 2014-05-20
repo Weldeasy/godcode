@@ -200,6 +200,11 @@ h1{
 	text-align:center;
 	margin-right:17px;
 }
+#categorias {
+	width:120px;
+	text-align:center;
+	margin-right:17px;
+}
 
 .zona_busqueda .caja_busqueda #landingForm .input_fecha {
   width: 174px;
