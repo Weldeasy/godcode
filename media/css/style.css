@@ -184,6 +184,10 @@ h1{
   
   margin-right: 5px;
 }
+.centrar_form{
+  text-align: center;
+  margin-left: 245px;
+}
 
 .zona_busqueda .caja_busqueda #landingForm .input_ciudad {
   width: 260px;
