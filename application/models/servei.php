@@ -31,5 +31,32 @@ Class Servei extends CI_Model {
 		));
 		return true;
 	}
+
+	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
+		$this -> db -> select('*');
+		$this -> db -> from('servei s');
+		$this -> db -> from('usuari u');
+		$this -> db -> from('poblacion p');
+		
+		if (is_numeric($ciutat)) {
+			$this -> db -> where('s.cp', $ciutat); 
+		}
+		else {
+			$this -> db -> where('p.poblacion', $ciutat);
+			$this -> db -> where('s.cp = p.postal');
+		}
+		if($dataInici != null ){
+			$this -> db -> where('s.data_inici = '.$dataInici);
+		}
+		if($dataFi != null ){
+			$this -> db -> where('s.data_fi = '.$dataFi);
+		}
+		if($categoria != null ){
+			$this -> db -> where('s.categoria = '.$categoria);
+		}
+
+		$query = $this -> db -> get();
+		return $query->result();
+	 }
 }
 ?>
