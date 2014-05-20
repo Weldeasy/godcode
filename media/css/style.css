@@ -191,10 +191,13 @@ h1{
 
 #datepicker1 {
 	width:120px;
+	text-align:center;
 	margin-right:17px;
 }
 #datepicker2 {
 	width:120px;
+	text-align:center;
+	margin-right:17px;
 }
 
 .zona_busqueda .caja_busqueda #landingForm .input_fecha {
