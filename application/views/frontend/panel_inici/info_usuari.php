@@ -22,40 +22,15 @@
 </div>
 
 <div class="infousuari">
-<h1 class="label_title">Usuaris</h1>
+<h1 class="label_title">Serveis dels usuaris</h1>
   <div class="un_info_usuari">
-  <p>Juan Fernadez</p>
-  	<img src="<?=base_url()?>media/users_profile/thumbs/anonimo.jpg"/>
-  	<p>Juan Fernadezdddddddddddddddddddddddddddddddddddddddd</p>
+    <p><b>Nom i cognom:</b>Juan Fernadez</p>
+    <img src="<?=base_url()?>media/users_profile/thumbs/anonimo.jpg"/>
+   <p><b>Correu :</b>juan@gmail.com</p>
+   <p><b>Població :</b>Granollers</p>
   </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
+  <div class="detail_servei_user">
+    <p><b>Nom :</b>Creació webs</p>
+    <p><b>Categoria :</b>Informàtica</p>
   </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-  <div class="un_info_usuari">
-  	<p>dd</p>
-  </div>
-   <div class="un_info_usuari">
-  	<p>1</p>
-  </div>
-</div>  
+</div>
