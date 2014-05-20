@@ -45,10 +45,10 @@ Class Servei extends CI_Model {
 			$this -> db -> where('s.cp = p.postal');
 		}
 		if($dataInici != null ){
-			$this -> db -> where('s.data_inici = '.$dataInici);
+			$this -> db -> where('s.data_inici <= '.$dataInici );
 		}
 		if($dataFi != null ){
-			$this -> db -> where('s.data_fi = '.$dataFi);
+			$this -> db -> where('s.data_fi >= '.$dataFi);
 		}
 		if($categoria != null ){
 			$this -> db -> where('s.categoria = '.$categoria);
