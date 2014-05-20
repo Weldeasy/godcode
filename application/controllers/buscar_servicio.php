@@ -8,7 +8,7 @@ class Buscar_servicio extends CI_Controller {
 	}
 	
   function index() {
-  	$data = array();
+ /* 	$data = array();
   	$ciutat = null;
     $dataInici = null;
     $dataFi = null;
@@ -27,7 +27,8 @@ class Buscar_servicio extends CI_Controller {
   		$categories = $_POST['categorias'];
   	}
   	$data['serveis'] = $this ->servei-> busca_serveis($ciutat,$dataInici,$dataFi,$categories);
-  	var_dump($data);
+  	var_dump($data);*/
+  	echo('hola');
   }
 }
 ?>
