@@ -4,7 +4,7 @@ class Buscar_servicio extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this ->load-> model('servei');
+		$this->load->model('servei');
 	}
 	
   function index() {
@@ -26,7 +26,7 @@ class Buscar_servicio extends CI_Controller {
   	if (isset($_POST['categorias'])){
   		$categories = $_POST['categorias'];
   	}
-  	/*$data['serveis'] = $this ->servei-> busca_serveis($ciutat,$dataInici,$dataFi,$categories);*/
+  	$data['serveis']=$this->servei->busca_serveis($ciutat,$dataInici,$dataFi,$categories);
   	var_dump($data);
   }
 }
