@@ -199,8 +199,7 @@ h1{
 	width:120px;
 	text-align:center;
 	margin-right:17px;
-}
-#categorias {
+[name=categorias] {
 	width:120px;
 	text-align:center;
 	margin-right:17px;
