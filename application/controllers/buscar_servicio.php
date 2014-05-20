@@ -2,10 +2,11 @@
 
 class Buscar_servicio extends CI_Controller {
 
-
-
-  function index()
-  {
+	function __construct() {
+		parent::__construct();
+	}
+	
+  function index() {
     echo "buscar_servicio";
   }
 ?>
