@@ -199,6 +199,13 @@ h1{
 	width:120px;
 	text-align:center;
 	margin-right:17px;
+<<<<<<< HEAD
+=======
+[name=categorias] {
+	width:120px;
+	text-align:center;
+	margin-right:17px;
+>>>>>>> ea6a0377de6f7dd852419517a2af2dcbc65b3a07
 }
 
 .zona_busqueda .caja_busqueda #landingForm .input_fecha {
