@@ -36,13 +36,13 @@ Class Servei extends CI_Model {
 		$this -> db -> select('*');
 		$this -> db -> from('servei s');
 		$this -> db -> from('poblacion p');
+		$this -> db -> where('s.cp = p.postal');
 
 		if (is_numeric($ciutat)) {
 			$this -> db -> where('s.cp', $ciutat); 
 		}
 		else {
 			$this -> db -> where('p.poblacion', $ciutat);
-			$this -> db -> where('s.cp = p.postal');
 		}
 		if($dataInici != null ){
 			$this -> db -> where('s.data_inici <= '.$dataInici );
