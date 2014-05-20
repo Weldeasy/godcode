@@ -173,12 +173,13 @@ h1{
   font-size: 12px;
   border: 0px;
   border-radius: 5px;
+  width: auto;
   height: 50px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #505050;
   box-shadow: 0px 3px 0px 0px rgba(150, 150, 150, 0.53);
-  margin-top: -30px;
+  
   margin-right: 5px;
 }
 
@@ -191,12 +192,16 @@ h1{
 }
 
 #datepicker1 {
-	width:120px;
+	width:auto;
+  padding-left: 3px;
+  padding-right: 3px;
 	text-align:center;
 	margin-right:17px;
 }
 #datepicker2 {
-	width:120px;
+	width:auto;
+  padding-left: 3px;
+  padding-right: 3px;
 	text-align:center;
 	margin-right:17px;
 }
