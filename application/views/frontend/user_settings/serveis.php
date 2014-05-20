@@ -1,11 +1,19 @@
 <html>
 	<head>
-		<title>Time Banking | La meva conte</title>
+		<title>Time Banking | Els meus serveis</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
+		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
-		
-		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+		<!--
+		foreach($output->css_files as $file) {
+			print '<link type="text/css" rel="stylesheet" href="'.$file.'" />';
+		}
+		foreach($output->js_files as $file) {
+			print '<script src="'.$file.'"></script>';
+		}*/
+		?-->
 	</head>
 	<body>
 		
@@ -24,7 +32,7 @@
 		</div>
 		
 		<div id="sidebar">
-			<a class="back" href="<?= base_url()?>">
+			<a class="back" href="<?= base_url()?>index.php/user_settings">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
 				<span>TORNAR</span>
@@ -37,7 +45,8 @@
 		</div>
 
 		<div id="page-wrapper">
+			<h1>Els meus serveis</h1>
+			<?php echo $html; /*echo $output->output*/ ?>
 		</div>
-
 	</body>
 </html>

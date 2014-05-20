@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Time Banking | La meva conte</title>
@@ -5,6 +6,9 @@
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		
+		<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
+		<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
+		<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	</head>
 	<body>
@@ -37,6 +41,9 @@
 		</div>
 
 		<div id="page-wrapper">
+		
+			<?=$missatge?>
+			
 		</div>
 
 	</body>

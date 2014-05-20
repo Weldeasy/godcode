@@ -33,6 +33,7 @@
                 <div class="col-xs-6">
                   Llistar Denúnices
                 </div>
+				
                 <div class="col-xs-6 text-right">
                   <i class="fa fa-arrow-circle-right"></i>
                 </div>

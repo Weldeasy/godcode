@@ -1,10 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Aboutus extends CI_Controller {
-	//session_start();
-	 
+class No_autentificat extends CI_Controller {
 	public function index() {
-	
 		$data = array();
 		$this->load->library('form_validation');
 		$this->load->helper('url');
@@ -14,10 +11,10 @@ class Aboutus extends CI_Controller {
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
 			$data['login_form'] = null;
-			$this->load->view('frontend/aboutus', $data);
+			$this->load->view('frontend/no_autentificat', $data);
 		} else {
 			$data['login_form'] = 'frontend/login_form';
 		}
-		$this->load->view('frontend/aboutus', $data);
+		$this->load->view('frontend/no_autentificat',$data);
 	}
 }

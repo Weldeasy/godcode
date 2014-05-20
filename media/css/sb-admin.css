@@ -171,3 +171,34 @@ table.tablesorter thead tr th:hover {
   margin-left: 15px;
   border: 0;
 }
+
+.tablaDatagrid{
+  margin-top: 15px;
+  position: absolute;
+  margin-left: 20px;
+}
+fieldset{
+  border: 1px solid #A3A3A3;
+}
+legend{
+  color:#000;
+  background: #E6E6E6; 
+  border: 1px solid #000;
+  padding: 2px 6px;
+}
+
+.ftitle{
+  font-size:14px;
+  font-weight:bold;
+  color:#666;
+  padding:5px 0;
+  margin-bottom:10px;
+  border-bottom:1px solid #ccc;
+}
+.fitem{
+  margin-bottom:5px;
+}
+.fitem label{
+  display:inline-block;
+  width:120px;
+}

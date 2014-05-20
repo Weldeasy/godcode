@@ -4,27 +4,44 @@
  */
 class Admin extends CI_Controller {
 	/**
-	 * [__construct del Admin]
+	 * [$session_data té la informació del login]
+	 * @var [array]
 	 */
 	 private $session_data; 
 	 
+	 /**
+	  * [__construct del Admin]
+	  */
 	function __construct(){
     	parent::__construct();
- 
-		$this->load->database();
-		$this->load->model('adm','',TRUE);
-		$this->session_data = $this->session->userdata('logged_in');
-	
+ 		$this->es_autentificat();//crida la funció aqui, perquè es validar tots els controladors del admin.
+		$this->load->database();//es carrega la BD
+		$this->load->model('administrador','adm',TRUE);//també el model del admin
 	}
+	/**
+	 * [es_autentificat si comprova si usuari es admin amb el estat es igual a 2]
+	 * @return [boolean] [description]
+	 */
 	function es_autentificat(){
-		if(!$this->session->userdata('logged_in') || $estat!=2) {
-			$this->load->view("backend/pages/no_autentificat");
+		$estat= $this->session->userdata('estat');
+		$this->session_data = $this->session->userdata('logged_in');
+
+		if(!$this->session_data || $estat!=2) {
+			 redirect('no_autentificat', 'refresh');
 			return FALSE;
 		}else{
 			return TRUE;
 		}
 	}
-
+	/**
+	 * [passemVistaAlPanelAdmin description]
+	 * @param  [array] $data [alla es guarda una vista carregada]
+	 * @return [void]       [es carrega una vista del panel del admin]
+	 */
+	public function passemVistaAlPanelAdmin($data){ //passem una vista concreta al admin.php
+		$data['email'] = $this->session_data['email'];//també passem el email del admin
+		$this->load->view('backend/admin',$data);	
+	}
 
 	/**
 	 * [index  admin panel]
@@ -33,50 +50,21 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-			if($this->es_autentificat()){
-				$data['email'] = $this->session_data['email'];
-				$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
-				$this->load->view('backend/admin',$data);
-			}
-		
+		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 
 	public function denuncies(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
-		$this->load->view('backend/admin',$data);
-	}
-	/**
-	 * [json llista denuncies]
-	 * @return [void] [Es carrega la vista json ]
-	 */
-	function jsonllistarDenuncies(){
-		echo $this->adm->llistarDenuncies();
-	}
-	/**
-	 * [jsonconeglarUsuaris description]
-	 * @return [void] [description]
-	 */
-	function jsonconeglarUsuaris(){
-		echo $this->adm->coneglarUsuaris();
-	}
-	/**
-	 * [jsonllistarCategoria description]
-	 * @return [void] [description]
-	 */
-	function jsonllistarCategoria(){
-		echo $this->adm->llistarCategoria();	
+		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
 	 * [congelarusuaris vista]
 	 * @return [void] [Es carrega la vista congelarusuaris]
 	 */
 	public function congelarusuaris(){  
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 
 	/**
@@ -84,50 +72,91 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista crearcategories]
 	 */
 	public function crearcategories(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
 	 * [configSaldo vista]
 	 * @return [void] [Es carrega la vista configSaldo]
 	 */
 	public function configSaldo(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
 	 * [zona vista]
 	 * @return [void] [Es carrega la vista zona]
 	 */
 	public function zona(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
 	 * [numServeis vista]
 	 * @return [void] [Es carrega la vista numServeis]
 	 */
 	public function numServeis(){	
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
 	 * [numServeisConsumit vista]
 	 * @return [void] [Es carrega la vista numServeisConsumit]
 	 */
 	public function numServeisConsumit(){
-		$data = array();
-		$data['email'] = $this->session_data['email'];
 		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
-		$this->load->view('backend/admin',$data);
+		$this->passemVistaAlPanelAdmin($data);
+	}
+	/**
+	 * SON LES VISTES QUE RETORNA JSON, UTILITZA PER CARREGAR-SE DATAGRID JEASYUI (/media/jquery/admin.js)
+	 */
+
+	/**
+	 * [json llista denuncies]
+	 * @return [void] [Es carrega la vista json ]
+	 */
+	function jsonllistarDenuncies(){
+		echo json_encode($this->adm->llistarDenuncies());
+	}
+	/**
+	 * [jsonconeglarUsuaris description]
+	 * @return [void] [description]
+	 */
+	function jsonconeglarUsuaris(){
+		echo json_encode($this->adm->coneglarUsuaris());
+	}
+	/**
+	 * [jsonllistarCategoria description]
+	 * @return [void] [description]
+	 */
+	function jsonllistarCategoria(){
+		echo json_encode($this->adm->llistarCategoria());	
+	}
+
+	function eliminarCategoria_control(){
+		if(isset($_POST['id'])){
+			$id=$_POST['id'];
+			echo json_encode($this->adm->eliminarCategoria($id));
+		}else{
+			echo json_encode("error al via post");
+		}
+	}
+	function crearCategoria_control(){
+		$nom=mysql_real_escape_string($_POST['nom_cat']);
+		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+		echo json_encode($this->adm->afegirCategoria($nom,$descripcio));
+	}
+	function actualitzarCategoria_control(){
+		$id=$_GET['id'];
+		$nom=mysql_real_escape_string($_POST['nom_cat']);
+		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+		echo json_encode($this->adm->actualitzarCategoria($nom,$descripcio,$id));
+	}
+	
+	function actualitzarUsuari_control(){
+		$id=$_GET['id'];
+		$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);
+		echo json_encode($this->adm->actualitzarUsuari($esta_congelat,$id));	
 	}
 }
 

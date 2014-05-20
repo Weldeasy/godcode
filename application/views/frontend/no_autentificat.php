@@ -9,8 +9,9 @@
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
   </head>
  <body>
  <div id='cssmenu'>
@@ -19,27 +20,31 @@
      <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
      <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
      <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-	 <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
+	 <?php
+	if ($login_form != null) {
+		echo $this->load->view($login_form);
+		?><li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li><?php
+	} else {
+		echo $this->load->view('frontend/welcome');
+	}
+?>
   </ul>
-  <?php echo $this->load->view($login_form); ?>
  </div>
- <form class="form-container">
-<div class="form-title"><h2>Contacte</h2></div>
-<div class="form-title">Nombre</div>
-<input class="form-field" type="text" name="firstname" /><br />
-<div class="form-title">Email</div>
-<input class="form-field" type="text" name="email" /><br />
-<div class="submit-container">
-<input class="submit-button" type="submit" value="Submit" />
-</div>
-</form>
-<div id="footer">
+ <div id="contenido_principal">
+  <div id="about_us">
+              <h1>NO AUTENTIFICAT</h1>
+              <hr />
+              <br />
+              <p> Sis plau, intenteu feu altre vegada, sino posi al contacte al admin </p>
+    
+  </div>
+    <div id="footer">
       <div id="separador_degradado">
         
       </div>
       <div class="contenido_footer">
-        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> </p>
+        <p>Esto es el footer</p>
       </div>
     </div>
-</body>
-</html>
+    
+</div>

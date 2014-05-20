@@ -19,7 +19,6 @@ h1{
   height: 45px;
   z-index: 9999; position: fixed; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
-
 #cssmenu ul {
   background-color: #05b5f5 ;
   height: 44px;
@@ -331,9 +330,9 @@ h1{
   width: 100%;
   height: auto;
   background: #585c54;
-    position: relative;
-    border-top: 2px solid white;
-  margin-top: 10%;
+  position: relative;
+  border-top: 2px solid white;
+  margin-top: 5%;
   clear: both;
 
 }
@@ -452,3 +451,54 @@ h1{
    background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
    color: #fff;
    }
+   
+#redondo {
+margin-right:200px;
+padding: 0;
+overflow: hidden;
+margin-top:5px;
+}
+
+#redondo>img{
+height:35px;    
+border-radius:40%;
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(../fonts/DroidSans.woff) format('woff');
+}
+.infousuari{
+  background-color:#1b8eb8;
+  border-radius:6px;
+  height: auto;
+  margin-top: 100px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.un_info_usuari{
+    background-color:white;
+    border-radius:12px;
+    margin-top: 15px;
+    height: auto;
+    max-width: 300px;
+    min-width: 300px;
+    margin-right: 15px;
+    margin-left: 15px;
+    display: inline-block;
+   -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    word-wrap:break-word;
+
+}
+
+
+.label_title{
+  text-align: center;
+  color: white;
+}

@@ -7,8 +7,38 @@ Class User extends CI_Model
 		
 		$this->load->database();
     }
+	
+	public function get_user_by_email($email) {
+		try {
+			$data = $this->db->query("SELECT * FROM usuari WHERE email='".$email."' LIMIT 1");
+			return $data->row();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	
+	public function update_perfil($email, $nom, $cognom, $sexe, $pr, $po, $cp, $desc, $foto) {
+		$actualitzar = array(
+		   'nom' => $nom,
+		   'cognom' => $cognom,
+		   'sexe' => $sexe,
+		   'provincia' => $pr,
+		   'poblacio' => $po,
+		   'cp' => $cp,
+		   'presentacio' => $desc,
+		   'foto' => $foto
+		);
+		try {
+			$this->db->where('email', $email);
+			$this->db->update('usuari', $actualitzar);
+			return true;
+		} catch (Exception $e) {
+			return false;
+		}
+	}
 	 
 	 public function add_user($imagen, $code) {
+		//FER TRANSACTION
 		$email_user = $this->input->post("email", TRUE);
 		$this->db->insert("usuari", array(
 			"email"=>$email_user,
@@ -80,7 +110,7 @@ Class User extends CI_Model
 	
 	function login($email, $password)
 	{
-		$this -> db -> select('l.id, l.email, l.password, u.es_admin, u.esta_congelat');
+		$this -> db -> select('l.id, l.email, l.password, u.es_admin, u.esta_congelat, u.foto');
 		$this -> db -> from('login l');
 		$this -> db -> from('usuari u');
 		$this -> db -> where('l.email', $email); 

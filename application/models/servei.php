@@ -6,6 +6,19 @@ Class Servei extends CI_Model {
 		$this->load->database();
     }
 	 
+	 public function get_serveis($id_user) {
+		$this -> db -> select('*');
+		$this -> db -> from('servei');
+		if ($id_user != null) {
+			$this -> db -> where('s.usuari', $id_user); 
+		}
+
+		$query = $this -> db -> get();
+		return $query->result();
+	 }
+	 
+	 
+	 
 	 public function add_servei() {
 		$this->db->insert("servei", array(
 			"descripcio"=>$this->input->post("descripcio", TRUE),

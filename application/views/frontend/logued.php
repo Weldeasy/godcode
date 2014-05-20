@@ -9,6 +9,9 @@
     <meta name="author" content="">
     <link href="<?=base_url()?>media/css/style.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="<?=base_url()?>media/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="<?=base_url()?>media/js/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<style>
 	.welcome_msg {
 		color:white;
@@ -34,9 +37,10 @@
    <ul>
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 	   <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-	   <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-	   <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-	   <li class="welcome_msg"><?php echo "Hola, ".$email; ?></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
+	   <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
+	   <li class="welcome_msg" id="redondo"><img id="userfoto" src="<?php echo base_url().'media/users_profile/thumbs/'.$foto; ?>" /></li>
+	   <li class="welcome_msg"><?php echo "Hola, 	".$email; ?></li>
 		<br/>
 		<a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><img src="<?= base_url()?>media/images/frontend/close_session.png" /></a>
 		<a class="user_settings" title="La meva conte" href="<?= base_url()?>index.php/user_settings"><img src="<?= base_url()?>media/images/frontend/user_settings.png" /></a>

@@ -7,10 +7,10 @@ class VerifyLogin extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-	define("USUARI", 1);
-	define("ADMIN", 2);
-	define("CONGELAT", 3);
-	define("NOVERIFICAT", 4);
+  	define("USUARI", 1);
+  	define("ADMIN", 2);
+  	define("CONGELAT", 3);
+  	define("NOVERIFICAT", 4);
     $this->load->model('user', '', TRUE);
   }
 
@@ -30,9 +30,9 @@ class VerifyLogin extends CI_Controller {
     } else {
 		 $session_data = $this->session->userdata('logged_in');
 		 $data['email'] = $session_data['email'];
+		 $data['foto'] = $session_data['foto'];
 		 $data['login_form'] = 'frontend/logued';
     }
-	$data['estat'] = $this->session->userdata('estat');
     redirect('inicio', 'refresh');
   }
   
@@ -53,7 +53,8 @@ class VerifyLogin extends CI_Controller {
           'id' => $row->id,
           'email' => $row->email,
 		  'es_admin' => $row->es_admin,
-          'esta_congelat' => $row->esta_congelat
+          'esta_congelat' => $row->esta_congelat,
+		  'foto' => $row->foto
         );
         $this->session->set_userdata('logged_in', $sess_array);
 		if ($sess_array['esta_congelat']==1) {

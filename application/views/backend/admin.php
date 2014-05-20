@@ -32,7 +32,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.easyui.min.js"></script>
 
     <script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
-    <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -63,7 +63,7 @@
                 <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
                 <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                <li><a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>

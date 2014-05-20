@@ -62,7 +62,6 @@
 	<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
 	<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 	<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
 </head>
@@ -72,51 +71,58 @@
 			<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 			<li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
 			<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-			<li class='active'><a href='#'><span>CONTACTA</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
 			<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li>
 		</ul>
-		<?php echo $this->load->view($login_form); ?>
 	</div>
 	<div id="container">
-		<center><h1><u>Formulari nou usuari</u></h1></center>
 		<?= form_open_multipart(base_url().'index.php/formularioregistro/validar', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
+		<center><h1><u>Formulari nou usuari</u></h1></center>
 		<table>
 		
-            <tr><td>
+            <tr><td colspan="3">
     		<?= form_label("Nom:", "", array('for'=>'nombre', 'class'=>$label_class)); ?>
-            </td><td>
+            </td></tr><tr><td>
     		<?= form_input($nom_opts); ?>
             </td><td>
     		<?= form_error("nombre"); ?>
             </td></tr>
+			
+			<tr><td colspan="3">&nbsp;</td></tr>
             
-            <tr><td>
+            <tr><td colspan="3">
             <?= form_label("Cognoms:", "", array('for'=>'apellidos', 'class'=>$label_class)); ?>
-            </td><td>
+            </td></tr><tr><td>
     		<?= form_input($cognoms_opts); ?>
             </td><td>
     		<?= form_error("apellidos"); ?>
             </td></tr>
 			
-			<tr><td>
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
+			<tr><td colspan="3">
             <?= form_label("Email:", "", array('for'=>'email', 'class'=>$label_class)); ?>
-            </td><td>
+            </td></tr><tr><td>
     		<?= form_input($email_opts); ?>
             </td><td>
     		<?= form_error("email"); ?>
             </td></tr>
 			
-			<tr><td>
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
+			<tr><td colspan="3">
             <?= form_label("Contrasenya:", "", array('for'=>'pass', 'class'=>$label_class)); ?>
-            </td><td>
+            </td></tr><tr><td>
     		<?= form_password($pass_opts); ?>
             </td><td>
     		<?= form_error("pass"); ?>
             </td></tr>
 			
-			<tr><td>
-            <?= form_label("Confirmar contrasenya:", "", array('for'=>'confirm_pass', 'class'=>$label_class)); ?>&nbsp;
-            </td><td>
+			<tr><td colspan="3">&nbsp;</td></tr>
+			
+			<tr><td colspan="3">
+            <?= form_label("Confirmar la contrasenya:", "", array('for'=>'confirm_pass', 'class'=>$label_class)); ?>&nbsp;
+            </td></tr><tr><td>
     		<?= form_password($confirm_pass_opts); ?>
             </td><td>
     		<?= form_error("confirm_pass"); ?>
@@ -126,7 +132,7 @@
 			
 			<tr><td>
             <?= form_label("Sexe:", "", array('for'=>'sexo', 'class'=>$label_class)); ?>
-            </td><td colspan="2">
+            </td><td>
             <label id="sexo1" <?php if ($sex_selected == "0") echo 'class="checkedd"'; ?> for="sexo1"><img src="<?= base_url(); ?>media/images/frontend/sr.png" title="Home" name="sexo1" onClick="changeClass(this)" /></label>
 			&nbsp;
     		<label id="sexo2" <?php if ($sex_selected == "1") echo 'class="checkedd"'; ?> for="sexo2"><img src="<?= base_url(); ?>media/images/frontend/sra.png" title="Dona" name="sexo2" onClick="changeClass(this)" /></label>
@@ -139,7 +145,7 @@
 					print form_radio("sexo", "1", TRUE, "id = 'sexo2_r'");
 				}
 			?>
-            </td></tr>
+            </td><td>&nbsp;</td></tr>
 			
 			<tr><td colspan="3">&nbsp;</td></tr>
 			
