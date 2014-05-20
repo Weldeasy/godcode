@@ -8,12 +8,11 @@ class Cercar_usuari extends CI_Controller {
 	}
 	
   function index() {
-    	if(isset($_POST['email_user'],$_POST['nom_user'])){
-    		$email_user = $_POST['email_user'];
-    		$nom_user = $_POST['nom_user'];
-        echo $nom_user."-".$email_user;
- //   	  $data['users']=$this->user->cercar_user_servei($email_user,$nom);
-   //     var_dump($data);
+    	if(isset($_POST['cercar_user'])){
+    		$cercar_user = $_POST['cercar_user'];
+        
+   $data['users']=$this->user->cercar_user_servei($cercar_user);
+        var_dump($data);
       }else{
         echo "no existe";
       }

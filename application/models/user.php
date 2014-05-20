@@ -16,9 +16,9 @@ Class User extends CI_Model
 			return;
 		}
 	}
-	public function cercar_user_servei($email_user,$nom){
+	public function cercar_user_servei($cercar_user){
 		try {
-			$data = $this->db->query('SELECT * FROM `usuari` WHERE (email LIKE "'.$email_user.'%" OR nom LIKE "'.$nom.'%")');
+			$data = $this->db->query('SELECT * FROM `usuari` WHERE (email LIKE "'.$cercar_user.'%" OR nom LIKE "'.$cercar_user.'%")');
 			return $data->row();
 		} catch (Exception $e) {
 			return;
