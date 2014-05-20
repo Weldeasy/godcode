@@ -199,10 +199,6 @@ h1{
 	width:120px;
 	text-align:center;
 	margin-right:17px;
-[name=categorias] {
-	width:120px;
-	text-align:center;
-	margin-right:17px;
 }
 
 .zona_busqueda .caja_busqueda #landingForm .input_fecha {
@@ -226,6 +222,7 @@ h1{
   border: 0px;
   border-radius: 4px;
   cursor: pointer;
+  margin-left:17px;
   /*
   -moz-box-shadow:inset 0px 0px 0px 1px #cc7618;
   -webkit-box-shadow:inset 0px 0px 0px 1px #cc7618;
