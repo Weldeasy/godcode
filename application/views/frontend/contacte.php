@@ -27,7 +27,7 @@
  <form class="form-container">
 <div class="form-title"><h2>Contacte</h2></div>
 <div class="form-title">Nombre</div>
-<input class="form-field" type="text" name="firstname" /><?= form_error("firstname"); ?><br />
+<input class="form-field" type="text" name="firstname" /><p><?= form_error("firstname"); ?></p><br />
 <div class="form-title">Email</div>
 <input class="form-field" type="text" name="email" /><?= form_error("email"); ?><br />
 <div class="form-title">Telefono</div>
