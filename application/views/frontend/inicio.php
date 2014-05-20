@@ -16,6 +16,7 @@
 	<script>
 	$(function() {
 	$( "#datepicker1" ).datepicker();
+	$("#datepicker2").datepicker();
 	});
 	</script>
     <title>Time Bank</title>
