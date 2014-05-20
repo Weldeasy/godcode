@@ -5,10 +5,10 @@ class Inicio extends CI_Controller {
   function __construct()
   {
     parent::__construct();
-	$this->load->helper('url');
-	$this->load->library('form_validation');
-	$this->load->helper(array('form'));
-	$this->load->model('categorias');
+  	$this->load->helper('url');
+  	$this->load->library('form_validation');
+  	$this->load->helper(array('form'));
+  	$this->load->model('categorias');
   }
 
   function index()
@@ -59,6 +59,7 @@ class Inicio extends CI_Controller {
     $data['contingut']=$this->load->view('frontend/panel_inici/aboutus',null,TRUE);
     $this->load->view('frontend/inicio', $data);
   }
+  
    function contacte(){
       $data = array();
       if($this->session->userdata('logged_in')) {
