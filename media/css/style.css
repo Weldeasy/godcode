@@ -164,7 +164,8 @@ h1{
   overflow: auto;
   margin-bottom: 15px;
   margin-right: 5px;
-  height: 50px;
+  height: auto;
+  margin-top: -30px;
 }
 
 .zona_busqueda .caja_busqueda #landingForm input, select  {
