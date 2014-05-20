@@ -38,6 +38,10 @@ Class Servei extends CI_Model {
 		$this -> db -> from('poblacion p');
 		$this -> db -> where('s.cp = p.postal');
 
+		if($categoria != null ){
+			$this -> db -> where('s.categoria = '.$categoria);
+		}
+		
 		if (is_numeric($ciutat)) {
 			$this -> db -> where('s.cp', $ciutat); 
 		}
@@ -50,9 +54,7 @@ Class Servei extends CI_Model {
 		if($dataFi != null ){
 			$this -> db -> where('s.data_fi >= '.$dataFi);
 		}
-		if($categoria != null ){
-			$this -> db -> where('s.categoria = '.$categoria);
-		}
+		
 
 		$query = $this -> db -> get();
 		return $query->result();
