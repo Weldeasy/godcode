@@ -189,6 +189,10 @@ h1{
   margin-right: 17px;
 }
 
+#datepicker1 {
+	width:60px;
+}
+
 .zona_busqueda .caja_busqueda #landingForm .input_fecha {
   width: 174px;
   background: url('../bundles/mambocarassets/img/redesign/landing_input_calendar.png') no-repeat scroll 7px 7px #FFFFFF;
