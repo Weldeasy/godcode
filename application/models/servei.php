@@ -33,9 +33,8 @@ Class Servei extends CI_Model {
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
-		/*$this -> db -> select('*');
+		$this -> db -> select('*');
 		$this -> db -> from('servei s');
-		$this -> db -> from('usuari u');
 		$this -> db -> from('poblacion p');
 
 		if (is_numeric($ciutat)) {
@@ -56,9 +55,7 @@ Class Servei extends CI_Model {
 		}
 
 		$query = $this -> db -> get();
-		return $query->result_array();*/
-		$data = array($ciutat, $dataInici, $dataFi, $categoria);
-		return $data;
+		return $query->result_array();
 	 }
 }
 ?>
