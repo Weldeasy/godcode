@@ -8,7 +8,7 @@
               <hr>
               <br>
               <div class="contenido_formulario_busqueda">
-                <form id="landingForm" action="buscar_servicio" method="post">
+                <form id="landingForm" action="<?php echo base_url(); ?>buscar_servicio" method="post">
 
                     <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
 					<input id="autocomplete_city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Códi postal o nom de la ciutat: " title="Per favor selecciona una ciutat" autofocus="" >
