@@ -26,7 +26,8 @@ class Buscar_servicio extends CI_Controller {
   	if (isset($_POST['categorias'])){
   		$categories = $_POST['categorias'];
   	}
-  	$data['serveis'] = $this ->servei-> busca_serveis($ciutat,$dataInici,$dataFi,$categories);
+  	/*$data['serveis'] = $this ->servei-> busca_serveis($ciutat,$dataInici,$dataFi,$categories);*/
   	var_dump($data);
   }
+}
 ?>
