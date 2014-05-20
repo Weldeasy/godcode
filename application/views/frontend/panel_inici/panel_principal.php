@@ -13,7 +13,7 @@
                     <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input id="autocomplete_city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Código postal ciudad: " required="" title="Por favor selecciona una ciudad" autofocus="" autocomplete="off">
 					<input type="text" name="datainici" id="datepicker1" placeholder="Serveis disponibles desde: ">
 					<input type="text" name="datafi" id="datepicker2" placeholder="Serveis disponibles fins el: ">
-					<?php echo form_dropdown('categorias', $categorias, 'placeholder="" autocomplete="off" class="input_fecha hasDatepicker id="date_to""'); ?>
+					<?php echo form_dropdown('categorias', $categorias, 'id="datepicker1"'); ?>
                     <input type="submit" value="Buscar servicios" class="bt_ver_coches">
                 </form>
               </div>
