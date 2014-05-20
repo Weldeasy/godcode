@@ -166,7 +166,7 @@ h1{
   height: 50px;
 }
 
-.zona_busqueda .caja_busqueda #landingForm input {
+.zona_busqueda .caja_busqueda #landingForm input, select  {
   float: left;
   position: relative;
   font-size: 12px;
