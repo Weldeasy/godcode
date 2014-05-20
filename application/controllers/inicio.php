@@ -71,7 +71,18 @@ class Inicio extends CI_Controller {
       $data['contingut']=$this->load->view('frontend/panel_inici/contacte',null,TRUE);
       $this->load->view('frontend/inicio', $data);
   }
-
+  function infousuari(){
+      $data = array();
+      if($this->session->userdata('logged_in')) {
+          $session_data = $this->session->userdata('logged_in');
+          $data['email'] = $session_data['email'];
+          $data['login_form'] = null;
+      }else{
+          $data['login_form'] = 'frontend/login_form';
+      }
+      $data['contingut']=$this->load->view('frontend/panel_inici/info_usuari',null,TRUE);
+      $this->load->view('frontend/inicio', $data);
+  }
   public function validar(){
         $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
         $this->form_validation->set_rules('firstname', 'Nombre', 'trim|required|callback__alpha_dash_space');
