@@ -130,12 +130,12 @@ h1{
 }
 
 .zona_busqueda .caja_busqueda h1 {
-  margin-top: 35px;
+  margin-top: 20px;
   font-family: 'Open Sans', sans-serif;
   font-size: 24pt;
   font-weight: 400;
   letter-spacing: 1px;
-  //text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
+  text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
   color: #fff;
 }
 
@@ -145,7 +145,7 @@ h1{
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 1px;
-  //text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
+  text-shadow: 0px 2px 0px rgba(150, 150, 150, 0.53);
   color: #fff;  
 }
 
