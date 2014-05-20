@@ -14,7 +14,7 @@
 					<input id="autocomplete_city" name="autocomplete_city" class="input_ciudad ui-autocomplete-input" type="text" placeholder="Códi postal o nom de la ciutat: " title="Per favor selecciona una ciutat" autofocus="" >
 					<input type="text" name="datainici" id="datepicker1" placeholder="disponibles desde: ">
 					<input type="text" name="datafi" id="datepicker2" placeholder="disponibles fins el: ">
-					<?php echo form_dropdown('categorias', $categorias, 'placeholder="Categories" id="categorias"'); ?>
+					<?php echo form_dropdown('categorias', $categorias, 'disabled="disabled" id="categorias"'); ?>
                     <input type="submit" value="Buscar servicios" class="bt_ver_coches">
                 </form>
               </div>
