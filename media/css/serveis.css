@@ -3,12 +3,12 @@
 	height:150px;
 	width:700px;
 	margin-top:30px;
-	margin-bottom:70px;
-	margin-left:280px;
+	margin-left:auto;
+	margin-right:auto;
+	position: relative;
 }
 
 .foto_servicio {
-
 	border:1px solid;
 	height:100%;
 	display:inline-block;
@@ -33,8 +33,9 @@
 }
 .precio_servicio {
 	border:1px solid;
-	float:right;
+	position:absolute;
+	bottom:0px;
+	right:0px;
 	height:50px;
 	width:120px;
-	margin-top:70px;
 }
