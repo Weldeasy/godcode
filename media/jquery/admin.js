@@ -14,7 +14,7 @@ $(document).ready(function(){
 			pagination:true, // mostrar una barra d'eines a la part inferior de paginació DataGrid
 			loadMsg:'', //message per carregar-se
 			height:'auto',
-			width:'1250',
+			width:'1000',
 		    columns:[[ 
 		        {field:'motiu',title:'Motiu',sortable:true,width:60,align:'left'},
 		        {field:'data_reclamacio',title:'Data reclamació',sortable:true,width:60,align:'left'},
@@ -30,19 +30,18 @@ $(document).ready(function(){
 		pagination:true, // mostrar una barra d'eines a la part inferior de paginació DataGrid
 		loadMsg:'', //message per carregar-se
 		height:'auto',
-		width:'1250',
+		width:'1000',
 	    columns:[[ 
 	        {field:'nom',title:'Nom',sortable:true,width:50,align:'left'},
 	        {field:'cognom',title:'Cognom',sortable:true,width:50,align:'left'},
 	    	{field:'esta_congelat',title:'Estat',sortable:true,width:50,align:'left',
 				formatter:function(value,row,index){
-				
 						if(value==1){
-                  			return '<span style="background-color:red;">Sí</span>';
+                  			return '<div style="border:1px solid;border-radius:50%;background-color:red;height:10px;width:10px;"></div>';
 						}else if(value==2){	
-                  			return '<span style="background-color:yellow;">Pendent</span>';
+                  			return '<div style="border:1px solid;border-radius:50%;background-color:yellow;height:10px;width:10px;"></div>';
 						}else if(value==0){	
-                  			return '<span>No</span>';
+                  			return '<div style="border:1px solid;border-radius:50%;background-color:green;height:10px;width:10px;"></div>';
 						}
               	},
 	    	},

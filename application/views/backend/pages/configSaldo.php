@@ -7,8 +7,11 @@
 	    </ol>  
 		<center>
 			<form id='formulari' action="<?php echo base_url(); ?>index.php/saldominim" method="post">
-				<input type="number" value='50' />
-				<input type="submit" value='Guardar' />
+				<div class="easyui-panel" style="width:400px;padding:20px 100px 60px 100px;">
+			        <label>Amount:</label>
+			        <input class="easyui-numberbox" value="100"></input>
+					<input type="submit" value='Guardar' />
+  			    </div>
 			</form>
 		</center>
 </div>
