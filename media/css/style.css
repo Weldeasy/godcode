@@ -410,7 +410,7 @@ h1{
    }
 .form-field:focus {
    background: #fff;
-   color: #ffffff;
+   color: black;
    }
 .form-container h2 {
    text-shadow: #fdf2e4 0 1px 0;
@@ -558,4 +558,8 @@ border-radius:40%;
 .user_settings img {
   margin-top:2px;
   width:20px;
+}
+.error_formulario_registro {
+  color:red;
+  font-size:14px;
 }

@@ -1,5 +1,4 @@
 <?php
-echo validation_errors();
 echo form_open('verifylogin',array('class'=>'login_form'));
 ?>
 	<input class="user_opt" type="text" value="<?= @set_value("email")?>" size="20" id="email" name="email"/>
