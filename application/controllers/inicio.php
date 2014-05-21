@@ -16,16 +16,15 @@ class Inicio extends CI_Controller {
     	$data = array();
     	$login_view = "";
     	$estat = $this->session->userdata('estat');
+
+              
     	if($this->session->userdata('logged_in')) {
-        		switch($estat) {
+            $session_data = $this->session->userdata('logged_in');
+            $data['email'] = $session_data['email'];
+            $data['foto'] = $session_data['foto'];
+            switch($estat) {
         			case '1':
         			case '2':
-        				$session_data = $this->session->userdata('logged_in');
-        				$data['email'] = $session_data['email'];
-        				$data['foto'] = $session_data['foto'];
-                $data['esta_loguejat']=true;
-
-
                 $categorias = $this->categorias->get_categorias();
                   foreach($categorias as $row) {
                     $data['categorias'][$row['id']] = $row['nom'];
@@ -96,6 +95,30 @@ class Inicio extends CI_Controller {
         $data['contingut']=$this->load->view('frontend/panel_inici/contacte',$data,TRUE);
         $this->load->view('frontend/inicio', $data);
   
+  }
+  function alpha_dash_space($str)
+  {
+    return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+  }
+  function validar_contacte(){
+        $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');
+        $this->form_validation->set_rules('nom', 'Nom', 'trim|required|callback__alpha_dash_space|alpha');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('missatge', 'Missatge', 'trim|required|callback__alpha_dash_space|alpha');
+
+
+        $this->form_validation->set_message('required', "Aquest camp es obligatori");
+        $this->form_validation->set_message('alpha', "Només s'accepten lletres");
+        $this->form_validation->set_message('valid_email', "Això no és una direcció de correu electronic.");
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->contacte();
+        }
+        else
+        {
+
+        }
   }
   function detailusuari() {
       if(isset($_POST['cercar_user'])){
