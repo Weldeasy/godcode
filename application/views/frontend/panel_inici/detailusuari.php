@@ -1,6 +1,6 @@
 
 <div class="infousuari">
-<?php // var_dump($users); ?>
+<?php var_dump($users); ?>
 
 <h1 class="label_title">Serveis dels usuaris</h1>
   <div class="un_info_usuari">

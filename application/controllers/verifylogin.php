@@ -52,9 +52,9 @@ class VerifyLogin extends CI_Controller {
         $sess_array = array(
           'id' => $row->id,
           'email' => $row->email,
-		  'es_admin' => $row->es_admin,
+		      'es_admin' => $row->es_admin,
           'esta_congelat' => $row->esta_congelat,
-		  'foto' => $row->foto
+		      'foto' => $row->foto
         );
         $this->session->set_userdata('logged_in', $sess_array);
 		if ($sess_array['esta_congelat']==1) {

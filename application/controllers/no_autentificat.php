@@ -9,8 +9,9 @@ class No_autentificat extends CI_Controller {
 		
 		if($this->session->userdata('logged_in')) {
 			$session_data = $this->session->userdata('logged_in');
-			$data['email'] = $session_data['email'];
-			$data['login_form'] = null;
+			$data['foto'] = $session_data['foto'];
+		    $data['email'] = $session_data['email'];
+		    $data['login_form'] = 'frontend/panel_inici/logued';
 			$this->load->view('frontend/no_autentificat', $data);
 		} else {
 			$data['login_form'] = 'frontend/login_form';

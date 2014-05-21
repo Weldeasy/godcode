@@ -16,14 +16,15 @@ class Detailusuari extends CI_Controller {
 
         if($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
+            $data['foto'] = $session_data['foto'];
             $data['email'] = $session_data['email'];
-            $data['login_form'] = null;
+            $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
             $data['login_form'] = 'frontend/login_form';
         }
         
         $data['users']=$this->user->cercar_user_servei($cercar_user);
-        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data['users']);
+        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data);
         $this->load->view('frontend/inicio', $data);
       }else{
         echo "no existe";
