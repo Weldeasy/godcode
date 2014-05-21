@@ -1,15 +1,15 @@
 <div class="servicio">
 	<div class="foto_servicio">
-		<img src="http://pesimoservicio.com/publicidad/QueBuenServicio.com.png" />
+		<img src="<?=base_url()?>media/images/categorias/<?=$categoria?>.jpg" />
 	</div>
 	<div class="cuerpo_servicio">
 		<div class="titulo_servicio">
-			TITULO
+			<?=$nom?>
 		</div>
 		<div class="descripcion_servicio">
-			<?php echo $descripcio; ?>
+			<?=$descripcio?>
 			<div class="precio_servicio">
-				<?php echo $preu; ?>
+				<?=$preu?>
 			</div>
 		</div>
 	</div>
