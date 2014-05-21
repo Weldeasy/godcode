@@ -44,15 +44,15 @@
 }
 .combo,
 .combo-panel {
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 .combo {
-  border-color: #95B8E7;
-  background-color: #ffffff;
+  border-color: #abafb8;
+  background-color: #fafafa;
 }
 .combo-arrow {
-  background-color: #E0ECFF;
+  background-color: #c7ccd1;
 }
 .combo-arrow-hover {
-  background-color: #eaf2ff;
+  background-color: #E6E6E6;
 }

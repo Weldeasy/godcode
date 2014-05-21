@@ -88,9 +88,9 @@
   white-space: nowrap;
   border-width: 1px;
   border-style: solid;
-  -moz-border-radius: 5px 5px 0 0;
-  -webkit-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 0px 0px 0 0;
+  -webkit-border-radius: 0px 0px 0 0;
+  border-radius: 0px 0px 0 0;
 }
 .tabs li.tabs-selected a.tabs-inner {
   font-weight: bold;
@@ -172,9 +172,9 @@
   margin: -1px 4px 0 0;
 }
 .tabs-header-bottom .tabs li a.tabs-inner {
-  -moz-border-radius: 0 0 5px 5px;
-  -webkit-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 0px 0px;
+  -webkit-border-radius: 0 0 0px 0px;
+  border-radius: 0 0 0px 0px;
 }
 .tabs-header-bottom .tabs-tool {
   top: 0;
@@ -232,16 +232,16 @@
 .tabs-header-left .tabs li a.tabs-inner {
   display: block;
   text-align: left;
-  -moz-border-radius: 5px 0 0 5px;
-  -webkit-border-radius: 5px 0 0 5px;
-  border-radius: 5px 0 0 5px;
+  -moz-border-radius: 0px 0 0 0px;
+  -webkit-border-radius: 0px 0 0 0px;
+  border-radius: 0px 0 0 0px;
 }
 .tabs-header-right .tabs li a.tabs-inner {
   display: block;
   text-align: left;
-  -moz-border-radius: 0 5px 5px 0;
-  -webkit-border-radius: 0 5px 5px 0;
-  border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 0px 0px 0;
+  -webkit-border-radius: 0 0px 0px 0;
+  border-radius: 0 0px 0px 0;
 }
 .tabs-panels-right {
   float: right;
@@ -260,66 +260,30 @@
   background: transparent;
 }
 .tabs-scroller-left {
-  background: #E0ECFF url('images/tabs_icons.png') no-repeat 1px center;
+  background: #c7ccd1 url('images/tabs_icons.png') no-repeat 1px center;
 }
 .tabs-scroller-right {
-  background: #E0ECFF url('images/tabs_icons.png') no-repeat -15px center;
+  background: #c7ccd1 url('images/tabs_icons.png') no-repeat -15px center;
 }
 .tabs li a.tabs-close {
   background: url('images/tabs_icons.png') no-repeat -34px center;
 }
 .tabs li a.tabs-inner:hover {
-  background: #eaf2ff;
-  color: #000000;
+  background: #E6E6E6;
+  color: #404040;
   filter: none;
 }
 .tabs li.tabs-selected a.tabs-inner {
-  background-color: #ffffff;
-  color: #0E2D5F;
-  background: -webkit-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
-  background: -moz-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
-  background: -o-linear-gradient(top,#EFF5FF 0,#ffffff 100%);
-  background: linear-gradient(to bottom,#EFF5FF 0,#ffffff 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#ffffff,GradientType=0);
-}
-.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner {
-  background: -webkit-linear-gradient(top,#ffffff 0,#EFF5FF 100%);
-  background: -moz-linear-gradient(top,#ffffff 0,#EFF5FF 100%);
-  background: -o-linear-gradient(top,#ffffff 0,#EFF5FF 100%);
-  background: linear-gradient(to bottom,#ffffff 0,#EFF5FF 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#EFF5FF,GradientType=0);
-}
-.tabs-header-left .tabs li.tabs-selected a.tabs-inner {
-  background: -webkit-linear-gradient(left,#EFF5FF 0,#ffffff 100%);
-  background: -moz-linear-gradient(left,#EFF5FF 0,#ffffff 100%);
-  background: -o-linear-gradient(left,#EFF5FF 0,#ffffff 100%);
-  background: linear-gradient(to right,#EFF5FF 0,#ffffff 100%);
-  background-repeat: repeat-y;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#ffffff,GradientType=1);
-}
-.tabs-header-right .tabs li.tabs-selected a.tabs-inner {
-  background: -webkit-linear-gradient(left,#ffffff 0,#EFF5FF 100%);
-  background: -moz-linear-gradient(left,#ffffff 0,#EFF5FF 100%);
-  background: -o-linear-gradient(left,#ffffff 0,#EFF5FF 100%);
-  background: linear-gradient(to right,#ffffff 0,#EFF5FF 100%);
-  background-repeat: repeat-y;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff,endColorstr=#EFF5FF,GradientType=1);
+  background-color: #fafafa;
+  color: #404040;
 }
 .tabs li a.tabs-inner {
-  color: #0E2D5F;
-  background-color: #E0ECFF;
-  background: -webkit-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
-  background: -moz-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
-  background: -o-linear-gradient(top,#EFF5FF 0,#E0ECFF 100%);
-  background: linear-gradient(to bottom,#EFF5FF 0,#E0ECFF 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#E0ECFF,GradientType=0);
+  color: #404040;
+  background-color: #c7ccd1;
 }
 .tabs-header,
 .tabs-tool {
-  background-color: #E0ECFF;
+  background-color: #c7ccd1;
 }
 .tabs-header-plain {
   background: transparent;
@@ -335,22 +299,22 @@
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-left .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-right .tabs li.tabs-selected a.tabs-inner {
-  border-color: #95B8E7;
+  border-color: #abafb8;
 }
 .tabs-p-tool a:hover,
 .tabs li a:hover.tabs-close,
 .tabs-scroller-over {
-  background-color: #eaf2ff;
+  background-color: #E6E6E6;
 }
 .tabs li.tabs-selected a.tabs-inner {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #fafafa;
 }
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner {
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid #fafafa;
 }
 .tabs-header-left .tabs li.tabs-selected a.tabs-inner {
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #fafafa;
 }
 .tabs-header-right .tabs li.tabs-selected a.tabs-inner {
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #fafafa;
 }

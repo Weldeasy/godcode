@@ -143,15 +143,15 @@
   top: 0;
 }
 .tree-node-proxy {
-  background-color: #ffffff;
-  color: #000000;
-  border-color: #95B8E7;
+  background-color: #fafafa;
+  color: #404040;
+  border-color: #abafb8;
 }
 .tree-node-hover {
-  background: #eaf2ff;
-  color: #000000;
+  background: #E6E6E6;
+  color: #404040;
 }
 .tree-node-selected {
-  background: #ffe48d;
-  color: #000000;
+  background: #84909c;
+  color: #fff;
 }

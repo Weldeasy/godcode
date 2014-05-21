@@ -49,11 +49,11 @@
   background: url('images/spinner_arrows.png') no-repeat -15px center;
 }
 .spinner {
-  border-color: #95B8E7;
+  border-color: #abafb8;
 }
 .spinner-arrow {
-  background-color: #E0ECFF;
+  background-color: #c7ccd1;
 }
 .spinner-arrow-hover {
-  background-color: #eaf2ff;
+  background-color: #E6E6E6;
 }
