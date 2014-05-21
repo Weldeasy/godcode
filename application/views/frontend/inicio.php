@@ -25,12 +25,23 @@
  <div id='cssmenu'>
 	<ul>
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
-		<li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
-	</ul>
-  <?php echo $this->load->view($login_form); ?>
+		<li class='active'><a href='<?= base_url()?>index.php/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/cercarusuari'><span>Usuaris</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
+	 <?php if(isset($esta_loguejat)){ ?>
+      <li class="welcome_msg" id="redondo"><img id="userfoto" src="<?php echo base_url().'media/users_profile/thumbs/'.$foto; ?>" /></li>
+     <li class="welcome_msg"><?php echo "Hola,  ".$email; ?></li>
+    <br/>
+    <a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><img src="<?= base_url()?>media/images/frontend/close_session.png" /></a>
+    <a class="user_settings" title="La meva conte" href="<?= base_url()?>index.php/user_settings"><img src="<?= base_url()?>media/images/frontend/user_settings.png" /></a>
+  <?php }else{ ?>
+    <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
+  <?php  } ?>
+
+  </ul>
+  <?php if(!isset($esta_loguejat)){ echo $this->load->view($login_form); } ?>
+ 
  </div>
 <?php echo $contingut; ?>
 

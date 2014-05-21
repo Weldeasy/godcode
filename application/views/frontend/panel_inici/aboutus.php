@@ -3,7 +3,10 @@
               <h1>SOBRE NOSALTRES</h1>
               <hr />
               <br />
-              <p>Godcode és una empresa impulsada per un jove grup de programadors web. Malgrat ser un grup tan jove, podem encarrilar qualsevol projecte gràcies a les nostres ganes i professionalitat. Tenim un gran ventall de projectes nostres, si vulgues més informació posi's en contacte amb nosaltres o miri en la nostra web.</p>
+              <p>Godcode és una empresa impulsada per un jove grup de programadors web. Malgrat ser un grup tan jove, podem encarrilar qualsevol projecte gràcies a les nostres ganes i professionalitat. Tenim un gran ventall de projectes nostres, si vulgues més informació posi's en contacte amb nosaltres o miri en la nostra web.
+Treballem una empresa de serveis informàtics, que entre d'altres serveis, es proposem un producte que consistirà en una plataforma Web de banc
+del temps (Time Banking).
+              </p>
               <table id="table_programadors">
                 <td>
                   <tr>

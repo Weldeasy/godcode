@@ -21,6 +21,7 @@ $(document).ready(function(){
 		        {field:'nom',title:'Denunciant',sortable:true,width:60,align:'left'},
 		    ]]
 	});
+
 	$('#congelarDatagrid').datagrid({
 	    url:urlGlobal+'/jsonconeglarUsuaris', //agafa dades des de servidor
 	    title:"Usuaris", //titol del taula
@@ -33,7 +34,7 @@ $(document).ready(function(){
 	    columns:[[ 
 	        {field:'nom',title:'Nom',sortable:true,width:50,align:'left'},
 	        {field:'cognom',title:'Cognom',sortable:true,width:50,align:'left'},
-	    	{field:'esta_congelat',title:'Es_congelat',sortable:true,width:50,align:'left',
+	    	{field:'esta_congelat',title:'Estat',sortable:true,width:50,align:'left',
 				formatter:function(value,row,index){
 				
 						if(value==1){
