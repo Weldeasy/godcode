@@ -537,6 +537,9 @@ border-radius:40%;
   text-align: center;
   color: white;
 }
+#page-wrapper {
+	margin-left:225px;
+}
 /*CSS LOGUED*/
 
 .welcome_msg {
