@@ -9,6 +9,7 @@ class Inicio extends CI_Controller {
   	$this->load->library('form_validation');
   	$this->load->helper(array('form'));
   	$this->load->model('categorias');
+    $this->load->model('user');
   }
 
   function index(){
@@ -110,7 +111,7 @@ class Inicio extends CI_Controller {
         }
         
         $data['users']=$this->user->cercar_user_servei($cercar_user);
-        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data);
+        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
         $this->load->view('frontend/inicio', $data);
       }else{
         echo "no existe";

@@ -17,18 +17,13 @@
  <body>
  <div id='cssmenu'>
    <ul>
-	<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
-     <li class='active'><a href='#'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-     <li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-     <li class='active'><a href='#'><span>CONTACTA</span></a></li>
-	 <?php
-	if ($login_form != null) {
-		echo $this->load->view($login_form);
-		?><li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRE'T</span></a></li><?php
-	} else {
-		echo $this->load->view('frontend/welcome');
-	}
-?>
+	     <li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
+      <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+      <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
+      <li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
+      <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
+      <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
+      <?php echo $this->load->view($login_form); ?>
   </ul>
  </div>
  <div id="contenido_principal">
@@ -37,15 +32,16 @@
               <hr />
               <br />
               <p> Sis plau, intenteu feu altre vegada, sino posi al contacte al admin </p>
-    
   </div>
     <div id="footer">
       <div id="separador_degradado">
         
       </div>
       <div class="contenido_footer">
-        <p>Esto es el footer</p>
+        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto, Alex Martin.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> </p>
       </div>
     </div>
+</body>
+</html>
     
 </div>

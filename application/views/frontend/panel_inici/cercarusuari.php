@@ -8,7 +8,7 @@
                <hr>
                <br>
                 <div class="contenido_formulario_busqueda">
-                  <form id="landingForm" action="<?php echo base_url(); ?>index.php/detailusuari" method="post">
+                  <form id="landingForm" action="<?php echo base_url(); ?>index.php/inicio/detailusuari" method="post">
                       <div class="centrar_form">
                         <input type="text" size='30' name='cercar_user' id='cercar_user' placeholder="Introdueix el teu correu o nom: " title="Sisplau introdueix el teu correu" />
                         <input type="submit" value="Buscar usuari" class="bt_ver_coches">
