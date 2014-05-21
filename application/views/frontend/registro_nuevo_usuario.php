@@ -69,11 +69,11 @@
 	<div id='cssmenu'>
 		<ul>
 			<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
-			<li class='active'><a href='<?= base_url()?>index.php/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-   			<li class='active'><a href='<?= base_url()?>index.php/cercarusuari'><span>Usuaris</span></a></li>
-			<li class='active'><a href='<?= base_url()?>index.php/aboutus/'><span>SOBRE GODCODE</span></a></li>
-			<li class='active'><a href='<?= base_url()?>index.php/contacte/'><span>CONTACTA</span></a></li>
- 		   <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
+    		<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
+			<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
+    		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
 		</ul>
 	</div>
 	<div id="container">
