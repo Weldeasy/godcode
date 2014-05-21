@@ -9,7 +9,6 @@
 }
 
 .foto_servicio {
-	border:1px solid;
 	height:100%;
 	display:inline-block;
 	width:150px;
@@ -17,22 +16,25 @@
 .foto_servicio img{
 	height:100%;
 	width:150px;
+	border-right:1px solid;
 }
 .cuerpo_servicio {
 	float:right;
 	width:77%;
+	display:inline-block;
 }
 
 .titulo_servicio {
-	border:1px solid;
-	
+	border-left:1px solid;
+	border-bottom:1px solid;
+	padding-left:5px;
 }
 .descripcion_servicio {
-	border:1px solid;
 	height:128px;
 }
 .precio_servicio {
-	border:1px solid;
+	border-top:1px solid;
+	border-left:1px solid;
 	position:absolute;
 	bottom:0px;
 	right:0px;

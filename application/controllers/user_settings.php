@@ -124,6 +124,7 @@ class User_settings extends CI_Controller {
 		foreach($serveis as $row) {
 			$data2 = array(
 			  'id' => $row->id,
+			  'nom' => $row->nom,
 			  'descripcio' => $row->descripcio,
 			  'preu' => $row->preu,
 			  'data_inici' => $row->data_inici,
