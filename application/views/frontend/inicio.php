@@ -24,11 +24,12 @@
  <body>
  <div id='cssmenu'>
 	<ul>
-		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
-    <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
-    <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
+		<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
+    
     <?php echo $this->load->view($login_form); ?>
   </ul>
  
