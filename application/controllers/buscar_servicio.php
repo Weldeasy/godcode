@@ -9,9 +9,11 @@ class Buscar_servicio extends CI_Controller {
 	}
 	
 	function index() {
-		$session_data = $this->session->userdata('logged_in');
-		$data['es_admin'] = $session_data['es_admin'];
 		$data = array();
+		$session_data = $this->session->userdata('logged_in');
+		$data['email'] = $session_data['email'];
+		$data['foto'] = $session_data['foto'];
+		$data['es_admin'] = $session_data['es_admin'];
 		$serveis = $this->buscar();
 		$html = "";
 
