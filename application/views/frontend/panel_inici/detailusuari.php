@@ -5,7 +5,7 @@
       <form id='formulari' method="post" action="<?=base_url()?>index.php/inicio/serveis_detail">
         <p><b>Nom i cognom:</b><?php echo $data->nom_usuari." ".$data->cognom; ?></p>
         <?php if($data->foto!=null){?>
-          <img src="<?=base_url()?>media/users_profile/thumbs/"<?php echo $data->foto ?>/>
+          <img src="<?=base_url() ?>media/users_profile/thumbs/<?php echo $data->foto.'"' ?>/>
         <?php }else{ ?>
           <img src="<?=base_url()?>media/users_profile/thumbs/anonimo.jpg"/>
         <?php } ?>
