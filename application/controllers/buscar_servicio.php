@@ -10,10 +10,6 @@ class Buscar_servicio extends CI_Controller {
 	
 	function index() {
 		$data = array();
-		$session_data = $this->session->userdata('logged_in');
-		$data['email'] = $session_data['email'];
-		$data['foto'] = $session_data['foto'];
-		$data['es_admin'] = $session_data['es_admin'];
 		$serveis = $this->buscar();
 		$html = "";
 
@@ -38,6 +34,10 @@ class Buscar_servicio extends CI_Controller {
 		$data['html'] = $html;
 		if($this->session->userdata('logged_in')) {
 			$data['login_form'] = 'frontend/panel_inici/logued';
+				$session_data = $this->session->userdata('logged_in');
+				$data['email'] = $session_data['email'];
+				$data['foto'] = $session_data['foto'];
+				$data['es_admin'] = $session_data['es_admin'];
 		} else {
 			$data['login_form'] = 'frontend/login_form';
 		}
