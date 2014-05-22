@@ -1,5 +1,6 @@
 body{
   background-color: #dedede;
+  height: auto;
 }
 h1{
   padding-top: 3%;
@@ -364,7 +365,7 @@ h1{
   position: absolute;
   border-top: 2px solid white;
   clear: both;
-  margin-top:300px;
+  margin-top:400px;
 
 }
 
