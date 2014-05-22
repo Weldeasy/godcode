@@ -309,6 +309,9 @@ h1{
 .welcome_msg {
 	color:white;
 	right:5px;
+  width: auto;
+  height: auto;
+  padding-right: 10px;
 	position:absolute;
 }
 .logout_b {
