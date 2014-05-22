@@ -63,7 +63,7 @@ a:focus {
 
 
 #user {
-	width:225px;
+	width:auto;
 	height:50px;
 	right:0px;
 	top:0px;
@@ -92,13 +92,14 @@ a:focus {
 	float:left;
     padding-top:10px;
 	padding-left:10px;
+	padding-right: 30px;
 }
 
 #user_nav {
 	display:none;
 	right:0px;
 	top:50px;
-	width:185px;
+	width:auto;
 	height:0px;
 	position:absolute;
 	border-left:1px solid grey;
