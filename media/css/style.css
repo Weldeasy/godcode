@@ -286,6 +286,7 @@ h1{
 }
 #contenido_principal{
   width: 100%;
+  position: relative;
 }
 #contenido_principal_izquierda{
   width: auto;
@@ -295,6 +296,7 @@ h1{
   margin-left: 20%;  
   float:left;
   padding-top: 20px;
+  position: relative;
 }
 #contenido_principal_derecha{
   display: block;
@@ -302,6 +304,7 @@ h1{
   width: auto;
   margin-right: 20%;
   padding-top: 20px;
+  position: relative;
 }
 .welcome_msg {
 	color:white;
