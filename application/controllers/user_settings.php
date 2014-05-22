@@ -142,11 +142,26 @@ class User_settings extends CI_Controller {
 	
 	$this->load->view('frontend/user_settings/serveis', $this->data);
 
-	
-
   }
   
-  public function editar_servei($id) {
+  public function validar_servei() {
+	$dades_servei = array(
+		"id" => $this->input->post("id"),
+		"nom" => $this->input->post("nom"),
+		"descripcio" => $this->input->post("descripcio"),
+		"preu" => $this->input->post("preu"),
+		"categoria" => $this->input->post("categoria")
+	);
+	
+	if ($this->servei->actualitzar_servei($dades_servei))
+		$missatge = "Servei actualitzat Ok!";
+	else
+		$missatge = "S'ha produit un error, torna a provar-ho.";
+		
+	$this->editar_servei($dades_servei['id'], $missatge);
+  }
+  
+  public function editar_servei($id, $missatge = null) {
 		$this -> db -> select('*');
 		$this -> db -> from('servei s');
 		$this -> db -> where('s.id = '.$id);
@@ -158,7 +173,15 @@ class User_settings extends CI_Controller {
 		$data['id'] = $dades_servei[0]->id;
 		$data['nom'] = $dades_servei[0]->nom;
 		$data['preu'] = $dades_servei[0]->preu;
+		$data['categoria'] = $dades_servei[0]->categoria;
 		$data['descripcio'] = $dades_servei[0]->descripcio;
+		
+		$categories = $this->categorias->get_categorias();
+		foreach ($categories as $valor) {
+			$data['categories'][$valor['id']] = $valor['nom'];
+		}
+		
+		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
 		$this->load->view("frontend/user_settings/editar_servei", $data);
 	}

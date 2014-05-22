@@ -8,7 +8,7 @@
 	
 	//Valor CI forms
 	$nom_opts = array(
-		'name' => 'nombre',
+		'name' => 'nom',
 		'value' => $nom,
 		'class' => $input_text_class,
 		'placeholder' => 'Indica el nom del servei..'
@@ -89,7 +89,9 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 		</div>
 
 		<div id="page-wrapper">
+			<?php if(isset($missatge)) print $missatge."<br>"; ?>
 			<?= form_open(base_url().'index.php/user_settings/validar_servei', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
+				<input type="hidden" name="id" value="<?=$id?>" />
 				<table class="center">
 					<tr><td colspan="3">
 					<?= form_label("Nom del servei:", "", array('for'=>'nom', 'class'=>$label_class)); ?>
@@ -98,6 +100,17 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 					<?= form_input($nom_opts); ?>
 					</td><td>
 					<?= form_error("nom"); ?>
+					</td></tr>
+					
+					<tr><td colspan="3">&nbsp;</td></tr>
+					
+					<tr><td colspan="3">
+					<?= form_label("Categoria:", "", array('for'=>'categoria', 'class'=>$label_class)); ?>
+					</td></tr>
+					<tr><td>
+					<?= form_dropdown('categoria', $categories, $categoria); ?>
+					</td><td>
+					<?= form_error("categoria"); ?>
 					</td></tr>
 					
 					<tr><td colspan="3">&nbsp;</td></tr>
@@ -115,13 +128,19 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 					<tr><td>&nbsp;</td></tr>
 					<tr><td colspan="2">
 					10&nbsp;<input id="range_value" type="range" value="<?=$preu?>" min="10" max="999" onChange="showValue(this.value);" />&nbsp;999
-					<input id="input_value" type="number" name="preu" value="<?=$preu?>" onChange="showValue2(this.value);" />
+					<input id="input_value" type="number" name="preu" max="999" value="<?=$preu?>" onChange="showValue2(this.value);" onKeyUp="showValue2(this.value);" />
 					<script>
 						function showValue(num)
 							$("#input_value").val(num);
 						function showValue2(num)
 							$("#range_value").val(num);
 					</script>
+					
+					<tr><td colspan="3">&nbsp;</td></tr>
+					
+					<tr><td colspan="3">
+						<?= form_submit('submit', 'Canviar', 'class = '.$submit); ?>
+					</td></tr>
 					
 					</td></tr>
 				</table>
