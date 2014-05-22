@@ -17,5 +17,5 @@
         <input type="hidden" value="<?php echo $data->email; ?>" name='email_user'/>
         <input type="submit" value='Ver Serveis' />
       </form>
-    </div>
   <?php } ?>
+</div>

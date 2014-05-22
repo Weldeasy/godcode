@@ -50,8 +50,7 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['total_denuncies']=$this->getNumeroDenuncies_control();
-		$data['panel_admin']=$this->load->view('backend/pages/panel_admin',$data, TRUE);
+		$data['panel_admin']=$this->load->view('backend/pages/panel_admin',null, TRUE);
 		$this->passemVistaAlPanelAdmin($data);
 	}
 
@@ -172,12 +171,6 @@ class Admin extends CI_Controller {
 		if($this->adm->setSaldoMinim($saldo_minim)){
 			$this->configSaldo();
 		}	
-	}
-
-
-	function getNumeroDenuncies_control(){
-		$array=$this->adm->getLlistarDenuncies();
-		return $array;
 	}
 
 	function getSaldoMinim_control(){
