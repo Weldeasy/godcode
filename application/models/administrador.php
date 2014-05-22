@@ -71,6 +71,18 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;
 	}
-
+	function getSaldoMinim(){
+		$query=$this->db->query('SELECT saldo_minim FROM banc_del_temps');
+		return $query->result();	
+	}
+	function setsaldominim($saldo_minim){
+		$query = $this->db->query('UPDATE banc_del_temps SET saldo_minim="'.$saldo_minim.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;	
+	}
 }
 ?>
