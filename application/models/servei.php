@@ -54,7 +54,7 @@ Class Servei extends CI_Model {
 		if ($ciutat != "") {
 			if (is_numeric($ciutat)) {
 				//$this -> db -> where('s.cp', $ciutat); 
-				$sql .= 'AND s.cp = '.$ciutat.' ';
+				$sql .= 'AND s.cp = "'.$ciutat.'" ';
 			}
 			else {
 				//$this -> db -> where('p.poblacion', $ciutat);
@@ -63,11 +63,11 @@ Class Servei extends CI_Model {
 		}
 		if($dataInici != '1970-01-01'){
 			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
-			$sql .= 'AND DATEDIFF( s.data_inici, '.$dataInici.') >=0 ';
+			$sql .= 'AND DATEDIFF( s.data_inici, "'.$dataInici.'") >=0 ';
 		}
 		if($dataFi != '1970-01-01'){
 			//$this -> db -> where('s.data_fi >= '.$dataFi);
-			$sql .= 'AND DATEDIFF( s.data_fi, '.$dataFi.') <= 0';
+			$sql .= 'AND DATEDIFF( s.data_fi, "'.$dataFi.'") <= 0';
 		}
 		//$query = $this->db->query($sql);
 
