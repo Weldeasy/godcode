@@ -136,9 +136,9 @@ class Inicio extends CI_Controller {
         }
         
         $data['users']=$this->user->cercar_user_servei($cercar_user);
-        if(){         
+      //  if(){         
             $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
-        }
+        //}
         $this->load->view('frontend/inicio', $data);
       }else{
         echo "no existe";
