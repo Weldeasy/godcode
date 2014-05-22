@@ -56,7 +56,7 @@ Class Servei extends CI_Model {
 			$this -> db -> where('p.poblacion', $ciutat);
 		}
 		if($dataInici != null ){
-			$this -> db -> where('DATEDIFF(s.data_inici,"'.$dataInici.'") >=0');
+			$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
 		}
 		if($dataFi != null ){
 			$this -> db -> where('s.data_fi >= '.$dataFi);
