@@ -19,7 +19,7 @@ Class User extends CI_Model
 	public function cercar_user_servei($cercar_user){
 		try {
 			$data = $this->db->query(
-				'SELECT  distinct cognom,poblacion,email,usuari.nom as nom_usuari
+				'SELECT  distinct foto,cognom,poblacion,email,usuari.nom as nom_usuari
 				 FROM usuari,poblacion
 				 where usuari.poblacio=poblacion.idpoblacion and 
 				 (usuari.email LIKE "'.$cercar_user.'%" OR usuari.nom LIKE "'.$cercar_user.'%")
