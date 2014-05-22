@@ -1,3 +1,4 @@
+ <?php echo ($es_admin); ?>
  <li class="welcome_msg" id="redondo"><img id="userfoto" src="<?php echo base_url().'media/users_profile/thumbs/'.$foto; ?>" /></li>
      <li class="welcome_msg"><?php echo "Hola,  ".$email; ?></li>
     <br/>
