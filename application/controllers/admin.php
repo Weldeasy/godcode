@@ -166,6 +166,7 @@ class Admin extends CI_Controller {
 			return $key->saldo_minim;
 		}
 	}	
+
 	function setSaldoMinim_control(){
 		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
 		if($this->adm->setSaldoMinim($saldo_minim)){
@@ -173,6 +174,23 @@ class Admin extends CI_Controller {
 		}	
 	}
 }
+	public function numero_denuncies(){
+			$data['total_denuncies']=$this->getNumeroDenuncies_control();
+			$this->passemVistaAlPanelAdmin($data);
+		}
 
+	function getNumeroDenuncies_control(){
+		$array=$this->adm->getLlistarDenuncies();
+		var_dump($array);
+		}
+
+	function getSaldoMinim_control(){
+		$array=$this->adm->getLlistarDenuncies();
+		$denuncies_num=0;
+		foreach ($array as $key) {
+			return $key->denuncies_num;
+		}
+	}	
+	}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
