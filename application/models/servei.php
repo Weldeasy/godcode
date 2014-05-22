@@ -70,7 +70,7 @@ Class Servei extends CI_Model {
 		}
 		$query = $this->db->query($sql);
 
-		$query = $this -> db -> get();
+		//$query = $this -> db -> get();
 		return $query->result();
 	 }
 }
