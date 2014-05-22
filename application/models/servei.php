@@ -47,7 +47,7 @@ Class Servei extends CI_Model {
 
 		$sql = "SELECT * FROM servei s, poblacion p WHERE s.cp = p.postal ";
 		
-		if($categoria != null ){
+		if($categoria != ""){
 			//$this -> db -> where('s.categoria = '.$categoria);
 			$sql .= 'AND s.categoria = '.$categoria.' ';
 		}
@@ -61,11 +61,11 @@ Class Servei extends CI_Model {
 				$sql .= 'AND p.poblacion = '.$ciutat.' ';
 			}
 		}
-		if($dataInici != null ){
+		if($dataInici != '1970-01-01'){
 			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
 			$sql .= 'DATEDIFF( s.data_inici, '.$dataInici.') >=0 ';
 		}
-		if($dataFi != null ){
+		if($dataFi != '1970-01-01'){
 			//$this -> db -> where('s.data_fi >= '.$dataFi);
 			$sql .= 'DATEDIFF( s.data_fi, '.$dataFi.') <=0';
 		}
