@@ -51,14 +51,15 @@ Class Servei extends CI_Model {
 			//$this -> db -> where('s.categoria = '.$categoria);
 			$sql .= 'AND s.categoria = '.$categoria.' ';
 		}*/
-		
-		if (is_numeric($ciutat)) {
-			//$this -> db -> where('s.cp', $ciutat); 
-			$sql .= 'AND s.cp = '.$ciutat.' ';
-		}
-		else {
-			//$this -> db -> where('p.poblacion', $ciutat);
-			$sql .= 'AND p.poblacion = '.$ciutat.' ';
+		if ($ciutat != "") {
+			if (is_numeric($ciutat)) {
+				//$this -> db -> where('s.cp', $ciutat); 
+				$sql .= 'AND s.cp = '.$ciutat.' ';
+			}
+			else {
+				//$this -> db -> where('p.poblacion', $ciutat);
+				$sql .= 'AND p.poblacion = '.$ciutat.' ';
+			}
 		}
 		/*if($dataInici != null ){
 			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
