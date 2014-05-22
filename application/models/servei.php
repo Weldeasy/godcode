@@ -49,7 +49,7 @@ Class Servei extends CI_Model {
 		
 		if($categoria != null ){
 			//$this -> db -> where('s.categoria = '.$categoria);
-			$sql += 'AND s.categoria = '.$categoria.' ';
+			$sql .= 'AND s.categoria = '.$categoria.' ';
 		}
 		
 		/*if (is_numeric($ciutat)) {
