@@ -29,7 +29,7 @@
  </div>
  <div id="contenido_principal">
   <div id="about_us">
-        <?php echo $html; ?>      
+        <?php //echo $html; ?>      
   </div>
     <div id="footer">
       <div id="separador_degradado">
