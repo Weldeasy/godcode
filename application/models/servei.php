@@ -58,7 +58,7 @@ Class Servei extends CI_Model {
 			}
 			else {
 				//$this -> db -> where('p.poblacion', $ciutat);
-				$sql .= 'AND p.poblacion = '.$ciutat.' ';
+				$sql .= 'AND p.poblacion = "'.$ciutat.'" ';
 			}
 		}
 		if($dataInici != '1970-01-01'){
