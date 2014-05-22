@@ -7,30 +7,59 @@ class Buscar_servicio extends CI_Controller {
 		$this->load->model('servei');
 	}
 	
-  function index() {
-  	$data = array();
-  	$ciutat = null;
-    $dataInici = null;
-    $dataFi = null;
-    $categories = null;
+	function index() {
+		$data = array();
+		$serveis = $this->buscar();
+		$html = "";
 
-  	if(isset($_POST['city'])){
-  		$ciutat = $_POST['city'];
-  	}
-  	if (isset($_POST['datainici'])){
-		$dataInici = date("Y-m-d", strtotime($_POST['datainici']));
-  	}
-  	if (isset($_POST['datafi'])){
-  		$dataFi = $_POST['datafi'];
-		$dataFi = date("Y-m-d", strtotime($_POST['datafi']));
-  	}
-  	if (isset($_POST['categorias'])){
-  		$categories = $_POST['categorias'];
-  	}
-  	$data['serveis']=$this->servei->busca_serveis($ciutat,$dataInici,$dataFi,$categories);
-  	echo('<pre>');
-	var_dump($data);
-  	echo('</pre>');
-  }
+		foreach($serveis as $row) {
+			$data2 = array(
+			  'id' => $row->id,
+			  'nom' => $row->nom,
+			  'descripcio' => $row->descripcio,
+			  'preu' => $row->preu,
+			  'data_inici' => $row->data_inici,
+			  'data_fi' => $row->data_fi,
+			  'disp_horaria' => $row->disp_horaria,
+			  'categoria' => $row->categoria,
+			  'usuari' => $row->usuari,
+			  'cp' => $row->cp
+			);
+
+			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+		}
+	
+	
+	$data['html'] = $html;
+	
+	$this->load->view('frontend/resultado_servicios', $data);
+	}
+	
+	function buscar() {
+		$data = array();
+		$ciutat = null;
+		$dataInici = null;
+		$dataFi = null;
+		$categories = null;
+
+		if(isset($_POST['city'])){
+			$ciutat = $_POST['city'];
+		}
+		if (isset($_POST['datainici'])){
+			$dataInici = date("Y-m-d", strtotime($_POST['datainici']));
+		}
+		if (isset($_POST['datafi'])){
+			$dataFi = $_POST['datafi'];
+			$dataFi = date("Y-m-d", strtotime($_POST['datafi']));
+		}
+		if (isset($_POST['categorias'])){
+			$categories = $_POST['categorias'];
+		}
+		
+		
+		return $this->servei->busca_serveis($ciutat,$dataInici,$dataFi,$categories);
+		
+		
+	}
 }
 ?>
