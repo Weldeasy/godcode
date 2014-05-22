@@ -85,7 +85,7 @@ a:focus {
 }
 #user span {
 	right:40px;
-	position:relative;
+	position:absolute;
 	line-height:50px;
 }
 #user img {
