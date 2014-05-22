@@ -19,7 +19,8 @@
    vertical-align: middle;
    min-width:300px;
    padding:20px;
-   padding-top:0px;
+   margin-top: 10%;
+   padding-top:5px;
 }
 #formulario_registro table {
 	margin-left:auto;
