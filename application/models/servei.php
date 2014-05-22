@@ -47,31 +47,33 @@ Class Servei extends CI_Model {
 
 		$sql = "SELECT * FROM servei s, poblacion p WHERE s.cp = p.postal ";
 		
-		if($categoria != null ){
+		if($categoria != ""){
 			//$this -> db -> where('s.categoria = '.$categoria);
 			$sql .= 'AND s.categoria = '.$categoria.' ';
 		}
-		
-		if (is_numeric($ciutat)) {
-			//$this -> db -> where('s.cp', $ciutat); 
-			$sql .= 'AND s.cp = '.$ciutat.' ';
+		if ($ciutat != "") {
+			if (is_numeric($ciutat)) {
+				//$this -> db -> where('s.cp', $ciutat); 
+				$sql .= 'AND s.cp = "'.$ciutat.'" ';
+			}
+			else {
+				//$this -> db -> where('p.poblacion', $ciutat);
+				$sql .= 'AND p.poblacion = "'.$ciutat.'" ';
+			}
 		}
-		else {
-			//$this -> db -> where('p.poblacion', $ciutat);
-			$sql .= 'AND p.poblacion = '.$ciutat.' ';
-		}
-		if($dataInici != null ){
+		if($dataInici != '1970-01-01'){
 			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
-			$sql .= 'DATEDIFF( s.data_inici, '.$dataInici.') >=0 ';
+			$sql .= 'AND DATEDIFF( s.data_inici, "'.$dataInici.'") >=0 ';
 		}
-		if($dataFi != null ){
+		if($dataFi != '1970-01-01'){
 			//$this -> db -> where('s.data_fi >= '.$dataFi);
-			$sql .= 'DATEDIFF( s.data_fi, '.$dataFi.') <=0 ';
+			$sql .= 'AND DATEDIFF( s.data_fi, "'.$dataFi.'") <= 0';
 		}
-		$query = $this->db->query($sql);
+		//$query = $this->db->query($sql);
 
 		//$query = $this -> db -> get();
-		return $query->result();
+		//return $query->result();
+		return $sql;
 	 }
 }
 ?>
