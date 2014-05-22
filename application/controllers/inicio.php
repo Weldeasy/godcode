@@ -25,6 +25,7 @@ class Inicio extends CI_Controller {
             switch($estat) {
         			case '1':
         			case '2':
+              echo $session_data['es_admin'];;
                 $categorias = $this->categorias->get_categorias();
                   foreach($categorias as $row) {
                     $data['categorias'][$row['id']] = $row['nom'];
