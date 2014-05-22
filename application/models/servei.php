@@ -40,38 +40,38 @@ Class Servei extends CI_Model {
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
-		/*$this -> db -> select(';');
+		$this -> db -> select(';');
 		$this -> db -> from('servei s');
 		$this -> db -> from('poblacion p');
-		$this -> db -> where('s.cp = p.postal');*/
+		$this -> db -> where('s.cp = p.postal');
 
-		$sql = "SELECT * FROM servei s, poblacion p WHERE s.cp = p.postal ";
+		//$sql = "SELECT * FROM servei s, poblacion p WHERE s.cp = p.postal ";
 		
 		if($categoria != ""){
-			//$this -> db -> where('s.categoria = '.$categoria);
-			$sql .= 'AND s.categoria = '.$categoria.' ';
+			$this -> db -> where('s.categoria = '.$categoria);
+			//$sql .= 'AND s.categoria = '.$categoria.' ';
 		}
 		if ($ciutat != "") {
 			if (is_numeric($ciutat)) {
-				//$this -> db -> where('s.cp', $ciutat); 
-				$sql .= 'AND s.cp = "'.$ciutat.'" ';
+				$this->db->where('s.cp', $ciutat); 
+				//$sql .= 'AND s.cp = "'.$ciutat.'" ';
 			}
 			else {
-				//$this -> db -> where('p.poblacion', $ciutat);
-				$sql .= 'AND p.poblacion = "'.$ciutat.'" ';
+				$this->db->where('p.poblacion', $ciutat);
+				//$sql .= 'AND p.poblacion = "'.$ciutat.'" ';
 			}
 		}
 		if($dataInici != '1970-01-01'){
-			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
-			$sql .= 'AND DATEDIFF( s.data_inici, "'.$dataInici.'") <=0 ';
+			$this->db->where('DATEDIFF( s.data_inici, '.$dataInici.') <=0');
+			//$sql .= 'AND DATEDIFF( s.data_inici, "'.$dataInici.'") <=0 ';
 		}
 		if($dataFi != '1970-01-01'){
-			//$this -> db -> where('s.data_fi >= '.$dataFi);
-			$sql .= 'AND DATEDIFF( s.data_fi, "'.$dataFi.'") >=0';
+			$this->db->where('s.data_fi >= '.$dataFi);
+			//$sql .= 'AND DATEDIFF( s.data_fi, "'.$dataFi.'") >=0';
 		}
-		$query = $this->db->query($sql);
+		//$query = $this->db->query($sql);
 
-		//$query = $this -> db -> get();
+		$query = $this->db->get();
 		return $query->result();
 		
 	 }
