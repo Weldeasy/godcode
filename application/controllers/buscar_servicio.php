@@ -13,7 +13,7 @@ class Buscar_servicio extends CI_Controller {
 		$serveis = $this->buscar();
 		$html = "";
 
-		/*foreach($serveis as $row) {
+		foreach($serveis as $row) {
 			$data2 = array(
 			  'id' => $row->id,
 			  'nom' => $row->nom,
@@ -31,15 +31,15 @@ class Buscar_servicio extends CI_Controller {
 		}
 	
 		
-		$data['html'] = $html;*/
+		$data['html'] = $html;
 		$data['login_form'] = 'frontend/login_form';
-		/*if($this->session->userdata('logged_in')) {
+		if($this->session->userdata('logged_in')) {
 			$data['login_form'] = 'frontend/panel_inici/logued';
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
-		}*/
+		}
 		//$this->load->view('frontend/resultado_servicios', $data);
 		echo "<pre>";
 		var_dump($data);
