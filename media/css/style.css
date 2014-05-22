@@ -356,7 +356,7 @@ h1{
   background: #585c54;
   position: absolute;
   border-top: 2px solid white;
-  margin-top: 20%;
+  bottom:0;
   clear: both;
 
 }
@@ -364,7 +364,7 @@ h1{
 .contenido_footer{
   width: 100%;
   height: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   text-align:center;
   padding-left: 5%;
   padding-right: 5%;
