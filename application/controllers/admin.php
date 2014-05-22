@@ -172,14 +172,7 @@ class Admin extends CI_Controller {
 			$this->configSaldo();
 		}	
 	}
-
-	function getSaldoMinim_control(){
-		$array=$this->adm->getLlistarDenuncies();
-		$denuncies_num=0;
-		foreach ($array as $key) {
-			return $key->denuncies_num;
-		}
-	}	
-	}
+		
+}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
