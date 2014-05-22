@@ -6,6 +6,7 @@
 	margin-left:auto;
 	margin-right:auto;
 	position: relative;
+	border-bottom:1px solid;
 }
 
 .foto_servicio {
@@ -56,5 +57,6 @@
 	width:100%;
 	padding-bottom:10px;
 	padding-top:10px;
-	border-bottom:1px solid;
+	margin-bottom:-2px;
+	text-align:center;
 }

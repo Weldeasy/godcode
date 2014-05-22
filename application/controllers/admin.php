@@ -50,7 +50,7 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
+		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', $data, TRUE);
 		$this->passemVistaAlPanelAdmin($data);
 	}
 
@@ -159,6 +159,10 @@ class Admin extends CI_Controller {
 		$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);
 		echo json_encode($this->adm->actualitzarUsuari($esta_congelat,$id));	
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
 	function getSaldoMinim_control(){
 		$array=$this->adm->getSaldoMinim();
 		$saldo_minim=0;
@@ -166,13 +170,38 @@ class Admin extends CI_Controller {
 			return $key->saldo_minim;
 		}
 	}	
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
 	function setSaldoMinim_control(){
 		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
 		if($this->adm->setSaldoMinim($saldo_minim)){
 			$this->configSaldo();
 		}	
 	}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 05ff5ed... changes admin
+>>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
 }
+	public function numero_denuncies(){
+			return $this->getNumeroDenuncies_control();
+		}
 
+	function getNumeroDenuncies_control(){
+		$array=$this->adm->getLlistarDenuncies();
+		var_dump($array);
+		}
+
+	function getSaldoMinim_control(){
+		$array=$this->adm->getLlistarDenuncies();
+		$denuncies_num=0;
+		foreach ($array as $key) {
+			return $key->denuncies_num;
+		}
+	}	
+	}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
