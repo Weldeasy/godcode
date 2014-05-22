@@ -508,7 +508,7 @@ border-radius:40%;
     background-color:white;
     border-radius:12px;
     margin-top: 15px;
-    height: 200px;
+    height: auto;
     width: 300px;  
     margin-right: 15px;
     margin-left: 15px;
@@ -518,21 +518,6 @@ border-radius:40%;
     word-wrap:break-word;
 }
 
-
-.detail_servei_user{
-    background-color:white;
-    border-radius:12px;
-    margin-top: -145px;
-    height: auto;
-    width: 800px;
-    margin-right: 15px;
-    margin-left: 355px;
-   -webkit-box-shadow: 0 8px 6px -6px black;
-    -moz-box-shadow: 0 8px 6px -6px black;
-    box-shadow: 0 8px 6px -6px black;
-    word-wrap:break-word;
-    position: absolute;
-}
 .label_title{
   text-align: center;
   color: white;

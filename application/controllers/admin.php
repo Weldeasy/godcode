@@ -80,7 +80,8 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista configSaldo]
 	 */
 	public function configSaldo(){
-		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',null, TRUE);
+		$data['saldo_minim_BD']=$this->getSaldoMinim_control();
+		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',$data, TRUE);
 		$this->passemVistaAlPanelAdmin($data);
 	}
 	/**
@@ -157,6 +158,19 @@ class Admin extends CI_Controller {
 		$id=$_GET['id'];
 		$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);
 		echo json_encode($this->adm->actualitzarUsuari($esta_congelat,$id));	
+	}
+	function getSaldoMinim_control(){
+		$array=$this->adm->getSaldoMinim();
+		$saldo_minim=0;
+		foreach ($array as $key) {
+			return $key->saldo_minim;
+		}
+	}	
+	function setSaldoMinim_control(){
+		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
+		if($this->adm->setSaldoMinim($saldo_minim)){
+			$this->configSaldo();
+		}	
 	}
 }
 

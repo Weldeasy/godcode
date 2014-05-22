@@ -18,11 +18,24 @@ Class User extends CI_Model
 	}
 	public function cercar_user_servei($cercar_user){
 		try {
-			$data = $this->db->query('SELECT * FROM `usuari` WHERE (email LIKE "'.$cercar_user.'%" OR nom LIKE "'.$cercar_user.'%")');
-			return $data->row();
+			$data = $this->db->query(
+				'SELECT  distinct cognom,poblacion,email,usuari.nom as nom_usuari
+				 FROM usuari,poblacion
+				 where usuari.poblacio=poblacion.idpoblacion and 
+				 (usuari.email LIKE "'.$cercar_user.'%" OR usuari.nom LIKE "'.$cercar_user.'%")
+				');
+			return $data->result();
 		} catch (Exception $e) {
 			return;
 		}
+	}
+	function servei_user($email){
+		$data = $this->db->query(
+			'SELECT  distinct data_inici,data_fi,disp_horaria,preu,servei.descripcio as descipcio_servei,categoria_servei.nom as nom_categoria 
+			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
+			 and usuari.email="'.$email.'"');
+
+		return $data->result();
 	}
 	
 	public function update_perfil($email, $nom, $cognom, $sexe, $pr, $po, $cp, $desc, $foto) {
