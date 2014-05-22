@@ -30,9 +30,9 @@ class Buscar_servicio extends CI_Controller {
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	
-	
-		$data['html'] = $html;
-		$data['login_form'] = 'frontend/login_form';*/
+		
+		$data['html'] = $html;*/
+		$data['login_form'] = 'frontend/login_form';
 		/*if($this->session->userdata('logged_in')) {
 			$data['login_form'] = 'frontend/panel_inici/logued';
 			$session_data = $this->session->userdata('logged_in');
