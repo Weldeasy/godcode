@@ -22,6 +22,7 @@ class Inicio extends CI_Controller {
             $session_data = $this->session->userdata('logged_in');
             $data['email'] = $session_data['email'];
             $data['foto'] = $session_data['foto'];
+            $data['es_admin'] = $session_data['es_admin'];
             switch($estat) {
         			case '1':
         			case '2':
