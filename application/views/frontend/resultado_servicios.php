@@ -23,7 +23,7 @@
     <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
     
-    <?php echo $this->load->view($login_form, null); ?>
+    <?php echo $this->load->view($login_form, null, true); ?>
   </ul>
  </div>
  <div id="contenido_principal">
