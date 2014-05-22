@@ -18,17 +18,18 @@ class Buscar_servicio extends CI_Controller {
   		$ciutat = $_POST['city'];
   	}
   	if (isset($_POST['datainici'])){
-  		$dataInici = $_POST['datainici'];
+		$dataInici = date("Y-m-d", strtotime($_POST['datainici']));
   	}
   	if (isset($_POST['datafi'])){
   		$dataFi = $_POST['datafi'];
+		$dataFi = date("Y-m-d", strtotime($_POST['datafi']));
   	}
   	if (isset($_POST['categorias'])){
   		$categories = $_POST['categorias'];
   	}
   	$data['serveis']=$this->servei->busca_serveis($ciutat,$dataInici,$dataFi,$categories);
   	echo('<pre>');
-  	var_dump($data);
+	var_dump($data);
   	echo('</pre>');
   }
 }
