@@ -8,7 +8,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="">
-    
+    <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+	<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
     <link href="navbar-fixed-top.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -23,7 +24,7 @@
     <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
     
-    <?php echo $this->load->view($login_form, null, true); ?>
+    <?php echo $this->load->view($login_form); ?>
   </ul>
  </div>
  <div id="contenido_principal">
