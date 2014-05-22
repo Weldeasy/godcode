@@ -66,7 +66,7 @@ Class Servei extends CI_Model {
 		}
 		if($dataFi != null ){
 			//$this -> db -> where('s.data_fi >= '.$dataFi);
-			$sql .= 'DATEDIFF( s.data_fi, '.$dataFi.') <=0 ';
+			$sql .= 'DATEDIFF( s.data_fi, '.$dataFi.') <=0';
 		}
 		$query = $this->db->query($sql);
 

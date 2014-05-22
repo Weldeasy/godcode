@@ -15,8 +15,8 @@
 	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script>
 	$(function() {
-		$("#datepicker1").datepicker({ altFormat: "yyyy-mm-dd" });
-		$("#datepicker2").datepicker({ altFormat: "yyyy-mm-dd" });
+		$("#datepicker1").datepicker({ appendText: "" });
+		$("#datepicker2").datepicker({ appendText: "" });
 	});
 	</script>
     <title>Time Bank</title>
