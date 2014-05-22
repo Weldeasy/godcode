@@ -336,6 +336,7 @@ h1{
   display: block;
   background-color: white;
   margin-bottom: 100px;
+  position: relative;
 
 }
 #about_us p{
@@ -361,6 +362,7 @@ h1{
   border-top: 2px solid white;
   bottom:0;
   clear: both;
+  margin-top:100px;
 
 }
 
