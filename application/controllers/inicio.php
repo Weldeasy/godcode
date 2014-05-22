@@ -2,6 +2,8 @@
 session_start();
 class Inicio extends CI_Controller {
 
+  private $data = array();
+
   function __construct()
   {
     parent::__construct();
@@ -10,23 +12,21 @@ class Inicio extends CI_Controller {
   	$this->load->helper(array('form'));
   	$this->load->model('categorias');
     $this->load->model('user');
+    $session_data = $this->session->userdata('logged_in');
+    $this->data['email'] = $session_data['email'];
+    $this->data['foto'] = $session_data['foto'];
+    $this->data['es_admin'] = $session_data['es_admin'];
   }
 
   function index(){
     	$data = array();
     	$login_view = "";
     	$estat = $this->session->userdata('estat');
-
-              
     	if($this->session->userdata('logged_in')) {
-            $session_data = $this->session->userdata('logged_in');
-            $data['email'] = $session_data['email'];
-            $data['foto'] = $session_data['foto'];
-            $data['es_admin'] = $session_data['es_admin'];
+            $data=$this->data;
             switch($estat) {
         			case '1':
         			case '2':
-              echo $session_data['es_admin'];;
                 $categorias = $this->categorias->get_categorias();
                   foreach($categorias as $row) {
                     $data['categorias'][$row['id']] = $row['nom'];
@@ -62,8 +62,7 @@ class Inicio extends CI_Controller {
       $data = array();
         if($this->session->userdata('logged_in')) {
           $session_data = $this->session->userdata('logged_in');
-          $data['foto'] = $session_data['foto'];
-          $data['email'] = $session_data['email'];
+          $data=$this->data;
           $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
           $data['login_form'] = 'frontend/login_form';
@@ -75,9 +74,8 @@ class Inicio extends CI_Controller {
       $data = array();
         if($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
-           $data['foto'] = $session_data['foto'];
-          $data['email'] = $session_data['email'];
-          $data['login_form'] = 'frontend/panel_inici/logued';
+            $data=$this->data;
+            $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
             $data['login_form'] = 'frontend/login_form';
         }
@@ -87,10 +85,8 @@ class Inicio extends CI_Controller {
   public function contacte() {
         $data = array();
         if($this->session->userdata('logged_in')) {
-          $session_data = $this->session->userdata('logged_in');
-         $data['foto'] = $session_data['foto'];
-          $data['email'] = $session_data['email'];
-          $data['login_form'] = 'frontend/panel_inici/logued';
+           $data=$this->data;
+           $data['login_form'] = 'frontend/panel_inici/logued';
         } else {
           $data['login_form'] = 'frontend/login_form';
         }
@@ -127,9 +123,7 @@ class Inicio extends CI_Controller {
         $cercar_user = $_POST['cercar_user'];  
 
         if($this->session->userdata('logged_in')) {
-            $session_data = $this->session->userdata('logged_in');
-            $data['foto'] = $session_data['foto'];
-            $data['email'] = $session_data['email'];
+            $data=$this->data;
             $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
             $data['login_form'] = 'frontend/login_form';
@@ -148,8 +142,7 @@ class Inicio extends CI_Controller {
 
         if($this->session->userdata('logged_in')) {
             $session_data = $this->session->userdata('logged_in');
-            $data['foto'] = $session_data['foto'];
-            $data['email'] = $session_data['email'];
+            $data=$this->data;
             $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
             $data['login_form'] = 'frontend/login_form';
@@ -167,8 +160,7 @@ class Inicio extends CI_Controller {
       $data = array();
       if($this->session->userdata('logged_in')) {
         $session_data = $this->session->userdata('logged_in');
-        $data['foto'] = $session_data['foto'];
-        $data['email'] = $session_data['email'];
+        $data=$this->data;
         $data['login_form'] = 'frontend/panel_inici/logued';
       }else{
         $data['login_form'] = 'frontend/login_form';
