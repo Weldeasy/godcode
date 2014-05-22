@@ -145,20 +145,39 @@ class User_settings extends CI_Controller {
   }
   
   public function validar_servei() {
-	$dades_servei = array(
-		"id" => $this->input->post("id"),
-		"nom" => $this->input->post("nom"),
-		"descripcio" => $this->input->post("descripcio"),
-		"preu" => $this->input->post("preu"),
-		"categoria" => $this->input->post("categoria")
-	);
+  
+	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
+	$this->form_validation->set_rules('days', 'Dias', 'required');
+	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	
-	if ($this->servei->actualitzar_servei($dades_servei))
-		$missatge = "Servei actualitzat Ok!";
+	if ($this->form_validation->run() == FALSE)
+	{
+		$this->editar_servei($this->input->post("id"));
+	}
 	else
-		$missatge = "S'ha produit un error, torna a provar-ho.";
+	{
+		$disponibilitat_horaria = $this->input->post("hores");
+		$disponibilitat_dies = "";
+		foreach ($this->input->post("days") as $key => $value) {
+			$disponibilitat_dies .= $this->input->post("days")[$key].";";
+		}
+		$dades_servei = array(
+			"id" => $this->input->post("id"),
+			"nom" => $this->input->post("nom"),
+			"descripcio" => $this->input->post("descripcio"),
+			"preu" => $this->input->post("preu"),
+			"categoria" => $this->input->post("categoria"),
+			"disp_horaria" => $disponibilitat_horaria,
+			"disp_dies" => $disponibilitat_dies
+		);
 		
-	$this->editar_servei($dades_servei['id'], $missatge);
+		if ($this->servei->actualitzar_servei($dades_servei))
+			$missatge = "Servei actualitzat Ok!";
+		else
+			$missatge = "S'ha produit un error, torna a provar-ho.";
+			
+		$this->editar_servei($dades_servei['id'], $missatge);
+	}
   }
   
   public function editar_servei($id, $missatge = null) {
@@ -168,11 +187,21 @@ class User_settings extends CI_Controller {
 		$query = $this -> db -> get();
 		$dades_servei = $query->result();
 		
+		$dies = explode(';', $dades_servei[0]->disp_dies);
+		$hores = explode('-', $dades_servei[0]->disp_horaria);
+		$hora1 = explode(':', $hores[0]);
+		$hora1 = $hora1[0];
+		$hora2 = explode(':', $hores[1]);
+		$hora2 = $hora2[0];
+		
 		$data = array();
 		$data['email'] = $this->data['email'];
 		$data['id'] = $dades_servei[0]->id;
 		$data['nom'] = $dades_servei[0]->nom;
 		$data['preu'] = $dades_servei[0]->preu;
+		$data['hora_inici'] = $hora1;
+		$data['hora_fi'] = $hora2;
+		$data['disponibilitat_dies'] = $dies;
 		$data['categoria'] = $dades_servei[0]->categoria;
 		$data['descripcio'] = $dades_servei[0]->descripcio;
 		

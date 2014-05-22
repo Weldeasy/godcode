@@ -40,24 +40,33 @@
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
-		
-		 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
- <script>
-$(function() {
-$( "#slider-range" ).slider({
-range: true,
-min: 10,
-max: 999,
-values: [ 75, 300 ],
-slide: function( event, ui ) {
-$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-}
-});
-$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-" - $" + $( "#slider-range" ).slider( "values", 1 ) );
-});
-</script>
+		<script>var hora_inici = <?php echo json_encode($hora_inici); ?>;var hora_fi = <?php echo json_encode($hora_fi); ?>;</script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+						$(function() {
+						$( "#slider-hores" ).slider({
+						range: true,
+						min: 00,
+						max: 24,
+						values: [ hora_inici, hora_fi ],
+						slide: function( event, ui ) {
+						$( "#hores" ).val( ui.values[ 0 ] + ":00 - " + ui.values[ 1 ] + ":00" );
+						}
+						});
+						$( "#hores" ).val( $( "#slider-hores" ).slider( "values", 0 ) +
+						":00 - " + $( "#slider-hores" ).slider( "values", 1 ) + ":00" );
+						});
+						</script>
+<style>
+	.page_wrapper {
+		overflow:auto;
+		width:100%;
+	}
+	#slider-hores {
+		width:300px;
+	}
+</style>
 	</head>
 	<body>
 		
@@ -138,10 +147,37 @@ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
 					
 					<tr><td colspan="3">&nbsp;</td></tr>
 					
-					<tr><td colspan="3">
-						<?= form_submit('submit', 'Canviar', 'class = '.$submit); ?>
+					<tr><td colspan="2">
+					<?= form_label("Disponibilitat horaria:", "", array('for'=>'disponibilitat', 'class'=>$label_class)); ?>
+					</td></tr>				
+					
+					<tr><td>
+						<input type="checkbox" name="days[]" value="L" <?php if (in_array('L',$disponibilitat_dies)) print "checked"; ?> >Dilluns&nbsp;
+						<input type="checkbox" name="days[]" value="M" <?php if (in_array('M',$disponibilitat_dies)) print "checked"; ?> >Dimarts&nbsp;
+						<input type="checkbox" name="days[]" value="X" <?php if (in_array('X',$disponibilitat_dies)) print "checked"; ?> >Dimecres&nbsp;
+						<input type="checkbox" name="days[]" value="J" <?php if (in_array('J',$disponibilitat_dies)) print "checked"; ?> >Dijous&nbsp;
+						<input type="checkbox" name="days[]" value="V" <?php if (in_array('V',$disponibilitat_dies)) print "checked"; ?> >Divendres&nbsp;
+						<input type="checkbox" name="days[]" value="S" <?php if (in_array('S',$disponibilitat_dies)) print "checked"; ?> >Dissabte&nbsp;
+						<input type="checkbox" name="days[]" value="D" <?php if (in_array('D',$disponibilitat_dies)) print "checked"; ?> >Diumenge
+					</td><td>
+						<?= form_error("days"); ?>
 					</td></tr>
 					
+					<tr><td colspan="3">&nbsp;</td></tr>
+					
+					<tr><td colspan="3">
+						<input type="text" name="hores" id="hores" style="border:0;width:300px;" readonly />
+					</td></tr>
+				</table>
+				<table>
+					<tr><td>00:00&nbsp;&nbsp;</td><td>
+					<div id="slider-hores"></div>
+					</td><td>24:00</td></tr>
+					
+					<tr><td colspan="3">&nbsp;</td></tr>
+					
+					<tr><td colspan="3">
+						<?= form_submit('submit', 'Canviar', 'class = '.$submit); ?>
 					</td></tr>
 				</table>
 			<?= form_close(); ?>
