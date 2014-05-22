@@ -50,7 +50,7 @@ Class Servei extends CI_Model {
 		/*if($categoria != null ){
 			//$this -> db -> where('s.categoria = '.$categoria);
 			$sql .= 'AND s.categoria = '.$categoria.' ';
-		}
+		}*/
 		
 		if (is_numeric($ciutat)) {
 			//$this -> db -> where('s.cp', $ciutat); 
@@ -60,7 +60,7 @@ Class Servei extends CI_Model {
 			//$this -> db -> where('p.poblacion', $ciutat);
 			$sql .= 'AND p.poblacion = '.$ciutat.' ';
 		}
-		if($dataInici != null ){
+		/*if($dataInici != null ){
 			//$this -> db -> where('DATEDIFF( s.data_inici, '.$dataInici.') >=0');
 			$sql .= 'DATEDIFF( s.data_inici, '.$dataInici.') >=0 ';
 		}
@@ -72,7 +72,7 @@ Class Servei extends CI_Model {
 
 		//$query = $this -> db -> get();
 		//return $query->result();
-		return $ciutat;
+		return $sql;
 	 }
 }
 ?>
