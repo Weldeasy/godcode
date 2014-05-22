@@ -27,7 +27,6 @@
 		<li class='active'><a href='<?= base_url()?>'><span>INICI</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>QUÉ ES UN BANCO DEL TIEMPO?</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>CONTACTA</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>REGISTRA'T</span></a></li>
     <?php echo $this->load->view($login_form); ?>
@@ -41,7 +40,7 @@
         
       </div>
       <div class="contenido_footer">
-        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto, Alex Martin.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> </p>
+        <p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto, Alex Martin.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> <a href='<?= base_url()?>index.php/inicio/aboutus/'><span>SOBRE GODCODE</span></a></p>
       </div>
     </div>
 </body>
