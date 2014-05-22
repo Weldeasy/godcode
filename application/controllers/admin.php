@@ -167,7 +167,6 @@ class Admin extends CI_Controller {
 			return $key->saldo_minim;
 		}
 	}	
-
 	function setSaldoMinim_control(){
 		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
 		if($this->adm->setSaldoMinim($saldo_minim)){
@@ -175,22 +174,12 @@ class Admin extends CI_Controller {
 		}	
 	}
 }
+<<<<<<< HEAD
 	public function numero_denuncies(){
 			return $this->get;NumeroDenuncies_control();
 		}
+=======
+>>>>>>> parent of 33ebbd1... contar denuncias
 
-	function getNumeroDenuncies_control(){
-		$array=$this->adm->getLlistarDenuncies();
-		var_dump($array);
-		}
-
-	function getSaldoMinim_control(){
-		$array=$this->adm->getLlistarDenuncies();
-		$denuncies_num=0;
-		foreach ($array as $key) {
-			return $key->denuncies_num;
-		}
-	}	
-	}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

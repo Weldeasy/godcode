@@ -21,7 +21,11 @@
                 <i class="fa fa-tasks fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading"><?php echo("<b> ".$total_denuncies."</b>"); ?></p>
+<<<<<<< HEAD
+                <p class="announcement-heading"></p>
+=======
+                <p class="announcement-heading">10</p>
+>>>>>>> parent of 33ebbd1... contar denuncias
                 <!--la ultima denuncia actualitzem la data-->
                 <p class="announcement-text">12/5/2014 14:5:01</p>
               </div>

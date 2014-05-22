@@ -75,10 +75,6 @@ Class Administrador extends CI_Model
 		$query=$this->db->query('SELECT saldo_minim FROM banc_del_temps');
 		return $query->result();	
 	}
-	function getLlistarDenuncies(){
-		$query=$this->db->query('SELECT COUNT(*) AS total_denuncia FROM reclamacio');
-		return $query->result();	
-	}
 	function setsaldominim($saldo_minim){
 		$query = $this->db->query('UPDATE banc_del_temps SET saldo_minim="'.$saldo_minim.'"');
 		if($query){
