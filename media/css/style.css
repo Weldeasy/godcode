@@ -354,9 +354,9 @@ h1{
   width: 100%;
   height: auto;
   background: #585c54;
-  position: relative;
+  position: absolute;
   border-top: 2px solid white;
-  margin-top: 5%;
+  margin-top: -150px;
   clear: both;
 
 }
