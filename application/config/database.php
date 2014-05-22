@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = 'godcode';
 $db['default']['username'] = 'godcode';
 $db['default']['password'] = 'godcode';
 $db['default']['database'] = 'godcode';
