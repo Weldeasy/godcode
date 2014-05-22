@@ -5,11 +5,12 @@ class Buscar_servicio extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('servei');
-		$session_data = $this->session->userdata('logged_in');
-		$this->data['es_admin'] = $session_data['es_admin'];
+		
 	}
 	
 	function index() {
+		$session_data = $this->session->userdata('logged_in');
+		$data['es_admin'] = $session_data['es_admin'];
 		$data = array();
 		$serveis = $this->buscar();
 		$html = "";
