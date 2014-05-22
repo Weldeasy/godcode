@@ -40,7 +40,7 @@ Class Servei extends CI_Model {
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
-		$this -> db -> select('*');
+		$this -> db -> select(';');
 		$this -> db -> from('servei s');
 		$this -> db -> from('poblacion p');
 		$this -> db -> where('s.cp = p.postal');
