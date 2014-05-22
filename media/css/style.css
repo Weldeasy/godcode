@@ -331,7 +331,7 @@ h1{
   margin-top: 10%;
   box-shadow: 2px 2px 5px #999;
   border-radius: 15px;
-  height: 500px;
+  height: auto;
   margin-left: 20%;
   margin-right: 20%;
   padding-left: 3%;
@@ -344,7 +344,7 @@ h1{
 }
 #about_us p{
    font-family: 'Open Sans', sans-serif;
-   font-size: 14px;
+   font-size: 16px;
 }
 #table {
   font-family: 'Open Sans', sans-serif;
