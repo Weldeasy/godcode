@@ -50,7 +50,8 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', null, TRUE);
+		$data['total_denuncies']=$this -> numero_denuncies();
+		$data['panel_admin']=$this->load->view('backend/pages/panel_admin', $data, TRUE);
 		$this->passemVistaAlPanelAdmin($data);
 	}
 
@@ -175,8 +176,7 @@ class Admin extends CI_Controller {
 	}
 }
 	public function numero_denuncies(){
-			$data['total_denuncies']=$this->getNumeroDenuncies_control();
-			$this->passemVistaAlPanelAdmin($data);
+			return $this->get;NumeroDenuncies_control();
 		}
 
 	function getNumeroDenuncies_control(){
