@@ -32,6 +32,10 @@ Class Servei extends CI_Model {
 		));
 		return true;
 	}
+	
+	public function editar_servei($dades_servei) {
+		
+	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
 		$this -> db -> select('*');
