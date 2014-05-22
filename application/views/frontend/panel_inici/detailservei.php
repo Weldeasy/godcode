@@ -1,6 +1,7 @@
 <div class="infousuari">
 <h1 class="label_title">Serveis dels usuaris</h1>
-<?php foreach ($servei as $data) { ?>
+<?php if($servei!=null){
+	foreach ($servei as $data) { ?>
   <div class="un_info_usuari">
     <p><b>Nom :</b><?php echo $data->nom_servei; ?></p>
     <p><b>Descripció :</b><?php echo $data->descripcio_servei; ?></p>
@@ -10,5 +11,11 @@
     <p><b>Horari :</b><?php echo $data->disp_horaria; ?></p>
     <p><b>Preu :</b><?php echo $data->preu; ?></p>
   </div>
-<?php } ?>
+
+<?php }
+ }else{ ?>
+	   <div class='un_info_usuari'>
+            <p>No té cap servei</p>
+       </div>
+	<?php } ?>
 </div>

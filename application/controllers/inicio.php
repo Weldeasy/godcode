@@ -135,10 +135,8 @@ class Inicio extends CI_Controller {
             $data['login_form'] = 'frontend/login_form';
         }
         
-        $data['users']=$this->user->cercar_user_servei($cercar_user);
-      //  if(){         
-            $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
-        //}
+        $data['users']=$this->user->cercar_user_servei($cercar_user);      
+        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
         $this->load->view('frontend/inicio', $data);
       }else{
         echo "no existe";
