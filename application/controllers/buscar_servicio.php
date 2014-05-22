@@ -41,9 +41,9 @@ class Buscar_servicio extends CI_Controller {
 			$data['es_admin'] = $session_data['es_admin'];
 		}
 		$this->load->view('frontend/resultado_servicios', $data);
-		echo "<pre>";
+		/*echo "<pre>";
 		var_dump($data);
-		echo "<pre>";
+		echo "<pre>";*/
 	}
 	
 	function buscar() {
