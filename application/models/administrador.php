@@ -71,6 +71,7 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;
 	}
+<<<<<<< HEAD
 	function getSaldoMinim(){
 		$query=$this->db->query('SELECT saldo_minim FROM banc_del_temps');
 		return $query->result();	
@@ -88,5 +89,8 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;	
 	}
+=======
+
+>>>>>>> parent of 05ff5ed... changes admin
 }
 ?>
