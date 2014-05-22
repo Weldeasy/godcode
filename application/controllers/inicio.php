@@ -134,8 +134,9 @@ class Inicio extends CI_Controller {
         }
         
         $data['users']=$this->user->cercar_user_servei($cercar_user);
-
-        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
+        if(){         
+            $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
+        }
         $this->load->view('frontend/inicio', $data);
       }else{
         echo "no existe";
@@ -163,12 +164,12 @@ class Inicio extends CI_Controller {
       }
   }
   public function introduccio() {
-    $data = array();
+      $data = array();
       if($this->session->userdata('logged_in')) {
         $session_data = $this->session->userdata('logged_in');
         $data['foto'] = $session_data['foto'];
-      $data['email'] = $session_data['email'];
-      $data['login_form'] = 'frontend/panel_inici/logued';
+        $data['email'] = $session_data['email'];
+        $data['login_form'] = 'frontend/panel_inici/logued';
       }else{
         $data['login_form'] = 'frontend/login_form';
       }
@@ -176,9 +177,9 @@ class Inicio extends CI_Controller {
       $this->load->view('frontend/inicio', $data);
   }
   public function no_autentificat() {
-    $data = array();
-    $data['login_form'] = 'frontend/login_form';
-    $this->load->view('frontend/panel_inici/no_autentificat',$data);
+      $data = array();
+      $data['login_form'] = 'frontend/login_form';
+      $this->load->view('frontend/panel_inici/no_autentificat',$data);
   }
 
 }
