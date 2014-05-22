@@ -356,7 +356,7 @@ h1{
   background: #585c54;
   position: absolute;
   border-top: 2px solid white;
-  margin-top: -150px;
+  margin-top: 10%;
   clear: both;
 
 }
