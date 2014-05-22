@@ -30,9 +30,13 @@ class Buscar_servicio extends CI_Controller {
 		}
 	
 	
-	$data['html'] = $html;
-	
-	$this->load->view('frontend/resultado_servicios', $data);
+		$data['html'] = $html;
+		if($this->session->userdata('logged_in')) {
+			$data['login_form'] = 'frontend/panel_inici/logued';
+		} else {
+			$data['login_form'] = 'frontend/login_form';
+		}
+		$this->load->view('frontend/resultado_servicios', $data);
 	}
 	
 	function buscar() {
