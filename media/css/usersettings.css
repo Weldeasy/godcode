@@ -85,14 +85,14 @@ a:focus {
 }
 #user span {
 	right:40px;
-	position:absolute;
+	position:relative;
 	line-height:50px;
 }
 #user img {
 	float:left;
     padding-top:10px;
 	padding-left:10px;
-	padding-right: 30px;
+	padding-right: 60px;
 }
 
 #user_nav {
