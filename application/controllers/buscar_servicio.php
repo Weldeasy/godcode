@@ -28,7 +28,7 @@ class Buscar_servicio extends CI_Controller {
   	}
   	$data['serveis']=$this->servei->busca_serveis($ciutat,$dataInici,$dataFi,$categories);
   	echo('<pre>');
-	echo date("jS F, Y", strtotime($dataInici)); 
+	echo date("yyyy-mm-dd", strtotime($dataInici)); 
   	echo('</pre>');
   }
 }
