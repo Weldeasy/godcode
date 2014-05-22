@@ -71,21 +71,16 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
 	function getSaldoMinim(){
 		$query=$this->db->query('SELECT saldo_minim FROM banc_del_temps');
 		return $query->result();	
 	}
-<<<<<<< HEAD
-=======
+
 	function getLlistarDenuncies(){
 		$query=$this->db->query('SELECT COUNT(*) AS total_denuncia FROM reclamacio');
 		return $query->result();	
 	}
->>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
+
 	function setsaldominim($saldo_minim){
 		$query = $this->db->query('UPDATE banc_del_temps SET saldo_minim="'.$saldo_minim.'"');
 		if($query){
@@ -95,11 +90,5 @@ Class Administrador extends CI_Model
 		}
 		return $resultat;	
 	}
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> parent of 05ff5ed... changes admin
->>>>>>> ae171e50ddd2d0a162d457b728d77179cfb0f897
 }
 ?>
