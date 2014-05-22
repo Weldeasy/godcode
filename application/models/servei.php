@@ -47,7 +47,7 @@ Class Servei extends CI_Model {
 
 		//$sql = "SELECT * FROM servei s, poblacion p WHERE s.cp = p.postal ";
 		
-		if($categoria != ""){
+		if($categoria != 0){
 			$this -> db -> where('s.categoria = '.$categoria);
 			//$sql .= 'AND s.categoria = '.$categoria.' ';
 		}
