@@ -15,7 +15,7 @@
                   <p><b>Correu :</b><?php echo $data->email; ?></p>
                   <p><b>Població :</b><?php echo $data->poblacion; ?></p>
                   <input type='hidden' value='<?php echo $data->email; ?>' name='email_user'/>
-                  <input type='submit' value='Ver Serveis' />
+                  <input type='submit' value='Ver Serveis' class="buttonform" />
                 </form>
               </div>
   <?php   } 
