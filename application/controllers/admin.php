@@ -27,7 +27,7 @@ class Admin extends CI_Controller {
 		$this->session_data = $this->session->userdata('logged_in');
 
 		if(!$this->session_data || $estat!=2) {
-			 redirect('no_autentificat', 'refresh');
+			 redirect('inicio/no_autentificat', 'refresh');
 			return FALSE;
 		}else{
 			return TRUE;
