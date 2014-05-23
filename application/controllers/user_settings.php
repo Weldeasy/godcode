@@ -149,7 +149,7 @@ class User_settings extends CI_Controller {
 	if ($this->form_validation->run() == FALSE)
 	{
 	echo "ola";
-	else
+	}else
 	{
 	echo "no";
 	}
