@@ -8,7 +8,7 @@ class User_settings extends CI_Controller {
   {
     parent::__construct();
 	if ($this->session->userdata('logged_in') == FALSE)
-		redirect('inicio');
+		//redirect('inicio');
 	$this->load->helper(array('url', 'form'));
 	$this->load->model(array('user', 'categorias', 'servei'));
 	$this->load->library(array('form_validation', 'grocery_CRUD'));
