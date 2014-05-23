@@ -9,7 +9,7 @@
 	//Valor CI forms
 	$nom_opts = array(
 		'name' => 'nom',
-		'value' => utf8_encode($nom),
+		'value' => utf8_decode($nom),
 		'class' => $input_text_class,
 		'placeholder' => 'Indica el nom del servei..'
 	);
