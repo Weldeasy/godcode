@@ -150,7 +150,7 @@ class User_settings extends CI_Controller {
 	
 	if ($this->form_validation->run() == FALSE)
 	{
-		$this->editar_servei($this->input->post("id"));
+		$this->editar_servei($this->input->post("id"), "No has seleccionat cap dia");
 	}
 	else
 	{
