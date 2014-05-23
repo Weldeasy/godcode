@@ -146,7 +146,7 @@ class Inicio extends CI_Controller {
             $data3['detail_users']=$html;
             $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailusuari',$data3,TRUE);
         }else{
-            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_users',NULL,TRUE);
+            $data['contingut']="hola";
         }
         $this->load->view('frontend/inicio', $data);
       }else{
