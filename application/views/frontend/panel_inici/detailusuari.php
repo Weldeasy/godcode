@@ -8,7 +8,7 @@
             <div class="text_info_user">
                <b>Nom i cognoms :</b><?= $nom_usuari." ".$cognom; ?><br />
                <b>Correu :</b><?= $email; ?><br />
-               <b>Pobalció :</b><?= $poblacion; ?>
+               <b>Població :</b><?= $poblacion; ?>
             </div>
             <div class='canviposicio'>    
                 <input type='hidden' value='<?= $email; ?>' name='email_user'/>
