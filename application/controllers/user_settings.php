@@ -143,7 +143,7 @@ class User_settings extends CI_Controller {
 
   }
   
-  function validar_servei() {
+  /*function validar_servei() {
   
 	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
 	$this->form_validation->set_rules('days', 'Dias', 'required');
@@ -177,9 +177,9 @@ class User_settings extends CI_Controller {
 			
 		$this->editar_servei($dades_servei['id'], $missatge);
 	}
-  }
+  }*/
   
-  /*function editar_servei($id, $missatge = null) {
+  function editar_servei($id, $missatge = null) {
 		$this->db->select('*');
 		$this->db->from('servei s');
 		$this->db->where('s.id = '.$id);
@@ -212,7 +212,7 @@ class User_settings extends CI_Controller {
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
 		$this->load->view("frontend/user_settings/editar_servei", $data);
-	}*/
+	}
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
