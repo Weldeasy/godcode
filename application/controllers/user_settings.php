@@ -143,7 +143,7 @@ class User_settings extends CI_Controller {
 
   }
   
- /* public function validar_servei() {
+  function validar_servei() {
   
 	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
 	$this->form_validation->set_rules('days', 'Dias', 'required');
@@ -177,7 +177,7 @@ class User_settings extends CI_Controller {
 			
 		$this->editar_servei($dades_servei['id'], $missatge);
 	}
-  }*/
+  }
   
   function editar_servei($id, $missatge = null) {
 		$this->db->select('*');
