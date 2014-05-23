@@ -100,7 +100,7 @@
 
 		<div id="page-wrapper">
 			<?php if(isset($missatge)) print $missatge."<br>"; ?>
-			<?= form_open(base_url().'index.php/user_settings/validar_servei', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
+			<?= form_open(base_url().'index.php/user_settings/validar_editar_servei', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
 				<input type="hidden" name="id" value="<?=$id?>" />
 				<table class="center">
 					<tr><td colspan="3">

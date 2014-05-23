@@ -143,7 +143,7 @@ class User_settings extends CI_Controller {
 
   }
   
-  function validar_servei() {
+  function validar_edicio_servei() {
 	$this->form_validation->set_rules('days', 'Dias', 'required');
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	if ($this->form_validation->run() == FALSE)
