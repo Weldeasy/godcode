@@ -2,7 +2,7 @@
 session_start();
 class User_settings extends CI_Controller {
 
-	private $data = array();
+  private $data = array();
 	
   function __construct()
   {
