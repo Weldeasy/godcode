@@ -186,7 +186,8 @@ class User_settings extends CI_Controller {
 		$query = $this->db->get();
 		$dades_servei = $query->result();
 		
-		$dies = explode(';', $dades_servei[0]->disp_dies);
+		var_dump($dades_servei);
+		/*$dies = explode(';', $dades_servei[0]->disp_dies);
 		$hores = explode('-', $dades_servei[0]->disp_horaria);
 		$hora1 = explode(':', $hores[0]);
 		$hora1 = $hora1[0];
@@ -194,7 +195,7 @@ class User_settings extends CI_Controller {
 		$hora2 = $hora2[0];
 		
 		$data = array();
-		//$data['email'] = $this->data['email'];
+		$data['email'] = $this->data['email'];
 		$data['id'] = $dades_servei[0]->id;
 		$data['nom'] = $dades_servei[0]->nom;
 		$data['preu'] = $dades_servei[0]->preu;
@@ -211,15 +212,15 @@ class User_settings extends CI_Controller {
 		
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
-		$this->load->view("frontend/user_settings/editar_servei", $data);
+		$this->load->view("frontend/user_settings/editar_servei", $data);*/
 	}
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
-  /*function opcions()
+  function opcions()
   {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
-  }*/
+  }
   /***************************************************OPCIONS*************************************************************/
   
 }
