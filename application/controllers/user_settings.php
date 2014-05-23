@@ -148,7 +148,7 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	if ($this->form_validation->run() == FALSE)
 	{
-	echo "ola";
+		$this->editar_servei($this->input->post("id"));
 	}else
 	{
 	echo "no";
