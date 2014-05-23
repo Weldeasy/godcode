@@ -179,7 +179,7 @@ class User_settings extends CI_Controller {
 	}
   }
   
-  function editar_servei($id, $missatge = null) {
+  function editar_servei($id, $missatge) {
 		/*$this->db->select('*');
 		$this->db->from('servei s');
 		$this->db->where('s.id = '.$id);
