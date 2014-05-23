@@ -591,9 +591,10 @@ margin-right: 40px;
   margin-left: 512px;
 }
 #formularidetailuser img{
-  height: 120px;
+  height: 100px;
   border-radius: 12px;
   margin-top: 12px;
   margin-right: 12px;
   float: left;
+  margin-left: 15px;
 }
