@@ -14,6 +14,7 @@
 			print '<script src="'.$file.'"></script>';
 		}*/
 		?-->
+		<meta charset="utf-8">
 	</head>
 	<body>
 		

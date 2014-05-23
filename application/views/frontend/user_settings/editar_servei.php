@@ -34,6 +34,7 @@
 ?>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Time Banking | Editar el meu servei</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">

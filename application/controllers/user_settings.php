@@ -193,7 +193,7 @@ class User_settings extends CI_Controller {
 		$data = array();
 		$data['email'] = $this->data['email'];
 		$data['id'] = $dades_servei[0]->id;
-		$data['nom'] = $dades_servei[0]->nom;
+		$data['nom'] = utf8_encode($dades_servei[0]->nom);
 		$data['preu'] = $dades_servei[0]->preu;
 		$data['hora_inici'] = $hora1;
 		$data['hora_fi'] = $hora2;
