@@ -15,19 +15,18 @@ class User_settings extends CI_Controller {
 	$session_data = $this->session->userdata('logged_in');
 	$this->data['email'] = $session_data['email'];
   }
-
-  function index()
-  {
+	
+  function index() {
 	$this->load->view('frontend/user_settings/inicio', $this->data);
   }
+  /*
   function mostrar_missatge($m) {
 	$this->data['missatge'] = $m;
 	$this->load->view('frontend/user_settings/resultat', $this->data);
-  }
+  }*/
   
   /***************************************************PERFIL*************************************************************/
-  function perfil()
-  {
+  /*function perfil() {
 	$dades = array();
 	$dades = $this->user->get_user_by_email($this->data['email']);
 	
@@ -110,12 +109,12 @@ class User_settings extends CI_Controller {
   function alpha_dash_space($str)
 	{
 		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
-	}
+	}*/
 	
   /***************************************************PERFIL*************************************************************/
   /***************************************************SERVEIS*************************************************************/
   
-  function serveis() {
+  /*function serveis() {
 	$data2 = array();
 	$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
@@ -213,14 +212,14 @@ class User_settings extends CI_Controller {
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
 		$this->load->view("frontend/user_settings/editar_servei", $data);
-	}
+	}*/
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
-  function opcions()
+  /*function opcions()
   {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
-  }
+  }*/
   /***************************************************OPCIONS*************************************************************/
   
 }
