@@ -178,7 +178,7 @@ class User_settings extends CI_Controller {
 		$this->editar_servei($dades_servei['id'], $missatge);
 	}
   }
-  /*
+  
   public function editar_servei($id, $missatge = null) {
 		$this -> db -> select('*');
 		$this -> db -> from('servei s');
@@ -212,7 +212,7 @@ class User_settings extends CI_Controller {
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
 		$this->load->view("frontend/user_settings/editar_servei", $data);
-	}*/
+	}
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
