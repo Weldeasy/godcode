@@ -8,7 +8,7 @@ class User_settings extends CI_Controller {
   {
     parent::__construct();
 	if ($this->session->userdata('logged_in') == FALSE)
-		//redirect('inicio');
+		redirect('inicio');
 	$this->load->helper(array('url', 'form'));
 	$this->load->model(array('user', 'categorias', 'servei'));
 	$this->load->library(array('form_validation', 'grocery_CRUD'));
@@ -145,16 +145,16 @@ class User_settings extends CI_Controller {
   
   function validar_servei() {
   
-	//$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
-	//$this->form_validation->set_rules('days', 'Dias', 'required');
-	//$this->form_validation->set_message('required', "No has seleccionat cap dia");
+	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
+	$this->form_validation->set_rules('days', 'Dias', 'required');
+	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	
-	/*if ($this->form_validation->run() == FALSE)
+	if ($this->form_validation->run() == FALSE)
 	{
 		$this->editar_servei($this->input->post("id"));
 	}
 	else
-	{*/
+	{
 		$disponibilitat_horaria = $this->input->post("hores");
 		$disponibilitat_dies = "";
 		foreach ($this->input->post("days") as $key => $value) {
@@ -176,7 +176,7 @@ class User_settings extends CI_Controller {
 			$missatge = "S'ha produit un error, torna a provar-ho.";
 			
 		$this->editar_servei($dades_servei['id'], $missatge);
-	/*}*/
+	}
   }
   
   function editar_servei($id, $missatge = null) {
