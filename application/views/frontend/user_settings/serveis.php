@@ -6,14 +6,6 @@
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
-		<!--
-		foreach($output->css_files as $file) {
-			print '<link type="text/css" rel="stylesheet" href="'.$file.'" />';
-		}
-		foreach($output->js_files as $file) {
-			print '<script src="'.$file.'"></script>';
-		}*/
-		?-->
 		<meta charset="utf-8">
 	</head>
 	<body>
@@ -47,6 +39,7 @@
 
 		<div id="page-wrapper">
 			<h1>Els meus serveis</h1>
+			<a href="<?=base_url()?>index.php/user_settings/crear_servei" title="Crear un nou servei propi"><input type="button" value="Crear nou servei" /></a>
 			<?php echo $html; /*echo $output->output*/ ?>
 		</div>
 	</body>
