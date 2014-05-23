@@ -179,15 +179,15 @@ class User_settings extends CI_Controller {
 	}
   }
   
-  //function editar_servei($id, $missatge = null) {
-		/*$this->db->select('*');
+  /*function editar_servei($id, $missatge = null) {
+		$this->db->select('*');
 		$this->db->from('servei s');
 		$this->db->where('s.id = '.$id);
 		$query = $this->db->get();
 		$dades_servei = $query->result();
-		
-		var_dump($dades_servei);*/
-		/*$dies = explode(';', $dades_servei[0]->disp_dies);
+	
+		var_dump($dades_servei);
+		$dies = explode(';', $dades_servei[0]->disp_dies);
 		$hores = explode('-', $dades_servei[0]->disp_horaria);
 		$hora1 = explode(':', $hores[0]);
 		$hora1 = $hora1[0];
@@ -212,8 +212,8 @@ class User_settings extends CI_Controller {
 		
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
-		$this->load->view("frontend/user_settings/editar_servei", $data);*/
-	//}
+		$this->load->view("frontend/user_settings/editar_servei", $data);
+	}*/
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
