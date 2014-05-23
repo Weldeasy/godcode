@@ -33,7 +33,6 @@ class Inicio extends CI_Controller {
                   }
                 $login_view = 'frontend/panel_inici/logued';
                 $data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
-        		
         				break;
         			case '3':
         				$login_view = 'frontend/panel_inici/logued';
@@ -171,7 +170,7 @@ class Inicio extends CI_Controller {
   public function no_autentificat() {
       $data = array();
       $data['login_form'] = 'frontend/login_form';
-      $this->load->view('frontend/panel_inici/no_autentificat',$data);
+      $this->load->view('frontend/no_autentificat',$data);
   }
 
 }
