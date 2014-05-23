@@ -133,20 +133,20 @@ class Inicio extends CI_Controller {
         $html="";
 
         if($users!=null){
-          foreach($users as $row) {
-            $data2 = array(
-              'nom_usuari' => $row->nom_usuari,
-              'cognom' => $row->cognom,
-              'foto' => $row->foto,
-              'poblacion' => $row->poblacion,
-              'email' => $row->email
-            );
-            $html = $html.$this->load->view('frontend/panel_inici/detailusuari',$data2,TRUE);
-          }
-          $data3['detail_users']=$html;
-          $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailusuari',$data3,TRUE);;
+            foreach($users as $row) {
+              $data2 = array(
+                'nom_usuari' => $row->nom_usuari,
+                'cognom' => $row->cognom,
+                'foto' => $row->foto,
+                'poblacion' => $row->poblacion,
+                'email' => $row->email
+              );
+              $html = $html.$this->load->view('frontend/panel_inici/detailusuari',$data2,TRUE);
+            }
+            $data3['detail_users']=$html;
+            $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailusuari',$data3,TRUE);
         }else{
-            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_users',NULL,TRUE);;
+            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_users',NULL,TRUE);
         }
         $this->load->view('frontend/inicio', $data);
       }else{
