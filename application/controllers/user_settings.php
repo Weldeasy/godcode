@@ -26,7 +26,7 @@ class User_settings extends CI_Controller {
   }
   
   /***************************************************PERFIL*************************************************************/
-  /*function perfil() {
+  function perfil() {
 	$dades = array();
 	$dades = $this->user->get_user_by_email($this->data['email']);
 	
@@ -74,8 +74,8 @@ class User_settings extends CI_Controller {
 	
 	$this->load->view('frontend/user_settings/perfil', $this->data);
   }
-  function validar_perfil()
-  {
+  /*
+  function validar_perfil() {
 	$this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
 	$this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|callback__alpha_dash_space|alpha');
 	$this->form_validation->set_rules('apellidos', 'Apellidos', 'callback__alpha_dash_space|alpha');
