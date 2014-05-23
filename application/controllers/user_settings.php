@@ -186,7 +186,6 @@ class User_settings extends CI_Controller {
 		$query = $this->db->get();
 		$dades_servei = $query->result();
 	
-		var_dump($dades_servei);
 		$dies = explode(';', $dades_servei[0]->disp_dies);
 		$hores = explode('-', $dades_servei[0]->disp_horaria);
 		$hora1 = explode(':', $hores[0]);
@@ -217,10 +216,9 @@ class User_settings extends CI_Controller {
   
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
-  /*function opcions()
-  {
+  function opcions() {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
-  }*/
+  }
   /***************************************************OPCIONS*************************************************************/
   
 }
