@@ -13,11 +13,30 @@
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/resources/demos/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script>
 	$(function() {
 		$("#datepicker1").datepicker({ appendText: "" });
 		$("#datepicker2").datepicker({ appendText: "" });
 	});
+	/*RESPONSIVE*/
+	$(function() {  
+		var pull        = $('#pull');  
+			menu        = $('#cssmenu ul');  
+			menuHeight  = menu.height();  
+	  
+		$(pull).on('click', function(e) {  
+			e.preventDefault();  
+			menu.slideToggle();  
+		});  
+	});
+	$(window).resize(function(){  
+		var w = $(window).width();  
+		if(w > 320 && menu.is(':hidden')) {  
+			menu.removeAttr('style');  
+		}  
+	});
+	/*RESPONSIVE*/
 	</script>
     <title>Time Bank</title>
   </head>
@@ -29,10 +48,11 @@
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
+	<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
     
-    <?php echo $this->load->view($login_form); ?>
+    <?=$this->load->view($login_form)?>
   </ul>
- 
+	<a href="#" id="pull"></a> 
  </div>
 <?php echo $contingut; ?>
 
