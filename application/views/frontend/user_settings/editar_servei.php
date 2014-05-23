@@ -9,7 +9,7 @@
 	//Valor CI forms
 	$nom_opts = array(
 		'name' => 'nom',
-		'value' => utf8_encode($nom),
+		'value' => $nom,
 		'class' => $input_text_class,
 		'placeholder' => 'Indica el nom del servei..'
 	);
@@ -34,6 +34,7 @@
 ?>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Time Banking | Editar el meu servei</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
