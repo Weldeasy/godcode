@@ -19,11 +19,11 @@ class User_settings extends CI_Controller {
   function index() {
 	$this->load->view('frontend/user_settings/inicio', $this->data);
   }
-  /*
+  
   function mostrar_missatge($m) {
 	$this->data['missatge'] = $m;
 	$this->load->view('frontend/user_settings/resultat', $this->data);
-  }*/
+  }
   
   /***************************************************PERFIL*************************************************************/
   /*function perfil() {
