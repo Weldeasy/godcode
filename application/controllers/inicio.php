@@ -129,7 +129,8 @@ class Inicio extends CI_Controller {
         }
         
         $users=$this->user->cercar_user_servei($cercar_user);
-        $html = '<div class="infousuari"><h1 class="label_title">Serveis dels usuaris</h1>';
+        
+        $html="";
 
         if($users!=null){
           foreach($users as $row) {
@@ -140,15 +141,13 @@ class Inicio extends CI_Controller {
               'poblacion' => $row->poblacion,
               'email' => $row->email
             );
-
-        $html = $html.$this->load->view('frontend/panel_inici/detailusuari',$data2,TRUE);
+            $html = $html.$this->load->view('frontend/panel_inici/detailusuari',$data2,TRUE);
           }
+          $data3['detail_users']=$html;
+          $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailusuari',$data3,TRUE);;
         }else{
-            $data2['totalusers']="<div class='un_info_usuari'>
-             <p>No s'ha trobat cap usuari buscat</p>
-          </div>";
+            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_users',NULL,TRUE);;
         }
-        $data['contingut']=$html."</div>";
         $this->load->view('frontend/inicio', $data);
       }else{
          redirect('inicio/no_autentificat', 'refresh');
