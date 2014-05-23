@@ -180,13 +180,13 @@ class User_settings extends CI_Controller {
   }
   
   public function editar_servei($id, $missatge = null) {
-		$this->db->select('*');
+		/*$this->db->select('*');
 		$this->db->from('servei s');
 		$this->db->where('s.id = '.$id);
 		$query = $this->db->get();
 		$dades_servei = $query->result();
 		
-		var_dump($dades_servei);
+		var_dump($dades_servei);*/
 		/*$dies = explode(';', $dades_servei[0]->disp_dies);
 		$hores = explode('-', $dades_servei[0]->disp_horaria);
 		$hora1 = explode(':', $hores[0]);
