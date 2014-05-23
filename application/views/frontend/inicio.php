@@ -19,7 +19,7 @@
 		$("#datepicker1").datepicker({ appendText: "" });
 		$("#datepicker2").datepicker({ appendText: "" });
 	});
-	/*RESPONSIVE*/
+	/*RESPONSIVE */
 	$(function() {  
 		var pull        = $('#pull');  
 			menu        = $('#cssmenu ul');  
