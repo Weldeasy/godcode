@@ -147,7 +147,7 @@ class User_settings extends CI_Controller {
   
 	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
 	$this->form_validation->set_rules('days', 'Dias', 'required');
-	$this->form_validation->set_message('required', "No has seleccionat cap dia");
+	//$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	
 	if ($this->form_validation->run() == FALSE)
 	{
