@@ -143,6 +143,10 @@ class User_settings extends CI_Controller {
 
   }
   
+  function crear_servei() {
+	$this->load->view('frontend/user_settings/alta_servei', $this->data);
+  }
+  
   function validar_editar_servei() {
 	$this->form_validation->set_rules('days', 'Dias', 'required');
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
