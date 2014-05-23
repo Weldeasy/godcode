@@ -509,7 +509,6 @@ margin-right: 40px;
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   padding-bottom: 60px;
 }
 .un_info_usuari{
@@ -517,15 +516,24 @@ margin-right: 40px;
     border-radius:12px;
     margin-top: 15px;
     height: auto;
-    width: 300px;  
-    margin-right: 15px;
-    margin-left: 15px;
+    width: 1000px;  
+    margin-right: auto;
+    margin-left: auto;
    -webkit-box-shadow: 0 8px 6px -6px black;
     -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
     word-wrap:break-word;
 }
-
+.un_info_usuari table {
+  width: 100%;
+  height: 100%;
+  padding-top: 4px;
+}
+.un_info_usuari table img{
+  border-bottom-left-radius: 12px;
+  border-top-left-radius:12px;
+  height: 50%; 
+}
 .label_title{
   text-align: center;
   color: white;
