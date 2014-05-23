@@ -105,16 +105,16 @@ class User_settings extends CI_Controller {
 			
 		$this->mostrar_missatge($mensaje);
 	}
-  }/*
+  }
   function alpha_dash_space($str)
 	{
 		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
-	}*/
+	}
 	
   /***************************************************PERFIL*************************************************************/
   /***************************************************SERVEIS*************************************************************/
   
-  /*function serveis() {
+  function serveis() {
 	$data2 = array();
 	$id = $this->session->userdata('id');
 	$serveis = $this->servei->get_serveis($id);
@@ -142,7 +142,7 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/serveis', $this->data);
 
   }
-  
+  /*
   public function validar_servei() {
   
 	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
