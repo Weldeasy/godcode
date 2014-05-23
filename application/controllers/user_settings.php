@@ -143,9 +143,8 @@ class User_settings extends CI_Controller {
 
   }
   
-  /*function validar_servei() {
+  function validar_servei() {
   
-	$this->form_validation->set_error_delimiters('<td class="error_formulario_registro">','</td>');  
 	$this->form_validation->set_rules('days', 'Dias', 'required');
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	
@@ -170,14 +169,15 @@ class User_settings extends CI_Controller {
 			"disp_dies" => $disponibilitat_dies
 		);
 		
-		if ($this->servei->actualitzar_servei($dades_servei))
+		if ($this->servei->actualitzar_servei($dades_servei)) {
 			$missatge = "Servei actualitzat Ok!";
-		else
+		} else {
 			$missatge = "S'ha produit un error, torna a provar-ho.";
+		}
 			
 		$this->editar_servei($dades_servei['id'], $missatge);
 	}
-  }*/
+  }
   
   function editar_servei($id, $missatge = null) {
 		$this->db->select('*');
