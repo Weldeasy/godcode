@@ -154,7 +154,7 @@ class User_settings extends CI_Controller {
 		$disponibilitat_horaria = $this->input->post("hores");
 		$disponibilitat_dies = "";
 		foreach ($this->input->post("days") as $key => $value) {
-			echo "ola";
+			$disponibilitat_dies = $disponibilitat_dies.$this->input->post("days")[$key].";";
 		}
 		
 	}
