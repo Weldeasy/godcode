@@ -180,10 +180,10 @@ class User_settings extends CI_Controller {
   }
   
   public function editar_servei($id, $missatge = null) {
-		$this -> db -> select('*');
-		$this -> db -> from('servei s');
-		$this -> db -> where('s.id = '.$id);
-		$query = $this -> db -> get();
+		$this->db->select('*');
+		$this->db->from('servei s');
+		$this->db->where('s.id = '.$id);
+		$query = $this->db->get();
 		$dades_servei = $query->result();
 		
 		$dies = explode(';', $dades_servei[0]->disp_dies);
@@ -194,7 +194,7 @@ class User_settings extends CI_Controller {
 		$hora2 = $hora2[0];
 		
 		$data = array();
-		$data['email'] = $this->data['email'];
+		//$data['email'] = $this->data['email'];
 		$data['id'] = $dades_servei[0]->id;
 		$data['nom'] = $dades_servei[0]->nom;
 		$data['preu'] = $dades_servei[0]->preu;
