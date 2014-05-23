@@ -128,12 +128,7 @@ function afegirCategoria(){
 	$('#finestraCategoria').dialog('open').dialog('setTitle','Nova Categoria');
 	url = urlGlobal+'/crearCategoria_control'; //crea un variable global url,que es envia servidor
 }
-function afegirUsuari(){
 
-	$('#formulariUsuari').form('clear');//Netejem el formulari per a la Nova usuari
-	$('#finestraUsuari').dialog('open').dialog('setTitle','Nova Usuari');
-	url = urlGlobal+'/crearUsuari_control'; //crea un variable global url,que es envia servidor
-}
 function guardarUsuari(){
 	$('#formulariUsuari').form('submit',{
 			url:url,
@@ -145,13 +140,13 @@ function guardarUsuari(){
 					$('#finestraUsuari').dialog('close');
 					$.messager.show({
 							title:'Guardar Usuari',
-							msg:"L'Usuari s'ha creat correctament",
+							msg:"L'Estat d'usuari s'ha actualitzat correctament",
 							showType:'show' //mostra slider fade
 					});
 					$('#congelarDatagrid').datagrid('reload');
 				}else{
 					$.messager.show({
-						title:"Error al inserir l'usuari",
+						title:"Error al actualitzae l'usuari",
 						msg:"Hi ha hagut un error al guardar l'usuari"
 					});
 				}
@@ -207,7 +202,7 @@ function modificarUsuari(){
 	var fila=$('#congelarDatagrid').datagrid('getSelected');
 	if(!fila){
 		$.messager.show({
-			title:'Editar Usuari',
+			title:'Estat d\'usuari',
 			msg:'Selecciona una usuari a editar'
 		});
 	}else{

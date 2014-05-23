@@ -34,37 +34,44 @@ class Admin extends CI_Controller {
 		}
 	}
 	/**
-	 * [passemVistaAlPanelAdmin description]
-	 * @param  [array] $data [alla es guarda una vista carregada]
-	 * @return [void]       [es carrega una vista del panel del admin]
+	 * [vista_panel_admin description]
+	 * @param  [type] $ruta [les rutes de les vistes]
+	 * @return [void]       [es carrega la pagina inicial del admin]
 	 */
-	public function passemVistaAlPanelAdmin($data){ //passem una vista concreta al admin.php
-		$data['email'] = $this->session_data['email'];//també passem el email del admin
+	public function vista_panel_admin($ruta){
+		$data['ruta']=$ruta;
+
+		if($ruta=='configSaldo'){//quan tenim la vista configsaldo, pasem el saldo minim.
+			$data['saldo_minim_BD']=$this->getSaldoMinim_control();
+		}
+
+		$data['panel_admin']=$this->load->view('backend/pages/'.$ruta,$data,TRUE);
+		$data['email'] = $this->session_data['email'];//també passem el email del admin al vista admin.
 		$this->load->view('backend/admin',$data);	
 	}
 
 	/**
 	 * [index  admin panel]
-	 * @return [void] [pagina inici del admin]
+	 * @return [void] [es carrega pagina inici del admin i passem la ruta es diu 'panel_admin']
 	 */
 	
 	public function index()
 	{
-		$data['panel_admin']=$this->load->view('backend/pages/panel_admin',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('panel_admin');
 	}
-
+	/**
+	 * [denuncies la vista denuncies]
+	 * @return [type] [es carrega pagina inici del admin i passem la ruta es diu 'denuncies']
+	 */
 	public function denuncies(){
-		$data['panel_admin'] = $this->load->view('backend/pages/denuncies',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('denuncies');
 	}
 	/**
 	 * [congelarusuaris vista]
 	 * @return [void] [Es carrega la vista congelarusuaris]
 	 */
 	public function congelarusuaris(){  
-		$data['panel_admin'] = $this->load->view('backend/pages/congelarusuaris',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('congelarusuaris');
 	}
 
 	/**
@@ -72,41 +79,35 @@ class Admin extends CI_Controller {
 	 * @return [void] [Es carrega la vista crearcategories]
 	 */
 	public function crearcategories(){
-		$data['panel_admin'] = $this->load->view('backend/pages/crearcategories',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('crearcategories');
 	}
 	/**
 	 * [configSaldo vista]
 	 * @return [void] [Es carrega la vista configSaldo]
 	 */
 	public function configSaldo(){
-		$data['saldo_minim_BD']=$this->getSaldoMinim_control();
-		$data['panel_admin'] = $this->load->view('backend/pages/configSaldo',$data, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('configSaldo');
 	}
 	/**
 	 * [zona vista]
 	 * @return [void] [Es carrega la vista zona]
 	 */
 	public function zona(){
-		$data['panel_admin'] = $this->load->view('backend/pages/zona',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('zona');
 	}
 	/**
 	 * [numServeis vista]
 	 * @return [void] [Es carrega la vista numServeis]
 	 */
 	public function numServeis(){	
-		$data['panel_admin'] = $this->load->view('backend/pages/numServeis',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('numServeis');
 	}
 	/**
 	 * [numServeisConsumit vista]
 	 * @return [void] [Es carrega la vista numServeisConsumit]
 	 */
 	public function numServeisConsumit(){
-		$data['panel_admin'] = $this->load->view('backend/pages/numServeisConsumit',null, TRUE);
-		$this->passemVistaAlPanelAdmin($data);
+		$this->vista_panel_admin('numServeisConsumit');
 	}
 	/**
 	 * SON LES VISTES QUE RETORNA JSON, UTILITZA PER CARREGAR-SE DATAGRID JEASYUI (/media/jquery/admin.js)

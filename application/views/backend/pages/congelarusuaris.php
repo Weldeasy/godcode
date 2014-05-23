@@ -11,9 +11,7 @@
 			<!--TOOLBAR DEL DATAGRID JEASYUI-->
 			<div id="tbUsuari" style="padding:5px;height:auto">
                 <div style="margin-bottom:5px">
-                    <div onclick="afegirUsuari()" class="easyui-linkbutton" iconCls="icon-add" plain="true"></div>
                     <div onclick="modificarUsuari()" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></div>
-                   <div onclick="eliminarUsuari()" class="easyui-linkbutton" iconCls="icon-remove" plain="true"></div>
                 </div>
             </div>
 		</center>
