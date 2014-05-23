@@ -8,14 +8,14 @@
                 <form id='formulari' method="post" action="<?=base_url()?>index.php/inicio/serveis_detail">
                   <p><b>Nom i cognom:</b><?php echo $data->nom_usuari." ".$data->cognom; ?></p>
                   <?php if($data->foto!=null){?>
-                    <img src='<?=base_url() ?>media/users_profile/thumbs/<?php echo $data->foto."'" ?>/>
+                    <img src='<?=base_url() ?>media/users_profile/thumbs/<?= $data->foto ?>.jpg' />
                   <?php }else{ ?>
                     <img src='<?=base_url()?>media/users_profile/thumbs/anonimo.jpg'/>
                   <?php } ?>
                   <p><b>Correu :</b><?php echo $data->email; ?></p>
                   <p><b>Població :</b><?php echo $data->poblacion; ?></p>
                   <input type='hidden' value='<?php echo $data->email; ?>' name='email_user'/>
-                  <input type='submit' value='Ver Serveis' class="buttonform" />
+                  <input type='submit' value='Veure Serveis' class="buttonform" />
                 </form>
               </div>
   <?php   } 
