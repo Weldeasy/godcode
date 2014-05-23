@@ -698,3 +698,17 @@ margin-right: 10px;
   background-color: #5baa68;
   margin-bottom: 5%;
 }
+.text_info_user{
+  margin-bottom: -20px;
+}
+.canviposicio input{
+  margin-left: 512px;
+}
+#formularidetailuser img{
+  height: 100px;
+  border-radius: 12px;
+  margin-top: 12px;
+  margin-right: 12px;
+  float: left;
+  margin-left: 15px;
+}

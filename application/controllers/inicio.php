@@ -128,13 +128,33 @@ class Inicio extends CI_Controller {
             $data['login_form'] = 'frontend/login_form';
         }
         
-        $data['users']=$this->user->cercar_user_servei($cercar_user);      
-        $data['contingut']=$this->load->view('frontend/panel_inici/detailusuari',$data,TRUE);
+        $users=$this->user->cercar_user_servei($cercar_user);
+        $html = '<div class="infousuari"><h1 class="label_title">Serveis dels usuaris</h1>';
+
+        if($users!=null){
+          foreach($users as $row) {
+            $data2 = array(
+              'nom_usuari' => $row->nom_usuari,
+              'cognom' => $row->cognom,
+              'foto' => $row->foto,
+              'poblacion' => $row->poblacion,
+              'email' => $row->email
+            );
+
+        $html = $html.$this->load->view('frontend/panel_inici/detailusuari',$data2,TRUE);
+          }
+        }else{
+            $data2['totalusers']="<div class='un_info_usuari'>
+             <p>No s'ha trobat cap usuari buscat</p>
+          </div>";
+        }
+        $data['contingut']=$html."</div>";
         $this->load->view('frontend/inicio', $data);
       }else{
-        echo "no existe";
+         redirect('inicio/no_autentificat', 'refresh');
       }
   }
+
   function serveis_detail(){
      if(isset($_POST['email_user'])){
         $email_user = $_POST['email_user']; 
@@ -152,7 +172,7 @@ class Inicio extends CI_Controller {
         $data['contingut']=$this->load->view('frontend/panel_inici/detailservei',$data,TRUE);
         $this->load->view('frontend/inicio', $data);
       }else{
-        echo "no existe";
+         redirect('inicio', 'refresh');
       }
   }
   public function introduccio() {
