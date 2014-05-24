@@ -150,7 +150,6 @@ class User_settings extends CI_Controller {
   //function validar_editar_servei() {
 	function validar_servicio() {
 	
-	echo "yea";
 	$this->form_validation->set_rules('nombreServicio', 'Nom del servei', 'required|max_length[25]');
 	$this->form_validation->set_rules('descripcionServicio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 	$this->form_validation->set_rules('precioServicio', 'Nom del servei', 'required|integer');
