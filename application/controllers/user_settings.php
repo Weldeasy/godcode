@@ -147,7 +147,8 @@ class User_settings extends CI_Controller {
   //http://us2.php.net/manual/es/function.checkdate.php
   function data_check($date, $format = 'Y-m-d') {
 	$d = DateTime::createFromFormat($format, $date);
-    return $d && $d->format($format) == $date;
+    //return $d && $d->format($format) == $date;
+	echo $date;
   }
   
   function crear_servei() {
