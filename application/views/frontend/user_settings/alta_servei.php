@@ -73,7 +73,7 @@
 						'type' => 'email',
 						'value' => 'test'
 						);
-			echo from_input($test);
+			echo form_input($test);
 		?>
 			<input type="text" name="test" />
 		</div>
