@@ -74,7 +74,8 @@ h1{
     #cssmenu li {  
         width: 50%;  
         float: left;  
-        position: relative;  
+        position: relative; 
+		height:auto; 
     }  
     #cssmenu li a {  
         border-bottom: 1px solid #576979;  
@@ -85,14 +86,44 @@ h1{
         width: 100%;  
         text-indent: 25px;  
     } 
-#cssmenu li.welcome_msg {
-		display:none;
+	
+	#cssmenu form {
+		position:absolute;
 	}
-.logout_b	 {
-		display:none;
+	#cssmenu .login_responsive {
+		height:90px;
 	}
-	.user_settings {
-		display:none;
+	#cssmenu .welcome_msg {
+		position:relative;
+		padding-bottom:6px;
+		right:0;
+		padding-left:5px;
+		width:48.8%;
+	}
+	#cssmenu .welcome_msg .user_settings{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+		left:0;
+		padding-left:20px;
+	}
+	#cssmenu .welcome_msg .logout_b{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+		left:10px;
+		padding-left:50px;
+	}
+	#cssmenu .welcome_msg a:hover{
+		background-color:#05B5F5;
+	}
+	#cssmenu .user_settings {
+		float:right;
+		border:0;
 	}
 }
 @media only screen and (max-width : 480px) {  
@@ -120,14 +151,34 @@ h1{
         right: 15px;  
         top: 10px;  
     }  
-	#cssmenu li.welcome_msg {
-		display:none;
+	#cssmenu .welcome_msg {
+		position:relative;
+		padding-bottom:6px;
+		right:0;
+		padding-left:5px;
+		width:48%;
 	}
-.logout_b	 {
-		display:none;
+	#cssmenu .welcome_msg .user_settings{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+		left:0;
+		padding-left:20px;
 	}
-	.user_settings {
-		display:none;
+	#cssmenu .welcome_msg .logout_b{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+	}
+	#cssmenu .welcome_msg a:hover{
+		background-color:#05B5F5;
+	}
+	#cssmenu .user_settings {
+		border:0;
 	}
 }
 @media only screen and (max-width : 320px) {  
@@ -136,14 +187,37 @@ h1{
         float: none;  
         width: 100%;  
     }
-	#cssmenu li.welcome_msg {
-		display:none;
+	#cssmenu .welcome_msg {
+		position:relative;
+		padding-bottom:6px;
+		right:0;
+		padding-left:5px;
+		width:100%;
 	}
-.logout_b	 {
-		display:none;
+	#cssmenu .welcome_msg .user_settings{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+		left:0;
+		padding-left:20px;
 	}
-	.user_settings {
-		display:none;
+	#cssmenu .welcome_msg .logout_b{
+		display:inline-block;
+		width:20px;
+		margin-top:15px;
+		margin-left:5px;
+		border:0;
+		left:10px;
+		padding-left:50px;
+	}
+	#cssmenu .welcome_msg a:hover{
+		background-color:#05B5F5;
+	}
+	#cssmenu .user_settings {
+		float:right;
+		border:0;
 	}
 }
 /*RESPONSIVE*/
@@ -166,8 +240,8 @@ h1{
 #cssmenu ul ul a {
   color: white;
 }
-#cssmenu li > a:hover,
-#cssmenu ul li:hover > a {
+#cssmenu li.active > a:hover,
+#cssmenu ul li.active:hover > a {
   background: white url('images/hover.png') bottom center no-repeat;
   color: #6c0000;
   text-decoration: none;
@@ -660,16 +734,33 @@ margin-right: 10px;
 .welcome_msg {
   color:white;
   right:5px;
-  position:absolute;
-  margin-left: 50px;
 }
-.logout_b {
-  right:5px;
-  position:absolute;
+.welcome_msg a{
+	padding:0;
+	display:inline-block;
 }
-.user_settings {
-  right:40px;
+#cssmenu li .logout_b {
   position:absolute;
+  line-height:10px;
+  border:0;
+  padding:0;
+  margin-top:-20px;
+  right:0px;
+  background-color:#05B5F5;
+}
+#cssmenu li .logout_b:hover {
+	background-color:#05B5F5;
+}
+#cssmenu li .user_settings {
+  position:absolute;
+  line-height:10px;
+  border:0;
+  padding:0;
+    margin-top:-20px;
+	right:50px;
+}
+#cssmenu li .user_settings:hover {
+	background-color:#05B5F5;
 }
 .user_settings img {
   margin-top:2px;
