@@ -71,21 +71,29 @@
 			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
 			Nombre:
-			<input type="text" name="nombreServicio" value="<?php echo set_value('nombreServicio'); ?>"  /><?php echo form_error('nombreServicio'); ?><br />
+			<input type="text" name="nombreServicio" value="<?php echo set_value('nombreServicio'); ?>"  />
+			<?php echo form_error('nombreServicio'); ?><br />
 			Descripcion:
-			<input type="text" name="descripcionServicio" value="<?php echo set_value('descripcionServicio'); ?>"  /><br />
+			<input type="text" name="descripcionServicio" value="<?php echo set_value('descripcionServicio'); ?>"  />
+			<?php echo form_error('descripcionServicio'); ?><br />
 			Precio:
-			<input type="number" name="precioServicio" value="<?php echo set_value('precioServicio'); ?>"  /><br />
+			<input type="number" name="precioServicio" value="<?php echo set_value('precioServicio'); ?>"  />
+			<?php echo form_error('precioServicio'); ?><br />
 			Data_fi:
-			<input type="text" name="dataFi" value="<?php echo set_value('dataFi'); ?>" /><br />
+			<input type="text" name="dataFi" value="<?php echo set_value('dataFi'); ?>" />
+			<?php echo form_error('dataFi'); ?><br />
 			Disponibilidad Horaria:
-			<input type="text" name="dispHorServicio" value="<?php echo set_value('dispHorServicio'); ?>" /><br />
+			<input type="text" name="dispHorServicio" value="<?php echo set_value('dispHorServicio'); ?>" />
+			<?php echo form_error('dispHorServicio'); ?><br />
 			Disponibilidad Dias semana:
-			<input type="text" name="diaServicio" value="<?php echo set_value('diaServicio'); ?>" /><br />
+			<input type="text" name="diaServicio" value="<?php echo set_value('diaServicio'); ?>" />
+			<?php echo form_error('diaServicio'); ?><br />
 			Categoria:
-			<input type="text" name="categoriaServicio" value="<?php echo set_value('categoriaServicio'); ?>" /><br />
+			<input type="text" name="categoriaServicio" value="<?php echo set_value('categoriaServicio'); ?>" />
+			<?php echo form_error('categoriaServicio'); ?><br />
 			CP:
 			<input type="text" name="cpServicio" value="<?php echo set_value('cpServicio'); ?>" />
+			<?php echo form_error('cpServicio'); ?><br />
 			<input type="submit" name="submit" value="Crear Servicio" />
 		</div>
 		<div id="page-wrapper">
