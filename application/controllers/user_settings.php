@@ -183,7 +183,7 @@ class User_settings extends CI_Controller {
 		
 	} else {
 		$this->servei->add_servei();
-		$this->serveis();
+		redirect('user_settings/serveis','refresh');
 	}
 	
 	
