@@ -93,7 +93,7 @@
 			<input type="checkbox" name="days[]" value="V" />Divendres&nbsp;<br />
 			<input type="checkbox" name="days[]" value="S" />Dissabte&nbsp;<br />
 			<input type="checkbox" name="days[]" value="D" />Diumenge<br />
-			<?php echo form_error('days[]'); ?><br />
+			<?php echo form_error('days'); ?><br />
 			
 			
 			

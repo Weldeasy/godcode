@@ -188,23 +188,12 @@ class User_settings extends CI_Controller {
 		$disponibilitat_dies = "";
 		$dies = $this->input->post("days");
 		var_dump($dies);
-		/*foreach ($dies as $key => $value) {
+		foreach ($dies as $key => $value) {
 			$disponibilitat_dies .= $dies[$key].";";
 		}
-		$dades_servei = array(
-			"id" => $this->input->post("id"),
-			"nom" => $this->input->post("nom"),
-			"descripcio" => $this->input->post("descripcio"),
-			"preu" => $this->input->post("preu"),
-			"categoria" => $this->input->post("categoria"),
-			"disp_horaria" => $disponibilitat_horaria,
-			"disp_dies" => $disponibilitat_dies
-		);
-	
-	
-	
-		$this->servei->add_servei();
-		redirect('user_settings/serveis','refresh');*/
+		$data_inici = date('Y-m-d');
+		$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies);
+		redirect('user_settings/serveis','refresh');
 	}
 	
 	
