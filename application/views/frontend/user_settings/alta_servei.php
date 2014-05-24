@@ -70,7 +70,7 @@
 			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
 			Nombre: 
-			<input type="text" name="nombreServeio" /><br />
+			<input type="text" name="nombreServicio" /><br />
 			Descripcion:
 			<input type="text" name="descripcionServicio" /><br />
 			Precio:

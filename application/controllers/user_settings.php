@@ -151,6 +151,40 @@ class User_settings extends CI_Controller {
 	function validar_servicio() {
 	
 	echo "yea";
+	$this->form_validation->set_rules('nombreServicio', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('descripcionServicio', 'descripcionServicio', 'required');
+	$this->form_validation->set_rules('precioServicio', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('dataFi', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('dispHorServicio', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('diaServicio', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('categoriaServicio', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('cpServicio', 'Nom del servei', 'required');
+	if ($this->form_validation->run() == FALSE)	{
+		echo "YES";
+		
+	} else {
+		echo "NOPE";
+			
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*$this->form_validation->set_rules('days', 'Dias', 'required');
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	if ($this->form_validation->run() == FALSE)
