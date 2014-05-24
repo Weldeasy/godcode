@@ -189,7 +189,7 @@ class User_settings extends CI_Controller {
 	} else {
 		$disponibilitat_horaria = $this->input->post("disp_horaria");
 		$disponibilitat_dies = "";
-		$dies = $this->input->post("days[]");
+		$dies = $this->input->post("days");
 		var_dump($dies);
 		/*foreach ($dies as $key => $value) {
 			$disponibilitat_dies .= $dies[$key].";";
