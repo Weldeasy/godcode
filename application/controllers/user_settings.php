@@ -143,6 +143,13 @@ class User_settings extends CI_Controller {
 
   }
   
+  //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
+  //http://us2.php.net/manual/es/function.checkdate.php
+  function data_check($date, $format = 'Y-m-d') {
+	$d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+  }
+  
   function crear_servei() {
 	$this->load->view('frontend/user_settings/alta_servei', $this->data);
   }
@@ -154,12 +161,12 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_rules('descripcionServicio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 	$this->form_validation->set_rules('precioServicio', 'Nom del servei', 'required|integer');
 	//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
-	$this->form_validation->set_rules('dataFi', 'Nom del servei', 'required@|regex_match[[0-9]{4}-[0-9]{2}-[0-9]{2}]');
+	$this->form_validation->set_rules('dataFi', 'Nom del servei', 'required|callback_data_check');
 	$this->form_validation->set_rules('dispHorServicio', 'Nom del servei', 'required');
 	$this->form_validation->set_rules('diaServicio', 'Nom del servei', 'required');
 	//La categoria es un natural != 0
 	$this->form_validation->set_rules('categoriaServicio', 'Nom del servei', 'required|is_natural_no_zero');
-	$this->form_validation->set_rules('cpServicio', 'Nom del servei', 'required|regex_match[([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$]');
+	$this->form_validation->set_rules('cpServicio', 'Nom del servei', 'required|');
 	if ($this->form_validation->run() == FALSE)	{
 	
 		$this->load->view('frontend/user_settings/alta_servei', $this->data);
