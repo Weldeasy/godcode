@@ -64,7 +64,7 @@
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
-
+			aaas
 		<div id="page-wrapper">
 		</div>
 	</body>
