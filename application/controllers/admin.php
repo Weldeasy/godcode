@@ -16,6 +16,8 @@ class Admin extends CI_Controller {
     	parent::__construct();
  		$this->es_autentificat();//crida la funció aqui, perquè es validar tots els controladors del admin.
 		$this->load->database();//es carrega la BD
+		$this->load->library('gcharts'); //carrega la llibreria de google charts per a fer estadístiques
+		$this->gcharts->load('LineChart');
 		$this->load->model('administrador','adm',TRUE);//també el model del admin
 	}
 	/**
@@ -174,6 +176,24 @@ class Admin extends CI_Controller {
 		}	
 	}
 		
+	function estadisticaZona(){
+		$dataTable = $this->gcharts->DataTable('Stocks');
+		$dataTable->addColumn('number', 'Count', 'count');
+		$dataTable->addColumn('number', 'Projected', 'projected');
+		$dataTable->addColumn('number', 'Official', 'official');
+
+		for($a = 1; $a < 25; $a++)
+			{
+			 $data[0] = $a; //Count
+			 $data[1] = rand(800,1000); //Line 1's data
+			 $data[2] = rand(800,1000); //Line 2's data
+
+			 $dataTable->addRow($data);
+			}
+			$config = array('title' => 'Stocks');
+			$this->gcharts->LineChart('Stocks')->setConfig($config);
+
+		}
 }
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
