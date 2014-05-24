@@ -1,5 +1,5 @@
 <div class="tablaDatagrid">
-	<h1>Banc de Temps</h1>
+	<h1> <b>Banc de Temps</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
 	      		<i class="fa fa-bar-chart-o"></i> Saldo

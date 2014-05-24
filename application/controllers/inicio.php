@@ -12,10 +12,13 @@ class Inicio extends CI_Controller {
   	$this->load->helper(array('form'));
   	$this->load->model('categorias');
     $this->load->model('user');
+    $this->load->model('servei');
+    
     $session_data = $this->session->userdata('logged_in');
     $this->data['email'] = $session_data['email'];
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
+    $this->data['id_user'] = $session_data['id'];
   }
 
   function index(){
@@ -35,13 +38,14 @@ class Inicio extends CI_Controller {
                 $data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
         				break;
         			case '3':
+                /*
         				$login_view = 'frontend/panel_inici/logued';
-        				$data['contingut']=$this->load->view('frontend/panel_inici/congelat',$data,TRUE);
-   
-        			case '4':
+        				$data['contingut']=$this->load->view('frontend/panel_inici/congelat',$data,TRUE);*/
+        			case '4':/*
         				$login_view = 'frontend/panel_inici/logued';
-        				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',$data,TRUE);
-        				break;
+        				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',$data,TRUE);*/
+                    redirect('logout', 'refresh');
+                break;
         		}
             $data['login_form'] = $login_view;
             $this->load->view('frontend/inicio', $data);
@@ -166,14 +170,91 @@ class Inicio extends CI_Controller {
             $data['login_form'] = 'frontend/login_form';
         }
         
-        $data['servei']=$this->user->servei_user($email_user);
+        $servei=$this->user->servei_user($email_user);
 
-        $data['contingut']=$this->load->view('frontend/panel_inici/detailservei',$data,TRUE);
+        $html="";
+
+        if($servei!=null){
+            foreach($servei as $row) {
+              $data2 = array(
+                'id_servei' => $row->id_servei,
+                'nom_servei' => $row->nom_servei,
+                'descripcio_servei' => $row->descripcio_servei,
+                'nom_categoria' => $row->nom_categoria,
+                'data_inici' => $row->data_inici,
+                'data_fi' => $row->data_fi,
+                'disp_horaria' => $row->disp_horaria,
+                'preu' => $row->preu,
+                'user_oferit_servei' => $row->email, //email del users que oferit el servei
+              );
+              //email del session passem al vista,per poder solicitar servei;
+              if(isset($data['email'])){
+                  $data2['email']=$data['email'];
+              }
+              if(isset($data['id_user'])){
+                  $data2['id_user']=$data['id_user'];
+              }
+              $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
+            }
+            $data3['detail_servei']=$html;
+            $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailservei',$data3,TRUE);
+        }else{
+            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_servei',NULL,TRUE);
+        }
         $this->load->view('frontend/inicio', $data);
       }else{
          redirect('inicio', 'refresh');
       }
   }
+  public function verifica_solicitut(){
+        if(isset($_POST['email_user'])){
+          $id_servei=$_POST['id_servei'];
+          $email_user=$_POST['email_user'];
+          $id_user=$_POST['id_user'];
+          
+          if($this->session->userdata('logged_in')) {
+            $session_data = $this->session->userdata('logged_in');
+            $data=$this->data;
+            $data['login_form'] = 'frontend/panel_inici/logued';
+          }else{
+              $data['login_form'] = 'frontend/login_form';
+          }
+          $puntsServeiBD=$this->servei->getPreuServei($id_servei);   
+          $saldoUserBD=$this->user->getSaldoUser($email_user);  
+          $comprovaMinimServeiOfertBD=$this->servei->comprovaServeiOferts($email_user);
+
+          //els punts del servei i els punts del usuari, comparem-les
+          //comprova si usuari té un servei oferit
+          foreach($puntsServeiBD as $row) {
+            $puntsServei=$row->preu;
+          }   
+          foreach ($saldoUserBD as $key) {
+            $saldoUser=$key->saldo;
+          }
+          foreach ($comprovaMinimServeiOfertBD as $key) {
+            $comprovaMinimServeiOfert=$key->servei_minim_oferit;
+          } 
+
+          //Es solicita
+          //Quan es loguejat + no solicitar si mateix //comprovat en altre funcio, serveis_detail(controllador)
+          //Com minim usuari solicitant ha de oferir un servei
+          //El preu del servei ha der més gran o igual saldo del usuari
+          if($comprovaMinimServeiOfert>0){
+            if($puntsServei<=$saldoUser){         
+              $this->user->enviarSolicitut($id_user,$id_servei);     
+              $data['contingut']=$this->load->view('frontend/panel_inici/enviat_solicitut',NULL,TRUE);
+            }else{
+              $data['contingut']=$this->load->view('frontend/panel_inici/error_saldo_minim_servei',NULL,TRUE);
+            }
+          }else{
+              $data['contingut']=$this->load->view('frontend/panel_inici/error_minim_oferit_servei',NULL,TRUE);
+          }
+          $this->load->view('frontend/inicio', $data);
+        }else{
+           redirect('inicio', 'refresh');   
+        }
+  }
+
   public function introduccio() {
       $data = array();
       if($this->session->userdata('logged_in')) {

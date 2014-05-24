@@ -1,5 +1,5 @@
 <div class="tablaDatagrid">
-	<h1>Categories</h1>
+	<h1><b>Gestió de Categories</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
 	      		<i class="fa fa-bar-chart-o"></i> Crear Categories
@@ -10,6 +10,7 @@
 			<!--DATAGRID-->
 			<table class="easyui-datagrid" data-options="toolbar:'#tbCategoria'" rownumbers="true" id="categoriaDatagrid" style="auto">
 			</table>
+
 			<!--TOOLBAR DEL DATAGRID JEASYUI-->
 			<div id="tbCategoria" style="padding:5px;height:auto">
                 <div style="margin-bottom:5px">

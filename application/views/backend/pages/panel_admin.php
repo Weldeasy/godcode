@@ -3,13 +3,13 @@
 
   <div class="row">
       <div class="col-lg-12">
-        <h1>Inici</h1>
+        <h1><b>Panel Admin<b></h1>
         <ol class="breadcrumb">
-          <li class="active"><i class="fa fa-dashboard"></i> Inici</li>
+          <li class="active"><i class="fa fa-dashboard"></i> Panel Admin</li>
         </ol>
         <div class="alert alert-success alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-          Benvingut, Godcode com Administrador
+          Benvingut, com Administrador.
         </div>
       </div>
     </div>
@@ -21,9 +21,9 @@
                 <i class="fa fa-tasks fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">10</p>
+                <p class="announcement-heading"></p>
                 <!--la ultima denuncia actualitzem la data-->
-                <p class="announcement-text">12/5/2014 14:5:01</p>
+                <p class="announcement-text"></p>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@
                     <i class="fa fa-edit fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">5</p>
+                    <p class="announcement-heading"></p>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
                     <i class="fa fa-cog fa-5x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">456</p>
+                    <p class="announcement-heading"></p>
                   </div>
                 </div>
               </div>

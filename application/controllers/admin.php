@@ -140,25 +140,37 @@ class Admin extends CI_Controller {
 			$id=$_POST['id'];
 			echo json_encode($this->adm->eliminarCategoria($id));
 		}else{
-			echo json_encode("error al via post");
+			 redirect('/inicio', 'refresh');
 		}
 	}
 	function crearCategoria_control(){
-		$nom=mysql_real_escape_string($_POST['nom_cat']);
-		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
-		echo json_encode($this->adm->afegirCategoria($nom,$descripcio));
+		if(isset($_POST['nom_cat'])){
+			$nom=mysql_real_escape_string($_POST['nom_cat']);
+			$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+			echo json_encode($this->adm->afegirCategoria($nom,$descripcio));
+		}else{
+			 redirect('/inicio', 'refresh');	
+		}
 	}
 	function actualitzarCategoria_control(){
-		$id=$_GET['id'];
-		$nom=mysql_real_escape_string($_POST['nom_cat']);
-		$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
-		echo json_encode($this->adm->actualitzarCategoria($nom,$descripcio,$id));
+		if(isset($_GET['id'])){
+			$id=$_GET['id'];
+			$nom=mysql_real_escape_string($_POST['nom_cat']);
+			$descripcio=mysql_real_escape_string($_POST['descripcio_cat']);
+			echo json_encode($this->adm->actualitzarCategoria($nom,$descripcio,$id));
+		}else{
+			 redirect('/inicio', 'refresh');
+		}
 	}
 	
 	function actualitzarUsuari_control(){
-		$id=$_GET['id'];
-		$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);
-		echo json_encode($this->adm->actualitzarUsuari($esta_congelat,$id));	
+		if(isset($_GET['id'])){
+			$id=$_GET['id'];
+			$esta_congelat=mysql_real_escape_string($_POST['esta_congelat_user']);
+			echo json_encode($this->adm->actualitzarUsuari($esta_congelat,$id));
+		}else{
+			 redirect('/inicio', 'refresh');
+		}	
 	}
 	function getSaldoMinim_control(){
 		$array=$this->adm->getSaldoMinim();

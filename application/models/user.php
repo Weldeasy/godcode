@@ -31,12 +31,29 @@ Class User extends CI_Model
 	}
 	function servei_user($email){
 		$data = $this->db->query(
-			'SELECT  distinct data_inici,data_fi,disp_horaria,preu,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
+			'SELECT  distinct data_inici,data_fi,disp_horaria,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
 			 and usuari.email="'.$email.'"');
 
 		return $data->result();
 	}
+	public function enviarSolicitut($id_usuari,$id_servei){
+		$this->db->insert("solicitut_servei", array(
+			"id_solicitant"=>$id_usuari,
+			"servei_id"=>$id_servei,
+			"estat" => 0
+		));
+	}
+
+	public function getSaldoUser($email){
+	 	if($email!=null){
+	 		$this->db->select('saldo');
+			$this->db->from('usuari');
+			$this->db->where('email', $email); 	
+			$query = $this->db->get();
+			return $query->result();
+	 	}
+	 }
 	
 	public function update_perfil($email, $nom, $cognom, $sexe, $pr, $po, $cp, $desc, $foto) {
 		$actualitzar = array(
