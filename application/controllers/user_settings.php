@@ -154,7 +154,7 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_rules('descripcionServicio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 	$this->form_validation->set_rules('precioServicio', 'Nom del servei', 'required|integer');
 	//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
-	$this->form_validation->set_rules('dataFi', 'Nom del servei', 'required@|regex_match[\\d{4}-\\d{2}-\\d{2}]');
+	$this->form_validation->set_rules('dataFi', 'Nom del servei', 'required@|regex_match[[0-9]{4}-[0-9]{2}-[0-9]{2}]');
 	$this->form_validation->set_rules('dispHorServicio', 'Nom del servei', 'required');
 	$this->form_validation->set_rules('diaServicio', 'Nom del servei', 'required');
 	//La categoria es un natural != 0
