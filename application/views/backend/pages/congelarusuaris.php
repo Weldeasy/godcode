@@ -1,5 +1,5 @@
 <div class="tablaDatagrid">
-	<h1>Usuaris</h1>
+	<h1> <b>Usuaris</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
 	      		<i class="fa fa-bar-chart-o"></i> Coneglar Usuaris
@@ -37,4 +37,14 @@
         <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="guardarUsuari()">Guardar</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#finestraUsuari').dialog('close')">Cancel·lar</a>
     </div>
+
+
+    <div class="info_estat">
+			<b>* Congelat: </b>
+			<div class="estat_adm" style="background-color:red;"></div>
+			<b>* Pendent per verificar: </b>
+			<div class="estat_adm" style="background-color:yellow;"></div>
+			<b>* No està congelat: </b>
+			<div class="estat_adm" style="background-color:green;"></div>
+		</div>
 </div>

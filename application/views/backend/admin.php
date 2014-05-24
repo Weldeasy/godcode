@@ -19,9 +19,8 @@
     <!-- JavaScript -->
     <script src="<?php echo base_url();?>media/js/jquery-1.10.2.js"></script>
     <script src="<?php echo base_url();?>media/js/bootstrap.js"></script>
-   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-    <!-- JQUERY-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- JQUERY -->
     <script src="<?php echo base_url();?>media/jquery/jquery-1.9.1.min.js"></script>
      <script src="<?php echo base_url();?>media/jquery/admin.js"></script>
 
@@ -39,11 +38,11 @@
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav side-nav">
-			  <li id='inici' class="active"><a href="<?= base_url()?>index.php/admin/"><i class="fa fa-dashboard"></i> Inici</a></li> 
+     	<ul class="nav navbar-nav side-nav">
+			  <li id='inici'><a href="<?= base_url()?>index.php/admin/"><i class="fa fa-dashboard"></i> Panel Admin</a></li> 
 			  <li id='llistarDenuncies'><a href="<?= base_url()?>index.php/admin/denuncies"><i class="fa fa-bar-chart-o"></i> Llistar Denúnices</a></li>
 			  <li id='congelarUsuaris'><a href="<?= base_url()?>index.php/admin/congelarusuaris"><i class="fa fa-ban"></i> Congelar Usuaris</a></li>
-			  <li><a href="<?= base_url()?>index.php/admin/crearcategories"><i class="fa fa-edit"></i> Crear Categoria</a></li>
+			  <li><a href="<?= base_url()?>index.php/admin/crearcategories"><i class="fa fa-edit"></i> Gestió de Categoria</a></li>
 			  <li><a href="<?= base_url()?>index.php/admin/configSaldo"><i class="fa fa-cog"></i> Parametritzar el saldo minim</a></li>
 			  <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Estadístiques <b class="caret"></b></a>
@@ -59,8 +58,9 @@
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $email; ?><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="divider"></li>
-                <li><a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
+                 <li> <a  href="<?= base_url()?>index.php/inicio"><i class="fa fa-bar-chart-o"></i> Inici</a></li>
+                 <li> <a  href="<?= base_url()?>index.php/admin"><i class="fa fa-dashboard"></i> Panel Admin</a></li>
+                 <li><a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
               </ul>
             </li>
           </ul>

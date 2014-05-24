@@ -19,6 +19,17 @@ $(document).ready(function(){
 		        {field:'motiu',title:'Motiu',sortable:true,width:60,align:'left'},
 		        {field:'data_reclamacio',title:'Data reclamació',sortable:true,width:60,align:'left'},
 		        {field:'nom',title:'Denunciant',sortable:true,width:60,align:'left'},
+		        {field:'estat_reclamacio',title:'Estat',sortable:true,width:60,align:'left',
+						formatter:function(value,row,index){
+								if(value==2){
+		                  			return '<div style="border:1px solid;border-radius:50%;background-color:red;height:10px;width:10px;"></div>';
+								}else if(value==0){	
+		                  			return '<div style="border:1px solid;border-radius:50%;background-color:yellow;height:10px;width:10px;"></div>';
+								}else if(value==1){	
+		                  			return '<div style="border:1px solid;border-radius:50%;background-color:green;height:10px;width:10px;"></div>';
+								}
+		              	},
+	    		},
 		    ]]
 	});
 
@@ -139,15 +150,15 @@ function guardarUsuari(){
 				if(result){
 					$('#finestraUsuari').dialog('close');
 					$.messager.show({
-							title:'Guardar Usuari',
+							title:'Estat Usuari',
 							msg:"L'Estat d'usuari s'ha actualitzat correctament",
 							showType:'show' //mostra slider fade
 					});
 					$('#congelarDatagrid').datagrid('reload');
 				}else{
 					$.messager.show({
-						title:"Error al actualitzae l'usuari",
-						msg:"Hi ha hagut un error al guardar l'usuari"
+						title:"Error al actualitzar l'usuari",
+						msg:"Hi ha hagut un error al estat l'usuari"
 					});
 				}
 			},
