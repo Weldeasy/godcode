@@ -85,6 +85,7 @@
 			<input type="text" name="categoriaServicio" /><br />
 			CP:
 			<input type="text" name="cpServicio" />
+			<input type="submit" name="submit" value="Crear Servicio" />
 		</div>
 		<div id="page-wrapper">
 		</div>
