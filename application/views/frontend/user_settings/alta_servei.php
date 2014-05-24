@@ -64,7 +64,7 @@
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
-		<div>
+		<div style="margin-left:150px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_servei', $attributes);
