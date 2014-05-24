@@ -66,12 +66,12 @@
 		</div>
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
-			echo validation_errors();
+			//echo validation_errors();
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
-			Nombre: 
-			<input type="text" name="nombreServicio" value="<?php echo set_value('nombreServicio'); ?>"  /><br />
+			Nombre:
+			<input type="text" name="nombreServicio" value="<?php echo set_value('nombreServicio'); ?>"  /><?php echo form_error('nombreServicio'); ?><br />
 			Descripcion:
 			<input type="text" name="descripcionServicio" value="<?php echo set_value('descripcionServicio'); ?>"  /><br />
 			Precio:
