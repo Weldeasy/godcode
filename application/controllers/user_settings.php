@@ -148,7 +148,9 @@ class User_settings extends CI_Controller {
   }
   
   function validar_editar_servei() {
-	$this->form_validation->set_rules('days', 'Dias', 'required');
+  
+	echo "yea";
+	/*$this->form_validation->set_rules('days', 'Dias', 'required');
 	$this->form_validation->set_message('required', "No has seleccionat cap dia");
 	if ($this->form_validation->run() == FALSE)
 	{
@@ -177,7 +179,7 @@ class User_settings extends CI_Controller {
 			$missatge = "S'ha produit un error, torna a provar-ho.";
 			
 		$this->editar_servei($dades_servei['id'], $missatge);
-	}
+	}*/
   }
   
   function editar_servei($id, $missatge = null) {
