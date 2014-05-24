@@ -173,7 +173,7 @@ class User_settings extends CI_Controller {
 	//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
 	$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_data_check');
 	$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
-	$this->form_validation->set_rules('disp_dias', 'Nom del servei', 'required');
+	$this->form_validation->set_rules('days[]', 'Nom del servei', 'required');
 	//La categoria es un natural != 0
 	$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
 	$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
