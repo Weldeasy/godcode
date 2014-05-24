@@ -64,18 +64,27 @@
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
-		<div style="margin-left:150px; margin-top:50px;">
+		<div style="margin-left:450px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_servei', $attributes);
-			$test = array(
-						'name' => 'test',
-						'type' => 'email',
-						'value' => 'test'
-						);
-			echo form_input($test);
-		?>
-			<input type="text" name="test" />
+		?>	
+			Nombre: 
+			<input type="text" name="nombreServeio" /><br />
+			Descripcion:
+			<input type="text" name="descripcionServicio" /><br />
+			Precio:
+			<input type="number" name="precioServicio" /><br />
+			Data_fi:
+			<input type="text" name="dataFi" /><br />
+			Disponibilidad Horaria:
+			<input type="text" name="dispHorServicio" /><br />
+			Disponibilidad Dias semana:
+			<input type="text" name="diaServicio" /><br />
+			Categoria:
+			<input type="text" name="categoriaServicio" /><br />
+			CP:
+			<input type="text" name="cpServicio" />
 		</div>
 		<div id="page-wrapper">
 		</div>
