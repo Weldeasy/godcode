@@ -86,8 +86,18 @@
 			<input type="text" name="disp_horaria" value="<?php echo set_value('disp_horaria'); ?>" />
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<input type="text" name="disp_dias" value="<?php echo set_value('disp_dias'); ?>" />
-			<?php echo form_error('disp_dias'); ?><br />
+			<input type="checkbox" name="days[]" value="L" <?php if (in_array('L',$disponibilitat_dies)) print "checked"; ?> >Dilluns&nbsp;
+			<input type="checkbox" name="days[]" value="M" <?php if (in_array('M',$disponibilitat_dies)) print "checked"; ?> >Dimarts&nbsp;
+			<input type="checkbox" name="days[]" value="X" <?php if (in_array('X',$disponibilitat_dies)) print "checked"; ?> >Dimecres&nbsp;
+			<input type="checkbox" name="days[]" value="J" <?php if (in_array('J',$disponibilitat_dies)) print "checked"; ?> >Dijous&nbsp;
+			<input type="checkbox" name="days[]" value="V" <?php if (in_array('V',$disponibilitat_dies)) print "checked"; ?> >Divendres&nbsp;
+			<input type="checkbox" name="days[]" value="S" <?php if (in_array('S',$disponibilitat_dies)) print "checked"; ?> >Dissabte&nbsp;
+			<input type="checkbox" name="days[]" value="D" <?php if (in_array('D',$disponibilitat_dies)) print "checked"; ?> >Diumenge
+			<?php echo form_error('days'); ?><br />
+			
+			
+			
+			
 			Categoria:
 			<input type="text" name="categoria" value="<?php echo set_value('categoria'); ?>" />
 			<?php echo form_error('categoria'); ?><br />
