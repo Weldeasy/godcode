@@ -68,6 +68,12 @@
 		<?php
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_servei', $attributes);
+			$test = array(
+						'name' => 'test',
+						'type' => 'email',
+						'value' => 'test'
+						);
+			echo from_input($test);
 		?>
 			<input type="text" name="test" />
 		</div>
