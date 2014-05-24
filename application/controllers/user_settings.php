@@ -146,7 +146,7 @@ class User_settings extends CI_Controller {
   //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
   function data_check($date) {
 	if (count(explode('-', $date)) == 3) {
-		list($mes, $dia, $año) = explode('-', $date);
+		list($mes, $dia, $anyo) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
 		if ($valida) {
 			return true;
