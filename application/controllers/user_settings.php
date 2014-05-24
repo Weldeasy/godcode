@@ -152,6 +152,7 @@ class User_settings extends CI_Controller {
 			return true;
 		} else {
 			$this->form_validation->set_message('data_check', '%s es una fecha NO valida');
+			return false;
 		}
 	} else {
 		$this->form_validation->set_message('data_check', '%s no es ni una fecha');
