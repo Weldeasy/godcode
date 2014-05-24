@@ -71,21 +71,21 @@
 			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
 			Nombre: 
-			<input type="text" name="nombreServicio" /><br />
+			<input type="text" name="nombreServicio" value="<?php echo set_value('nombreServicio'); ?>"  /><br />
 			Descripcion:
-			<input type="text" name="descripcionServicio" /><br />
+			<input type="text" name="descripcionServicio" value="<?php echo set_value('descripcionServicio'); ?>"  /><br />
 			Precio:
-			<input type="number" name="precioServicio" /><br />
+			<input type="number" name="precioServicio" value="<?php echo set_value('precioServicio'); ?>"  /><br />
 			Data_fi:
-			<input type="text" name="dataFi" /><br />
+			<input type="text" name="dataFi" value="<?php echo set_value('dataFi'); ?>" /><br />
 			Disponibilidad Horaria:
-			<input type="text" name="dispHorServicio" /><br />
+			<input type="text" name="dispHorServicio" value="<?php echo set_value('dispHorServicio'); ?>" /><br />
 			Disponibilidad Dias semana:
-			<input type="text" name="diaServicio" /><br />
+			<input type="text" name="diaServicio" value="<?php echo set_value('diaServicio'); ?>" /><br />
 			Categoria:
-			<input type="text" name="categoriaServicio" /><br />
+			<input type="text" name="categoriaServicio" value="<?php echo set_value('categoriaServicio'); ?>" /><br />
 			CP:
-			<input type="text" name="cpServicio" />
+			<input type="text" name="cpServicio" value="<?php echo set_value('cpServicio'); ?>" />
 			<input type="submit" name="submit" value="Crear Servicio" />
 		</div>
 		<div id="page-wrapper">
