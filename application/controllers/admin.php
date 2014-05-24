@@ -16,8 +16,6 @@ class Admin extends CI_Controller {
     	parent::__construct();
  		$this->es_autentificat();//crida la funció aqui, perquè es validar tots els controladors del admin.
 		$this->load->database();//es carrega la BD
-		$this->load->library('gcharts'); //carrega la llibreria de google charts per a fer estadístiques
-		$this->gcharts->load('LineChart');
 		$this->load->model('administrador','adm',TRUE);//també el model del admin
 	}
 	/**
@@ -177,6 +175,8 @@ class Admin extends CI_Controller {
 	}
 		
 	function estadisticaZona(){
+		$this->load->library('gcharts'); //carrega la llibreria de google charts per a fer estadístiques
+		$this->gcharts->load('LineChart');
 		$dataTable = $this->gcharts->DataTable('Stocks');
 		$dataTable->addColumn('number', 'Count', 'count');
 		$dataTable->addColumn('number', 'Projected', 'projected');
