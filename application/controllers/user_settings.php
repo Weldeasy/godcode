@@ -166,7 +166,7 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_rules('diaServicio', 'Nom del servei', 'required');
 	//La categoria es un natural != 0
 	$this->form_validation->set_rules('categoriaServicio', 'Nom del servei', 'required|is_natural_no_zero');
-	$this->form_validation->set_rules('cpServicio', 'Nom del servei', 'required|');
+	$this->form_validation->set_rules('cpServicio', 'Nom del servei', 'required|exact_length[5]|numeric');
 	if ($this->form_validation->run() == FALSE)	{
 	
 		$this->load->view('frontend/user_settings/alta_servei', $this->data);
