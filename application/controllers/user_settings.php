@@ -164,7 +164,7 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_message('required', 'Esto es necesario, manito');
 	if ($this->form_validation->run() == FALSE)	{
 	
-		$this->crear_servei();
+		$this->load->view('frontend/user_settings/alta_servei', $this->data);
 		
 	} else {
 		echo "YESH";
