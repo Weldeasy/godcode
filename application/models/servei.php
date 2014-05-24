@@ -48,8 +48,10 @@ Class Servei extends CI_Model {
 			"data_inici"=>$this->input->post("data_inici", TRUE),
 			"data_fi" =>$this->input->post("data_fi", TRUE),
 			"disp_horaria"=>$this->input->post("disp_horaria"),
+			"disp_dias"=>$this->input->post("disp_dias"),
 			"categoria"=>$this->input->post("categoria", TRUE),
-			"usuari"=>$this->input->post("usuari", TRUE)
+			"usuari"=>$this->input->post("usuari", TRUE),
+			"cp"=>$this->input->post("cp", TRUE)
 		));
 		return true;
 	}
