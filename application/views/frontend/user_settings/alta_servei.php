@@ -67,7 +67,7 @@
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
-			echo form_open('user_settings/validar_servei', $attributes);
+			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
 			Nombre: 
 			<input type="text" name="nombreServeio" /><br />
