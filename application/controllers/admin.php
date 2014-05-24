@@ -177,6 +177,7 @@ class Admin extends CI_Controller {
 	function estadisticaZona(){
 		$this->load->library('gcharts'); //carrega la llibreria de google charts per a fer estadístiques
 		$this->gcharts->load('LineChart');
+		echo("jola");
 		$dataTable = $this->gcharts->DataTable('Stocks');
 		$dataTable->addColumn('number', 'Count', 'count');
 		$dataTable->addColumn('number', 'Projected', 'projected');
