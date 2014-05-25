@@ -16,6 +16,16 @@ Class Servei extends CI_Model {
 		$query = $this -> db -> get();
 		return $query->result();
 	 }
+	 
+	 /* Funcion que devuelve el servicio por el id */
+	 public function get_servei($id) {
+		$this -> db -> select('*');
+		$this -> db -> from('servei');
+		$this -> db -> where('s.id', $id); 
+		$query = $this -> db -> get();
+		return $query->result();
+	 }
+	 
 	 public function comprovaServeiOferts($email){
 		if($email!=null){
 	 		$query = $this->db->query('SELECT COUNT(*) as servei_minim_oferit from servei,usuari where usuari.id=servei.usuari and usuari.email="'.$email.'"');

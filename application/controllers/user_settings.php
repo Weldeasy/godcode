@@ -181,9 +181,7 @@ class User_settings extends CI_Controller {
   
   //function validar_editar_servei() {
 	function validar_servicio() {
-		
-		
-		
+	
 		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
@@ -213,59 +211,15 @@ class User_settings extends CI_Controller {
 			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari['id']);
 			redirect('user_settings/serveis','refresh');
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*$this->form_validation->set_rules('days', 'Dias', 'required');
-	$this->form_validation->set_message('required', "No has seleccionat cap dia");
-	if ($this->form_validation->run() == FALSE)
-	{
-		$this->editar_servei($this->input->post("id"));
-	}else
-	{
-		$disponibilitat_horaria = $this->input->post("hores");
-		$disponibilitat_dies = "";
-		$dies = $this->input->post("days");
-		foreach ($dies as $key => $value) {
-			$disponibilitat_dies .= $dies[$key].";";
-		}
-		$dades_servei = array(
-			"id" => $this->input->post("id"),
-			"nom" => $this->input->post("nom"),
-			"descripcio" => $this->input->post("descripcio"),
-			"preu" => $this->input->post("preu"),
-			"categoria" => $this->input->post("categoria"),
-			"disp_horaria" => $disponibilitat_horaria,
-			"disp_dies" => $disponibilitat_dies
-		);
-		
-		if ($this->servei->actualitzar_servei($dades_servei))
-			$missatge = "Servei actualitzat Ok!";
-		else
-			$missatge = "S'ha produit un error, torna a provar-ho.";
-			
-		$this->editar_servei($dades_servei['id'], $missatge);
-	}*/
   }
   
   function editar_servei($id, $missatge = null) {
-		$this->db->select('*');
+		
+		$servicio = $this->servei->get_servei($id);
+		var_dump($servicio);
+		
+		
+		/*$this->db->select('*');
 		$this->db->from('servei s');
 		$this->db->where('s.id = '.$id);
 		$query = $this->db->get();
@@ -296,7 +250,7 @@ class User_settings extends CI_Controller {
 		
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
-		$this->load->view("frontend/user_settings/editar_servei", $data);
+		$this->load->view("frontend/user_settings/editar_servei", $data);*/
 	}
   
   /***************************************************SERVEIS*************************************************************/
