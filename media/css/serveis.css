@@ -67,7 +67,8 @@
 
 /* ALTA SERVEI Y EDITAR SERVEI */
 
-#disp_dias {
+#disp_dias td {
 	border:1px solid;
-	border-color:#99FF99;
+	border-color:#CCFF66;
+	background-color:#99FF99;
 }
