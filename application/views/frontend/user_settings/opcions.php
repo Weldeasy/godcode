@@ -34,7 +34,7 @@
 			<div class="sidebar-option-none">
 			</div>
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
-			<a><div class="sidebar-option">SOLICITUDS</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
 
 		<div id="page-wrapper">
