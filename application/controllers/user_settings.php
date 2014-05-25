@@ -152,7 +152,6 @@ class User_settings extends CI_Controller {
 		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
 		if ($valida) {
-			var_dump();
 			if (strrpos($diff, "-") === false) {
 				$this->form_validation->set_message('dataFi_check', '%s tiene que ser posterior a hoy');
 				return false;
