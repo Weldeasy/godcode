@@ -19,6 +19,8 @@
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
+					from: <?php echo $horas[0]; ?>,
+					to: <?php echo $horas[1]; ?>,
 					type: 'double',
 					postfix: ":00",
 					prettify: false,
@@ -79,10 +81,10 @@
 			<input type="text" name="descripcio" value="<?php echo set_value('descripcio'); if(isset($descripcio)) {echo $descripcio;}?>"  />
 			<?php echo form_error('descripcio'); ?><br />
 			Precio:
-			<input type="number" name="preu" value="<?php echo set_value('preu'); ?>"  />
+			<input type="number" name="preu" value="<?php echo set_value('preu'); if(isset($preu)) {echo $preu;} ?>"  />
 			<?php echo form_error('preu'); ?><br />
 			Data_fi:
-			<input type="text" name="data_fi" id="datepicker1" value="<?php echo set_value('data_fi'); ?>" />
+			<input type="text" name="data_fi" id="datepicker1" value="<?php echo set_value('data_fi'); if(isset($data_fi)) {echo $data_fi;} ?>" />
 			<?php echo form_error('data_fi'); ?><br />
 			Disponibilidad Horaria:
 			<div id="slider-hores">
@@ -101,8 +103,9 @@
 			<?php echo form_dropdown('categoria', $categorias, ''); ?><br />
 			<?php echo form_error('categoria'); ?><br />
 			CP:
-			<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />
+			<input type="text" name="cp" value="<?php echo set_value('cp'); if(isset($cp)) {echo $cp;} ?>" />
 			<?php echo form_error('cp'); ?><br />
+			<input type="hidden" name="data_inici" value="<?php echo set_value('data_inici'); if(isset($data_inici)) {echo $data_inici;} ?>" />
 			<input type="submit" name="submit" value="Editar Servicio" />
 
 		</div>
