@@ -16,15 +16,17 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<script>
-			$("#disp_horaria").ionRangeSlider({
-				min: 0,
-				max: 5000,
-				type: 'double',
-				prefix: "$",
-				maxPostfix: "+",
-				prettify: false,
-				hasGrid: true
-			});
+			$function() {
+				$("#disp_horaria").ionRangeSlider({
+					min: 0,
+					max: 5000,
+					type: 'double',
+					prefix: "$",
+					maxPostfix: "+",
+					prettify: false,
+					hasGrid: true
+				});
+			}
 		</script>
 <style>
 	.page_wrapper {
