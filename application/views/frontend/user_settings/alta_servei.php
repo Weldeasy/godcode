@@ -25,7 +25,7 @@
 					prettify: false,
 					hasGrid: true
 				});
-				$("#disp_horaria").css("width", 300);
+				$("#datepicker1").datepicker({ appendText: "" });
 			}
 		</script>
 <style>
@@ -82,7 +82,7 @@
 			<input type="number" name="preu" value="<?php echo set_value('preu'); ?>"  />
 			<?php echo form_error('preu'); ?><br />
 			Data_fi:
-			<input type="text" name="data_fi" value="<?php echo set_value('data_fi'); ?>" />
+			<input type="text" name="data_fi" id="datepicker1"value="<?php echo set_value('data_fi'); ?>" />
 			<?php echo form_error('data_fi'); ?><br />
 			Disponibilidad Horaria:
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  />
