@@ -124,6 +124,7 @@ class User_settings extends CI_Controller {
 	if (count($serveis) > 0) {
 		$html = "";
 		foreach($serveis as $row) {
+			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
 			  'nom' => $row->nom,
@@ -131,9 +132,12 @@ class User_settings extends CI_Controller {
 			  'preu' => $row->preu,
 			  'data_inici' => $row->data_inici,
 			  'data_fi' => $row->data_fi,
-			  'disp_horaria' => $row->disp_horaria,
+			  'horas' => explode(";", $row->disp_horaria),
+			  'days' => explode(";", $row->disp_dies),
 			  'categoria' => $row->categoria,
-			  'usuari' => $row->usuari
+			  'usuari' => $row->usuari,
+			  'cp' => $row->cp,
+			  'poblacion' => $pueblo->poblacion
 			);
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
@@ -150,7 +154,7 @@ class User_settings extends CI_Controller {
   
   //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
   function dataFi_check($date) {
-	if (count(explode('/', $date)) == 3) {
+	if (count(explode('-', $date)) == 3) {
 		list($anyo, $mes, $dia) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
@@ -191,14 +195,14 @@ class User_settings extends CI_Controller {
 		$this->form_validation->set_message('max_length', "%s no pot tenir més %s caracters.");
 		$this->form_validation->set_message('min_length', "%s ha de tenir %s caracters.");
 		$this->form_validation->set_message('integer', "%s només pot contenir números.");
-		$this->form_validation->set_message('callback_dataFi_check', "El format de %s no es correcte (Y/m/d).");
 		$this->form_validation->set_message('is_natural_no_zero', "%s que has seleccionat no es correcte.");
 		$this->form_validation->set_message('exact_length', "%s ha de tenir exactament %s numeros.");
 		$this->form_validation->set_message('numeric', "%s ha de ser númeric.");
+		$this->form_validation->set_message('greater_than', "%s ha de ser major que %s.");
 	
 		$this->form_validation->set_rules('nom', 'El nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'La descripció', 'required|min_length[50]|max_length[500]');
-		$this->form_validation->set_rules('preu', 'El preu', 'required|integer');
+		$this->form_validation->set_rules('preu', 'El preu', 'required|integer|greater_than[0]');
 		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
 		$this->form_validation->set_rules('data_fi', 'la data de fi', 'required|callback_dataFi_check');
 		$this->form_validation->set_rules('disp_horaria', 'L\'horari', 'required');
@@ -273,6 +277,7 @@ class User_settings extends CI_Controller {
 			$this->data['nom'] = $servicio->nom;
 			$this->data['descripcio'] = $servicio->descripcio;
 			$this->data['preu'] = $servicio->preu;
+			$this->data['categoria'] = $servicio->categoria;
 			$this->data['data_inici'] = $servicio->data_inici;
 			$this->data['data_fi'] = $servicio->data_fi;
 			$this->data['usuari'] = $servicio->usuari;
@@ -299,6 +304,7 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
   }
   /***************************************************OPCIONS*************************************************************/
+
   function estatSolicitut(){
   	$estatSolicitut=false;
   	if(isset($_POST['id_solicitut'])){
@@ -344,7 +350,6 @@ class User_settings extends CI_Controller {
    	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
-
 
 }
 

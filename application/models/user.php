@@ -62,7 +62,7 @@ Class User extends CI_Model
 	}
 	function servei_user($email){
 		$data = $this->db->query(
-			'SELECT  distinct data_inici,data_fi,disp_horaria,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
+			'SELECT  distinct categoria,data_inici,data_fi,disp_horaria,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
 			 and usuari.email="'.$email.'"');
 

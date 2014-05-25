@@ -37,7 +37,7 @@
 					hasGrid: true
 				});
 				
-				$("#datepicker1").datepicker();
+				$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
 				
 			}
 		</script>
@@ -79,7 +79,7 @@
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
-		<div style="margin-left:450px; margin-top:50px;">
+		<div id="page-wrapper">
 		<?php
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
 			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
@@ -101,25 +101,35 @@
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<input type="checkbox" name="days[]" value="L"  <?php if(isset($disponibilitat_dies)) {if (in_array('L',$disponibilitat_dies)) {print "checked";}} ?>/>Dilluns&nbsp;<br />
-			<input type="checkbox" name="days[]" value="M"  <?php  if(isset($disponibilitat_dies)) {if (in_array('M',$disponibilitat_dies)) {print "checked";}} ?>/>Dimarts&nbsp;<br />
-			<input type="checkbox" name="days[]" value="X"  <?php  if(isset($disponibilitat_dies)) {if (in_array('X',$disponibilitat_dies)) {print "checked";}} ?>/>Dimecres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="J"  <?php  if(isset($disponibilitat_dies)) {if (in_array('J',$disponibilitat_dies)) {print "checked";}} ?>/>Dijous&nbsp;<br />
-			<input type="checkbox" name="days[]" value="V"  <?php  if(isset($disponibilitat_dies)) {if (in_array('V',$disponibilitat_dies)) {print "checked";}} ?>/>Divendres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="S"  <?php  if(isset($disponibilitat_dies)) {if (in_array('S',$disponibilitat_dies)) {print "checked";}} ?>/>Dissabte&nbsp;<br />
-			<input type="checkbox" name="days[]" value="D"  <?php  if(isset($disponibilitat_dies)) {if (in_array('D',$disponibilitat_dies)) {print "checked";}} ?>/>Diumenge<br />
+			<table id="disp_dias">
+				<tr>
+					<td>L</td>
+					<td>M</td>
+					<td>X</td>
+					<td>J</td>
+					<td>V</td>
+					<td>S</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('L', $_POST['days'])) ) print 'checked'; ?> value="L" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('M', $_POST['days'])) ) print 'checked'; ?> value="M" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('X', $_POST['days'])) ) print 'checked'; ?> value="X" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('J', $_POST['days'])) ) print 'checked'; ?> value="J" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('V', $_POST['days'])) ) print 'checked'; ?> value="V" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('S', $_POST['days'])) ) print 'checked'; ?> value="S" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
+				</tr>
+			</table>
 			<?php echo form_error('days'); ?><br />
-			Categoria:
-			<?php echo form_dropdown('categoria', $categorias, ''); ?><br />
-			<?php echo form_error('categoria'); ?><br />
+			<?php if (isset($_POST['categoria'])) $c = $_POST['categoria']; else $c = $categoria; echo form_dropdown('categoria', $categorias, $c); ?><br />
+			<?php echo form_error('categoria'); ?><br /><br />
 			CP:
 			<input type="text" name="cp" value="<?php echo set_value('cp'); if(isset($cp)) {echo $cp;} ?>" />
 			<?php echo form_error('cp'); ?><br />
 			<input type="hidden" name="data_inici" value="<?php echo set_value('data_inici'); if(isset($data_inici)) {echo $data_inici;} ?>" />
 			<input type="submit" name="submit" value="Editar Servicio" />
 
-		</div>
-		<div id="page-wrapper">
 		</div>
 	</body>
 </html>

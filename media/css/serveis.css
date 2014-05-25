@@ -2,27 +2,20 @@
 	border:1px solid;
 	height:150px;
 	width:700px;
-	margin-top:30px;
-	margin-left:auto;
-	margin-right:auto;
-	position: relative;
-	border-bottom:1px solid;
+	margin-bottom:80px;
+	margin-top:50px;
 }
 
 .foto_servicio {
-	height:100%;
-	display:inline-block;
-	width:150px;
+	float:left;
 }
-.foto_servicio img{
-	height:100%;
-	width:150px;
+.foto_servicio>img{
 	border-right:1px solid;
+	height:150px;
+	width:150px;
 }
 .cuerpo_servicio {
-	float:right;
-	width:77%;
-	display:inline-block;
+	width:100%;
 }
 
 .titulo_servicio {
@@ -31,20 +24,18 @@
 	padding-left:5px;
 }
 .descripcion_servicio {
-	height:128px;
+	/*min-height:128px;*/
+}
+.descripcion_servicio p{
+	/*word-wrap: break-word;
+	padding-right:10px;*/
 }
 .precio_servicio {
-	border-top:1px solid;
-	border-left:1px solid;
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	height:50px;
-	width:120px;
-	text-align:center;
-	line-height:50px;
-	font-weight:bolder;
-	font-size:large;
+	border:1px solid;
+	float:right;
+	width:110px;
+	height:40px;
+	clear:left;
 }
 .data_caducitat{
 	float:right;
@@ -54,9 +45,26 @@
 	font-weight:bolder;
 }
 .servei_actions {
-	width:100%;
+	/*width:100%;
 	padding-bottom:10px;
 	padding-top:10px;
 	margin-bottom:-2px;
-	text-align:center;
+	text-align:center;*/
+}
+
+.dispo_servicio {
+	border:1px solid;
+	clear:left;
+	width:100%;
+}
+
+/* ALTA SERVEI Y EDITAR SERVEI */
+
+.disp_dias td {
+	border:1px solid;
+	border-color:#CCFF66;
+	background-color:#99FF99;
+}
+.disp_dias {
+	display:inline;
 }

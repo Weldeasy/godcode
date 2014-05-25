@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+	var w = $("#user").css('width').substring(0, $("#user").css('width').length-2);
+	w -= 39;
+	w += "px";
+	$("#user_nav").width(w);
+	
 	$("#user").click(function() {
 		var estat = $("#user_nav").css("display");
 		if (estat == "none") {

@@ -9,6 +9,7 @@
 		<link href="<?= base_url()?>media/css/ion.rangeSlider.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/ion.rangeSlider.skinSimple.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
+
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		<script src="<?= base_url()?>media/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
@@ -26,7 +27,7 @@
 					hasGrid: true
 				});
 				
-				$("#datepicker1").datepicker();
+				$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
 				
 			}
 		</script>
@@ -90,21 +91,31 @@
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<input type="checkbox" name="days[]" value="L" />Dilluns&nbsp;<br />
-			<input type="checkbox" name="days[]" value="M" />Dimarts&nbsp;<br />
-			<input type="checkbox" name="days[]" value="X" />Dimecres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="J" />Dijous&nbsp;<br />
-			<input type="checkbox" name="days[]" value="V" />Divendres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="S" />Dissabte&nbsp;<br />
-			<input type="checkbox" name="days[]" value="D" />Diumenge<br />
+			<table id="disp_dias">
+				<tr>
+					<td>L</td>
+					<td>M</td>
+					<td>X</td>
+					<td>J</td>
+					<td>V</td>
+					<td>S</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('L', $_POST['days'])) ) print 'checked'; ?> value="L" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('M', $_POST['days'])) ) print 'checked'; ?> value="M" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('X', $_POST['days'])) ) print 'checked'; ?> value="X" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('J', $_POST['days'])) ) print 'checked'; ?> value="J" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('V', $_POST['days'])) ) print 'checked'; ?> value="V" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('S', $_POST['days'])) ) print 'checked'; ?> value="S" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
+				</tr>
+			</table>
 			<?php echo form_error('days'); ?><br />
 			
-			
-			
-			
-			Categoria:
-			<?php echo form_dropdown('categoria', $categorias, ''); ?><br />
-			<?php echo form_error('categoria'); ?><br />
+				
+			<?php echo form_dropdown('categoria', $categorias, @set_value('categoria')); ?><br />
+			<?php echo form_error('categoria'); ?><br /><br />
 			CP:
 			<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />
 			<?php echo form_error('cp'); ?><br />
