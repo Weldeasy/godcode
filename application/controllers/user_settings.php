@@ -142,7 +142,7 @@ class User_settings extends CI_Controller {
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	} else {
-		$html = "No estas ofernit cap servei actualment.";
+		$html = "No estas oferint cap servei actualment.";
 	}
 	
 	
@@ -303,7 +303,7 @@ class User_settings extends CI_Controller {
   function opcions() {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
   }
-  /***************************************************OPCIONS*************************************************************/
+  /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){
   	$estatSolicitut=false;
