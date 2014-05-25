@@ -15,8 +15,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script>
 	$(function() {
-		$("#datepicker1").datepicker();
-		$("#datepicker2").datepicker();
+		$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
+		$("#datepicker2").datepicker({ dateFormat: 'yy-mm-dd' });
 	});
 	/*RESPONSIVE */
 	$(function() {  
