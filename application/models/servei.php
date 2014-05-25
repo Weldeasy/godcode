@@ -97,7 +97,7 @@ Class Servei extends CI_Model {
 				//$sql .= 'AND s.cp = "'.$ciutat.'" ';
 			}
 			else {
-				$this->db->where('p.poblacion', $ciutat);
+				$this->db->like('p.poblacion', $ciutat);
 				//$sql .= 'AND p.poblacion = "'.$ciutat.'" ';
 			}
 		}
