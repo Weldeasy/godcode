@@ -152,7 +152,7 @@ class User_settings extends CI_Controller {
 		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
 		if ($valida) {
-			var_dump(strrpos($diff, "-"););
+			var_dump(strrpos($diff, "-"));
 			//return true;
 		} else {
 			$this->form_validation->set_message('data_check', '%s es una fecha NO valida');
