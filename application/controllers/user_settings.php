@@ -171,6 +171,10 @@ class User_settings extends CI_Controller {
   }
   
   function crear_servei() {
+	$categorias = $this->categorias->get_categorias();
+	foreach($categorias as $row) {
+		$this->data['categorias'][$row['id']] = $row['nom'];
+	}
 	$this->load->view('frontend/user_settings/alta_servei', $this->data);
   }
   
