@@ -230,6 +230,7 @@ class User_settings extends CI_Controller {
 			foreach($categorias as $row) {
 				$this->data['categorias'][$row['id']] = $row['nom'];
 			}
+			$this->data['id'] = $id;
 			$this->load->view('frontend/user_settings/editar_servei', $this->data);
 			
 		} else {
@@ -262,7 +263,7 @@ class User_settings extends CI_Controller {
 			$this->data['data_fi'] = $servicio->data_fi;
 			$this->data['usuari'] = $servicio->usuari;
 			$this->data['cp'] = $servicio->cp;
-			$this->data['idS'] = $servicio->id;
+			$this->data['id'] = $servicio->id;
 			
 			$categories = $this->categorias->get_categorias();
 			foreach ($categories as $valor) {
