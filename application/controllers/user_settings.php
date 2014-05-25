@@ -238,7 +238,7 @@ class User_settings extends CI_Controller {
 			
 			$categories = $this->categorias->get_categorias();
 			foreach ($categories as $valor) {
-				$data['categories'][$valor['id']] = $valor['nom'];
+				$data['categorias'][$valor['id']] = $valor['nom'];
 			}
 			
 			$this->load->view("frontend/user_settings/editar_servei", $data);
