@@ -113,12 +113,9 @@
 			</table>
 			<?php echo form_error('days'); ?><br />
 			
-			
-			
-			
-			Categoria:
+				
 			<?php echo form_dropdown('categoria', $categorias, @set_value('categoria')); ?><br />
-			<?php echo form_error('categoria'); ?><br />
+			<?php echo form_error('categoria'); ?><br /><br />
 			CP:
 			<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />
 			<?php echo form_error('cp'); ?><br />
