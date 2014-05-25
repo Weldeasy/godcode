@@ -19,8 +19,8 @@
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
-					from: <?php if (isset($horas) {echo $horas[0];} else { echo 0;} ?>,
-					to: <?php if (isset($horas) {echo $horas[1];} else {echo 24;} ?>,
+					<?php if (isset($horas) {echo "from:".$horas[0];}  ?>,
+				    <?php if (isset($horas) {echo "to:".$horas[1];} ?>,
 					type: 'double',
 					postfix: ":00",
 					prettify: false,
