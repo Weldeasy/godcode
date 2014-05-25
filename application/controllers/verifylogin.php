@@ -35,7 +35,7 @@ class VerifyLogin extends CI_Controller {
 		 $data['foto'] = $session_data['foto'];
 		 $data['login_form'] = 'frontend/logued';
     }
-    redirect('inicio', 'refresh');
+    $this->load->view('inicio');
   }
   
   function check_database($password)
