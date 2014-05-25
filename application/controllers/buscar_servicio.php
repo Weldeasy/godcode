@@ -28,7 +28,7 @@ class Buscar_servicio extends CI_Controller {
 			  'cp' => $row->cp
 			);
 
-			//$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 			
 		}
 	
