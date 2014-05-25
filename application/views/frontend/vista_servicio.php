@@ -29,15 +29,13 @@
 	</div>
 	<div class="cuerpo_servicio">
 		<div class="titulo_servicio">
-			Titulo del servicio
+			<?=$nom?>
 		</div>
 		<div class="descripcion_servicio">
-			Descripcion del servicio, etc, bla bla bla, mi coche es de color
-			del amor en pleno mes de abril
-			
+			<p><?=$descripcio?></p>
 		</div>
 		<div class="precio_servicio">
-				301
+			<?=$preu?> punts
 		</div>
 	</div>
 	<div class="dispo_servicio">
