@@ -64,3 +64,15 @@
 	margin-bottom:-2px;
 	text-align:center;
 }
+
+/* ALTA SERVEI Y EDITAR SERVEI */
+
+#disp_dias td {
+	border:1px solid;
+	border-color:#CCFF66;
+	background-color:#99FF99;
+}
+#disp_dias>td {
+	margin-left:5px;
+	margin-right:5px;
+}
