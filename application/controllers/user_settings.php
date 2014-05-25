@@ -223,10 +223,11 @@ class User_settings extends CI_Controller {
 		
 		//Esta condicion evita que cualquier otro que no sea el dueño del servicio pueda editarlo.
 		if ($servicio->usuari == $session_data['id']) {
-			$dies = explode(';', $servicio->disp_dies);
-			$hores = explode(';', $servicio->disp_horaria);
+			
 			
 			$data = array();
+			$data['disponibilitat_dies'] = explode(';', $servicio->disp_dies);
+			$data['horas'] = explode(';', $servicio->disp_horaria);
 			$data['nom'] = $servicio->nom;
 			$data['descripcio'] = $servicio->descripcio;
 			$data['preu'] = $servicio->preu;
