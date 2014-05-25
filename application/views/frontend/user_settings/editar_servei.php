@@ -21,7 +21,7 @@
 			$horas = explode(';', $aux);
 		}
 		if (!isset($disponibilitat_dies)) {
-			$aux = set_value('days');
+			$aux = set_value('days[]');
 			$disponibilitat_dies = explode(';', $aux);
 		}
 		?>
