@@ -219,7 +219,7 @@ class User_settings extends CI_Controller {
 		echo "<pre>";
 		var_dump($servicio);
 		echo "</pre>";
-		if ($servicio['usuari'] == $session_data['id']) {
+		if ($servicio[0]['usuari'] == $session_data['id']) {
 			echo "si";
 		} else {
 			echo "no";
