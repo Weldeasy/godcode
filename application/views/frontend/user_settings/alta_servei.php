@@ -90,13 +90,13 @@
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<input type="checkbox" name="days[]" value="L" />Dilluns&nbsp;<br />
-			<input type="checkbox" name="days[]" value="M" />Dimarts&nbsp;<br />
-			<input type="checkbox" name="days[]" value="X" />Dimecres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="J" />Dijous&nbsp;<br />
-			<input type="checkbox" name="days[]" value="V" />Divendres&nbsp;<br />
-			<input type="checkbox" name="days[]" value="S" />Dissabte&nbsp;<br />
-			<input type="checkbox" name="days[]" value="D" />Diumenge<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('L', $_POST['days'])) ) print 'checked'; ?> value="L" />Dilluns&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('M', $_POST['days'])) ) print 'checked'; ?> value="M" />Dimarts&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('X', $_POST['days'])) ) print 'checked'; ?> value="X" />Dimecres&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('J', $_POST['days'])) ) print 'checked'; ?> value="J" />Dijous&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('V', $_POST['days'])) ) print 'checked'; ?> value="V" />Divendres&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('S', $_POST['days'])) ) print 'checked'; ?> value="S" />Dissabte&nbsp;<br />
+			<input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" />Diumenge<br />
 			<?php echo form_error('days'); ?><br />
 			
 			
