@@ -5,7 +5,7 @@ class Buscar_servicio extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('servei');
-		
+		$this->load->model('lugares');
 	}
 	
 	function index() {
@@ -14,6 +14,7 @@ class Buscar_servicio extends CI_Controller {
 		$html = "";
 
 		foreach($serveis as $row) {
+			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
 			  'nom' => $row->nom,
@@ -28,8 +29,8 @@ class Buscar_servicio extends CI_Controller {
 			  'cp' => $row->cp
 			);
 
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
-			
+			//$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			var_dump($pueblo);
 		}
 	
 		
@@ -42,7 +43,7 @@ class Buscar_servicio extends CI_Controller {
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
 		}
-		$this->load->view('frontend/resultado_servicios', $data);
+		//$this->load->view('frontend/resultado_servicios', $data);
 		/*echo "<pre>";
 		var_dump($data);
 		echo "<pre>";*/
