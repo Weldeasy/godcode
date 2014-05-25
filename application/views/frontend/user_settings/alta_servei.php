@@ -25,6 +25,7 @@
 					prettify: false,
 					hasGrid: true
 				});
+				$("#disp_horaria").css("width", 300);
 			}
 		</script>
 <style>
