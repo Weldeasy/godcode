@@ -217,7 +217,7 @@ class User_settings extends CI_Controller {
 		$session_data = $this->session->userdata('logged_in');
 		$servicio = $this->servei->get_servei($id);
 		echo "<pre>";
-		var_dump($session_data);
+		var_dump($servicio);
 		echo "</pre>";
 		if ($servicio['usuari'] == $session_data['id']) {
 			echo "si";
