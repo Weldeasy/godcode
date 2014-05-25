@@ -38,7 +38,8 @@
 		<div class="precio_servicio">
 			301
 		</div>
-		<div class="dispo_servicio">
+	</div>
+	<div class="dispo_servicio">
 			Disponible desde el yyyy-mm-dd hasta el yyyy-mm-dd los 
 			<table id="disp_dias">
 				<tr>
@@ -62,5 +63,4 @@
 			</table>
 			de XX:XX a YY:YY
 		</div>
-	</div>
 </div>
