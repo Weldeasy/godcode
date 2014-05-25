@@ -21,8 +21,7 @@
 .titulo_servicio {
 	border-left:1px solid;
 	border-bottom:1px solid;
-	/*
-	padding-left:5px;*/
+	padding-left:5px;
 }
 .descripcion_servicio {
 	/*min-height:128px;*/
@@ -39,8 +38,8 @@
 	clear:left;
 }
 .data_caducitat{
-	/*float:right;
-	padding-right:5px;*/
+	float:right;
+	padding-right:5px;
 }
 .nom_servei {
 	font-weight:bolder;
