@@ -42,7 +42,7 @@
 			Disponible hasta el <?=$data_fi?> los 
 			<table class="disp_dias">
 				<tr>
-					<td>L</td>
+					<td <?php if ( (isset($days)) && (in_array('L', $days)) ) print 'style="background-color:red;"'; ?> value="L" >L</td>
 					<td>M</td>
 					<td>X</td>
 					<td>J</td>
