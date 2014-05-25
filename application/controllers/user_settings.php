@@ -150,7 +150,7 @@ class User_settings extends CI_Controller {
   
   //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
   function dataFi_check($date) {
-	if (count(explode('-', $date)) == 3) {
+	if (count(explode('/', $date)) == 3) {
 		list($anyo, $mes, $dia) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
@@ -186,17 +186,26 @@ class User_settings extends CI_Controller {
   
   //function validar_editar_servei() {
 	function validar_alta_servicio() {
+		$this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
+		$this->form_validation->set_message('required', "%s es obligatori.");
+		$this->form_validation->set_message('max_length', "%s no pot tenir més %s caracters.");
+		$this->form_validation->set_message('min_length', "%s ha de tenir %s caracters.");
+		$this->form_validation->set_message('integer', "%s només pot contenir números.");
+		$this->form_validation->set_message('callback_dataFi_check', "El format de %s no es correcte (Y/m/d).");
+		$this->form_validation->set_message('is_natural_no_zero', "%s que has seleccionat no es correcte.");
+		$this->form_validation->set_message('exact_length', "%s ha de tenir exactament %s numeros.");
+		$this->form_validation->set_message('numeric', "%s ha de ser númeric.");
 	
-		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
-		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
-		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
+		$this->form_validation->set_rules('nom', 'El nom del servei', 'required|max_length[25]');
+		$this->form_validation->set_rules('descripcio', 'La descripció', 'required|min_length[50]|max_length[500]');
+		$this->form_validation->set_rules('preu', 'El preu', 'required|integer');
 		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
-		$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
-		$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
-		$this->form_validation->set_rules('days', 'Nom del servei', 'required');
+		$this->form_validation->set_rules('data_fi', 'la data de fi', 'required|callback_dataFi_check');
+		$this->form_validation->set_rules('disp_horaria', 'L\'horari', 'required');
+		$this->form_validation->set_rules('days', 'Els dies', 'required');
 		//La categoria es un natural != 0
-		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
-		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
+		$this->form_validation->set_rules('categoria', 'La categoria', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('cp', 'El codi postal', 'required|exact_length[5]|numeric');
 		if ($this->form_validation->run() == FALSE)	{
 			$categorias = $this->categorias->get_categorias();
 			foreach($categorias as $row) {
