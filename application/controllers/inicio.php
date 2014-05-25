@@ -1,11 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 session_start();
 class Inicio extends CI_Controller {
-
+  /**
+   * [$data se guarda les dades del usuari a partir del session]
+   * @var array
+   */
   private $data = array();
 
-  function __construct()
-  {
+  /**
+   * [__construct Inici]
+   * Carregem la libraria i els models i tambe les session
+   */
+  function __construct(){
     parent::__construct();
   	$this->load->helper('url');
   	$this->load->library('form_validation');
@@ -18,89 +24,132 @@ class Inicio extends CI_Controller {
     $this->data['email'] = $session_data['email'];
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
-    $this->data['id_user'] = $session_data['id'];
   }
-
+  /**
+   * [contingut es carrega la pagina principal, amb les vistes i les dades]
+   * @param  [void] $form  [el formulari del login]
+   * @param  [void] $vista [la vista del pàgina principal]
+   * @param  [void] $data  [les dades que necessiten a la vista]
+   * @return [void]        [una vista inici]
+   */
+  function contingut($form,$vista,$data){
+      $data['contingut']=$this->load->view('frontend/panel_inici/'.$vista,$data,TRUE);
+      $data['login_form'] = 'frontend/'.$form;
+      $this->load->view('frontend/inicio', $data);
+  }
+  /**
+   * [es_autentificat si existeiz la session 'logued_in']
+   * @return [boolean] [si usuari esta loguejat o no]
+   */
+  function es_autentificat(){
+      if($this->session->userdata('logged_in')){
+          return TRUE;
+      }else{
+          return FALSE;
+      }
+  }
+  /**
+   * [index la pàgina principal del web]
+   * @return [void] [es carrega la categoria al inici]
+   */
   function index(){
     	$data = array();
     	$login_view = "";
     	$estat = $this->session->userdata('estat');
-    	if($this->session->userdata('logged_in')) {
-            $data=$this->data;
+      $data=$this->data;
+      $categorias = $this->categorias->get_categorias();
+      foreach($categorias as $row) {
+        $data['categorias'][$row['id']] = $row['nom'];
+      }
+      $vista='panel_principal';
+
+    	if($this->es_autentificat()) {
             switch($estat) {
         			case '1':
         			case '2':
-                $categorias = $this->categorias->get_categorias();
-                  foreach($categorias as $row) {
-                    $data['categorias'][$row['id']] = $row['nom'];
-                  }
-                $login_view = 'frontend/panel_inici/logued';
-                $data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
+                        $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
         				break;
-        			case '3':
+        			case '3': //sino 3=congelat
                 /*
         				$login_view = 'frontend/panel_inici/logued';
         				$data['contingut']=$this->load->view('frontend/panel_inici/congelat',$data,TRUE);*/
-        			case '4':/*
+        			case '4': //4 = ha de verificar el correu
+                /*
         				$login_view = 'frontend/panel_inici/logued';
         				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',$data,TRUE);*/
                     redirect('logout', 'refresh');
                 break;
         		}
-            $data['login_form'] = $login_view;
-            $this->load->view('frontend/inicio', $data);
     
-        }else{
-      		$categorias = $this->categorias->get_categorias();
-      		foreach($categorias as $row) {
-      			$data['categorias'][$row['id']] = $row['nom'];
-      		}
-      		$data['login_form'] = 'frontend/login_form';
-      		$data['contingut']=$this->load->view('frontend/panel_inici/panel_principal',$data,TRUE);
-      		$this->load->view('frontend/inicio', $data);
+        }else{//si no existeix la sessio
+          $login_view='login_form';
       	}
+        $this->contingut($login_view,$vista,$data);//si crida la funcio contingut
 
   }
-    public function aboutus() {
-      $data = array();
-        if($this->session->userdata('logged_in')) {
-          $session_data = $this->session->userdata('logged_in');
-          $data=$this->data;
-          $data['login_form'] = 'frontend/panel_inici/logued';
+  /**
+   * [mostraContingut ]
+   * @param  [void] $vistaCont [passem el nom del vista]
+   * @return [void]            [es carrega inici amb la vista concreta]
+   */
+  public function mostraContingut($vistaCont){
+        $login_view='';
+        $data=$this->data;
+        
+        if($this->es_autentificat()){
+            $login_view = 'panel_inici/logued';
         }else{
-          $data['login_form'] = 'frontend/login_form';
+          $login_view = 'login_form';
         }
-        $data['contingut']=$this->load->view('frontend/panel_inici/aboutus',$data,TRUE);
-        $this->load->view('frontend/inicio', $data);
-    }
-    public function cercarusuari() {
-      $data = array();
-        if($this->session->userdata('logged_in')) {
-            $session_data = $this->session->userdata('logged_in');
-            $data=$this->data;
-            $data['login_form'] = 'frontend/panel_inici/logued';
-        }else{
-            $data['login_form'] = 'frontend/login_form';
-        }
-        $data['contingut']=$this->load->view('frontend/panel_inici/cercarusuari',$data,TRUE);
-        $this->load->view('frontend/inicio', $data);
+        $vista=$vistaCont;
+        $this->contingut($login_view,$vista,$data);
   }
+  /**
+   * [aboutus crida la funcio mostraContingut]
+   * @return [void] [passen el nom del vista]
+   */
+  public function aboutus() {
+      $this->mostraContingut('aboutus');
+  }
+  /**
+   * [cercarusuari crida la funcio mostraContingut]
+   * @return [void] [passen el nom del vista]
+   */
+  public function cercarusuari() {
+      $this->mostraContingut('cercarusuari');
+  }
+  /**
+   * [contacte crida la funcio mostraContingut]
+   * @return [void] [passen el nom del vista]
+   */
   public function contacte() {
-        $data = array();
-        if($this->session->userdata('logged_in')) {
-           $data=$this->data;
-           $data['login_form'] = 'frontend/panel_inici/logued';
-        } else {
-          $data['login_form'] = 'frontend/login_form';
-        }
-        $data['contingut']=$this->load->view('frontend/panel_inici/contacte',$data,TRUE);
-        $this->load->view('frontend/inicio', $data);
-  
+       $this->mostraContingut('contacte');  
   }
-  function alpha_dash_space($str)
-  {
-    return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+  /**
+   * [introduccio crida la funcio mostraContingut]
+   * @return [type] [passen el nom del vista]
+   */
+  public function introduccio() {
+       $this->mostraContingut('introduccio');  
   }
+  /**
+   * [no_autentificat ]
+   * @return [type] [es carrega la vista no_autenifica]
+   */
+  public function no_autentificat(){
+      $data = array();
+      $data['login_form'] = 'frontend/login_form';
+      $this->load->view('frontend/no_autentificat',$data);
+  }
+  /**
+   * [alpha_dash_space expression regular]
+   * @param  [String] $str [el nom del camp]
+   * @return [boolean]      [true o false]
+   */
+  function alpha_dash_space($str){
+    return (!preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+  }
+
   function validar_contacte(){
         $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');
         $this->form_validation->set_rules('nom', 'Nom', 'trim|required|callback__alpha_dash_space|alpha');
@@ -121,11 +170,15 @@ class Inicio extends CI_Controller {
 
         }
   }
+  /**
+   * [detailusuari informació del usuari cercat]
+   * @return [void] [description]
+   */
   function detailusuari() {
       if(isset($_POST['cercar_user'])){
         $cercar_user = $_POST['cercar_user'];  
 
-        if($this->session->userdata('logged_in')) {
+        if($this->es_autentificat()) {
             $data=$this->data;
             $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
@@ -157,13 +210,15 @@ class Inicio extends CI_Controller {
          redirect('inicio/no_autentificat', 'refresh');
       }
   }
-
+  /**
+   * [serveis_detail es mostra la informació dels serveis del usuari concret]
+   * @return [type] [description]
+   */
   function serveis_detail(){
      if(isset($_POST['email_user'])){
         $email_user = $_POST['email_user']; 
 
-        if($this->session->userdata('logged_in')) {
-            $session_data = $this->session->userdata('logged_in');
+        if($this->es_autentificat()) {
             $data=$this->data;
             $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
@@ -191,9 +246,7 @@ class Inicio extends CI_Controller {
               if(isset($data['email'])){
                   $data2['email']=$data['email'];
               }
-              if(isset($data['id_user'])){
-                  $data2['id_user']=$data['id_user'];
-              }
+              $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;                 
               $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
             }
             $data3['detail_servei']=$html;
@@ -206,19 +259,18 @@ class Inicio extends CI_Controller {
          redirect('inicio', 'refresh');
       }
   }
+  /**
+   * [verifica_solicitut el usuari solicita un servei]
+   * @return [void] [description]
+   */
   public function verifica_solicitut(){
         if(isset($_POST['email_user'])){
           $id_servei=$_POST['id_servei'];
           $email_user=$_POST['email_user'];
           $id_user=$_POST['id_user'];
-          
-          if($this->session->userdata('logged_in')) {
-            $session_data = $this->session->userdata('logged_in');
-            $data=$this->data;
-            $data['login_form'] = 'frontend/panel_inici/logued';
-          }else{
-              $data['login_form'] = 'frontend/login_form';
-          }
+          $login_view='';
+          $vista='';
+
           $puntsServeiBD=$this->servei->getPreuServei($id_servei);   
           $saldoUserBD=$this->user->getSaldoUser($email_user);  
           $comprovaMinimServeiOfertBD=$this->servei->comprovaServeiOferts($email_user);
@@ -242,35 +294,17 @@ class Inicio extends CI_Controller {
           if($comprovaMinimServeiOfert>0){
             if($puntsServei<=$saldoUser){         
               $this->user->enviarSolicitut($id_user,$id_servei);     
-              $data['contingut']=$this->load->view('frontend/panel_inici/enviat_solicitut',NULL,TRUE);
+              $vista='enviat_solicitut';
             }else{
-              $data['contingut']=$this->load->view('frontend/panel_inici/error_saldo_minim_servei',NULL,TRUE);
+               $vista='error_saldo_minim_servei';
             }
           }else{
-              $data['contingut']=$this->load->view('frontend/panel_inici/error_minim_oferit_servei',NULL,TRUE);
+              $vista='error_minim_oferit_servei';
           }
-          $this->load->view('frontend/inicio', $data);
+          $this->contingut($login_view,$vista,$data);
         }else{
            redirect('inicio', 'refresh');   
         }
-  }
-
-  public function introduccio() {
-      $data = array();
-      if($this->session->userdata('logged_in')) {
-        $session_data = $this->session->userdata('logged_in');
-        $data=$this->data;
-        $data['login_form'] = 'frontend/panel_inici/logued';
-      }else{
-        $data['login_form'] = 'frontend/login_form';
-      }
-      $data['contingut']=$this->load->view('frontend/panel_inici/introduccio',$data,TRUE);
-      $this->load->view('frontend/inicio', $data);
-  }
-  public function no_autentificat() {
-      $data = array();
-      $data['login_form'] = 'frontend/login_form';
-      $this->load->view('frontend/no_autentificat',$data);
   }
 
 }
