@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<script>
-			$function() {
+		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 5000,
