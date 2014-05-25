@@ -50,7 +50,7 @@ Class Servei extends CI_Model {
 			"disp_horaria"=>$disponibilitat_horaria,
 			"disp_dies"=>$disponibilitat_dies,
 			"categoria"=>$this->input->post("categoria", TRUE),
-			"usuari"=>$this->session->userdata('logged_in')['id'],
+			"usuari"=>$this->input->post("usuari", TRUE),
 			"cp"=>$this->input->post("cp", TRUE)
 		));
 		return true;
