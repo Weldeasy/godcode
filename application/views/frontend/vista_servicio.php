@@ -43,21 +43,12 @@
 			<table class="disp_dias">
 				<tr>
 					<td <?php if ( (isset($days)) && (!in_array('L', $days)) ) print 'style="background-color:red;"'; ?> value="L" >L</td>
-					<td>M</td>
-					<td>X</td>
-					<td>J</td>
-					<td>V</td>
-					<td>S</td>
-					<td>D</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('L', $days)) ) print 'checked'; ?> value="L" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('M', $days)) ) print 'checked'; ?> value="M" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('X', $days)) ) print 'checked'; ?> value="X" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('J', $days)) ) print 'checked'; ?> value="J" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('V', $days)) ) print 'checked'; ?> value="V" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('S', $days)) ) print 'checked'; ?> value="S" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('D', $days)) ) print 'checked'; ?> value="D" /></td>
+					<td <?php if ( (isset($days)) && (!in_array('M', $days)) ) print 'style="background-color:red;"'; ?> value="L" >M</td>
+					<td <?php if ( (isset($days)) && (!in_array('X', $days)) ) print 'style="background-color:red;"'; ?> value="L" >X</td>
+					<td <?php if ( (isset($days)) && (!in_array('J', $days)) ) print 'style="background-color:red;"'; ?> value="L" >J</td>
+					<td <?php if ( (isset($days)) && (!in_array('V', $days)) ) print 'style="background-color:red;"'; ?> value="L" >V</td>
+					<td <?php if ( (isset($days)) && (!in_array('S', $days)) ) print 'style="background-color:red;"'; ?> value="L" >S</td>
+					<td <?php if ( (isset($days)) && (!in_array('D', $days)) ) print 'style="background-color:red;"'; ?> value="L" >D</td>
 				</tr>
 			</table>
 			de <?=$horas[0]?>:00 a <?=$horas[1]?>:00
