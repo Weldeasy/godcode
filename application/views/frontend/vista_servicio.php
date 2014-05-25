@@ -34,9 +34,10 @@
 		<div class="descripcion_servicio">
 			Descripcion del servicio, etc, bla bla bla, mi coche es de color
 			del amor en pleno mes de abril
-			<div class="precio_servicio">
+			
+		</div>
+		<div class="precio_servicio">
 				301
-			</div>
 		</div>
 	</div>
 	<div class="dispo_servicio">

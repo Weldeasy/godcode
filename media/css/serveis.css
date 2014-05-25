@@ -2,7 +2,7 @@
 	border:1px solid;
 	height:150px;
 	width:700px;
-	margin-bottom:80px;
+	margin-bottom:140px;
 }
 
 .foto_servicio {
@@ -33,6 +33,8 @@
 .precio_servicio {
 	border:1px solid;
 	float:right;
+	width:110px;
+	height:40px;
 	/*
 	position:absolute;
 	bottom:0px;
