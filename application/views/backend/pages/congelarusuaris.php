@@ -11,7 +11,7 @@
 			<!--TOOLBAR DEL DATAGRID JEASYUI-->
 			<div id="tbUsuari" style="padding:5px;height:auto">
                 <div style="margin-bottom:5px">
-                    <div onclick="modificarUsuari()" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></div>
+                    <div onclick="congelarUsuari()" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></div>
                 </div>
             </div>
 		</center>
@@ -34,7 +34,7 @@
 	</div>
 		<!-- Botons per a Confirmar o Cancelar Nou Usuari o Edita Usuari -->
     <div id="finestraUsuari-buttons">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="guardarUsuari()">Guardar</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="guardar_estat_Usuari()">Guardar</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#finestraUsuari').dialog('close')">Cancel·lar</a>
     </div>
 

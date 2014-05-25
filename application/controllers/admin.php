@@ -135,6 +135,10 @@ class Admin extends CI_Controller {
 		echo json_encode($this->adm->llistarCategoria());	
 	}
 
+	/**
+	 * [eliminarCategoria_control si s'ha fet eliminat correctament o no]
+	 * @return [json] [amb les dades true or false]
+	 */
 	function eliminarCategoria_control(){
 		if(isset($_POST['id'])){
 			$id=$_POST['id'];
@@ -143,6 +147,10 @@ class Admin extends CI_Controller {
 			 redirect('/inicio', 'refresh');
 		}
 	}
+	/**
+	 * [crearCategoria_control si s'ha fet creat correctament o no]
+	 * @return [json] [amb les dades true or false]
+	 */
 	function crearCategoria_control(){
 		if(isset($_POST['nom_cat'])){
 			$nom=mysql_real_escape_string($_POST['nom_cat']);
@@ -152,6 +160,11 @@ class Admin extends CI_Controller {
 			 redirect('/inicio', 'refresh');	
 		}
 	}
+
+	/**
+	 * [actualitzarCategoria_control si s'ha fet actualizat correctament o no]
+	 * @return [json] [amb les dades true or false]
+	 */
 	function actualitzarCategoria_control(){
 		if(isset($_GET['id'])){
 			$id=$_GET['id'];
@@ -162,7 +175,23 @@ class Admin extends CI_Controller {
 			 redirect('/inicio', 'refresh');
 		}
 	}
-	
+	/**
+	 * [actualitzarEstatDenuncia_control si s'ha fet actualizat correctament o no]
+	 * @return [json] [amb les dades true or false]
+	 */
+	function actualitzarEstatDenuncia_control(){
+		if(isset($_GET['id_rec'])){
+			$id=$_GET['id_rec'];
+			$estat=$_POST['estat_denuncia'];
+			echo json_encode($this->adm->actualitzarDenuncia($id,$estat));
+		}else{
+			 redirect('/inicio', 'refresh');
+		}
+	}
+	/**
+	 * [actualitzarUsuari_control si s'ha fet actualizat al estat del usuari correctament o no]
+	 * @return [json] [amb les dades true or false]
+	 */
 	function actualitzarUsuari_control(){
 		if(isset($_GET['id'])){
 			$id=$_GET['id'];
@@ -172,13 +201,17 @@ class Admin extends CI_Controller {
 			 redirect('/inicio', 'refresh');
 		}	
 	}
+	/**
+	 * [getSaldoMinim_control retorna un int, saldo minim]
+	 * @return [int] [saldo minim del banc del temps]
+	 */
 	function getSaldoMinim_control(){
-		$array=$this->adm->getSaldoMinim();
-		$saldo_minim=0;
-		foreach ($array as $key) {
-			return $key->saldo_minim;
-		}
+		$saldo_minim=$this->adm->getSaldoMinim()->saldo_minim;
+		return $saldo_minim;
 	}
+	/**
+	 * [setSaldoMinim_control actualitzat el saldo minim]
+	 */
 	function setSaldoMinim_control(){
 		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
 		if($this->adm->setSaldoMinim($saldo_minim)){

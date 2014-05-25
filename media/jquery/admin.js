@@ -22,11 +22,11 @@ $(document).ready(function(){
 		        {field:'estat_reclamacio',title:'Estat',sortable:true,width:60,align:'left',
 						formatter:function(value,row,index){
 								if(value==2){
-		                  			return '<div style="border:1px solid;border-radius:50%;background-color:red;height:10px;width:10px;"></div>';
+		                  			return '<div style="background-color:red;" class="estat_adm"></div>';
 								}else if(value==0){	
-		                  			return '<div style="border:1px solid;border-radius:50%;background-color:yellow;height:10px;width:10px;"></div>';
+		                  			return '<div style="background-color:yellow;" class="estat_adm"></div>';
 								}else if(value==1){	
-		                  			return '<div style="border:1px solid;border-radius:50%;background-color:green;height:10px;width:10px;"></div>';
+		                  			return '<div style="background-color:green;" class="estat_adm"></div>';
 								}
 		              	},
 	    		},
@@ -48,11 +48,11 @@ $(document).ready(function(){
 	    	{field:'esta_congelat',title:'Estat',sortable:true,width:50,align:'left',
 				formatter:function(value,row,index){
 						if(value==1){
-                  			return '<div style="border:1px solid;border-radius:50%;background-color:red;height:10px;width:10px;"></div>';
+                  			return '<div style="background-color:red;" class="estat_adm"></div>';
 						}else if(value==2){	
-                  			return '<div style="border:1px solid;border-radius:50%;background-color:yellow;height:10px;width:10px;"></div>';
+                  			return '<div style="background-color:yellow;" class="estat_adm"></div>';
 						}else if(value==0){	
-                  			return '<div style="border:1px solid;border-radius:50%;background-color:green;height:10px;width:10px;"></div>';
+                  			return '<div style="background-color:green;" class="estat_adm"></div>';
 						}
               	},
 	    	},
@@ -92,7 +92,14 @@ $(document).ready(function(){
 		    ]]
 	});
 })
+/////////////////////////////////////////////////////
+			///CATEGORIA///
+/////////////////////////////////////////////////////
 
+/**
+ * [eliminarCategoria eliminar un categoria]
+ * @return {[type]} [description]
+ */
 function eliminarCategoria(){
 	var row=$('#categoriaDatagrid').datagrid('getSelected');
 	if(!row){ //si no està seleccionada, surtira un missatge
@@ -133,14 +140,101 @@ function eliminarCategoria(){
 	}	
 }
 
+/**
+ * [afegirCategoria afegir categoria]
+ * @return {[type]} [description]
+ */
 function afegirCategoria(){
-
 	$('#finestraCategoria').form('clear');//Netejem el formulari per a la Nova categoria
 	$('#finestraCategoria').dialog('open').dialog('setTitle','Nova Categoria');
 	url = urlGlobal+'/crearCategoria_control'; //crea un variable global url,que es envia servidor
 }
 
-function guardarUsuari(){
+/**
+ * [modificarCategoria update categoria]
+ * @return {[type]} [description]
+ */
+function modificarCategoria(){
+	var fila=$('#categoriaDatagrid').datagrid('getSelected');//es boolean : si esta seleccionat o no
+	if(!fila){//Si no està seleccionat, retorna un missatge
+		$.messager.show({
+			title:'Editar Categoria',
+			msg:'Selecciona una categoria a editar'
+		});
+	}else{
+		if(fila){ //si esta seleccionat, mostra un formulari
+			$('#finestraCategoria').dialog('open').dialog('setTitle','Editar Categoria');
+			$.each(fila,function(key,value){
+				if(key!='id')
+					$($('#'+key+"_cat")).val(value);//recupera les dades i posem al formulari
+			});
+			url=urlGlobal+'/actualitzarCategoria_control?id='+fila.id;//envia al controlador
+		}
+	}
+}
+
+/**
+ * [guardarCategoria insertar categoria]
+ * @return {[type]} [description]
+ */
+function guardarCategoria(){
+	$('#formulariCategoria').form('submit',{
+			url:url,
+			onSubmit:function(){
+				return $(this).form('validate');//es valida el formulari
+			},
+			success:function(result){
+				if(result){
+					$('#finestraCategoria').dialog('close'); //tanquem la finestra del formulari
+					$.messager.show({ //mostra el missatge
+							title:'Guardar Categoria',
+							msg:"Categoria s'ha creat correctament",
+							showType:'show' //mostra slider fade
+					});
+					$('#categoriaDatagrid').datagrid('reload');//carreguem el datagrid,una vegada actualitzat
+				}else{
+					$.messager.show({
+						title:"Error al inserir al categoria",
+						msg:"Hi ha hagut un error al guardar categoria"
+					});
+				}
+			},
+	});
+}
+
+
+/////////////////////////////////////////////////////
+			///CONGELAR USUARI///
+/////////////////////////////////////////////////////
+
+/**
+ * [congelarUsuari envia les dades al controlador:actualitzarUsuari_control]
+ * @return {[type]} [description]
+ */
+function congelarUsuari(){
+	var fila=$('#congelarDatagrid').datagrid('getSelected');
+	if(!fila){
+		$.messager.show({
+			title:'Estat d\'usuari',
+			msg:'Selecciona una usuari a editar'
+		});
+	}else{
+		if(fila){
+			$('#finestraUsuari').dialog('open').dialog('setTitle','Editar Usuari');
+			$.each(fila,function(key,value){
+				if(key!='id')
+					$($('#'+key+"_user")).val(value);
+			});
+			url=urlGlobal+'/actualitzarUsuari_control?id='+fila.id;
+		}
+	}
+}
+
+/**
+ * [guardar_estat_Usuari estat del usuari]
+ * @return {[type]} [description]
+ */
+function guardar_estat_Usuari(){
 	$('#formulariUsuari').form('submit',{
 			url:url,
 			onSubmit:function(){
@@ -164,66 +258,62 @@ function guardarUsuari(){
 			},
 	});
 }
-function guardarCategoria(){
-	$('#formulariCategoria').form('submit',{
+
+/////////////////////////////////////////////////////
+			///ESTAT DEL DENUNCIA///
+/////////////////////////////////////////////////////
+
+/**
+ * [guardarDenuncia insertar denuncia]
+ * @return {[type]} [description]
+ */
+function guardarDenuncia(){
+	$('#formulariDenuncia').form('submit',{
 			url:url,
 			onSubmit:function(){
 				return $(this).form('validate');
 			},
 			success:function(result){
 				if(result){
-					$('#finestraCategoria').dialog('close');
+					$('#finestraDenuncia').dialog('close');
 					$.messager.show({
-							title:'Guardar Categoria',
-							msg:"Categoria s'ha creat correctament",
+							title:'Actualitza Denuncia',
+							msg:" La denuncia s'ha actualitzat correctament",
 							showType:'show' //mostra slider fade
 					});
-					$('#categoriaDatagrid').datagrid('reload');
+					$('#llistaDenuncies').datagrid('reload');
 				}else{
 					$.messager.show({
-						title:"Error al inserir al categoria",
-						msg:"Hi ha hagut un error al guardar categoria"
+						title:"Error al actualitzar al denuncia",
+						msg:"Hi ha hagut un error al actualitzar una denuncia"
 					});
 				}
 			},
-	});
+	});	
 }
 
-
-function modificarCategoria(){
-	var fila=$('#categoriaDatagrid').datagrid('getSelected');
+/**
+ * [modificarEstatDenuncia upadte denuncia]
+ * @return {[type]} [description]
+ */
+function modificarEstatDenuncia(){
+	var fila=$('#llistaDenuncies').datagrid('getSelected');
 	if(!fila){
 		$.messager.show({
-			title:'Editar Categoria',
-			msg:'Selecciona una categoria a editar'
+			title:'Editar Denùncies',
+			msg:'Selecciona una denuncia a editar'
 		});
 	}else{
 		if(fila){
-			$('#finestraCategoria').dialog('open').dialog('setTitle','Editar Categoria');
+			$('#finestraDenuncia').dialog('open').dialog('setTitle','Editar Denúncies');
+
 			$.each(fila,function(key,value){
-				if(key!='id')
-					$($('#'+key+"_cat")).val(value);
+				if(key=='estat_reclamacio')
+					$('#estat_denuncia').val(value);
+
 			});
-			url=urlGlobal+'/actualitzarCategoria_control?id='+fila.id;
+			url=urlGlobal+'/actualitzarEstatDenuncia_control?id_rec='+fila.id_rec;
 		}
 	}
 }
 
-function modificarUsuari(){
-	var fila=$('#congelarDatagrid').datagrid('getSelected');
-	if(!fila){
-		$.messager.show({
-			title:'Estat d\'usuari',
-			msg:'Selecciona una usuari a editar'
-		});
-	}else{
-		if(fila){
-			$('#finestraUsuari').dialog('open').dialog('setTitle','Editar Usuari');
-			$.each(fila,function(key,value){
-				if(key!='id')
-					$($('#'+key+"_user")).val(value);
-			});
-			url=urlGlobal+'/actualitzarUsuari_control?id='+fila.id;
-		}
-	}
-}
