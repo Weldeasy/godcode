@@ -144,11 +144,18 @@ class User_settings extends CI_Controller {
   }
   
   //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
-  function data_check($date) {
+  function dataFi_check($date) {
 	if (count(explode('-', $date)) == 3) {
 		list($anyo, $mes, $dia) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
+		$data_fi = date_create($anyo."-".$mes."-".$dia);
+		$data_inici = "";
+		var_dump($data_fi);
+		/*
 		if ($valida) {
+			if ($) {
+			
+			}
 			return true;
 		} else {
 			$this->form_validation->set_message('data_check', '%s es una fecha NO valida');
@@ -157,7 +164,7 @@ class User_settings extends CI_Controller {
 	} else {
 		$this->form_validation->set_message('data_check', '%s no es ni una fecha<br>[2015-06-25]');
 		return false;
-	}
+	}*/
   }
   
   function crear_servei() {
@@ -172,7 +179,7 @@ class User_settings extends CI_Controller {
 	$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 	$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
 	//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
-	$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_data_check');
+	$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
 	$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
 	$this->form_validation->set_rules('days', 'Nom del servei', 'required');
 	//La categoria es un natural != 0
@@ -187,7 +194,6 @@ class User_settings extends CI_Controller {
 		$disponibilitat_horaria = $this->input->post("disp_horaria");
 		$disponibilitat_dies = "";
 		$dies = $this->input->post("days");
-		var_dump($dies);
 		foreach ($dies as $key => $value) {
 			$disponibilitat_dies .= $dies[$key].";";
 		}

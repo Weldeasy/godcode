@@ -70,7 +70,6 @@
 		</div>
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
-			//echo validation_errors();
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_servicio', $attributes);
 		?>	
