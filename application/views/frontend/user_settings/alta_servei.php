@@ -19,10 +19,9 @@
 		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
-					max: 5000,
-					type: 'double',
-					prefix: "$",
-					maxPostfix: "+",
+					max: 24,
+					type: 'string',
+					postfix: ":00",
 					prettify: false,
 					hasGrid: true
 				});
