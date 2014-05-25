@@ -226,22 +226,22 @@ class User_settings extends CI_Controller {
 			
 			
 			$data = array();
-			$data['disponibilitat_dies'] = explode(';', $servicio->disp_dies);
-			$data['horas'] = explode(';', $servicio->disp_horaria);
-			$data['nom'] = $servicio->nom;
-			$data['descripcio'] = $servicio->descripcio;
-			$data['preu'] = $servicio->preu;
-			$data['data_inici'] = $servicio->data_inici;
-			$data['data_fi'] = $servicio->data_fi;
-			$data['usuari'] = $servicio->usuari;
-			$data['cp'] = $servicio->cp;
+			$this->data['disponibilitat_dies'] = explode(';', $servicio->disp_dies);
+			$this->data['horas'] = explode(';', $servicio->disp_horaria);
+			$this->data['nom'] = $servicio->nom;
+			$this->data['descripcio'] = $servicio->descripcio;
+			$this->data['preu'] = $servicio->preu;
+			$this->data['data_inici'] = $servicio->data_inici;
+			$this->data['data_fi'] = $servicio->data_fi;
+			$this->data['usuari'] = $servicio->usuari;
+			$this->data['cp'] = $servicio->cp;
 			
 			$categories = $this->categorias->get_categorias();
 			foreach ($categories as $valor) {
-				$data['categorias'][$valor['id']] = $valor['nom'];
+				$this->data['categorias'][$valor['id']] = $valor['nom'];
 			}
 			
-			$this->load->view("frontend/user_settings/editar_servei", $data);
+			$this->load->view("frontend/user_settings/editar_servei", $this->data);
 			
 			
 
