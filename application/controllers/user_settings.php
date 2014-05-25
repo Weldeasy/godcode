@@ -224,8 +224,7 @@ class User_settings extends CI_Controller {
 		//La categoria es un natural != 0
 		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
-		$servicio = $this->servei->get_servei($id);
-		$this->data['disponibilitat_dies'] = explode(';', $servicio->disp_dies);
+		
 		if ($this->form_validation->run() == FALSE)	{
 			$categorias = $this->categorias->get_categorias();
 			foreach($categorias as $row) {
