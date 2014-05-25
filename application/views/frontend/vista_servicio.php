@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div class="dispo_servicio">
-			Disponible hasta el yyyy-mm-dd los 
+			Disponible hasta el <?=$data_fi?> 
 			<table class="disp_dias">
 				<tr>
 					<td>L</td>
