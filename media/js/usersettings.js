@@ -6,7 +6,10 @@ $(document).ready(function() {
 			$("#user_nav").animate({
 				height:"120px"
 			}, 500, function() {
-				$("#user_nav").width($("#user").css('width'));
+				var w = $("#user").css('width').substring(0, $("#user").css('width').length-2);
+				w -= 39;
+				w += "px";
+				$("#user_nav").width(w);
 				$("#user_nav").children().css('display', 'block');
 			});
 		} else {
