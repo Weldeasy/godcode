@@ -20,6 +20,10 @@
 			$aux = set_value('disp_horaria');
 			$horas = explode(';', $aux);
 		}
+		if (!isset($disponibilitat_dies)) {
+			$aux = set_value('days');
+			$disponibilitat_dies = explode(';', $aux);
+		}
 		?>
 		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
@@ -80,7 +84,7 @@
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
 			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
 		?>	
-			Nombre:<span><?php echo set_value('disp_horaria');?></span>
+			Nombre:
 			<input type="text" name="nom" value="<?php echo set_value('nom'); if(isset($nom)) {echo $nom;} ?>"  />
 			<?php echo form_error('nom'); ?><br />
 			Descripcion:
