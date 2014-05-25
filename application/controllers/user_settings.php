@@ -149,7 +149,7 @@ class User_settings extends CI_Controller {
 		list($anyo, $mes, $dia) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
-		$data_inici = date('Y-m-d');
+		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici);
 		var_dump($diff);
 		/*
