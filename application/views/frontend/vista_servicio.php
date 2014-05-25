@@ -8,7 +8,7 @@
 			<span class="data_caducitat">Data caducitat: <?=$data_fi?></span>
 		</div>
 		<div class="descripcion_servicio">
-			<?=$descripcio?>
+			<p><?=$descripcio?></p>
 			<div class="precio_servicio">
 				<?=$preu?> punts
 			</div>

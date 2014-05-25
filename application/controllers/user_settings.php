@@ -273,6 +273,7 @@ class User_settings extends CI_Controller {
 			$this->data['nom'] = $servicio->nom;
 			$this->data['descripcio'] = $servicio->descripcio;
 			$this->data['preu'] = $servicio->preu;
+			$this->data['categoria'] = $servicio->categoria;
 			$this->data['data_inici'] = $servicio->data_inici;
 			$this->data['data_fi'] = $servicio->data_fi;
 			$this->data['usuari'] = $servicio->usuari;

@@ -31,7 +31,11 @@
 	padding-left:5px;
 }
 .descripcion_servicio {
-	height:128px;
+	min-height:128px;
+}
+.descripcion_servicio p{
+	word-wrap: break-word;
+	padding-right:10px;
 }
 .precio_servicio {
 	border-top:1px solid;

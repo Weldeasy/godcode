@@ -110,7 +110,7 @@
 			<input type="checkbox" name="days[]" value="D"  <?php  if(isset($disponibilitat_dies)) {if (in_array('D',$disponibilitat_dies)) {print "checked";}} ?>/>Diumenge<br />
 			<?php echo form_error('days'); ?><br />
 			Categoria:
-			<?php echo form_dropdown('categoria', $categorias, ''); ?><br />
+			<?php if (isset($_POST['categoria'])) $c = $_POST['categoria']; else $c = $categoria; echo form_dropdown('categoria', $categorias, $c); ?><br />
 			<?php echo form_error('categoria'); ?><br />
 			CP:
 			<input type="text" name="cp" value="<?php echo set_value('cp'); if(isset($cp)) {echo $cp;} ?>" />
