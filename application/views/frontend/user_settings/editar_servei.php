@@ -91,7 +91,7 @@
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<?php $disponibilitat_dies = set_value('days'); ?>
+			<?php $disponibilitat_dies = set_value('days'); echo $disponibilitat_dies; ?>
 			<input type="checkbox" name="days[]" value="L"  <?php if (in_array('L',$disponibilitat_dies)) print "checked"; ?>/>Dilluns&nbsp;<br />
 			<input type="checkbox" name="days[]" value="M"  <?php if (in_array('M',$disponibilitat_dies)) print "checked"; ?>/>Dimarts&nbsp;<br />
 			<input type="checkbox" name="days[]" value="X"  <?php if (in_array('X',$disponibilitat_dies)) print "checked"; ?>/>Dimecres&nbsp;<br />
