@@ -79,7 +79,7 @@
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a><div class="sidebar-option">SOLICITUDS</div></a>
 		</div>
-		<div style="margin-left:450px; margin-top:50px;">
+		<div id="page-wrapper">
 		<?php
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
 			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
@@ -118,8 +118,6 @@
 			<input type="hidden" name="data_inici" value="<?php echo set_value('data_inici'); if(isset($data_inici)) {echo $data_inici;} ?>" />
 			<input type="submit" name="submit" value="Editar Servicio" />
 
-		</div>
-		<div id="page-wrapper">
 		</div>
 	</body>
 </html>

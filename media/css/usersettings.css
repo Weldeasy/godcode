@@ -85,7 +85,7 @@ a:focus {
 }
 #user span {
 	right:40px;
-	position:absolute;
+	position:relative;
 	float: right;
 	line-height:50px;
 }
