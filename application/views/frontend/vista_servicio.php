@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div class="dispo_servicio">
-			Disponible hasta el <?=$data_fi?> 
+			Disponible hasta el <?=$data_fi?> los 
 			<table class="disp_dias">
 				<tr>
 					<td>L</td>
@@ -60,6 +60,6 @@
 					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
 				</tr>
 			</table>
-			de XX:XX a YY:YY
+			de <?=$horas[0]?> a <?=$horas[1]?>
 		</div>
 </div>
