@@ -25,9 +25,9 @@
 					prettify: false,
 					hasGrid: true
 				});
-				$(function() {
-					$("#datepicker1").datepicker({ appendText: "" });
-				});
+				
+				$("#datepicker1").datepicker({ appendText: "" });
+				
 			}
 		</script>
 <style>
@@ -87,7 +87,8 @@
 			<input type="text" name="data_fi" id="datepicker1" value="<?php echo set_value('data_fi'); ?>" />
 			<?php echo form_error('data_fi'); ?><br />
 			Disponibilidad Horaria:
-			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  />
+			<div id="slider-hores">
+			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
 			<input type="checkbox" name="days[]" value="L" />Dilluns&nbsp;<br />
