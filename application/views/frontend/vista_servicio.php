@@ -42,7 +42,7 @@
 	</div>
 	<div class="dispo_servicio">
 			Disponible hasta el yyyy-mm-dd los 
-			<table id="disp_dias">
+			<table class="disp_dias">
 				<tr>
 					<td>L</td>
 					<td>M</td>

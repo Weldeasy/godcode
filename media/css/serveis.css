@@ -36,23 +36,13 @@
 	width:110px;
 	height:40px;
 	clear:left;
-	/*
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	height:50px;
-	width:120px;
-	text-align:center;
-	line-height:50px;
-	font-weight:bolder;
-	font-size:large;*/
 }
 .data_caducitat{
 	/*float:right;
 	padding-right:5px;*/
 }
 .nom_servei {
-	/*font-weight:bolder;*/
+	font-weight:bolder;
 }
 .servei_actions {
 	/*width:100%;
