@@ -72,7 +72,7 @@
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
-			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
+			echo @form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
 		?>	
 			Nombre:
 			<input type="text" name="nom" value="<?php echo set_value('nom'); if(isset($nom)) {echo $nom;} ?>"  />
