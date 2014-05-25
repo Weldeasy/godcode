@@ -15,6 +15,11 @@
 		<script src="<?= base_url()?>media/js/jquery-ui-1.10.4.js"></script>
 		
 		<script>
+		<?php 
+		if (!isset($horas)) {
+			$horas = explode(';', set_value('disp_horaria'));
+		}
+		$horasexplode(';', $servicio->disp_dies);?>
 		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
