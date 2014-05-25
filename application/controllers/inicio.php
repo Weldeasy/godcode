@@ -135,7 +135,7 @@ class Inicio extends CI_Controller {
    */
   public function no_autentificat(){
       $data = array();
-      $data['login_form'] = $this->load->view('frontend/login_form');
+      $data['login_form'] = 'frontend/login_form';
       $this->load->view('frontend/no_autentificat',$data);
   }
   /**
