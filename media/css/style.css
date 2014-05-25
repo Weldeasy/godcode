@@ -737,7 +737,7 @@ margin-right: 10px;
 .un_info_usuari table img{
   border-bottom-left-radius: 12px;
   border-top-left-radius:12px;
-  height: 50%; 
+  width: 300px; 
 }
 .label_title{
   text-align: center;
