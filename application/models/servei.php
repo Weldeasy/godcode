@@ -65,10 +65,18 @@ Class Servei extends CI_Model {
 	
 	public function actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies) {
 	
-		echo $id;
-		/*$this->db->where('id', $dades_servei['id']);
-		$this->db->update('servei' ,$dades_servei);
-		return true;*/
+		$this->db->where('id', $id);
+		$this->db->update('servei' ,array(
+			"nom"=>$this->input->post("nom", TRUE),
+			"descripcio"=>$this->input->post("descripcio", TRUE),
+			"preu"=>$this->input->post("preu", TRUE),
+			"data_fi" =>$this->input->post("data_fi", TRUE),
+			"disp_horaria"=>$disponibilitat_horaria,
+			"disp_dies"=>$disponibilitat_dies,
+			"categoria"=>$this->input->post("categoria", TRUE),
+			"cp"=>$this->input->post("cp", TRUE)
+		));
+		return true;
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
