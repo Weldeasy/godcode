@@ -213,7 +213,7 @@ class User_settings extends CI_Controller {
 		}
   }
   
-  function validar_editar_servicio() {
+  function validar_editar_servicio($id) {
 		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
 		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
@@ -239,9 +239,7 @@ class User_settings extends CI_Controller {
 			foreach ($dies as $key => $value) {
 				$disponibilitat_dies .= $dies[$key].";";
 			}
-			$data_inici = $this->input->post("data_inici");
-			$usuari = $this->session->userdata('logged_in');
-			//$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari['id']);
+			$this->servei->actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies);
 			//redirect('user_settings/serveis','refresh');
 		}
   }
@@ -264,6 +262,7 @@ class User_settings extends CI_Controller {
 			$this->data['data_fi'] = $servicio->data_fi;
 			$this->data['usuari'] = $servicio->usuari;
 			$this->data['cp'] = $servicio->cp;
+			$this->data['id'] = $servicio->id;
 			
 			$categories = $this->categorias->get_categorias();
 			foreach ($categories as $valor) {

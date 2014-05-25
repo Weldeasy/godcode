@@ -63,10 +63,12 @@ Class Servei extends CI_Model {
 		return true;
 	}
 	
-	public function actualitzar_servei($dades_servei) {
-		$this->db->where('id', $dades_servei['id']);
+	public function actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies) {
+	
+		echo $id;
+		/*$this->db->where('id', $dades_servei['id']);
 		$this->db->update('servei' ,$dades_servei);
-		return true;
+		return true;*/
 	}
 
 	public function busca_serveis($ciutat, $dataInici, $dataFi, $categoria) {
