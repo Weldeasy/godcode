@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script>
 	$(function() {
-		$("#datepicker1").datepicker({ appendText: "" });
+		$("#datepicker1").datepicker({ appendText: "aaa" });
 		$("#datepicker2").datepicker({ appendText: "" });
 	});
 	/*RESPONSIVE */
