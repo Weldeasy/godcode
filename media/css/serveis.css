@@ -60,7 +60,7 @@
 
 /* ALTA SERVEI Y EDITAR SERVEI */
 
-#disp_dias td {
+.disp_dias {
 	border:1px solid;
 	border-color:#CCFF66;
 	background-color:#99FF99;
