@@ -241,7 +241,7 @@ class User_settings extends CI_Controller {
 				$disponibilitat_dies .= $dies[$key].";";
 			}
 			$this->servei->actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies);
-			//redirect('user_settings/serveis','refresh');
+			redirect('user_settings/serveis','refresh');
 		}
   }
   
