@@ -231,6 +231,7 @@ class Inicio extends CI_Controller {
               $data2 = array(
                 'id_servei' => $row->id_servei,
                 'nom_servei' => $row->nom_servei,
+				'categoria' => $row->categoria,
                 'descripcio_servei' => $row->descripcio_servei,
                 'nom_categoria' => $row->nom_categoria,
                 'data_inici' => $row->data_inici,

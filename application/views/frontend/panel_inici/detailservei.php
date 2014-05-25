@@ -2,7 +2,7 @@
 <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
  <table>
        <tr>
-          <td><img src="<?=base_url() ?>media/images/categorias/1.jpg"/></td>
+          <td><img src="<?=base_url() ?>media/images/categorias/<?= $categoria?>.jpg"/></td>
           <td>
               <b>Nom :</b><?= $nom_servei; ?><br />
               <b>Descripció :</b><?= $descripcio_servei; ?><br />
