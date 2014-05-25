@@ -116,10 +116,13 @@ class User_settings extends CI_Controller {
   
   function serveis() {
 	$data2 = array();
-	$id = $this->session->userdata('id');
+	$temp = $this->user->get_user_by_email($this->data['email']);
+	$id = $temp->id;
+	$temp = array();
 	$serveis = $this->servei->get_serveis($id);
-	$html = "";
-
+	
+	if (count($serveis) > 0) {
+		$html = "";
 		foreach($serveis as $row) {
 			$data2 = array(
 			  'id' => $row->id,
@@ -132,9 +135,11 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
+	} else {
+		$html = "No estas ofernit cap servei actualment.";
+	}
 	
 	
 	$this->data['html'] = $html;
@@ -143,76 +148,140 @@ class User_settings extends CI_Controller {
 
   }
   
+  //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
+  function dataFi_check($date) {
+	if (count(explode('-', $date)) == 3) {
+		list($anyo, $mes, $dia) = explode('-', $date);
+		$valida = checkdate($mes, $dia, $anyo);
+		$data_fi = date_create($anyo."-".$mes."-".$dia);
+		$data_inici = date_create(date('Y-m-d'));
+		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
+		$dias = date_diff($data_fi,$data_inici)->format('%a');
+		if ($valida) {
+			if (strrpos($diff, "-") === false || $dias>="365") {
+				$this->form_validation->set_message('dataFi_check', '%s tiene que ser posterior a hoy y como maximo 1 año mas');
+				return false;
+			} else {
+				return true;
+			}
+		} else {
+			$this->form_validation->set_message('dataFi_check', '%s es una fecha NO valida');
+			return false;
+		}
+	} else {
+		$this->form_validation->set_message('dataFi_check', '%s no es ni una fecha<br>[2015-06-25]');
+		return false;
+	}
+	
+  }
+  
   function crear_servei() {
+	$categorias = $this->categorias->get_categorias();
+	foreach($categorias as $row) {
+		$this->data['categorias'][$row['id']] = $row['nom'];
+	}
 	$this->load->view('frontend/user_settings/alta_servei', $this->data);
   }
   
-  function validar_editar_servei() {
-	$this->form_validation->set_rules('days', 'Dias', 'required');
-	$this->form_validation->set_message('required', "No has seleccionat cap dia");
-	if ($this->form_validation->run() == FALSE)
-	{
-		$this->editar_servei($this->input->post("id"));
-	}else
-	{
-		$disponibilitat_horaria = $this->input->post("hores");
-		$disponibilitat_dies = "";
-		$dies = $this->input->post("days");
-		foreach ($dies as $key => $value) {
-			$disponibilitat_dies .= $dies[$key].";";
-		}
-		$dades_servei = array(
-			"id" => $this->input->post("id"),
-			"nom" => $this->input->post("nom"),
-			"descripcio" => $this->input->post("descripcio"),
-			"preu" => $this->input->post("preu"),
-			"categoria" => $this->input->post("categoria"),
-			"disp_horaria" => $disponibilitat_horaria,
-			"disp_dies" => $disponibilitat_dies
-		);
-		
-		if ($this->servei->actualitzar_servei($dades_servei))
-			$missatge = "Servei actualitzat Ok!";
-		else
-			$missatge = "S'ha produit un error, torna a provar-ho.";
+  
+  //function validar_editar_servei() {
+	function validar_alta_servicio() {
+	
+		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
+		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
+		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
+		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
+		$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
+		$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
+		$this->form_validation->set_rules('days', 'Nom del servei', 'required');
+		//La categoria es un natural != 0
+		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
+		if ($this->form_validation->run() == FALSE)	{
+			$categorias = $this->categorias->get_categorias();
+			foreach($categorias as $row) {
+				$this->data['categorias'][$row['id']] = $row['nom'];
+			}
+			$this->load->view('frontend/user_settings/alta_servei', $this->data);
 			
-		$this->editar_servei($dades_servei['id'], $missatge);
-	}
+		} else {
+			$disponibilitat_horaria = $this->input->post("disp_horaria");
+			$disponibilitat_dies = "";
+			$dies = $this->input->post("days");
+			foreach ($dies as $key => $value) {
+				$disponibilitat_dies .= $dies[$key].";";
+			}
+			$data_inici = date('Y-m-d');
+			$usuari = $this->session->userdata('logged_in');
+			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari['id']);
+			redirect('user_settings/serveis','refresh');
+		}
+  }
+  
+  function validar_editar_servicio($id = null) {
+		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
+		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
+		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
+		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
+		$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
+		$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
+		$this->form_validation->set_rules('days', 'Nom del servei', 'required');
+		//La categoria es un natural != 0
+		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
+		
+		if ($this->form_validation->run() == FALSE)	{
+			$categorias = $this->categorias->get_categorias();
+			foreach($categorias as $row) {
+				$this->data['categorias'][$row['id']] = $row['nom'];
+			}
+			$this->data['id'] = $id;
+			$this->load->view('frontend/user_settings/editar_servei', $this->data);
+			
+		} else {
+			$disponibilitat_horaria = $this->input->post("disp_horaria");
+			$disponibilitat_dies = "";
+			$dies = $this->input->post("days");
+			foreach ($dies as $key => $value) {
+				$disponibilitat_dies .= $dies[$key].";";
+			}
+			$this->servei->actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies);
+			redirect('user_settings/serveis','refresh');
+		}
   }
   
   function editar_servei($id, $missatge = null) {
-		$this->db->select('*');
-		$this->db->from('servei s');
-		$this->db->where('s.id = '.$id);
-		$query = $this->db->get();
-		$dades_servei = $query->result();
-	
-		$dies = explode(';', $dades_servei[0]->disp_dies);
-		$hores = explode('-', $dades_servei[0]->disp_horaria);
-		$hora1 = explode(':', $hores[0]);
-		$hora1 = $hora1[0];
-		$hora2 = explode(':', $hores[1]);
-		$hora2 = $hora2[0];
+		$session_data = $this->session->userdata('logged_in');
+		$servicio = $this->servei->get_servei($id);
 		
-		$data = array();
-		$data['email'] = $this->data['email'];
-		$data['id'] = $dades_servei[0]->id;
-		$data['nom'] = utf8_encode($dades_servei[0]->nom);
-		$data['preu'] = $dades_servei[0]->preu;
-		$data['hora_inici'] = $hora1;
-		$data['hora_fi'] = $hora2;
-		$data['disponibilitat_dies'] = $dies;
-		$data['categoria'] = $dades_servei[0]->categoria;
-		$data['descripcio'] = $dades_servei[0]->descripcio;
-		
-		$categories = $this->categorias->get_categorias();
-		foreach ($categories as $valor) {
-			$data['categories'][$valor['id']] = $valor['nom'];
-		}
-		
-		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
-		
-		$this->load->view("frontend/user_settings/editar_servei", $data);
+		//Esta condicion evita que cualquier otro que no sea el dueño del servicio pueda editarlo.
+		if ($servicio->usuari == $session_data['id']) {
+			
+			
+			$data = array();
+			$this->data['disponibilitat_dies'] = explode(';', $servicio->disp_dies);
+			$this->data['horas'] = explode(';', $servicio->disp_horaria);
+			$this->data['nom'] = $servicio->nom;
+			$this->data['descripcio'] = $servicio->descripcio;
+			$this->data['preu'] = $servicio->preu;
+			$this->data['data_inici'] = $servicio->data_inici;
+			$this->data['data_fi'] = $servicio->data_fi;
+			$this->data['usuari'] = $servicio->usuari;
+			$this->data['cp'] = $servicio->cp;
+			$this->data['id'] = $servicio->id;
+			
+			$categories = $this->categorias->get_categorias();
+			foreach ($categories as $valor) {
+				$this->data['categorias'][$valor['id']] = $valor['nom'];
+			}
+			
+			$this->load->view("frontend/user_settings/editar_servei", $this->data);
+			
+			
+
+		} else {
+			redirect('user_settings/serveis','refresh');
+		}		
 	}
   
   /***************************************************SERVEIS*************************************************************/

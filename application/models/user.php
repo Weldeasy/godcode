@@ -148,7 +148,7 @@ Class User extends CI_Model
 	
 	function login($email, $password)
 	{
-		$this -> db -> select('l.id, l.email, l.password, u.es_admin, u.esta_congelat, u.foto');
+		$this -> db -> select('u.id, l.email, l.password, u.es_admin, u.esta_congelat, u.foto');
 		$this -> db -> from('login l');
 		$this -> db -> from('usuari u');
 		$this -> db -> where('l.email', $email); 

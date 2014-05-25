@@ -8,7 +8,7 @@ Class Servei extends CI_Model {
 	 
 	 public function get_serveis($id_user) {
 		$this -> db -> select('*');
-		$this -> db -> from('servei');
+		$this -> db -> from('servei s');
 		if ($id_user != null) {
 			$this -> db -> where('s.usuari', $id_user); 
 		}
@@ -16,6 +16,13 @@ Class Servei extends CI_Model {
 		$query = $this -> db -> get();
 		return $query->result();
 	 }
+	 
+	 /* Funcion que devuelve el servicio por el id */
+	 public function get_servei($id) {
+		$query = $this->db->query('SELECT * FROM servei WHERE id = '.$id.' LIMIT 1');
+		return $query->row();
+	 }
+	 
 	 public function comprovaServeiOferts($email){
 		if($email!=null){
 	 		$query = $this->db->query('SELECT COUNT(*) as servei_minim_oferit from servei,usuari where usuari.id=servei.usuari and usuari.email="'.$email.'"');
@@ -40,23 +47,35 @@ Class Servei extends CI_Model {
 
 	 
 	 
-	 public function add_servei() {
+	 public function add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari) {
 		$this->db->insert("servei", array(
 			"nom"=>$this->input->post("nom", TRUE),
 			"descripcio"=>$this->input->post("descripcio", TRUE),
 			"preu"=>$this->input->post("preu", TRUE),
-			"data_inici"=>$this->input->post("data_inici", TRUE),
+			"data_inici"=>$data_inici,
 			"data_fi" =>$this->input->post("data_fi", TRUE),
-			"disp_horaria"=>$this->input->post("disp_horaria"),
+			"disp_horaria"=>$disponibilitat_horaria,
+			"disp_dies"=>$disponibilitat_dies,
 			"categoria"=>$this->input->post("categoria", TRUE),
-			"usuari"=>$this->input->post("usuari", TRUE)
+			"usuari"=>$usuari,
+			"cp"=>$this->input->post("cp", TRUE)
 		));
 		return true;
 	}
 	
-	public function actualitzar_servei($dades_servei) {
-		$this->db->where('id', $dades_servei['id']);
-		$this->db->update('servei' ,$dades_servei);
+	public function actualitzar_servei($id, $disponibilitat_horaria, $disponibilitat_dies) {
+	
+		$this->db->where('id', $id);
+		$this->db->update('servei' ,array(
+			"nom"=>$this->input->post("nom", TRUE),
+			"descripcio"=>$this->input->post("descripcio", TRUE),
+			"preu"=>$this->input->post("preu", TRUE),
+			"data_fi" =>$this->input->post("data_fi", TRUE),
+			"disp_horaria"=>$disponibilitat_horaria,
+			"disp_dies"=>$disponibilitat_dies,
+			"categoria"=>$this->input->post("categoria", TRUE),
+			"cp"=>$this->input->post("cp", TRUE)
+		));
 		return true;
 	}
 

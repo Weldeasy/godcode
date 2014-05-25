@@ -62,7 +62,7 @@ h1{
 		line-height:44px;
 		font-size:15px;
 }
-@media screen and (max-width: 600px) {  
+@media screen and (max-width: 1062px) {  
     #cssmenu {   
         height: auto;  
     }  
@@ -91,7 +91,7 @@ h1{
 		position:absolute;
 	}
 	#cssmenu .login_responsive {
-		height:90px;
+		height:46px;
 	}
 	#cssmenu .welcome_msg {
 		position:relative;
@@ -126,7 +126,21 @@ h1{
 		border:0;
 	}
 }
-@media only screen and (max-width : 480px) {  
+@media only screen and (max-width : 772px) { 
+	#cssmenu .login_responsive {
+		height:91px;
+	}
+	#cssmenu ul li:nth-child(1) a {
+		padding-bottom:23px;
+		padding-top:22px;
+	}
+}
+@media only screen and (max-width : 818px) { 
+	#cssmenu ul li:nth-child(1) a {
+		padding:0px;
+	}
+}
+@media only screen and (max-width : 789px) {  
     #cssmenu {  
         border-bottom: 0;  
     }  
@@ -187,6 +201,9 @@ h1{
         float: none;  
         width: 100%;  
     }
+	#cssmenu ul li:nth-child(1) a {
+		padding:0px;
+	}
 	#cssmenu .welcome_msg {
 		position:relative;
 		padding-bottom:6px;
