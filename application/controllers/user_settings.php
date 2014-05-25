@@ -150,7 +150,7 @@ class User_settings extends CI_Controller {
   
   //funcion que valida si una data es correcta (en el alta_servei), esta en el formato correcto (Y-m-d)
   function dataFi_check($date) {
-	if (count(explode('/', $date)) == 3) {
+	if (count(explode('-', $date)) == 3) {
 		list($anyo, $mes, $dia) = explode('-', $date);
 		$valida = checkdate($mes, $dia, $anyo);
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
@@ -191,7 +191,6 @@ class User_settings extends CI_Controller {
 		$this->form_validation->set_message('max_length', "%s no pot tenir més %s caracters.");
 		$this->form_validation->set_message('min_length', "%s ha de tenir %s caracters.");
 		$this->form_validation->set_message('integer', "%s només pot contenir números.");
-		$this->form_validation->set_message('callback_dataFi_check', "El format de %s no es correcte (Y/m/d).");
 		$this->form_validation->set_message('is_natural_no_zero', "%s que has seleccionat no es correcte.");
 		$this->form_validation->set_message('exact_length', "%s ha de tenir exactament %s numeros.");
 		$this->form_validation->set_message('numeric', "%s ha de ser númeric.");

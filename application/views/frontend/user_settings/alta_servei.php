@@ -26,7 +26,7 @@
 					hasGrid: true
 				});
 				
-				$("#datepicker1").datepicker();
+				$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
 				
 			}
 		</script>
