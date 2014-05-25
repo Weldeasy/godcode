@@ -152,7 +152,7 @@ class User_settings extends CI_Controller {
 		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici);
 		echo "<pre>";
-		var_dump($diff->format('%R%a days'));
+		var_dump($diff->format('%a'));
 		echo "</pre>";
 		/*
 		if ($valida) {
