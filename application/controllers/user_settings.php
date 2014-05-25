@@ -181,33 +181,38 @@ class User_settings extends CI_Controller {
   
   //function validar_editar_servei() {
 	function validar_servicio() {
-	
-	$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
-	$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
-	$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
-	//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
-	$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
-	$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
-	$this->form_validation->set_rules('days', 'Nom del servei', 'required');
-	//La categoria es un natural != 0
-	$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
-	$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
-	
-	if ($this->form_validation->run() == FALSE)	{
-	
-		$this->load->view('frontend/user_settings/alta_servei', $this->data);
 		
-	} else {
-		$disponibilitat_horaria = $this->input->post("disp_horaria");
-		$disponibilitat_dies = "";
-		$dies = $this->input->post("days");
-		foreach ($dies as $key => $value) {
-			$disponibilitat_dies .= $dies[$key].";";
+		$categorias = $this->categorias->get_categorias();
+		foreach($categorias as $row) {
+			$this->data['categorias'][$row['id']] = $row['nom'];
 		}
-		$data_inici = date('Y-m-d');
-		$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies);
-		redirect('user_settings/serveis','refresh');
-	}
+		
+		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
+		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
+		$this->form_validation->set_rules('preu', 'Nom del servei', 'required|integer');
+		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
+		$this->form_validation->set_rules('data_fi', 'Nom del servei', 'required|callback_dataFi_check');
+		$this->form_validation->set_rules('disp_horaria', 'Nom del servei', 'required');
+		$this->form_validation->set_rules('days', 'Nom del servei', 'required');
+		//La categoria es un natural != 0
+		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
+		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
+		
+		if ($this->form_validation->run() == FALSE)	{
+		
+			$this->load->view('frontend/user_settings/alta_servei', $this->data);
+			
+		} else {
+			$disponibilitat_horaria = $this->input->post("disp_horaria");
+			$disponibilitat_dies = "";
+			$dies = $this->input->post("days");
+			foreach ($dies as $key => $value) {
+				$disponibilitat_dies .= $dies[$key].";";
+			}
+			$data_inici = date('Y-m-d');
+			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies);
+			redirect('user_settings/serveis','refresh');
+		}
 	
 	
 	
