@@ -151,23 +151,20 @@ class User_settings extends CI_Controller {
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
 		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
-		echo "<pre>";
-		var_dump($diff);
-		echo "</pre>";
-		/*
 		if ($valida) {
-			if ($) {
-			
+			if (strrpos($diff, "-") === false) {
+				$this->form_validation->set_message('dataFi_check', '%s debe ser una fecha posterior a hoy');
+				return false
 			}
 			return true;
 		} else {
-			$this->form_validation->set_message('data_check', '%s es una fecha NO valida');
+			$this->form_validation->set_message('dataFi_check', '%s es una fecha NO valida');
 			return false;
 		}
 	} else {
-		$this->form_validation->set_message('data_check', '%s no es ni una fecha<br>[2015-06-25]');
+		$this->form_validation->set_message('dataFi_check', '%s no es ni una fecha<br>[2015-06-25]');
 		return false;
-	}*/
+	}
 	}
   }
   
@@ -203,7 +200,7 @@ class User_settings extends CI_Controller {
 		}
 		$data_inici = date('Y-m-d');
 		$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies);
-		//redirect('user_settings/serveis','refresh');
+		redirect('user_settings/serveis','refresh');
 	}
 	
 	
