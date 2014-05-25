@@ -150,9 +150,9 @@ class User_settings extends CI_Controller {
 		$valida = checkdate($mes, $dia, $anyo);
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
 		$data_inici = date_create(date('Y-m-d'));
-		$diff = date_diff($data_fi,$data_inici);
+		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
 		echo "<pre>";
-		var_dump($diff->format('%R%a'));
+		var_dump($diff);
 		echo "</pre>";
 		/*
 		if ($valida) {
