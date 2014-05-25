@@ -195,10 +195,11 @@ class User_settings extends CI_Controller {
 		$this->form_validation->set_message('is_natural_no_zero', "%s que has seleccionat no es correcte.");
 		$this->form_validation->set_message('exact_length', "%s ha de tenir exactament %s numeros.");
 		$this->form_validation->set_message('numeric', "%s ha de ser númeric.");
+		$this->form_validation->set_message('greater_than', "%s ha de ser major que %s.");
 	
 		$this->form_validation->set_rules('nom', 'El nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'La descripció', 'required|min_length[50]|max_length[500]');
-		$this->form_validation->set_rules('preu', 'El preu', 'required|integer');
+		$this->form_validation->set_rules('preu', 'El preu', 'required|integer|greater_than[0]');
 		//Valida que la data_fi sea Y-m-d (xxxx-xx-xx)
 		$this->form_validation->set_rules('data_fi', 'la data de fi', 'required|callback_dataFi_check');
 		$this->form_validation->set_rules('disp_horaria', 'L\'horari', 'required');
