@@ -151,9 +151,10 @@ class User_settings extends CI_Controller {
 		$data_fi = date_create($anyo."-".$mes."-".$dia);
 		$data_inici = date_create(date('Y-m-d'));
 		$diff = date_diff($data_fi,$data_inici)->format('%R%a');
+		$dias = date_diff($data_fi,$data_inici)->format('%a');
 		if ($valida) {
-			if (strrpos($diff, "-") === false) {
-				$this->form_validation->set_message('dataFi_check', '%s tiene que ser posterior a hoy');
+			if (strrpos($diff, "-") === false && $dias<=365) {
+				$this->form_validation->set_message('dataFi_check', '%s tiene que ser posterior a hoy y como maximo 1 año mas');
 				return false;
 			} else {
 				return true;
