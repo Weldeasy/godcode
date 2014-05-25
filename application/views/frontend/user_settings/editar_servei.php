@@ -76,7 +76,7 @@
 			<input type="text" name="nom" value="<?php echo set_value('nom'); if(isset($nom)) {echo $nom;} ?>"  />
 			<?php echo form_error('nom'); ?><br />
 			Descripcion:
-			<input type="text" name="descripcio" value="<?php echo set_value('descripcio'); ?>"  />
+			<input type="text" name="descripcio" value="<?php echo set_value('descripcio'); if(isset($descripcio)) {echo $descripcio;}?>"  />
 			<?php echo form_error('descripcio'); ?><br />
 			Precio:
 			<input type="number" name="preu" value="<?php echo set_value('preu'); ?>"  />
