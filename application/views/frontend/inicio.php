@@ -44,7 +44,9 @@
 	<ul>
 		<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+	<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
+	<?php } ?>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     
