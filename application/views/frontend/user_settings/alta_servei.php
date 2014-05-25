@@ -12,6 +12,8 @@
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		<script src="<?= base_url()?>media/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+		<link href="<?= base_url()?>media/css/jquery-ui-1.10.4.css" rel="stylesheet">
+		<script src="<?= base_url()?>media/js/jquery-ui-1.10.4.js"></script>
 		
 		<script>
 		window.onload = function(){
