@@ -21,7 +21,7 @@ Class Servei extends CI_Model {
 	 public function get_servei($id) {
 		$this -> db -> select('*');
 		$this -> db -> from('servei');
-		$this -> db -> where('s.id', $id); 
+		$this -> db -> where('id', $id); 
 		$query = $this -> db -> get();
 		return $query->result();
 	 }
