@@ -165,6 +165,7 @@ class User_settings extends CI_Controller {
 		$this->form_validation->set_message('data_check', '%s no es ni una fecha<br>[2015-06-25]');
 		return false;
 	}*/
+	}
   }
   
   function crear_servei() {
