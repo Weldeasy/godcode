@@ -34,12 +34,15 @@
 		<div class="descripcion_servicio">
 			Descripcion del servicio, etc, bla bla bla, mi coche es de color
 			del amor en pleno mes de abril
+			
 		</div>
 		<div class="precio_servicio">
-			301
+				301
 		</div>
-		<div class="dispo_servicio">
-			<table id="disp_dias">
+	</div>
+	<div class="dispo_servicio">
+			Disponible hasta el yyyy-mm-dd los 
+			<table class="disp_dias">
 				<tr>
 					<td>L</td>
 					<td>M</td>
@@ -59,6 +62,6 @@
 					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
 				</tr>
 			</table>
+			de XX:XX a YY:YY
 		</div>
-	</div>
 </div>
