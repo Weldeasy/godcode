@@ -12,9 +12,9 @@
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		<script src="<?= base_url()?>media/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
-		<script>var hora_inici = <?php echo json_encode($hora_inici); ?>;var hora_fi = <?php echo json_encode($hora_fi); ?>;</script>
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
 		<script>
 		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
