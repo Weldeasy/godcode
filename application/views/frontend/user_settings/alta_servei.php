@@ -36,7 +36,7 @@
 		width:100%;
 	}
 	#slider-hores {
-		width:300px;
+		width:350px;
 	}
 </style>
 	</head>
@@ -71,7 +71,7 @@
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
-			echo form_open('user_settings/validar_servicio', $attributes);
+			echo form_open('user_settings/validar_alta_servicio', $attributes);
 		?>	
 			Nombre:
 			<input type="text" name="nom" value="<?php echo set_value('nom'); ?>"  />

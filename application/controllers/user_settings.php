@@ -180,7 +180,7 @@ class User_settings extends CI_Controller {
   
   
   //function validar_editar_servei() {
-	function validar_servicio() {
+	function validar_alta_servicio() {
 	
 		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
@@ -216,26 +216,17 @@ class User_settings extends CI_Controller {
   function editar_servei($id, $missatge = null) {
 		$session_data = $this->session->userdata('logged_in');
 		$servicio = $this->servei->get_servei($id);
-
+		//Esta condicion evita que cualquier otro que no sea el dueño del servicio pueda editarlo.
 		if ($servicio->usuari == $session_data['id']) {
 			echo "si";
 		} else {
-			echo "no";
+			redirect('user_settings/serveis','refresh');
 		}
 		
-		
-		/*$this->db->select('*');
-		$this->db->from('servei s');
-		$this->db->where('s.id = '.$id);
-		$query = $this->db->get();
-		$dades_servei = $query->result();
+	
 	
 		$dies = explode(';', $dades_servei[0]->disp_dies);
 		$hores = explode('-', $dades_servei[0]->disp_horaria);
-		$hora1 = explode(':', $hores[0]);
-		$hora1 = $hora1[0];
-		$hora2 = explode(':', $hores[1]);
-		$hora2 = $hora2[0];
 		
 		$data = array();
 		$data['email'] = $this->data['email'];
@@ -255,7 +246,7 @@ class User_settings extends CI_Controller {
 		
 		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
 		
-		$this->load->view("frontend/user_settings/editar_servei", $data);*/
+		$this->load->view("frontend/user_settings/editar_servei", $data);
 	}
   
   /***************************************************SERVEIS*************************************************************/
