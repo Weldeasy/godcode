@@ -17,7 +17,8 @@ class User_settings extends CI_Controller {
   }
 	
   function index() {
-	$this->load->view('frontend/user_settings/inicio', $this->data);
+	var_dump($session_data);
+	//$this->load->view('frontend/user_settings/inicio', $this->data);
   }
   
   function mostrar_missatge($m) {
