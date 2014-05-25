@@ -103,7 +103,7 @@
 			
 			
 			Categoria:
-			<?php echo form_dropdown('categoria', $categorias, ''); ?><br />
+			<?php echo form_dropdown('categoria', $categorias, @set_value('categoria')); ?><br />
 			<?php echo form_error('categoria'); ?><br />
 			CP:
 			<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />
