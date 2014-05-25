@@ -229,6 +229,7 @@ class User_settings extends CI_Controller {
 			foreach($categorias as $row) {
 				$this->data['categorias'][$row['id']] = $row['nom'];
 			}
+			$this->data['disponibilitat_dies'] = explode(';', $this->input->post("days"));
 			$this->load->view('frontend/user_settings/editar_servei', $this->data);
 			
 		} else {
