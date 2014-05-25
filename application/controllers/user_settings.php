@@ -210,7 +210,7 @@ class User_settings extends CI_Controller {
 			}
 			$data_inici = date('Y-m-d');
 			$usuari = $this->session->userdata('logged_in');
-			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari);
+			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari['id']);
 			redirect('user_settings/serveis','refresh');
 		}
 	
