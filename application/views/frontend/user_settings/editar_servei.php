@@ -17,7 +17,8 @@
 		<script>
 		<?php 
 		if (!isset($horas)) {
-			$horas = explode(';', set_value('disp_horaria'));
+			$aux = set_value('disp_horaria');
+			$horas = explode(';', $aux);
 		}
 		$horasexplode(';', $servicio->disp_dies);?>
 		window.onload = function(){
