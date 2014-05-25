@@ -216,37 +216,33 @@ class User_settings extends CI_Controller {
   function editar_servei($id, $missatge = null) {
 		$session_data = $this->session->userdata('logged_in');
 		$servicio = $this->servei->get_servei($id);
+		
 		//Esta condicion evita que cualquier otro que no sea el dueño del servicio pueda editarlo.
 		if ($servicio->usuari == $session_data['id']) {
-			echo "si";
+			$dies = explode(';', $servicio->disp_dies);
+			$hores = explode(';', $servicio->disp_horaria);
+			
+			$data = array();
+			$data['nom'] = $servicio->nom;
+			$data['descripcio'] = $servicio->descripcio;
+			$data['preu'] = $servicio->preu;
+			$data['data_inici'] = $servicio->data_inici;
+			$data['data_fi'] = $servicio->data_fi;
+			$data['usuari'] = $servicio->usuari;
+			$data['cp'] = $servicio->cp;
+			
+			$categories = $this->categorias->get_categorias();
+			foreach ($categories as $valor) {
+				$data['categories'][$valor['id']] = $valor['nom'];
+			}
+			
+			$this->load->view("frontend/user_settings/editar_servei", $data);
+			
+			
+
 		} else {
 			redirect('user_settings/serveis','refresh');
-		}
-		
-	
-	
-		$dies = explode(';', $dades_servei[0]->disp_dies);
-		$hores = explode('-', $dades_servei[0]->disp_horaria);
-		
-		$data = array();
-		$data['email'] = $this->data['email'];
-		$data['id'] = $dades_servei[0]->id;
-		$data['nom'] = utf8_encode($dades_servei[0]->nom);
-		$data['preu'] = $dades_servei[0]->preu;
-		$data['hora_inici'] = $hora1;
-		$data['hora_fi'] = $hora2;
-		$data['disponibilitat_dies'] = $dies;
-		$data['categoria'] = $dades_servei[0]->categoria;
-		$data['descripcio'] = $dades_servei[0]->descripcio;
-		
-		$categories = $this->categorias->get_categorias();
-		foreach ($categories as $valor) {
-			$data['categories'][$valor['id']] = $valor['nom'];
-		}
-		
-		if (!is_null($missatge)) { $data['missatge'] = $missatge; }
-		
-		$this->load->view("frontend/user_settings/editar_servei", $data);
+		}		
 	}
   
   /***************************************************SERVEIS*************************************************************/
