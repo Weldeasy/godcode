@@ -213,6 +213,10 @@ class User_settings extends CI_Controller {
 		}
   }
   
+  function validar_editar_servei() {
+	echo "xD";
+  }
+  
   function editar_servei($id, $missatge = null) {
 		$session_data = $this->session->userdata('logged_in');
 		$servicio = $this->servei->get_servei($id);
