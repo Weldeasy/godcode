@@ -13,12 +13,9 @@ class Inicio extends CI_Controller {
    */
   function __construct(){
     parent::__construct();
-  	$this->load->helper('url');
-  	$this->load->library('form_validation');
-  	$this->load->helper(array('form'));
-  	$this->load->model('categorias');
-    $this->load->model('user');
-    $this->load->model('servei');
+  	$this->load->library(array('form_validation'));
+  	$this->load->helper(array('form', 'url'));
+  	$this->load->model(array('categorias', 'user', 'servei'));
     
     $session_data = $this->session->userdata('logged_in');
     $this->data['email'] = $session_data['email'];
