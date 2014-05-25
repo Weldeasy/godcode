@@ -20,7 +20,7 @@
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
-					type: 'integer',
+					type: 'double',
 					postfix: ":00",
 					prettify: false,
 					hasGrid: true
