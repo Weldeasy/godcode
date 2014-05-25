@@ -10,6 +10,7 @@ Class Upload_img extends CI_Model
 		$config['max_height'] = 1024;
 		$config['file_name'] = $nombre."_".$codigo;
 		$config['remove_spaces'] = TRUE;
+		$config['overwrite'] = TRUE;
 		
 		$this->load->library('upload', $config);
 		

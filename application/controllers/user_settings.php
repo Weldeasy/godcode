@@ -300,13 +300,13 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
   }
   /***************************************************OPCIONS*************************************************************/
-  
+  /***************************************************SOLICITUTS**********************************************************/
   function solicitud(){
   	$data=$this->data;
   	$data['panel_user']=$this->load->view('frontend/user_settings/solicitud',NULL,TRUE);
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
-
+/***************************************************SOLICITUTS**********************************************************/
 
 }
 
