@@ -19,7 +19,7 @@
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
-					from: <?php echo $horas[0]; ?>,
+					from: <?php echo $horas[0];  ?>,
 					to: <?php echo $horas[1]; ?>,
 					type: 'double',
 					postfix: ":00",
@@ -74,7 +74,7 @@
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
 			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
 		?>	
-			Nombre:
+			Nombre:<span><?php echo set_value('disp_horaria');?></span>
 			<input type="text" name="nom" value="<?php echo set_value('nom'); if(isset($nom)) {echo $nom;} ?>"  />
 			<?php echo form_error('nom'); ?><br />
 			Descripcion:
