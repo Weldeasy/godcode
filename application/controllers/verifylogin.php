@@ -19,8 +19,10 @@ class VerifyLogin extends CI_Controller {
     //This method will have the credentials validation
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('email', 'Email', 'trim|required');
-    $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
+    $this->form_validation->set_rules('email', 'email', 'trim|required');
+    $this->form_validation->set_rules('password', 'password', 'trim|required|callback_check_database');
+	
+	$this->form_validation->set_message('required', "El camp %s es obligatori");
 
     if($this->form_validation->run() == FALSE)
     {
@@ -75,7 +77,7 @@ class VerifyLogin extends CI_Controller {
     }
     else
     {
-      $this->form_validation->set_message('check_database', 'Invalid email or password');
+      $this->form_validation->set_message('check_database', 'Email i/o password invalid/s');
       return false;
     }
   }

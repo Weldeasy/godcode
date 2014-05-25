@@ -7,3 +7,9 @@ echo form_open('verifylogin',array('class'=>'login_form'));
 	<input type="submit" value="ENTRAR" title="Accedir a la meva conte" />
 </form>
 </li>
+<div id="login_errors">
+	<ul>
+		<li><?= form_error("email"); ?></li>
+		<li><?= form_error("password"); ?></li>
+	</ul>
+</div>
