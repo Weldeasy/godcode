@@ -216,10 +216,13 @@ class User_settings extends CI_Controller {
   function editar_servei($id, $missatge = null) {
 		$session_data = $this->session->userdata('logged_in');
 		$servicio = $this->servei->get_servei($id);
-		echo $servicio['usuari']."<br>".$session_data['id'];
-		/*var_dump($servicio);
+		echo "<pre>";
+		var_dump($servicio);
 		echo "</pre>";
-		if ($servicio['usuari'] == $session_data['id']) {
+		echo "<pre>";
+		var_dump($session_data);
+		echo "</pre>";
+		/*if ($servicio'usuari'] == $session_data['id']) {
 			echo "si";
 		} else {
 			echo "no";
