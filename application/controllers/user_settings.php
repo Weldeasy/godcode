@@ -154,9 +154,10 @@ class User_settings extends CI_Controller {
 		if ($valida) {
 			if (strrpos($diff, "-") === false) {
 				$this->form_validation->set_message('dataFi_check', '%s debe ser una fecha posterior a hoy');
-				return false
+				return false;
+			} else {
+				return true;
 			}
-			return true;
 		} else {
 			$this->form_validation->set_message('dataFi_check', '%s es una fecha NO valida');
 			return false;
