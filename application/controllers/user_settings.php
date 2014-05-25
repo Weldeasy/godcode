@@ -213,7 +213,7 @@ class User_settings extends CI_Controller {
 		}
   }
   
-  function validar_editar_servei() {
+  function validar_editar_servicio() {
 	echo "xD";
   }
   
