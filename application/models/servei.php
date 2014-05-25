@@ -40,7 +40,7 @@ Class Servei extends CI_Model {
 
 	 
 	 
-	 public function add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies) {
+	 public function add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari) {
 		$this->db->insert("servei", array(
 			"nom"=>$this->input->post("nom", TRUE),
 			"descripcio"=>$this->input->post("descripcio", TRUE),
@@ -50,7 +50,7 @@ Class Servei extends CI_Model {
 			"disp_horaria"=>$disponibilitat_horaria,
 			"disp_dies"=>$disponibilitat_dies,
 			"categoria"=>$this->input->post("categoria", TRUE),
-			"usuari"=>$this->session->userdata('logged_in')['id'],
+			"usuari"=>$usuari,
 			"cp"=>$this->input->post("cp", TRUE)
 		));
 		return true;

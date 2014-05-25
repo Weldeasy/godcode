@@ -194,7 +194,6 @@ class User_settings extends CI_Controller {
 		//La categoria es un natural != 0
 		$this->form_validation->set_rules('categoria', 'Nom del servei', 'required|is_natural_no_zero');
 		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
-		
 		if ($this->form_validation->run() == FALSE)	{
 			$categorias = $this->categorias->get_categorias();
 			foreach($categorias as $row) {
@@ -210,7 +209,8 @@ class User_settings extends CI_Controller {
 				$disponibilitat_dies .= $dies[$key].";";
 			}
 			$data_inici = date('Y-m-d');
-			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies);
+			$usuari = $this->session->userdata('logged_in')['id'];
+			$this->servei->add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari);
 			redirect('user_settings/serveis','refresh');
 		}
 	
