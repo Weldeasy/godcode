@@ -182,10 +182,7 @@ class User_settings extends CI_Controller {
   //function validar_editar_servei() {
 	function validar_servicio() {
 		
-		$categorias = $this->categorias->get_categorias();
-		foreach($categorias as $row) {
-			$this->data['categorias'][$row['id']] = $row['nom'];
-		}
+		
 		
 		$this->form_validation->set_rules('nom', 'Nom del servei', 'required|max_length[25]');
 		$this->form_validation->set_rules('descripcio', 'descripcionServicio', 'required|min_length[50]|max_length[500]');
@@ -199,7 +196,10 @@ class User_settings extends CI_Controller {
 		$this->form_validation->set_rules('cp', 'Nom del servei', 'required|exact_length[5]|numeric');
 		
 		if ($this->form_validation->run() == FALSE)	{
-		
+			$categorias = $this->categorias->get_categorias();
+			foreach($categorias as $row) {
+				$this->data['categorias'][$row['id']] = $row['nom'];
+			}
 			$this->load->view('frontend/user_settings/alta_servei', $this->data);
 			
 		} else {
