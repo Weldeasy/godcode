@@ -20,7 +20,7 @@
 			$aux = set_value('disp_horaria');
 			$horas = explode(';', $aux);
 		}
-		$horasexplode(';', $servicio->disp_dies);?>
+		?>
 		window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
