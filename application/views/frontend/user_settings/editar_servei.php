@@ -19,8 +19,8 @@
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
-					<?php if (isset($horas) {echo "from:".$horas[0];}  ?>,
-				    <?php if (isset($horas) {echo "to:".$horas[1];} ?>,
+					from: <?php echo $horas[0]; ?>,
+					to: <?php echo $horas[1]; ?>,
 					type: 'double',
 					postfix: ":00",
 					prettify: false,
@@ -72,7 +72,7 @@
 		<div style="margin-left:450px; margin-top:50px;">
 		<?php
 			$attributes = array('class' => 'formY', 'id' => 'editarServicio');
-			echo @form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
+			echo form_open('user_settings/validar_editar_servicio/'.$id, $attributes);
 		?>	
 			Nombre:
 			<input type="text" name="nom" value="<?php echo set_value('nom'); if(isset($nom)) {echo $nom;} ?>"  />
