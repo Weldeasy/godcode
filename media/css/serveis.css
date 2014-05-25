@@ -1,45 +1,49 @@
 .servicio {
 	border:1px solid;
+	/*
 	height:150px;
 	width:700px;
 	margin-top:30px;
 	margin-left:auto;
 	margin-right:auto;
 	position: relative;
-	border-bottom:1px solid;
+	border-bottom:1px solid;*/
 }
 
 .foto_servicio {
-	height:100%;
+	/*height:100%;
 	display:inline-block;
-	width:150px;
+	width:150px;*/
 }
 .foto_servicio img{
-	height:100%;
-	width:150px;
 	border-right:1px solid;
+	/*height:100%;
+	width:150px;
+	;*/
 }
 .cuerpo_servicio {
-	float:right;
+	/*float:right;
 	width:77%;
-	display:inline-block;
+	display:inline-block;*/
 }
 
 .titulo_servicio {
 	border-left:1px solid;
 	border-bottom:1px solid;
-	padding-left:5px;
+	/*
+	padding-left:5px;*/
 }
 .descripcion_servicio {
-	min-height:128px;
+	/*min-height:128px;*/
 }
 .descripcion_servicio p{
-	word-wrap: break-word;
-	padding-right:10px;
+	/*word-wrap: break-word;
+	padding-right:10px;*/
 }
 .precio_servicio {
 	border-top:1px solid;
 	border-left:1px solid;
+	/*
 	position:absolute;
 	bottom:0px;
 	right:0px;
@@ -48,21 +52,21 @@
 	text-align:center;
 	line-height:50px;
 	font-weight:bolder;
-	font-size:large;
+	font-size:large;*/
 }
 .data_caducitat{
-	float:right;
-	padding-right:5px;
+	/*float:right;
+	padding-right:5px;*/
 }
 .nom_servei {
-	font-weight:bolder;
+	/*font-weight:bolder;*/
 }
 .servei_actions {
-	width:100%;
+	/*width:100%;
 	padding-bottom:10px;
 	padding-top:10px;
 	margin-bottom:-2px;
-	text-align:center;
+	text-align:center;*/
 }
 
 .dispo_servicio {
