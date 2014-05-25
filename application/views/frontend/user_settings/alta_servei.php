@@ -27,7 +27,7 @@
 					hasGrid: true
 				});
 				
-				$("#datepicker1").datepicker({ appendText: "" });
+				$("#datepicker1").datepicker();
 				
 			}
 		</script>
