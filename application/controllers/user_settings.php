@@ -116,10 +116,13 @@ class User_settings extends CI_Controller {
   
   function serveis() {
 	$data2 = array();
-	$id = $this->session->userdata('id');
+	$temp = $this->user->get_user_by_email($this->data['email']);
+	$id = $temp->id;
+	$temp = array();
 	$serveis = $this->servei->get_serveis($id);
-	$html = "";
-
+	
+	if (count($serveis) > 0) {
+		$html = "";
 		foreach($serveis as $row) {
 			$data2 = array(
 			  'id' => $row->id,
@@ -132,9 +135,11 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari
 			);
-
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
+	} else {
+		$html = "No estas ofernit cap servei actualment.";
+	}
 	
 	
 	$this->data['html'] = $html;

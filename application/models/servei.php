@@ -8,7 +8,7 @@ Class Servei extends CI_Model {
 	 
 	 public function get_serveis($id_user) {
 		$this -> db -> select('*');
-		$this -> db -> from('servei');
+		$this -> db -> from('servei s');
 		if ($id_user != null) {
 			$this -> db -> where('s.usuari', $id_user); 
 		}

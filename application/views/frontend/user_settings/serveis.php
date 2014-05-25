@@ -40,7 +40,7 @@
 		<div id="page-wrapper">
 			<h1>Els meus serveis</h1>
 			<a href="<?=base_url()?>index.php/user_settings/crear_servei" title="Crear un nou servei propi"><input type="button" value="Crear nou servei" /></a>
-			<?php echo $html; /*echo $output->output*/ ?>
+			<?php echo $html; ?>
 		</div>
 	</body>
 </html>
