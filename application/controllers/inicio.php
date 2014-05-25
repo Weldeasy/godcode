@@ -267,7 +267,12 @@ class Inicio extends CI_Controller {
           $id_user=$_POST['id_user'];
           $login_view='';
           $vista='';
-
+          if($this->es_autentificat()) {
+                $data=$this->data;
+                $login_view = 'panel_inici/logued';
+          }else{
+                $login_view= 'login_form';
+          }
           $puntsServeiBD=$this->servei->getPreuServei($id_servei);   
           $saldoUserBD=$this->user->getSaldoUser($email_user);  
           $comprovaMinimServeiOfertBD=$this->servei->comprovaServeiOferts($email_user);
@@ -290,7 +295,7 @@ class Inicio extends CI_Controller {
           //El preu del servei ha der més gran o igual saldo del usuari
           if($comprovaMinimServeiOfert>0){
             if($puntsServei<=$saldoUser){         
-              $this->user->enviarSolicitut($id_user,$id_servei);     
+              $this->user->enviarSolicitut($id_user,$id_servei);    
               $vista='enviat_solicitut';
             }else{
                $vista='error_saldo_minim_servei';

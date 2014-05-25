@@ -16,6 +16,37 @@ Class User extends CI_Model
 			return;
 		}
 	}
+	public function get_user_by_Id($id) {
+		try {
+			$data = $this->db->query("SELECT * FROM usuari WHERE id='".$id."' LIMIT 1");
+			return $data->row();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	public function comprovaSolicitut($email){
+		if($email!=null){
+	 		$query = $this->db->query('SELECT COUNT(*) as total_solicitut FROM usuari,servei,solicitut_servei
+	 		 where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and  usuari.email="'.$email.'"');
+			return $query->row();
+	 	}
+	}
+	public function getIdSolicitant($email){
+		if($email!=null){
+	 		$query = $this->db->query('SELECT solicitut_servei.id,id_solicitant,servei_id FROM usuari,servei,solicitut_servei where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and usuari.email="'.$email.'"');
+			return $query->result();
+	 	}
+	}
+	public function aceptaSolicitut($id){
+		$query = $this->db->query('UPDATE solicitut_servei SET estat=1 WHERE id="'.$id.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;
+	}
+
 	public function cercar_user_servei($cercar_user){
 		try {
 			$data = $this->db->query(

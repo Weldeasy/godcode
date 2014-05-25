@@ -19,7 +19,7 @@ Class Servei extends CI_Model {
 	 
 	 /* Funcion que devuelve el servicio por el id */
 	 public function get_servei($id) {
-		$query = $this->db->query('SELECT * FROM servei WHERE id = '.$id.' LIMIT 1');
+		$query = $this->db->query('SELECT * FROM servei WHERE id = "'.$id.'"');
 		return $query->row();
 	 }
 	 

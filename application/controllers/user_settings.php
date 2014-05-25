@@ -9,11 +9,11 @@ class User_settings extends CI_Controller {
     parent::__construct();
 	if ($this->session->userdata('logged_in') == FALSE)
 		redirect('inicio');
-	$this->load->helper(array('url', 'form'));
-	$this->load->model(array('user', 'categorias', 'servei'));
-	$this->load->library(array('form_validation', 'grocery_CRUD'));
-	$session_data = $this->session->userdata('logged_in');
-	$this->data['email'] = $session_data['email'];
+		$this->load->helper(array('url', 'form'));
+		$this->load->model(array('user', 'categorias', 'servei'));
+		$this->load->library(array('form_validation', 'grocery_CRUD'));
+		$session_data = $this->session->userdata('logged_in');
+		$this->data['email'] = $session_data['email'];
   }
 	
   function index() {
@@ -299,10 +299,49 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/opcions', $this->data);
   }
   /***************************************************OPCIONS*************************************************************/
-  
+  function estatSolicitut(){
+  	$estatSolicitut=false;
+  	if(isset($_POST['id_solicitut'])){
+  		$id_solicitut=$_POST['id_solicitut'];
+  	}
+  	if(isset($_POST['accepta'])){
+  		$accepta=$_POST['accepta'];
+  		$estatSolicitut=TRUE;
+  	}
+  	if(isset($_POST['rebuja'])){
+  		$rebuja=$_POST['rebuja'];
+  		$estatSolicitut=FALSE;
+  	}
+  	$data=$this->data;
+  	$data2['estatSolicitut']=$estatSolicitut;
+  	if($estatSolicitut){
+  		$this->user->aceptaSolicitut($id_solicitut);
+  	}
+	$data['panel_user']=$this->load->view('frontend/user_settings/actualitzaSolicitut',$data2,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+
+  }
   function solicitud(){
   	$data=$this->data;
-  	$data['panel_user']=$this->load->view('frontend/user_settings/solicitud',NULL,TRUE);
+  	$email=$data['email'];
+   	$html="";
+   	
+   	$total_solicitut=$this->user->comprovaSolicitut($email)->total_solicitut;
+   	if($total_solicitut>0){
+   			$infoSolicitut=$this->user->getIdSolicitant($email);
+   			foreach ($infoSolicitut as $key){ 
+   				 $data2 = array(
+                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
+                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
+                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
+                'id_solicitut' => $key->id,
+            	);
+            	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
+            }	
+	        $data['panel_user']=$html;
+   	}else{
+		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
+   	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
 

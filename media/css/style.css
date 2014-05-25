@@ -825,3 +825,18 @@ margin-right: 10px;
   margin-right: 500px;
   margin-left: 500px;
 }
+.solicitud{
+    background-color:lightblue;
+    border-radius:12px;
+    margin-top: 15px;
+    height: auto;
+    width: 1000px;  
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 8px 6px -6px black;
+    word-wrap:break-word; 
+}
+.solicitud table{
+  text-align: left;
+}
+
