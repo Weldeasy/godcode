@@ -25,7 +25,9 @@
 					prettify: false,
 					hasGrid: true
 				});
-				$("#datepicker1").datepicker();
+				$(function() {
+					$("#datepicker1").datepicker({ appendText: "" });
+				});
 			}
 		</script>
 <style>
