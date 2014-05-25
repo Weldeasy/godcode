@@ -5,27 +5,27 @@
 		<title>Time Banking | Editar el meu servei</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+		<link href="<?= base_url()?>media/css/normalize.min.css" rel="stylesheet">
+		<link href="<?= base_url()?>media/css/ion.rangeSlider.css" rel="stylesheet">
+		<link href="<?= base_url()?>media/css/ion.rangeSlider.skinSimple.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
+		<script src="<?= base_url()?>media/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
 		<script>var hora_inici = <?php echo json_encode($hora_inici); ?>;var hora_fi = <?php echo json_encode($hora_fi); ?>;</script>
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script>
-						$(function() {
-						$( "#slider-hores" ).slider({
-						range: true,
-						min: 00,
-						max: 24,
-						values: [ hora_inici, hora_fi ],
-						slide: function( event, ui ) {
-						$( "#hores" ).val( ui.values[ 0 ] + ":00 - " + ui.values[ 1 ] + ":00" );
-						}
-						});
-						$( "#hores" ).val( $( "#slider-hores" ).slider( "values", 0 ) +
-						":00 - " + $( "#slider-hores" ).slider( "values", 1 ) + ":00" );
-						});
-						</script>
+		<script>
+			$("#example_1").ionRangeSlider({
+				min: 0,
+				max: 5000,
+				type: 'double',
+				prefix: "$",
+				maxPostfix: "+",
+				prettify: false,
+				hasGrid: true
+			});
+		</script>
 <style>
 	.page_wrapper {
 		overflow:auto;
@@ -83,7 +83,7 @@
 			<input type="text" name="data_fi" value="<?php echo set_value('data_fi'); ?>" />
 			<?php echo form_error('data_fi'); ?><br />
 			Disponibilidad Horaria:
-			<input type="text" name="disp_horaria" value="<?php echo set_value('disp_horaria'); ?>" />
+			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  />
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
 			<input type="checkbox" name="days[]" value="L" />Dilluns&nbsp;<br />
