@@ -61,6 +61,8 @@
 
 .dispo_servicio {
 	border:1px solid;
+	clear:left;
+	width:100%;
 }
 
 /* ALTA SERVEI Y EDITAR SERVEI */
