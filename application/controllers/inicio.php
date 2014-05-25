@@ -242,8 +242,8 @@ class Inicio extends CI_Controller {
               //email del session passem al vista,per poder solicitar servei;
               if(isset($data['email'])){
                   $data2['email']=$data['email'];
+                  $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;                 
               }
-              $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;                 
               $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
             }
             $data3['detail_servei']=$html;
