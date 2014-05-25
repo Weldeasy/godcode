@@ -26,11 +26,11 @@ class Buscar_servicio extends CI_Controller {
 			  'days' => explode(";", $row->disp_dies),
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
-			  'cp' => $row->cp
+			  'cp' => $row->cp,
+			  'poblacion' => $pueblo->poblacion
 			);
 
-			//$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
-			var_dump($pueblo);
+			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	
 		
@@ -43,7 +43,7 @@ class Buscar_servicio extends CI_Controller {
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
 		}
-		//$this->load->view('frontend/resultado_servicios', $data);
+		$this->load->view('frontend/resultado_servicios', $data);
 		/*echo "<pre>";
 		var_dump($data);
 		echo "<pre>";*/

@@ -10,7 +10,8 @@ class User_settings extends CI_Controller {
 	if ($this->session->userdata('logged_in') == FALSE)
 		redirect('inicio');
 	$this->load->helper(array('url', 'form'));
-	$this->load->model(array('user', 'categorias', 'servei'));
+	$this->load->model(array('user', 'categorias', 'servei',));
+	$this->load->model('lugares');
 	$this->load->library(array('form_validation', 'grocery_CRUD'));
 	$session_data = $this->session->userdata('logged_in');
 	$this->data['email'] = $session_data['email'];
@@ -124,6 +125,7 @@ class User_settings extends CI_Controller {
 	if (count($serveis) > 0) {
 		$html = "";
 		foreach($serveis as $row) {
+			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
 			  'nom' => $row->nom,
@@ -135,7 +137,8 @@ class User_settings extends CI_Controller {
 			  'days' => explode(";", $row->disp_dies),
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
-			  'cp' => $row->cp
+			  'cp' => $row->cp,
+			  'poblacion' => $pueblo->poblacion
 			);
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
