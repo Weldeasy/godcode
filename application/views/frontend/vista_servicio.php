@@ -51,15 +51,15 @@
 					<td>D</td>
 				</tr>
 				<tr>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('L', $_POST['days'])) ) print 'checked'; ?> value="L" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('M', $_POST['days'])) ) print 'checked'; ?> value="M" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('X', $_POST['days'])) ) print 'checked'; ?> value="X" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('J', $_POST['days'])) ) print 'checked'; ?> value="J" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('V', $_POST['days'])) ) print 'checked'; ?> value="V" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('S', $_POST['days'])) ) print 'checked'; ?> value="S" /></td>
-					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('L', $days)) ) print 'checked'; ?> value="L" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('M', $days)) ) print 'checked'; ?> value="M" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('X', $days)) ) print 'checked'; ?> value="X" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('J', $days)) ) print 'checked'; ?> value="J" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('V', $days)) ) print 'checked'; ?> value="V" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('S', $days)) ) print 'checked'; ?> value="S" /></td>
+					<td><input type="checkbox" name="days[]" <?php if ( (isset($days)) && (in_array('D', $days)) ) print 'checked'; ?> value="D" /></td>
 				</tr>
 			</table>
-			de <?=$horas[0]?> a <?=$horas[1]?>
+			de <?=$horas[0]?>:00 a <?=$horas[1]?>:00
 		</div>
 </div>
