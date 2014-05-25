@@ -9,6 +9,7 @@
 		<link href="<?= base_url()?>media/css/ion.rangeSlider.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/ion.rangeSlider.skinSimple.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
+
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
 		<script src="<?= base_url()?>media/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
@@ -90,7 +91,7 @@
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
 			Disponibilidad Dias semana:
-			<table>
+			<table id="disp_dias">
 				<tr>
 					<td>L</td>
 					<td>M</td>
