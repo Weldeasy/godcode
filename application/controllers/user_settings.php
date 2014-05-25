@@ -131,9 +131,11 @@ class User_settings extends CI_Controller {
 			  'preu' => $row->preu,
 			  'data_inici' => $row->data_inici,
 			  'data_fi' => $row->data_fi,
-			  'disp_horaria' => $row->disp_horaria,
+			  'horas' => explode(";", $row->disp_horaria),
+			  'days' => explode(";", $row->disp_dies),
 			  'categoria' => $row->categoria,
-			  'usuari' => $row->usuari
+			  'usuari' => $row->usuari,
+			  'cp' => $row->cp
 			);
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
