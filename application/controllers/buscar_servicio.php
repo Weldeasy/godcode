@@ -28,7 +28,8 @@ class Buscar_servicio extends CI_Controller {
 			  'cp' => $row->cp
 			);
 
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			//$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			
 		}
 	
 		
@@ -41,10 +42,10 @@ class Buscar_servicio extends CI_Controller {
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
 		}
-		$this->load->view('frontend/resultado_servicios', $data);
-		/*echo "<pre>";
+		//$this->load->view('frontend/resultado_servicios', $data);
+		echo "<pre>";
 		var_dump($data);
-		echo "<pre>";*/
+		echo "<pre>";
 	}
 	
 	function buscar() {
