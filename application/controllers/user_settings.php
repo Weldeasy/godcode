@@ -339,9 +339,14 @@ class User_settings extends CI_Controller {
   }
   function comprovaPassword($pass){
   	$pass = MD5($pass);
-  	$consulta = $this->db->get_where("login", array('email'=>$_POST['email'], 'password'=>$pass));
+  	$email=$_POST['email'];
+  	$consulta = $this->db->get_where("login", array('email'=>$email, 'password'=>$pass));
 	if ($consulta->num_rows() == 1) {
-		$this->user->canviarPassword($email,$pass);
+		if($this->user->canviarPassword($email,$pass)){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
 		return true;
 	} else {
 		return false;

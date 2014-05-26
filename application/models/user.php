@@ -178,14 +178,13 @@ Class User extends CI_Model
 	}
 
   	function canviarPassword($email,$pass){
-  		$data=array(
-  			'password'=> $pass
-  		);
   		try {
 	  		$this->db->where('email',$email);
-	  		$this->db->update("login",$data);
+	  		$this->db->set("password",$pass);
+	  		$this->db->update("login");
+	  		return TRUE;
 	  	} catch (Exception $e) {
-	  		return;
+	  		return FALSE;
 	  	}
   	}
 
