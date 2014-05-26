@@ -6,6 +6,7 @@ class Buscar_servicio extends CI_Controller {
 		parent::__construct();
 		$this->load->model('servei');
 		$this->load->model('lugares');
+		$this->load->helper(array('form', 'url'));
 	}
 	
 	function index() {
@@ -29,19 +30,25 @@ class Buscar_servicio extends CI_Controller {
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
 			);
-
+			$msg = "Inicia sessio per solicitar";
+			$data2['alert'] = 'onclick=alert("Logueja\'t")';
+			if($this->session->userdata('logged_in')) {
+				$data2['alert'] = "";
+			}
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	
 		
 		$data['html'] = $html;
 		$data['login_form'] = "frontend/login_form";
+		$data['alert'] = "";
 		if($this->session->userdata('logged_in')) {
 			$data['login_form'] = 'frontend/panel_inici/logued';
 			$session_data = $this->session->userdata('logged_in');
 			$data['email'] = $session_data['email'];
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
+			
 		}
 		$this->load->view('frontend/resultado_servicios', $data);
 		/*echo "<pre>";
