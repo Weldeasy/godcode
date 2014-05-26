@@ -329,6 +329,7 @@ class User_settings extends CI_Controller {
 		$data=$this->data;
 		if ($this->form_validation->run()==TRUE){
 			$data['mensaje'][0]="Contrasenya canviada correctament";
+			$this->user->canviarPassword($data['email'],md5($this->input->post('passNou')));
 	  	}else{
 	  		$data['mensaje'][0]=form_error('passOriginal');
 	  		$data['mensaje'][1]=form_error('passNou');
@@ -342,11 +343,6 @@ class User_settings extends CI_Controller {
   	$email=$_POST['email'];
   	$consulta = $this->db->get_where("login", array('email'=>$email, 'password'=>$pass));
 	if ($consulta->num_rows() == 1) {
-		if($this->user->canviarPassword($email,$pass)){
-			return TRUE;
-		}else{
-			return FALSE;
-		}
 		return true;
 	} else {
 		return false;
