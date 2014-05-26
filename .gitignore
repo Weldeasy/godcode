@@ -9,4 +9,3 @@ application/logs/*
 !application/logs/.htaccess
 media/users_profile/Joan_99528.jpg
 media/users_profile/thumbs/Joan_99528.jpg
-application/config/database.php
