@@ -138,7 +138,7 @@ class User_settings extends CI_Controller {
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
 			);
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			$html = $html.$this->load->view('frontend/vista_servicio_user', $data2, true);
 		}
 	} else {
 		$html = "No estas oferint cap servei actualment.";
