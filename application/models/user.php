@@ -176,6 +176,16 @@ Class User extends CI_Model
 			return false;
 		}
 	}
+
+	function donarBaixaUsuari($email){
+		$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;
+	}
 	
 	function login($email, $password)
 	{

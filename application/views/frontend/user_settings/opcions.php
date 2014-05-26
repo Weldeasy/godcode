@@ -1,47 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Time Banking | Opcions</title>
-		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
-		<script src="<?= base_url()?>media/js/jquery.js"></script>
-		<script src="<?= base_url()?>media/js/usersettings.js"></script>
-		
-		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
-	</head>
-	<body onLoad="loadPP()">
-		
-		<div id="up-bar">
-			<div id="user">
-				<img src="<?= base_url()?>media/images/frontend/user_icon_mini2.png" />
-				<span><?=$email?></span>
-			</div>
-		</div>
-		
-		<div id="user_nav">
-			<a class="option" href="<?= base_url()?>index.php/user_settings/perfil">Perfil</a>
-			<a class="option" href="<?= base_url()?>index.php/user_settings/opcions">Opcions</a>
-			<div class="divisor_logout" ></div>
-			<a class="option" href="<?= base_url()?>index.php/logout">Log Out</a>
-		</div>
-		
-		<div id="sidebar">
-			<a class="back" href="<?= base_url()?>index.php/user_settings">
-			<div id="back">
-				<img src="<?= base_url()?>media/images/frontend/volver.png" />
-				<span>TORNAR</span>
-			</div>
-			</a>
-			<div class="sidebar-option-none">
-			</div>
-			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">SOLICITUDS</div></a>
-		</div>
-
-		<div id="page-wrapper">
-		
-			Opcions
-			
-		</div>
-
-	</body>
-</html>
+<form id='formulariUser' method="post" action="<?=base_url()?>index.php/user_settings/donarBaixaUser_control">
+	<table>
+		<tr>
+			<td>
+				<input type="hidden" value="<?= $email ?>" name='email'/>
+            	<input type='submit' value='Donar Baixa' name='baixa' class="buttonform" />
+			</td>
+		</tr>
+	</table>
+</form>

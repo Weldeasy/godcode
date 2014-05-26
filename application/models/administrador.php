@@ -1,6 +1,5 @@
 <?php
-Class Administrador extends CI_Model
-{
+Class Administrador extends CI_Model{
 	
 	/**
 	 * [llistarDenuncies description]

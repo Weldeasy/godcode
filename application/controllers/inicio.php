@@ -60,6 +60,8 @@ class Inicio extends CI_Controller {
       }
       $vista='panel_principal';
 
+      $data['no_autentificat']=FALSE;
+
     	if($this->es_autentificat()) {
             switch($estat) {
         			case '1':
@@ -67,14 +69,15 @@ class Inicio extends CI_Controller {
                         $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
         				break;
         			case '3': //sino 3=congelat
-                /*
-        				$login_view = 'frontend/panel_inici/logued';
-        				$data['contingut']=$this->load->view('frontend/panel_inici/congelat',$data,TRUE);*/
+                				/*$login_view = 'login_form';
+                        $vista='congelat';*/
+                        redirect('logout', 'refresh');
+                break;
         			case '4': //4 = ha de verificar el correu
-                /*
-        				$login_view = 'frontend/panel_inici/logued';
-        				$data['contingut']=$this->load->view('frontend/panel_inici/verifica',$data,TRUE);*/
-                    redirect('logout', 'refresh');
+                
+              			/*	$login_view = 'login_form';
+                      $vista='verifica';*/
+                        redirect('logout', 'refresh');
                 break;
         		}
     
@@ -82,7 +85,6 @@ class Inicio extends CI_Controller {
           $login_view='login_form';
       	}
         $this->contingut($login_view,$vista,$data);//si crida la funcio contingut
-
   }
   /**
    * [mostraContingut ]

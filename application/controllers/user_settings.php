@@ -4,8 +4,7 @@ class User_settings extends CI_Controller {
 
   private $data = array();
 	
-  function __construct()
-  {
+  function __construct(){
     parent::__construct();
 	if ($this->session->userdata('logged_in') == FALSE)
 		redirect('inicio');
@@ -301,7 +300,23 @@ class User_settings extends CI_Controller {
   /***************************************************SERVEIS*************************************************************/
   /***************************************************OPCIONS*************************************************************/
   function opcions() {
-	$this->load->view('frontend/user_settings/opcions', $this->data);
+  	$data=$this->data;
+	$data['panel_user']=$this->load->view('frontend/user_settings/opcions',$data,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+  }
+
+  function donarBaixaUser_control(){
+  	if(isset($_POST['email'])){
+  		$data=$this->data;
+	  	$email=$_POST['email'];
+	  	if($this->user->donarBaixaUsuari($email)){//quan es borra usuari, hay que borrar login
+			redirect('logout','refresh');
+		}else{
+			redirect('user_settings','refresh');	
+		}
+	}else{
+		redirect('user_settings','refresh');
+	}
   }
   /***************************************************SOLICITUD*************************************************************/
 
