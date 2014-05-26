@@ -23,9 +23,17 @@
               <input type='hidden' value='<?= $email; ?>' name='email_user'/>
               <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>
               <input type='submit' value='Solicitar' class="buttonform"/>
+              <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
+       
           </td>
+
           <?php } ?>
        </tr>
   </table>
 </form>
 </div>
+
+
+    <div id="dlg" class="easyui-dialog" title="Basic Dialog" data-options="iconCls:'icon-save'" style="width:400px;height:200px;padding:10px">
+        The dialog content.
+    </div>

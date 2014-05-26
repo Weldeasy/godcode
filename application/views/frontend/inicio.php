@@ -12,7 +12,15 @@
 	 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <!-- JEASYUI-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/icon.css">
+    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.easyui.min.js"></script>
+
+    <script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>
+ 
 	<script>
 	$(function() {
 		$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
