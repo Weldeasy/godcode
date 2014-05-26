@@ -26,6 +26,17 @@ Class Administrador extends CI_Model{
 	}
 	//CATEGORIES
 	
+
+
+	//ESTADISTICAS
+	function serveisPerProvincia(){      
+		$query = $this->db->query('SELECT provincia, COUNT(*) as numero FROM servei s, poblacion p, provincia pr WHERE p.postal=s.cp AND pr.idprovincia=p.idprovincia GROUP BY pr.provincia');
+		return $query->result();
+	}
+	function mitjaServeisPerUsuari(){      
+		$query = $this->db->query('SELECT AVG(COUNT(*)) as media FROM servei s, usuari u WHERE s.usuari=u.id');
+		return $query->result();
+	}
 	/**
 	 * [llistarCategoria description]
 	 * @return [objecte] [retorna les dades del categoria del servei]

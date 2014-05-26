@@ -17,6 +17,9 @@ class Admin extends CI_Controller {
  		$this->es_autentificat();//crida la funció aqui, perquè es validar tots els controladors del admin.
 		$this->load->database();//es carrega la BD
 		$this->load->model('administrador','adm',TRUE);//també el model del admin
+		$this->load->helper('url');
+        $this->load->library('gcharts');
+        
 	}
 	/**
 	 * [es_autentificat si comprova si usuari es admin amb el estat es igual a 2]
@@ -92,9 +95,7 @@ class Admin extends CI_Controller {
 	 * [zona vista]
 	 * @return [void] [Es carrega la vista zona]
 	 */
-	public function zona(){
-		$this->vista_panel_admin('zona');
-	}
+	
 	/**
 	 * [numServeis vista]
 	 * @return [void] [Es carrega la vista numServeis]
@@ -220,26 +221,31 @@ class Admin extends CI_Controller {
 	}
 		
 	function zona(){
-		$this->load->library('gcharts'); //carrega la llibreria de google charts per a fer estadístiques
-		$this->gcharts->load('LineChart');
-		echo("jola");
-		$dataTable = $this->gcharts->DataTable('Stocks');
-		$dataTable->addColumn('number', 'Count', 'count');
-		$dataTable->addColumn('number', 'Projected', 'projected');
-		$dataTable->addColumn('number', 'Official', 'official');
+		$this->gcharts->load('ColumnChart');
+        $zonas= $this->adm->serveisPerProvincia();
+        
+        $dataTable = $this->gcharts->DataTable('Population');
 
-		for($a = 1; $a < 25; $a++)
-			{
-			 $data[0] = $a; //Count
-			 $data[1] = rand(800,1000); //Line 1's data
-			 $data[2] = rand(800,1000); //Line 2's data
+        $dataTable->addColumn('string', 'Population', 'country');
+        $dataTable->addColumn('number', 'Population', 'population');
+        foreach ($zonas as $row) {
+        	echo $row ->provincia;
+        	echo $row ->numero;
+        	$dataTable->addRow(array($row->provincia, $row->numero));
+        } 
 
-			 $dataTable->addRow($data);
-			}
-			$config = array('title' => 'Stocks');
-			$this->gcharts->LineChart('Stocks')->setConfig($config);
+        $config = array(
+            'title' => 'provincias'
+        );
 
-		}
+        $data['grafica'] = $this->gcharts->ColumnChart('Population');
+        $data['panel_admin'] = $this->load->view('backend/pages/zona', $data, TRUE);
+        $data['email'] = $this->session_data['email'];
+        $this->load->view('backend/admin', $data);
+        
 }
+	}
+		
+
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

@@ -51,8 +51,7 @@
     <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     
     <?= $this->load->view($login_form)?>
-	<li><?= form_error("email"); ?></li>
-	<li><?= form_error("password"); ?></li>
+  </ul>
 	<a href="#" id="pull"></a> 
  </div>
 <?php echo $contingut; ?>

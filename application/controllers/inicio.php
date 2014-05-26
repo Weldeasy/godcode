@@ -49,15 +49,18 @@ class Inicio extends CI_Controller {
    * [index la pàgina principal del web]
    * @return [void] [es carrega la categoria al inici]
    */
-  function index($data = array()){
-      $login_view = "";
-      $estat = $this->session->userdata('estat');
+  function index(){
+    	$data = array();
+    	$login_view = "";
+    	$estat = $this->session->userdata('estat');
       $data=$this->data;
       $categorias = $this->categorias->get_categorias();
       foreach($categorias as $row) {
         $data['categorias'][$row['id']] = $row['nom'];
       }
       $vista='panel_principal';
+
+      $data['no_autentificat']=FALSE;
 
     	if($this->es_autentificat()) {
             switch($estat) {

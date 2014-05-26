@@ -18,20 +18,24 @@ class VerifyLogin extends CI_Controller {
   {
     //This method will have the credentials validation
     $this->load->library('form_validation');
+
     $this->form_validation->set_rules('email', 'email', 'trim|required');
     $this->form_validation->set_rules('password', 'password', 'trim|required|callback_check_database');
+	
 	$this->form_validation->set_message('required', "El camp %s es obligatori");
-	
-	
+
     if($this->form_validation->run() == FALSE)
     {
       //Field validation failed.  User redirected to login page
-		 redirect('inicio', 'refresh');
+      $data['login_form'] = 'frontend/login_form';
 
     } else {
-		 redirect('inicio', 'refresh');
+		 $session_data = $this->session->userdata('logged_in');
+		 $data['email'] = $session_data['email'];
+		 $data['foto'] = $session_data['foto'];
+		 $data['login_form'] = 'frontend/logued';
     }
-    
+    redirect('inicio', 'refresh');
   }
   
   function check_database($password)

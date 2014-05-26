@@ -12,6 +12,7 @@ Class Servei extends CI_Model {
 		if ($id_user != null) {
 			$this -> db -> where('s.usuari', $id_user); 
 		}
+
 		$query = $this -> db -> get();
 		return $query->result();
 	 }

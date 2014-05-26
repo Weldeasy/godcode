@@ -138,7 +138,7 @@ class User_settings extends CI_Controller {
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
 			);
-			$html = $html.$this->load->view('frontend/vista_servicio_user', $data2, true);
+			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	} else {
 		$html = "No estas oferint cap servei actualment.";
@@ -318,40 +318,6 @@ class User_settings extends CI_Controller {
 		redirect('user_settings','refresh');
 	}
   }
-  function canviaContrasenya_control(){
-  		$this->form_validation->set_rules('passOriginal', 'Password original', 'required|trim|callback_comprovaPassword[passOriginal]');
-		$this->form_validation->set_rules('passNou', 'Password nou', 'required|min_length[6]|trim');
-
-		$this->form_validation->set_message('required', "%s es obligatori");
-		$this->form_validation->set_message('min_length', "%s ha de tenir %s caracters");
-		$this->form_validation->set_message('comprovaPassword', "%s no es el teu password");
-		
-		$data=$this->data;
-		if ($this->form_validation->run()==TRUE){
-			$data['mensaje'][0]="Contrasenya canviada correctament";
-	  	}else{
-	  		$data['mensaje'][0]=form_error('passOriginal');
-	  		$data['mensaje'][1]=form_error('passNou');
-	  	}
-
-		$data['panel_user']=$this->load->view('frontend/user_settings/opcions',$data,TRUE);
-		$this->load->view('frontend/user_settings/inicio', $data);
-  }
-  function comprovaPassword($pass){
-  	$pass = MD5($pass);
-  	$email=$_POST['email'];
-  	$consulta = $this->db->get_where("login", array('email'=>$email, 'password'=>$pass));
-	if ($consulta->num_rows() == 1) {
-		if($this->user->canviarPassword($email,$pass)){
-			return TRUE;
-		}else{
-			return FALSE;
-		}
-		return true;
-	} else {
-		return false;
-	}
-  }
   /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){
@@ -399,7 +365,6 @@ class User_settings extends CI_Controller {
    	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
-
 
 }
 

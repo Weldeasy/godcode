@@ -177,25 +177,9 @@ Class User extends CI_Model
 		}
 	}
 
-  	function canviarPassword($email,$pass){
-  		try {
-	  		$this->db->where('email',$email);
-	  		$this->db->set("password",$pass);
-	  		$this->db->update("login");
-	  		return TRUE;
-	  	} catch (Exception $e) {
-	  		return FALSE;
-	  	}
-  	}
-
 	function donarBaixaUsuari($email){
-		$this->db->trans_off();
-		$this->db->trans_start();
-			$query = $this->db->query('DELETE FROM login WHERE email="'.$email.'"');
-			$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
-		$this->db->trans_complete();
-
-		if($this->db->trans_status()===TRUE){
+		$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
+		if($query){
 			$resultat=true;
 		}else{
 			$resultat=false;

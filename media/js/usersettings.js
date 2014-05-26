@@ -34,9 +34,4 @@ $(document).ready(function() {
 			});
 		}
 	});
-
-	$('#mostraInput').click(function(e){
-		$('.oculto').show();
-		$(this).hide();
-	});
 });
