@@ -49,10 +49,9 @@ class Inicio extends CI_Controller {
    * [index la pàgina principal del web]
    * @return [void] [es carrega la categoria al inici]
    */
-  function index(){
-    	$data = array();
-    	$login_view = "";
-    	$estat = $this->session->userdata('estat');
+  function index($data = array()){
+      $login_view = "";
+      $estat = $this->session->userdata('estat');
       $data=$this->data;
       $categorias = $this->categorias->get_categorias();
       foreach($categorias as $row) {
