@@ -178,8 +178,13 @@ Class User extends CI_Model
 	}
 
 	function donarBaixaUsuari($email){
-		$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
-		if($query){
+		$this->db->trans_off();
+		$this->db->trans_start();
+			$query = $this->db->query('DELETE FROM login WHERE email="'.$email.'"');
+			$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
+		$this->db->trans_complete();
+
+		if($this->db->trans_status()===TRUE){
 			$resultat=true;
 		}else{
 			$resultat=false;

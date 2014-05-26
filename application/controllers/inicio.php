@@ -60,8 +60,6 @@ class Inicio extends CI_Controller {
       }
       $vista='panel_principal';
 
-      $data['no_autentificat']=FALSE;
-
     	if($this->es_autentificat()) {
             switch($estat) {
         			case '1':
@@ -69,8 +67,8 @@ class Inicio extends CI_Controller {
                         $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
         				break;
         			case '3': //sino 3=congelat
-                				/*$login_view = 'login_form';
-                        $vista='congelat';*/
+                				$login_view = 'login_form';
+                        $vista='congelat';
                         redirect('logout', 'refresh');
                 break;
         			case '4': //4 = ha de verificar el correu
