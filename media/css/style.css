@@ -729,6 +729,45 @@ margin-right: 10px;
     box-shadow: 0 8px 6px -6px black;
     word-wrap:break-word;
 }
+.perfil_historial{
+    background-color:white;
+    border-radius:12px;
+    margin-top: 15px;
+    height: auto;
+    width: 1000px;  
+    margin-right: auto;
+    margin-left: auto;
+   -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    word-wrap:break-word;
+}
+.perfil_historial table{
+	display:inline-block;
+	vertical-align:top;
+}
+.perfil_historial table tr:nth-child(1) td:nth-child(1) {
+	font-size:28px;
+	font-weight:bolder;
+}
+.perfil_historial table tr:nth-child(1) td:nth-child(2) {
+	float:right;
+	position:relative;
+	display:block;
+}
+.perfil_historial img {
+	border-top-left-radius:7px;
+	-moz-border-top-left-radius: 40px;
+	-webkit-border-top-right-radius: 40px;
+	display:inline-block;
+	padding-left:15px;
+	padding-top:10px;
+	padding-bottom:20px;
+}
+.perfil_historial table tr td{
+	vertical-align:top;
+	padding:10px;
+}
 .un_info_usuari table {
   width: 100%;
   height: 100%;
