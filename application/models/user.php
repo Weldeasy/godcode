@@ -177,6 +177,18 @@ Class User extends CI_Model
 		}
 	}
 
+  	function canviarPassword($email,$pass){
+  		$data=array(
+  			'password'=> $pass
+  		);
+  		try {
+	  		$this->db->where('email',$email);
+	  		$this->db->update("login",$data);
+	  	} catch (Exception $e) {
+	  		return;
+	  	}
+  	}
+
 	function donarBaixaUsuari($email){
 		$this->db->trans_off();
 		$this->db->trans_start();
