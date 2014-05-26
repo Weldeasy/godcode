@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'godcode';
-$db['default']['password'] = 'godcode';
+$db['default']['password'] = 'godcode ';
 $db['default']['database'] = 'godcode';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
