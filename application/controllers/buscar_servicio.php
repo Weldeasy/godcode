@@ -31,9 +31,10 @@ class Buscar_servicio extends CI_Controller {
 			  'poblacion' => $pueblo->poblacion
 			);
 			$msg = "Inicia sessio per solicitar";
-			$data2['alert'] = 'onclick=alert("Logueja\'t")';
-			if($this->session->userdata('logged_in')) {
-				$data2['alert'] = "";
+			$data2['alert'] = false;
+			$session_data = $this->session->userdata('logged_in');
+			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
+				$data2['alert'] = true;
 			}
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
