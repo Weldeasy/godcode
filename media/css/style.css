@@ -856,6 +856,26 @@ margin-right: 10px;
   background-color: #5baa68;
   margin-bottom: 5%;
 }
+#veurePerfil{
+font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12pt;
+  text-indent: 0;
+  color: #ffffff;
+  height: 200px;
+  width: 138px;
+  line-height: 38px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0px 2px 0px #498853;
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 17px;
+  box-shadow: 0px 2px 0px 0px #498853;
+  background-color: #5baa68;
+  margin-bottom: 5%;
+}
 .text_info_user{
   margin-bottom: -20px;
 }
