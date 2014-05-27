@@ -6,6 +6,7 @@ Class User extends CI_Model
         parent::__construct();
 		
 		$this->load->database();
+		$this->load->model(array('banctemps'));
     }
 	
 	public function get_user_by_email($email) {
@@ -134,7 +135,7 @@ Class User extends CI_Model
 			"nom"=>$this->input->post("nombre", TRUE),
 			"cognom"=>$this->input->post("apellidos", TRUE),
 			"data_inscripcio" => date('Y-m-d', time()),
-			"saldo" => 0,
+			"saldo" => $this->banctemps->get_saldo(),
 			"sexe"=>$this->input->post("sexo"),
 			"presentacio"=>$this->input->post("descrivete", TRUE),
 			"poblacio"=>$this->input->post("poblacio", TRUE),
