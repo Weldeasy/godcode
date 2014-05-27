@@ -23,23 +23,23 @@
 </div>*/ 
 ?>
 
-<div class="servicio">
-	<div class="foto_servicio">
+<div class="servicio_vista">
+	<div class="foto_servicio_vista">
 		<img src="<?=base_url()?>media/images/categorias/<?=$categoria?>.jpg" />
 	</div>
-	<div class="cuerpo_servicio">
+	<div class="cuerpo_servicio_vista">
 		<div class="titulo_servicio">
 			<span class="nom_servei"><?=$nom?></span>
 			<span class="data_caducitat">en <a href="https://www.google.es/maps/place/<?=$poblacion?>"><?=$poblacion?></a></span>
 		</div>
-		<div class="descripcion_servicio">
+		<div class="descripcion_servicio_vista">
 			<p><?=$descripcio?></p>
 		</div>
 		<div class="precio_servicio">
 			<?=$preu?> punts
 		</div>
 	</div>
-	<div class="dispo_servicio">
+	<div class="dispo_servicio_vista">
 			Disponible hasta el <?=$data_fi?> los 
 			<table class="disp_dias">
 				<tr>
