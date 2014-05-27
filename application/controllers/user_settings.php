@@ -443,7 +443,6 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
 
-
 }
 
 ?>
