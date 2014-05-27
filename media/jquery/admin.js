@@ -19,7 +19,6 @@ $(document).ready(function(){
 		        {field:'motiu',title:'Motiu',sortable:true,width:60,align:'left'},
 		        {field:'data_reclamacio',title:'Data reclamació',sortable:true,width:60,align:'left'},
 		        {field:'nom',title:'Denunciant',sortable:true,width:60,align:'left'},
-		        {field:'nom_den',title:'Denunciat',sortable:true,width:60,align:'left'},
 		        {field:'estat_reclamacio',title:'Estat',sortable:true,width:60,align:'left',
 						formatter:function(value,row,index){
 								if(value==2){
