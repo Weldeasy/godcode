@@ -40,9 +40,9 @@ function denuncia(){
 }
 
 </script>
-<div id="formXat" class="easyui-dialog" title="Xat" closed="true" style="width:400px;height:200px;padding:10px">
+<div id="formXat" class="easyui-dialog" title="Xat" closed="true" style="width:800px;height:auto;padding:10px">
   <form id='formulariXat' method='post' action="<?=base_url()?>index.php/user_settings/xat">
-		<textarea size='30' name='missatgeXat'>
+		<textarea size='100%' name='missatgeXat'>
 		</textarea>
 		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor'/>
 		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut'/>
@@ -51,7 +51,7 @@ function denuncia(){
 		<input type='submit' value='Envia' class="buttonform"/>
   </form>
 </div>
-<div id="denuncia" class="easyui-dialog" title="Denuncia" closed="true" style="width:400px;height:150px;padding:10px">
+<div id="denuncia" class="easyui-dialog" title="Denuncia" closed="true" style="width:800px;height:auto;padding:10px">
 		<textarea size='30' name='denunciaText'>
 		</textarea>
 		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor'/>
