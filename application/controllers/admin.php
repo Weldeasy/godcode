@@ -47,6 +47,7 @@ class Admin extends CI_Controller {
 
 		if($ruta=='configSaldo'){//quan tenim la vista configsaldo, pasem el saldo minim.
 			$data['saldo_minim_BD']=$this->getSaldoMinim_control();
+			$data['max_dies_congelat']=$this->getMax_dies_congelat_control();
 		}
 
 		$data['panel_admin']=$this->load->view('backend/pages/'.$ruta,$data,TRUE);
@@ -211,16 +212,26 @@ class Admin extends CI_Controller {
 		$saldo_minim=$this->adm->getSaldoMinim()->saldo_minim;
 		return $saldo_minim;
 	}
+	
+	function getMax_dies_congelat_control() {
+		$max_dies_congelat=$this->adm->getMax_dies_congelat()->max_dias_congelado ;
+		return $max_dies_congelat;
+	}
 	/**
 	 * [setSaldoMinim_control actualitzat el saldo minim]
 	 */
 	function setSaldoMinim_control(){
 		$saldo_minim=mysql_real_escape_string($_POST['saldo_minim']);;	
-		if($this->adm->setSaldoMinim($saldo_minim)){
+		if($this->adm->setsaldominim($saldo_minim)){
 			$this->configSaldo();
 		}	
 	}
-		
+	function setMax_dies_congelat() {
+		$max_dies_congelat=mysql_real_escape_string($_POST['max_dies_congelat']);;	
+		if($this->adm->setMax_dies_congelat($max_dies_congelat)){
+			$this->configSaldo();
+		}	
+	}
 	function zona(){
 		$this->gcharts->load('ColumnChart');
         $zonas= $this->adm->serveisPerProvincia();
