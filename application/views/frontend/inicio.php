@@ -9,6 +9,8 @@
     <meta name="author" content="">
     <link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
     <link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
+    
+	<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
 	 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
