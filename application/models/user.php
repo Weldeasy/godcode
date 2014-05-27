@@ -6,8 +6,35 @@ Class User extends CI_Model
         parent::__construct();
 		
 		$this->load->database();
-		$this->load->model(array('banctemps'));
+        $this->load->model(array('banctemps'));
     }
+    function getXat($id_solicitut){
+    	try {
+			$data = $this->db->query("SELECT * FROM missatge WHERE id_solicitut='".$id_solicitut."'");
+			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}
+    }
+    function totSolicitutAcceptat($id_solicitant){
+    	try {
+			$data = $this->db->query('SELECT * FROM solicitut_servei WHERE id_solicitant="'.$id_solicitant.'" and estat=2');
+			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}	
+    }
+
+    function consumirServei($id_consumidor,$id_servei,$data){
+    	$this->db->insert("missatge", array(
+			"id"=>NULL,
+			"id_consumidor"=>$id_consumidor,
+			"id_servei"=>$id_servei,
+			"data_consumit" => $data,
+		));
+    }
+
+
 	
 	public function get_user_by_email($email) {
 		try {
@@ -16,6 +43,16 @@ Class User extends CI_Model
 		} catch (Exception $e) {
 			return;
 		}
+	}
+	public function enviaMissatge($id_emisor,$id_receptor,$missatge,$dataAvui,$id_solicitut){
+		$this->db->insert("missatge", array(
+			"id"=>NULL,
+			"id_emisor"=>$id_emisor,
+			"id_receptor"=>$id_receptor,
+			"missatge" => $missatge,
+			"data"=>$dataAvui,
+			"id_solicitut" => $id_solicitut,
+		));
 	}
 	public function get_user_by_Id($id) {
 		try {
@@ -34,10 +71,11 @@ Class User extends CI_Model
 	}
 	public function getIdSolicitant($email){
 		if($email!=null){
-	 		$query = $this->db->query('SELECT solicitut_servei.id,id_solicitant,servei_id FROM usuari,servei,solicitut_servei where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and usuari.email="'.$email.'"');
+	 		$query = $this->db->query('SELECT solicitut_servei.id,solicitut_servei.estat,id_solicitant,servei_id,usuari.id as user_id FROM usuari,servei,solicitut_servei where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and usuari.email="'.$email.'"');
 			return $query->result();
 	 	}
 	}
+
 	public function aceptaSolicitut($id){
 		$query = $this->db->query('UPDATE solicitut_servei SET estat=1 WHERE id="'.$id.'"');
 		if($query){
@@ -47,43 +85,68 @@ Class User extends CI_Model
 		}
 		return $resultat;
 	}
+	public function rebujaSolicitut($id){
+		$query = $this->db->query('UPDATE solicitut_servei SET estat=2 WHERE id="'.$id.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;
+	}
+	public function unic_solicitut($id_usuari,$id_servei){
+		try {
+			$data=$this->db->query('SELECT COUNT(*) as total_solicitut_user_servei FROM solicitut_servei where id_solicitant="'.$id_usuari.'" and servei_id="'.$id_servei.'" AND  estat=0');
+			return $data->row();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	public function getIdSolictut($id_usuari,$id_servei){
+		try {
+			$data=$this->db->query('SELECT id FROM solicitut_servei where id_solicitant="'.$id_usuari.'" and servei_id="'.$id_servei.'" AND estat=0');
+			return $data->row();
+		} catch (Exception $e) {
+			return;
+		}	
+	}
 
 	public function cercar_user_servei($cercar_user){
-		try {
-			$data = $this->db->query(
-				'SELECT  distinct foto,cognom,poblacion,email,usuari.nom as nom_usuari
-				 FROM usuari,poblacion
-				 where usuari.poblacio=poblacion.idpoblacion and 
-				 (usuari.email LIKE "'.$cercar_user.'%" OR usuari.nom LIKE "'.$cercar_user.'%") and usuari.es_admin=0
-				');
-			return $data->result();
-		} catch (Exception $e) {
-			return;
-		}
-	}
+        try {
+            $data = $this->db->query(
+                'SELECT  distinct foto,cognom,poblacion,email,usuari.nom as nom_usuari
+                 FROM usuari,poblacion
+                 where usuari.poblacio=poblacion.idpoblacion and 
+                 (usuari.email LIKE "'.$cercar_user.'%" OR usuari.nom LIKE "'.$cercar_user.'%") and usuari.es_admin=0
+                ');
+            return $data->result();
+        } catch (Exception $e) {
+            return;
+        }
+    }
 	public function get_user_consumits($idu){
-		try {
-			$data = $this->db->query(
-				'SELECT  distinct id_consumidor, data_consumit
-				 FROM servei_consumit, servei
-				 WHERE servei_consumit.id_servei=servei.id AND servei.usuari = '.$idu.'
-				 ORDER BY data_consumit DESC
-				');
-			return $data->result();
-		} catch (Exception $e) {
-			return;
-		}
-	}
+        try {
+            $data = $this->db->query(
+                'SELECT  distinct id_consumidor, data_consumit
+                 FROM servei_consumit, servei
+                 WHERE servei_consumit.id_servei=servei.id AND servei.usuari = '.$idu.'
+                 ORDER BY data_consumit DESC
+                ');
+            return $data->result();
+        } catch (Exception $e) {
+            return;
+        }
+    }
 	public function provincia_user_by_id($provincia){
-		try {
-			return $this->db->query("SELECT provincia FROM provincia WHERE idprovincia = ".$provincia)->row()->provincia;
-		} catch (Exception $e) {
-			return;
-		}
-	}
+        try {
+            return $this->db->query("SELECT provincia FROM provincia WHERE idprovincia = ".$provincia)->row()->provincia;
+        } catch (Exception $e) {
+            return;
+        }
+    }
 	function servei_user($email){
 		$data = $this->db->query(
-			'SELECT  distinct categoria,data_inici,data_fi,disp_horaria,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
+			'SELECT  distinct servei.cp,categoria,data_inici,data_fi,disp_horaria,disp_dies,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
 			 and usuari.email="'.$email.'"');
 
@@ -209,10 +272,14 @@ Class User extends CI_Model
 	  	
   	}
 
-
 	function donarBaixaUsuari($email){
-		$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
-		if($query){
+		$this->db->trans_off();
+		$this->db->trans_start();
+			$query = $this->db->query('DELETE FROM login WHERE email="'.$email.'"');
+			$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
+		$this->db->trans_complete();
+
+		if($this->db->trans_status()===TRUE){
 			$resultat=true;
 		}else{
 			$resultat=false;
