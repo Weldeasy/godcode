@@ -30,7 +30,7 @@
 	<div class="cuerpo_servicio_vista">
 		<div class="titulo_servicio">
 			<span class="nom_servei"><?=$nom?></span>
-			<span class="data_caducitat">en <a href="https://www.google.es/maps/place/<?=$poblacion?>"><?=$poblacion?></a></span>
+			<span class="data_caducitat">en <a href="https://www.google.es/maps/place/<?=$poblacion?>" target='_blank'><?=$poblacion?></a></span>
 		</div>
 		<div class="descripcion_servicio_vista">
 			<span><?=$descripcio?></span>
