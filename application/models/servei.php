@@ -17,6 +17,13 @@ Class Servei extends CI_Model {
 		return $query->result();
 	 }
 	 
+	 
+	 public function get_serveis_noConsumit() {
+		$query = $this->db->query('SELECT * FROM servei s WHERE s.id NOT IN (SELECT s.id FROM servei s, servei_consumit sc WHERE s.id = sc.id_servei)');
+		return $query->result();
+	 }
+	 
+	 
 	 /* Funcion que devuelve el servicio por el id */
 	 public function get_servei($id) {
 		$query = $this->db->query('SELECT * FROM servei WHERE id = "'.$id.'"');
