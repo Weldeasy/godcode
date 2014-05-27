@@ -1,2 +1,2 @@
-<?php echo "<h1>numero Serveis</h1>" ?>
+<?php echo  "<b> ".$mitja."</b>" ?>
 
