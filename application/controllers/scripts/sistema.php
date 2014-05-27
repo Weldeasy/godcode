@@ -30,11 +30,16 @@ class Sistema extends CI_Controller {
 	function eliminar_serveis_congelats() {
 		$servicios = $this->servei->get_serveis(null);
 		$data_actual = date("Y-m-d");
+		echo "<pre>";
 		foreach($servicios as $servicio) {
 			$data_fi = date($servicio->data_fi);
-			if ($data_actual>$data_fi) {
-				$this->servei->congelarServei($servicio->id);
+			if($servicio->data_congelacio != null) {
+				var_dump($servicio);
 			}
+			/*if ($data_actual>$data_fi) {
+				$this->servei->congelarServei($servicio->id);
+			}*/
+		echo "</pre>";
 		}
 	}	
 
