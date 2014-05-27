@@ -193,7 +193,7 @@ class Inicio extends CI_Controller {
 			$data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
 			$data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
 			$historial = "<table class='history' border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
-				if (count($historial) > 0) {
+				if (count($data_historial['consumits_usuari']) > 0) {
 					foreach ($data_historial['consumits_usuari'] as $consumit) {
 						$consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
 						$historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
