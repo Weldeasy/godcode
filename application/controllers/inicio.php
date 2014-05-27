@@ -164,7 +164,29 @@ class Inicio extends CI_Controller {
         }
         else
         {
-
+			$config = array(
+				'charset' => 'utf-8',
+				'newline' => '\r\n',
+				'mailtype' => 'html',
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.googlemail.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'gcbtv0@gmail.com',
+				'smtp_pass' => 'pepe123456',
+				'charset' => 'iso-8859-1',
+				'wordwrap' => TRUE
+			);
+			$this->load->library('email', $config);
+			$this->email->set_newline("\r\n");
+			$this->email->from('gcbtv0@gmail.com', 'Contacte | Banc del temps');
+			$this->email->to('gcbtv0@gmail.com');
+			$this->email->subject('Contacte | Banc del temps');
+			$this->email->message(
+				"<h1>Contacte</h1><p>Nom: ".$this->input->post("nom")."<br/>Email: ".$this->input->post("email")."<br/>Missatge: ".$this->input->post("missatge")."<br/></p>"
+			);
+			?><script>alert("Missatge enviat, et contestarem lo\nmes aviat possible.");</script><?php
+			$this->email->send();
+			redirect('inicio', 'refresh');
         }
   }
   /**
