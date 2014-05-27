@@ -357,6 +357,7 @@ class User_settings extends CI_Controller {
 	$this->load->view('frontend/user_settings/inicio', $data);
 
   }
+  /***************************************************OPCIONS*************************************************************/
   /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){
@@ -442,6 +443,18 @@ class User_settings extends CI_Controller {
 	$data['panel_user']=$this->load->view('frontend/user_settings/enviatMissatge',$data,TRUE);
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
+  function enviarDenuncia() {
+	$denunciat = $this->user->get_user_by_email($this->input->post("usuari_denunciat"))->id;
+	$denunciant = $this->input->post("usuari_denunciant");
+	$motiu = $this->input->post("motiu");
+	$estat = 0;
+	
+	if ($this->user->fer_denuncia($denunciat, $denunciant, $motiu, $estat))
+		echo "Reclamació feta";
+	else
+		echo "Hi ha hagut un error, prova-ho més tard!";
+  }
+  /***************************************************SOLICITUD*************************************************************/
 
 }
 

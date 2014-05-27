@@ -16,6 +16,7 @@ Class User extends CI_Model
 			return;
 		}
     }
+	
     function totSolicitutAcceptat($id_solicitant){
     	try {
 			$data = $this->db->query('SELECT * FROM solicitut_servei WHERE id_solicitant="'.$id_solicitant.'" and estat=2');
@@ -308,6 +309,20 @@ Class User extends CI_Model
 			return false;
 		}
 
+	}
+	function fer_denuncia($denunciat, $denunciant, $motiu, $estat) {
+		try {
+			$this->db->insert('reclamacio', array(
+			   'motiu' => $motiu,
+			   'data_reclamacio' => date('Y-m-d'),
+			   'id_denunciat' => $denunciat,
+			   'usuari_denunciant' => $denunciant,
+			   'estat_reclamacio' => $estat
+			));
+			return true;
+		} catch (Exception $e) {
+			return false;
+		}
 	}
 }
 ?>

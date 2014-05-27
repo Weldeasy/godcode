@@ -40,15 +40,31 @@ function denuncia(){
 }
 
 function guardarDenuncia() {
-	var usuari_denunciat = $("#email_receptor").val();
+	var usuari_denunciat = $("#email_receptor_d").val();
 	var usuari_denunciant = $("#id_emisor_d").val();
-	var estat_reclamacio = 0;
 	var motiu = $("#denunciaText").val();
 	
-	if (motiu.length < 1)
-		alert("Els dos camps (nom i opinio) son obligatoris!");
-	else
-		peticioOpinio(nom, opinio)
+	//get url actual
+	var href=window.location.href;
+	var split=href.split("/");//to array
+	split.pop();//eliminem ultim element perquè no necessitem
+	var urlGlobal=split.join("/");//to string
+	
+	if (motiu.length < 1) {
+		alert("Es obligatori indicar un motiu!");
+	} else {
+		var request = $.ajax({
+			url: urlGlobal + "/enviarDenuncia",
+			type: "POST",
+			data: {usuari_denunciat : usuari_denunciat, usuari_denunciant : usuari_denunciant, motiu : motiu},
+			dataType: "html"
+		});
+		request.done(function(data) {
+			$("#denuncia_span").html( data );
+			$('#denuncia').dialog('close');
+		} );
+	}
+		
 }
 
 </script>
@@ -63,9 +79,9 @@ function guardarDenuncia() {
   </form>
 </div>
 <div id="denuncia" class="easyui-dialog" title="Denuncia" closed="true" style="width:800px;min-height:200px;padding:10px">
-		<textarea size='800' name='denunciaText'></textarea>
-		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor_d'/>
-		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut_d'/>
-		<input type='hidden' value='<?= $email_solicitant; ?>' name='email_receptor_d'/>
-		<input type='button' value='Fer denuncia' class="buttonform" onClick="guardarDenuncia()"/>
+		<textarea size='800' id='denunciaText'></textarea>
+		<input type='hidden' value='<?= $user_id; ?>' id='id_emisor_d'/>
+		<input type='hidden' value='<?= $id_solicitut; ?>' id='id_solicitut_d'/>
+		<input type='hidden' value='<?= $email_solicitant; ?>' id='email_receptor_d'/>
+		<input type='button' value='Fer denuncia' class="buttonform" onclick="guardarDenuncia()"/>
 </div>
