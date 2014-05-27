@@ -39,7 +39,7 @@ class Sistema extends CI_Controller {
 				$data_congelacio = strtotime($data_congelacio);
 				$data_actual = strtotime($data_actual);
 				$diff = $data_actual - $data_congelacio;
-				var_dump($diff);
+				var_dump($diff/3600/24);
 			}
 		}
 		echo "</pre>";
