@@ -13,9 +13,9 @@ class Inicio extends CI_Controller {
    */
   function __construct(){
     parent::__construct();
-  	$this->load->library(array('form_validation'));
-  	$this->load->helper(array('form', 'url'));
-  	$this->load->model(array('categorias', 'user', 'servei'));
+    $this->load->library(array('form_validation'));
+    $this->load->helper(array('form', 'url'));
+    $this->load->model(array('categorias', 'user', 'servei','lugares'));
     
     $session_data = $this->session->userdata('logged_in');
     $this->data['email'] = $session_data['email'];
@@ -50,9 +50,9 @@ class Inicio extends CI_Controller {
    * @return [void] [es carrega la categoria al inici]
    */
   function index(){
-    	$data = array();
-    	$login_view = "";
-    	$estat = $this->session->userdata('estat');
+     $data = array();
+      $login_view = "";
+      $estat = $this->session->userdata('estat');
       $data=$this->data;
       $categorias = $this->categorias->get_categorias();
       foreach($categorias as $row) {
@@ -60,30 +60,28 @@ class Inicio extends CI_Controller {
       }
       $vista='panel_principal';
 
-      $data['no_autentificat']=FALSE;
-
-    	if($this->es_autentificat()) {
+      if($this->es_autentificat()) {
             switch($estat) {
-        			case '1':
-        			case '2':
+              case '1':
+              case '2':
                         $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
-        				break;
-        			case '3': //sino 3=congelat
-                				/*$login_view = 'login_form';
+                break;
+              case '3': //sino 3=congelat
+                        /*$login_view = 'login_form';
                         $vista='congelat';*/
                         redirect('logout', 'refresh');
                 break;
-        			case '4': //4 = ha de verificar el correu
+              case '4': //4 = ha de verificar el correu
                 
-              			/*	$login_view = 'login_form';
+                    /*  $login_view = 'login_form';
                       $vista='verifica';*/
                         redirect('logout', 'refresh');
                 break;
-        		}
+            }
     
         }else{//si no existeix la sessio
           $login_view='login_form';
-      	}
+        }
         $this->contingut($login_view,$vista,$data);//si crida la funcio contingut
   }
   /**
@@ -174,48 +172,49 @@ class Inicio extends CI_Controller {
    * @return [void] [description]
    */
    function perfilusuari ($uemail = NULL) {
-	if($this->es_autentificat()) {
+    if($this->es_autentificat()) {
             $data=$this->data;
             $data['login_form'] = 'frontend/panel_inici/logued';
         }else{
             $data['login_form'] = 'frontend/login_form';
         }
-	if ($uemail != NULL) {
-		$ausuari = $this->user->get_user_by_email($uemail);
-		if (!empty($ausuari)) {
-			$data_perfil = array();
-			$data_perfil['nom_usuari'] = ucfirst($ausuari->nom);
-			$data_perfil['cognom_usuari'] = strtolower($ausuari->cognom);
-			$data_perfil['presentacio_usuari'] = $ausuari->presentacio;
-			$data_perfil['provincia_usuari'] = $this->user->provincia_user_by_id($ausuari->provincia);
-			$data_perfil['foto_usuari'] = $ausuari->foto;
-			$perfil = $this->load->view('frontend/panel_inici/perfilusuari', $data_perfil, TRUE);
-			
-			$data['contingut'] = $perfil;
-			
-			$data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
-			$data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
-			$historial = "<table class='history' border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
-				if (count($data_historial['consumits_usuari']) > 0) {
-					foreach ($data_historial['consumits_usuari'] as $consumit) {
-						$consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
-						$historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
-					}
-				} else {
-					$historial .= "<tr><td colspan='3'>No hi ha historia</td></tr>";
-				}
-			$historial .= "</table><p>&nbsp;</p>";
-			$data['contingut'] .= $historial;
-			$data['contingut'] .= "</div>";
-		} else {
-			//$data[]
-			$data['contingut'] = "L'usuari que has solicitat no esta disponible.";
-		}
-	} else {
-		$data['contingut'] = "No has indicat cap usuari.";
-	}
-	$this->load->view('frontend/inicio', $data);
+    if ($uemail != NULL) {
+        $ausuari = $this->user->get_user_by_email($uemail);
+        if (!empty($ausuari)) {
+            $data_perfil = array();
+            $data_perfil['nom_usuari'] = ucfirst($ausuari->nom);
+            $data_perfil['cognom_usuari'] = strtolower($ausuari->cognom);
+            $data_perfil['presentacio_usuari'] = $ausuari->presentacio;
+            $data_perfil['provincia_usuari'] = $this->user->provincia_user_by_id($ausuari->provincia);
+            $data_perfil['foto_usuari'] = $ausuari->foto;
+            $perfil = $this->load->view('frontend/panel_inici/perfilusuari', $data_perfil, TRUE);
+            
+            $data['contingut'] = $perfil;
+            
+            $data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
+            $data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
+            $historial = "<table class='history' border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
+                if (count($data_historial['consumits_usuari']) > 0) {
+                    foreach ($data_historial['consumits_usuari'] as $consumit) {
+                        $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
+                        $historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
+                    }
+                } else {
+                    $historial .= "<tr><td colspan='3'>No hi ha historia</td></tr>";
+                }
+            $historial .= "</table><p>&nbsp;</p>";
+            $data['contingut'] .= $historial;
+            $data['contingut'] .= "</div>";
+        } else {
+            //$data[]
+            $data['contingut'] = "L'usuari que has solicitat no esta disponible.";
+        }
+    } else {
+        $data['contingut'] = "No has indicat cap usuari.";
+    }
+    $this->load->view('frontend/inicio', $data);
    }
+   
   /**
    * [detailusuari informació del usuari cercat]
    * @return [void] [description]
@@ -277,22 +276,26 @@ class Inicio extends CI_Controller {
 
         if($servei!=null){
             foreach($servei as $row) {
+              $pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
               $data2 = array(
                 'id_servei' => $row->id_servei,
                 'nom_servei' => $row->nom_servei,
-				'categoria' => $row->categoria,
+                'categoria' => $row->categoria,
                 'descripcio_servei' => $row->descripcio_servei,
                 'nom_categoria' => $row->nom_categoria,
                 'data_inici' => $row->data_inici,
                 'data_fi' => $row->data_fi,
-                'disp_horaria' => $row->disp_horaria,
+                'horas' => explode(";", $row->disp_horaria),
+                'days' => explode(";", $row->disp_dies),
                 'preu' => $row->preu,
                 'user_oferit_servei' => $row->email, //email del users que oferit el servei
+                'poblacion' => $pueblo->poblacion,
               );
               //email del session passem al vista,per poder solicitar servei;
               if(isset($data['email'])){
                   $data2['email']=$data['email'];
-                  $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;                 
+                  $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;
+                  $data2['es_admin']=$data['es_admin'];                 
               }
               $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
             }
@@ -315,6 +318,7 @@ class Inicio extends CI_Controller {
           $id_servei=$_POST['id_servei'];
           $email_user=$_POST['email_user'];
           $id_user=$_POST['id_user'];
+          $missatge=$_POST['missatge'];
           $login_view='';
           $vista='';
           if($this->es_autentificat()) {
@@ -344,9 +348,19 @@ class Inicio extends CI_Controller {
           //Com minim usuari solicitant ha de oferir un servei
           //El preu del servei ha der més gran o igual saldo del usuari
           if($comprovaMinimServeiOfert>0){
-            if($puntsServei<=$saldoUser){         
-              $this->user->enviarSolicitut($id_user,$id_servei);    
-              $vista='enviat_solicitut';
+            if($puntsServei<=$saldoUser){
+              //comprovo si abans  ha enviat el mateix usuari amb el mateix servei
+               if($this->user->unic_solicitut($id_user,$id_servei)->total_solicitut_user_servei==0){   
+                  $this->user->enviarSolicitut($id_user,$id_servei);  
+                  $id_solictut=$this->user->getIdSolictut($id_user,$id_servei)->id;
+                  $dataAvui=date('Y-m-d'); 
+                  $id_emisor=$id_user;
+                  $id_receptor=$this->servei->get_servei($id_servei)->usuari;
+                  $this->user->enviaMissatge($id_emisor,$id_receptor,$missatge,$dataAvui,$id_solictut);
+                $vista='enviat_solicitut';
+               }else{
+                  $vista='error_ja_enviada_solicitut';
+               }
             }else{
                $vista='error_saldo_minim_servei';
             }
