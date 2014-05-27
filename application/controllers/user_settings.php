@@ -486,10 +486,20 @@ class User_settings extends CI_Controller {
 		$this->email->message(
 			"<h1>Avis denuncia</h1><p>Hola ".$nom.",</p><p>Aquest missatge es un avis per tal de ferte saber que hem rebut una denuncia/reclamaci&oacute contre tu.<br/>Aquesta sera estudiada pel administradors, que decidiran com resoldre. Properament et respondrem la/s mesures preses.</p><p>Si tens algun problema o dubte pots contactar amb el nostre suport tecnic: <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a></p>"
 		);
-		if ($this->email->send())
-			return true;
-		else
+		if ($this->email->send()) {
+			$this->email->set_newline("\r\n");
+			$this->email->from('gcbtv0@gmail.com', 'Admin banc del temps');
+			$this->email->to('gcbtv0@gmail.com');
+			$this->email->subject('Avis denuncia nova | Banc del temps');
+			$this->email->message("<h1>Avis denuncia nova</h1>");
+			
+			if ($this->email->send())
+				return true;
+			else
+				show_error($this->email->print_debugger());
+		} else {
 			show_error($this->email->print_debugger());
+		}
 	}
   /***************************************************SOLICITUD*************************************************************/
 
