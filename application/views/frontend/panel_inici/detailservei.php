@@ -8,7 +8,9 @@
               <b>Categoria :</b><?= $nom_categoria; ?><br />
               <b>Data Inici :</b><?= $data_inici; ?><br />
               <b>Data Final :</b><?= $data_fi; ?><br />
-              <b>Horari :</b><?= $horas[0]?>:00 a <?=$horas[1]?>:00;<br />
+              <b>Horari :</b><?= $horas[0]?>:00 a <?=$horas[1]?>:00;<br />       
+              <b>Població: </b><span><a href="https://www.google.es/maps/place/<?=$poblacion?>"  target='_blank'><?=$poblacion?></a></span>
+         
           </td>
           <td>
               <div class="buttonform"><b>Punts :</b><?= $preu; ?></div>
