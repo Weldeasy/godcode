@@ -949,3 +949,6 @@ font-family: 'Open Sans', sans-serif;
    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
    padding:8px;
 }
+.imatge_perfil {border:4px inset #05B5F5; margin-left:20px; margin-top:20px;float:left;}
+.imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
+.imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}

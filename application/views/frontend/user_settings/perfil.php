@@ -1,37 +1,5 @@
 <!DOCTYPE html>
-<?php
-	//Noms classes CSS
-	$form_name = "formulario_perfil";
-	$label_class = "formulario_registro_label";
-	$input_text_class = "formulario_registro_input_text";
-    $input_textarea_class = "formulario_registro_textarea2";
-    $submit = "formulario_registro_submit";
-	
-	//Valor CI forms
-	$nom_opts = array(
-		'name' => 'nombre',
-		'value' => $nom,
-		'class' => $input_text_class,
-		'placeholder' => 'Indica el teu nom..'
-	);
-	$cognoms_opts = array(
-		'name' => 'apellidos',
-		'value' => $cognom,
-		'class' => $input_text_class,
-		'placeholder' => 'Indica els teus cognoms..'
-	);
-	$desc_opts = array(
-		'name' => 'descrivete',
-		'value' => $presentacio,
-		'class' => $input_textarea_class,
-		'placeholder' => 'Descriu-te..'
-	);
-	$provincia_opts = 'id = "provincies" onchange = "loadPoblacions()"';
-	
-	//Sexe seleccionat
-	if (isset($_POST["sexo"]))
-		$sex_selected = $_POST["sexo"];
-?>
+<?php include ("application/includes/config.perfil.php");?>
 <html>
 	<head>
 		<title>Time Banking | La meva conte</title>
@@ -43,22 +11,13 @@
 		<link href="<?= base_url()?>media/css/formularioregistro.css" rel="stylesheet">
 		<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
+		
 		<script>
-			//array poblacions a javascript
 			var poblacions = <?php echo json_encode($poblacions); ?>;
 			var provincia = <?php echo json_encode($provincia); ?>;
 			var poblacio = <?php echo json_encode($poblacio); ?>;
-			function loadPP() {
-				$("#provincies").val(provincia);
-				loadPoblacions();
-				$("#poblacio").val(poblacio);
-			}
 		</script>
-		<style>
-			.imatge_perfil {border:4px inset #05B5F5; margin-left:20px; margin-top:20px;float:left;}
-			.imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
-			.imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}
-		</style>
+		<script src="<?= base_url(); ?>media/js/edita_perfil.js"></script>
 	</head>
 	<body onLoad="loadPP()">
 		

@@ -1,58 +1,5 @@
 <!DOCTYPE html>
-<?php
-    //Noms classes CSS
-	$form_name = "formulario_registro";
-	$label_class = "formulario_registro_label";
-	$input_text_class = "formulario_registro_input_text";
-    $input_textarea_class = "formulario_registro_textarea";
-    $submit = "formulario_registro_submit";
-	
-	//Valor CI forms
-	$nom_opts = array(
-		'name' => 'nombre',
-		'value' => @set_value("nombre"),
-		'class' => $input_text_class,
-		'placeholder' => 'Indica el teu nom..'
-	);
-	$cognoms_opts = array(
-		'name' => 'apellidos',
-		'value' => @set_value("apellidos"),
-		'class' => $input_text_class,
-		'placeholder' => 'Indica els teus cognoms..'
-	);
-	$email_opts = array(
-		'name' => 'email',
-		'value' => @set_value("email"),
-		'class' => $input_text_class,
-		'placeholder' => 'Indica la teva direcci&oacute; d\'email..'
-	);
-	$desc_opts = array(
-		'name' => 'descrivete',
-		'value' => @set_value("descrivete"),
-		'class' => $input_textarea_class,
-		'placeholder' => 'Descriu-te..'
-	);
-	$pass_opts = array(
-		'name' => 'pass',
-		'class' => $input_text_class,
-		'placeholder' => 'Indica una contrasenya..'
-	);
-	$confirm_pass_opts = array(
-		'name' => 'confirm_pass',
-		'class' => $input_text_class,
-		'placeholder' => 'Confirmaci&oacute; contrasenya..'
-	);
-	$provincia_opts = 'id = "provincies" onchange = "loadPoblacions()"';
-	
-	//Sexe seleccionat
-	$sex_selected = "0";
-	if (isset($_POST["sexo"]))
-		$sex_selected = $_POST["sexo"];
-?>
-<script>
-	//array poblacions a javascript
-	var poblacions = <?php echo json_encode($poblacions); ?>;
-</script>
+<?php include("application/includes/config.registro.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" lang="ca">
 <head>
@@ -64,6 +11,10 @@
 	<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
 	<script src="<?= base_url(); ?>media/js/jquery.js"></script>
 	<script src="<?= base_url(); ?>media/js/formularioregistro.js"></script>
+	<script>
+		//array poblacions a javascript
+		var poblacions = <?php echo json_encode($poblacions); ?>;
+	</script>
 </head>
 <body onLoad="loadPoblacions()">
 	<div id='cssmenu'>

@@ -128,3 +128,10 @@ hr{
   box-shadow: 2px 2px 5px #999;
   border-radius: 15px;
 }
+.page_wrapper {
+		overflow:auto;
+		width:100%;
+	}
+	#slider-hores {
+		width:350px;
+	}
