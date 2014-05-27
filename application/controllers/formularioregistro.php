@@ -103,6 +103,7 @@ class Formularioregistro extends CI_Controller {
 			}
 			
 			$data['mensaje'] = $mensaje;
+			$data['login_form'] = "frontend/login_form";
 			$this->load->view('frontend/registro_completado', $data);
         }
         
@@ -110,12 +111,14 @@ class Formularioregistro extends CI_Controller {
 	
 	function confirmar($code, $email) {
 		$resultat = $this->user->verificar_registre($email, $code, 'codigo_registro');
+		$data['login_form'] = "frontend/login_form";
 		if ($resultat == false) {
-			print "Hi ha hagut un error, torna a provar, si el problema continua ficat en contacte amb <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a>.";
+			$data['mensaje'] = "Hi ha hagut un error, torna a provar, si el problema continua ficat en contacte amb <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a>.";
 		} else {
 			//crear sessio!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			print "<p>Has finalitzat el registre correctament!</p><p><a href='".base_url()."'>Inici</a></p>";
+			$data['mensaje'] = "<p>Has finalitzat el registre correctament!</p>";
 		}
+		$this->load->view('frontend/registro_completado', $data);
 	}
 	
 	function upload_image($codigo) {
