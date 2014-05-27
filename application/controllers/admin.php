@@ -254,7 +254,7 @@ class Admin extends CI_Controller {
         $data['mitja']=$this->adm->mitjaServeisPerUsuari(); 
         $data['consumits']=$this->adm->numeroServeisConsumits();
         $data['grafica'] = $this->gcharts->ColumnChart('Provincia');
-        $data['panel_admin'] = $this->load->view('backend/pages/zona', $data, TRUE);
+        $data['panel_admin'] = $this->load->view('backend/pages/estadistiques', $data, TRUE);
         $data['email'] = $this->session_data['email'];
         $this->load->view('backend/admin', $data);
         
