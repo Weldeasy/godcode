@@ -36,11 +36,10 @@ class Sistema extends CI_Controller {
 		foreach($servicios as $servicio) {
 			$data_congelacio = date($servicio->data_congelacio);
 			if($data_congelacio != null) {
-				/*$data_congelacio = strtotime($data_congelacio);
+				$data_congelacio = strtotime($data_congelacio);
 				$data_actual = strtotime($data_actual);
 				$diff = $data_actual - $data_congelacio;
-				var_dump($diff);*/
-				$t++;
+				var_dump($diff);
 			}
 		}
 		echo "</pre>";
