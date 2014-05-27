@@ -9,12 +9,14 @@
 }
 .servicio_vista {
 	height:150px;
-	width:700px;
-	margin-bottom:80px;
+	width:100%;
+	margin-bottom:140px;
 	margin-top:50px;
 	margin-left: 10px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+
+
 }
 
 .foto_servicio {
@@ -23,13 +25,24 @@
 .foto_servicio>img{
 	height:150px;
 	width:150px;
+	margin-top: 50px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+}
+.foto_servicio_vista>img{
+	height:150px;
+	width:150px;
 }
 .cuerpo_servicio {
 	width:140%;
 	background-color: white;
 	min-height: 150px;
 }
-
+.cuerpo_servicio_vista {
+	width:100%;
+	background-color: white;
+	min-height: 150px;
+}
 .titulo_servicio {
 	padding-left:5px;
 	padding-top: 10px;
@@ -41,12 +54,23 @@
 .descripcion_servicio_vista {
 	/*min-height:128px;*/
 	margin-left: 150px;
+	margin-top: 40px;
+	margin-bottom: 10px;
 }
 .descripcion_servicio p{
 	/*word-wrap: break-word;
 	padding-right:10px;*/
-	
+	width: 20%;
+	height: auto;
 	margin-top: 5px;
+}
+.descripcion_servicio_vista p{
+	/*word-wrap: break-word;
+	padding-right:10px;*/
+	width: 20%;
+	height: auto;
+	margin-left: 200px;
+	margin-top: 25px;
 }
 .precio_servicio {
 	float:right;
@@ -82,7 +106,11 @@
 	background-color: white;
 	clear:left;
 	width:100%;
+	box-shadow: 2px 2px 5px #999;
+  border-radius: 15px;
 }
+
+
 
 /* ALTA SERVEI Y EDITAR SERVEI */
 
@@ -90,7 +118,13 @@
 	border:1px solid;
 	border-color:#CCFF66;
 	background-color:#99FF99;
+	
+ 	border-radius: 15px;
 }
 .disp_dias {
 	display:inline;
+}
+hr{
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 15px;
 }

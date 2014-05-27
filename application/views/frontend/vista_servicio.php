@@ -27,20 +27,20 @@
 	<div class="foto_servicio">
 		<img src="<?=base_url()?>media/images/categorias/<?=$categoria?>.jpg" />
 	</div>
-	<div class="cuerpo_servicio">
+	<div class="cuerpo_servicio_vista">
 		<div class="titulo_servicio">
 			<span class="nom_servei"><?=$nom?></span>
 			<span class="data_caducitat">en <a href="https://www.google.es/maps/place/<?=$poblacion?>"><?=$poblacion?></a></span>
 		</div>
 		<div class="descripcion_servicio_vista">
-			<p><?=$descripcio?></p>
+			<span><?=$descripcio?></span>
 		</div>
 		<div class="precio_servicio">
 			<?=$preu?> punts
 		</div>
 	</div>
 	<div class="dispo_servicio_vista">
-			Disponible hasta el <?=$data_fi?> los 
+			<p>Disponible hasta el <?=$data_fi?> de <?=$horas[0]?>:00 a <?=$horas[1]?>:00</p>
 			<table class="disp_dias">
 				<tr>
 					<td <?php if ( (isset($days)) && (!in_array('L', $days)) ) print 'style="background-color:#FA5858;"'; ?> value="L" >L</td>
@@ -52,6 +52,7 @@
 					<td <?php if ( (isset($days)) && (!in_array('D', $days)) ) print 'style="background-color:#FA5858;"'; ?> value="L" >D</td>
 				</tr>
 			</table>
-			de <?=$horas[0]?>:00 a <?=$horas[1]?>:00
+			
 		</div>
 </div>
+	<hr></hr>
