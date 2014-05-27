@@ -67,16 +67,19 @@
 </head>
 <body onLoad="loadPoblacions()">
 	<div id='cssmenu'>
-		<ul>
+	<ul>
 		<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
-		<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+	<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
+	<?php } ?>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     
-    <?php echo $this->load->view($login_form); ?>
+    <?= $this->load->view($login_form)?>
   </ul>
-	</div>
+	<a href="#" id="pull"></a> 
+ </div>
 	<div id="container">
 		<?= form_open_multipart(base_url().'index.php/formularioregistro/validar', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
 		<center><h1><u>Formulari nou usuari</u></h1></center>
