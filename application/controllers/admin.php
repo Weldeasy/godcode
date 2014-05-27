@@ -217,6 +217,7 @@ class Admin extends CI_Controller {
 		$max_dies_congelat=$this->adm->getMax_dies_congelat()->max_dias_congelado ;
 		return $max_dies_congelat;
 	}
+	
 	/**
 	 * [setSaldoMinim_control actualitzat el saldo minim]
 	 */
@@ -232,7 +233,7 @@ class Admin extends CI_Controller {
 			$this->configSaldo();
 		}	
 	}
-	function zona(){
+	function estadistiques(){
 		$this->gcharts->load('ColumnChart');
         $zonas= $this->adm->serveisPerProvincia();
         
@@ -250,6 +251,8 @@ class Admin extends CI_Controller {
             'title' => 'provincias'
         );
 
+        $data['mitja']=$this->adm->mitjaServeisPerUsuari(); 
+        $data['consumits']=$this->adm->numeroServeisConsumits();
         $data['grafica'] = $this->gcharts->ColumnChart('Provincia');
         $data['panel_admin'] = $this->load->view('backend/pages/zona', $data, TRUE);
         $data['email'] = $this->session_data['email'];
@@ -257,17 +260,7 @@ class Admin extends CI_Controller {
         
 }
 
-function mitjaServeis(){
-		$data['mitja']=$this->adm->mitjaServeisPerUsuari(); 
-		$data['panel_admin'] = $this->load->view('backend/pages/numServeis', $data, TRUE);
-        $data['email'] = $this->session_data['email'];
-        $this->load->view('backend/admin', $data);
-        
-}
-function numeroServeisConsumit(){
-		$data['numSC']=$this->adm->numeroServeisConsumits();
-		$data['panel_admin']=$this->load->view('backend/pages/' ,$data,TRUE);
-	}
+
 		
 }
 /* End of file welcome.php */

@@ -17,6 +17,13 @@ Class Servei extends CI_Model {
 		return $query->result();
 	 }
 	 
+	 
+	 public function get_serveis_noConsumit() {
+		$query = $this->db->query('SELECT * FROM servei s WHERE s.id NOT IN (SELECT s.id FROM servei s, servei_consumit sc WHERE s.id = sc.id_servei)');
+		return $query->result();
+	 }
+	 
+	 
 	 /* Funcion que devuelve el servicio por el id */
 	 public function get_servei($id) {
 		$query = $this->db->query('SELECT * FROM servei WHERE id = "'.$id.'"');
@@ -44,8 +51,19 @@ Class Servei extends CI_Model {
 		return $query->result();
 	}
 	
-
-	 
+	public function congelarServei($id) {
+		$this->db->where('id', $id);
+		$this->db->update('servei' ,array(
+			"data_congelacio"=>date('Y-m-d'),
+		));
+	}
+	
+	public function descongelarServei($id) {
+		$this->db->where('id', $id);
+		$this->db->update('servei' ,array(
+			"data_congelacio"=>null,
+		));
+	}
 	 
 	 public function add_servei($data_inici, $disponibilitat_horaria, $disponibilitat_dies, $usuari) {
 		$this->db->insert("servei", array(
