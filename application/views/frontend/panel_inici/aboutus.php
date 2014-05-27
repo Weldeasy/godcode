@@ -19,7 +19,6 @@ del temps (Time Banking).
                     <p>Oscar Marcos</p>
                     <ul>
                       <li>Programador informátic</li>
-					  <li>Elkete foka, elkete parte la voka</li>
                     </ul>
                   </tr>
                   <tr>
