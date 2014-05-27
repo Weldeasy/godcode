@@ -4,6 +4,15 @@
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<script src="<?= base_url()?>media/js/usersettings.js"></script>
+			  <!-- JEASYUI-->
+	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/default/easyui.css">
+	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/icon.css">
+	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.min.js"></script>
+	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.easyui.min.js"></script>
+
+	    <script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
+	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>
+ 
 		
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	</head>
@@ -34,6 +43,7 @@
 			</div>
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
 			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">SOLICITUDS</div></a>
+			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir Servei</div></a></a>
 		</div>
 
 		<div id="page-wrapper">
