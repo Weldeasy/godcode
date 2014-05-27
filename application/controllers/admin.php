@@ -121,6 +121,7 @@ class Admin extends CI_Controller {
 	 */
 	function jsonllistarDenuncies(){
 		echo json_encode($this->adm->llistarDenuncies());
+		echo json_encode($this->adm->ll());
 	}
 	/**
 	 * [jsonconeglarUsuaris description]
