@@ -13,6 +13,7 @@
             <div class='canviposicio'>    
                 <input type='hidden' value='<?= $email; ?>' name='email_user'/>
                 <input type='submit' value='Veure Serveis' class="buttonform" />
+				<a class="buttonform" href="<?= base_url()?>index.php/inicio/perfilusuari/<?= $email?>">Usuari</a>
             </div>
   </form>
 </div>

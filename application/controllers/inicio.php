@@ -173,6 +173,53 @@ class Inicio extends CI_Controller {
    * [detailusuari informació del usuari cercat]
    * @return [void] [description]
    */
+   function perfilusuari ($uemail = NULL) {
+	if($this->es_autentificat()) {
+            $data=$this->data;
+            $data['login_form'] = 'frontend/panel_inici/logued';
+        }else{
+            $data['login_form'] = 'frontend/login_form';
+        }
+	if ($uemail != NULL) {
+		$ausuari = $this->user->get_user_by_email($uemail);
+		if (!empty($ausuari)) {
+			$data_perfil = array();
+			$data_perfil['nom_usuari'] = ucfirst($ausuari->nom);
+			$data_perfil['cognom_usuari'] = strtolower($ausuari->cognom);
+			$data_perfil['presentacio_usuari'] = $ausuari->presentacio;
+			$data_perfil['provincia_usuari'] = $this->user->provincia_user_by_id($ausuari->provincia);
+			$data_perfil['foto_usuari'] = $ausuari->foto;
+			$perfil = $this->load->view('frontend/panel_inici/perfilusuari', $data_perfil, TRUE);
+			
+			$data['contingut'] = $perfil;
+			
+			$data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
+			$data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
+			$historial = "<table class='history' border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
+				if (count($data_historial['consumits_usuari']) > 0) {
+					foreach ($data_historial['consumits_usuari'] as $consumit) {
+						$consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
+						$historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
+					}
+				} else {
+					$historial .= "<tr><td colspan='3'>No hi ha historia</td></tr>";
+				}
+			$historial .= "</table><p>&nbsp;</p>";
+			$data['contingut'] .= $historial;
+			$data['contingut'] .= "</div>";
+		} else {
+			//$data[]
+			$data['contingut'] = "L'usuari que has solicitat no esta disponible.";
+		}
+	} else {
+		$data['contingut'] = "No has indicat cap usuari.";
+	}
+	$this->load->view('frontend/inicio', $data);
+   }
+  /**
+   * [detailusuari informació del usuari cercat]
+   * @return [void] [description]
+   */
   function detailusuari() {
       if(isset($_POST['cercar_user'])){
         $cercar_user = $_POST['cercar_user'];  

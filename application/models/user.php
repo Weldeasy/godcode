@@ -6,6 +6,7 @@ Class User extends CI_Model
         parent::__construct();
 		
 		$this->load->database();
+		$this->load->model(array('banctemps'));
     }
 	
 	public function get_user_by_email($email) {
@@ -56,6 +57,26 @@ Class User extends CI_Model
 				 (usuari.email LIKE "'.$cercar_user.'%" OR usuari.nom LIKE "'.$cercar_user.'%") and usuari.es_admin=0
 				');
 			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	public function get_user_consumits($idu){
+		try {
+			$data = $this->db->query(
+				'SELECT  distinct id_consumidor, data_consumit
+				 FROM servei_consumit, servei
+				 WHERE servei_consumit.id_servei=servei.id AND servei.usuari = '.$idu.'
+				 ORDER BY data_consumit DESC
+				');
+			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	public function provincia_user_by_id($provincia){
+		try {
+			return $this->db->query("SELECT provincia FROM provincia WHERE idprovincia = ".$provincia)->row()->provincia;
 		} catch (Exception $e) {
 			return;
 		}
@@ -114,7 +135,7 @@ Class User extends CI_Model
 			"nom"=>$this->input->post("nombre", TRUE),
 			"cognom"=>$this->input->post("apellidos", TRUE),
 			"data_inscripcio" => date('Y-m-d', time()),
-			"saldo" => 0,
+			"saldo" => $this->banctemps->get_saldo(),
 			"sexe"=>$this->input->post("sexo"),
 			"presentacio"=>$this->input->post("descrivete", TRUE),
 			"poblacio"=>$this->input->post("poblacio", TRUE),
