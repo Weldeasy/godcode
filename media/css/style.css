@@ -323,18 +323,18 @@ h1{
 }
 
 .zona_busqueda .caja_busqueda {
-  position: absolute;
+  position: relative;
   background: url(../bundles/mambocarassets/img/redesign/fondo-pastilla-busqueda.png) repeat-x;
   top: 200px;
-  left: 50%;
   width: 960px;
-  height: 210px;
-  margin-left: -480px;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   text-align: center;
   background-color: #1b8eb8;
+  padding-bottom:10px;
 }
 
 .zona_busqueda .caja_busqueda h1 {
