@@ -1,2 +1,2 @@
-<?php echo  "<b> ".$mitja."</b>" ?>
+<?php echo  "<b> ".$mitja."</b>"?>
 
