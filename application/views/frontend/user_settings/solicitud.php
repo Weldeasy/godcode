@@ -39,11 +39,21 @@ function denuncia(){
 	$('#formXat').dialog('close');
 }
 
+function guardarDenuncia() {
+	var estat_reclamacio = $("#nom_opinio").val();
+	var usuari_denunciant = $("#id_emisor_d").val();
+	var estat_reclamacio = 0;
+	
+	if ( (nom.length < 1) || (opinio.length < 1) )
+		alert("Els dos camps (nom i opinio) son obligatoris!");
+	else
+		peticioOpinio(nom, opinio)
+}
+
 </script>
-<div id="formXat" class="easyui-dialog" title="Xat" closed="true" style="width:800px;height:auto;padding:10px">
+<div id="formXat" class="easyui-dialog" title="Xat" closed="true" style="width:800px;min-height:200px;padding:10px">
   <form id='formulariXat' method='post' action="<?=base_url()?>index.php/user_settings/xat">
-		<textarea size='100%' name='missatgeXat'>
-		</textarea>
+		<textarea size='800' name='missatgeXat'></textarea>
 		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor'/>
 		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut'/>
 		<input type='hidden' value='<?= $email_solicitant; ?>' name='email_receptor'/>
@@ -51,11 +61,10 @@ function denuncia(){
 		<input type='submit' value='Envia' class="buttonform"/>
   </form>
 </div>
-<div id="denuncia" class="easyui-dialog" title="Denuncia" closed="true" style="width:800px;height:auto;padding:10px">
-		<textarea size='30' name='denunciaText'>
-		</textarea>
-		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor'/>
-		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut'/>
-		<input type='hidden' value='<?= $email_solicitant; ?>' name='email_receptor'/>
-		<input type='button' value='Fer denuncia' class="buttonform" onClick=""/>
+<div id="denuncia" class="easyui-dialog" title="Denuncia" closed="true" style="width:800px;min-height:200px;padding:10px">
+		<textarea size='800' name='denunciaText'></textarea>
+		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor_d'/>
+		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut_d'/>
+		<input type='hidden' value='<?= $email_solicitant; ?>' name='email_receptor_d'/>
+		<input type='button' value='Fer denuncia' class="buttonform" onClick="guardarDenuncia()"/>
 </div>
