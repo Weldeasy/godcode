@@ -17,15 +17,18 @@
   </head>
  <body>
  <div id='cssmenu'>
-   <ul>
+  <ul>
     <li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
-    <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+  <?php if ($this->session->userdata('logged_in') == FALSE) { ?>
     <li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
+  <?php } ?>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
     
-    <?php echo $this->load->view($login_form); ?>
+    <?= $this->load->view($login_form)?>
   </ul>
+  <a href="#" id="pull"></a> 
  </div>
  <div id="contenido_principal">
   <div id="about_us">
