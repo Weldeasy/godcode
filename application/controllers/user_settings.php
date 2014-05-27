@@ -318,8 +318,7 @@ class User_settings extends CI_Controller {
 		redirect('user_settings','refresh');
 	}
   }
-<<<<<<< HEAD
-=======
+
   function canviaContrasenya_control(){
   		$this->form_validation->set_rules('passOriginal', 'Password original', 'required|trim|callback_comprovaPassword[passOriginal]');
 		$this->form_validation->set_rules('passNou', 'Password nou', 'required|min_length[6]|trim');
@@ -350,7 +349,7 @@ class User_settings extends CI_Controller {
 		return false;
 	}
   }
->>>>>>> ee3b3bffc5dcb0e6ffe3721d2db1e2a4758610ef
+
   /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){

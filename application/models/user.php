@@ -198,8 +198,6 @@ Class User extends CI_Model
 		}
 	}
 
-<<<<<<< HEAD
-=======
   	function canviarPassword($email,$pass){
   		$query = $this->db->query('UPDATE login SET password="'.$pass.'" WHERE email="'.$email.'"');
 		if($query){
@@ -211,7 +209,7 @@ Class User extends CI_Model
 	  	
   	}
 
->>>>>>> ee3b3bffc5dcb0e6ffe3721d2db1e2a4758610ef
+
 	function donarBaixaUsuari($email){
 		$query = $this->db->query('DELETE FROM usuari WHERE email="'.$email.'"');
 		if($query){
