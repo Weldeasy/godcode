@@ -37,7 +37,7 @@ class Sistema extends CI_Controller {
 			if($data_congelacio != null) {
 				$data_congelacio = strtotime($data_congelacio);
 				$data_actual = strtotime($data_actual);
-				$diff = $data_congelacio - $data_actual;
+				$diff = $data_actual - $data_congelacio;
 				var_dump($diff);
 			}
 			/*if ($data_actual>$data_fi) {
