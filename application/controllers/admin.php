@@ -44,6 +44,7 @@ class Admin extends CI_Controller {
 	public function vista_panel_admin($ruta){
 		$data['ruta']=$ruta;
 
+
 		if($ruta=='configSaldo'){//quan tenim la vista configsaldo, pasem el saldo minim.
 			$data['saldo_minim_BD']=$this->getSaldoMinim_control();
 		}
@@ -224,10 +225,10 @@ class Admin extends CI_Controller {
 		$this->gcharts->load('ColumnChart');
         $zonas= $this->adm->serveisPerProvincia();
         
-        $dataTable = $this->gcharts->DataTable('Population');
+        $dataTable = $this->gcharts->DataTable('Provincia');
 
-        $dataTable->addColumn('string', 'Population', 'country');
-        $dataTable->addColumn('number', 'Population', 'population');
+        $dataTable->addColumn('string', 'Provincia', 'provincias');
+        $dataTable->addColumn('number', 'Provincia', 'population');
         foreach ($zonas as $row) {
         	echo $row ->provincia;
         	echo $row ->numero;
@@ -238,14 +239,25 @@ class Admin extends CI_Controller {
             'title' => 'provincias'
         );
 
-        $data['grafica'] = $this->gcharts->ColumnChart('Population');
+        $data['grafica'] = $this->gcharts->ColumnChart('Provincia');
         $data['panel_admin'] = $this->load->view('backend/pages/zona', $data, TRUE);
         $data['email'] = $this->session_data['email'];
         $this->load->view('backend/admin', $data);
         
 }
+
+function mitjaServeis(){
+		$data['mitja']=$this->adm->mitjaServeisPerUsuari(); 
+		$data['panel_admin'] = $this->load->view('backend/pages/numServeis', $data, TRUE);
+        $data['email'] = $this->session_data['email'];
+        $this->load->view('backend/admin', $data);
+        
+}
+function numeroServeisConsumit(){
+		$data['numSC']=$this->adm->numeroServeisConsumits();
+		$data['panel_admin']=$this->load->view('backend/pages/' ,$data,TRUE);
 	}
 		
-
+}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

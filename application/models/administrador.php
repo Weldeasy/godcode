@@ -35,7 +35,16 @@ Class Administrador extends CI_Model{
 	}
 	function mitjaServeisPerUsuari(){      
 		$query = $this->db->query('SELECT AVG(COUNT(*)) as media FROM servei s, usuari u WHERE s.usuari=u.id');
-		return $query->result();
+		if($query){
+			$resultat = true;
+		}else{
+			$resultat = false;
+		}
+		return $resultat;
+	}
+	function numeroServeisConsumits(){      
+		$query = $this->db->query('SELECT COUNT(*) as numero_consumit FROM servei_consumit');
+		return $resultat;
 	}
 	/**
 	 * [llistarCategoria description]
