@@ -14,16 +14,17 @@ class Sistema extends CI_Controller {
 	* Este metodo congela los servicios que no se han consumido nunca pasado cierto tiempo.
 	* Tambien congela los servicios que han superado la data_fi
 	*/
-	function congelar_serveis_noConsumits() {
-		$servicios = $this->servei->get_serveis_noConsumit(null);
-		$max_dies_congetal = $this->administrador->getMax_dies_congelat()->max_dias_congelado;
+	function congelar_serveis_caducats() {
+		$servicios = $this->servei->get_serveis(null);
 		$data_actual = date("Y-m-d");
 		echo "<pre>";
 		foreach($servicios as $servicio) {
-			$data_congelacio = date($servicio->data_congelacio);
-			$diff_noConsumits = date_diff(date_create($data_congelacio), date_create($data_actual))->days;
-			var_dumb($data_congelacio);
+			$data_fi = date($servicio->data_fi);
+			if ($data_actual>$data_fi) {
+				$this->servei->congelarServei($servicio->id);
+			}
 		}
+	}
 		
 		
 
