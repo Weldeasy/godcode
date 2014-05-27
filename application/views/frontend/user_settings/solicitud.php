@@ -40,11 +40,12 @@ function denuncia(){
 }
 
 function guardarDenuncia() {
-	var estat_reclamacio = $("#nom_opinio").val();
+	var usuari_denunciat = $("#email_receptor").val();
 	var usuari_denunciant = $("#id_emisor_d").val();
 	var estat_reclamacio = 0;
+	var motiu = $("#denunciaText").val();
 	
-	if ( (nom.length < 1) || (opinio.length < 1) )
+	if (motiu.length < 1)
 		alert("Els dos camps (nom i opinio) son obligatoris!");
 	else
 		peticioOpinio(nom, opinio)
