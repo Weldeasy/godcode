@@ -1,7 +1,7 @@
 <div class="un_info_usuari">
  <table>
        <tr>
-          <td><img height="100px" width="50px" src="<?=base_url() ?>media/images/categorias/<?= $categoria?>.jpg"/></td>
+          <td><img height="100px" src="<?=base_url() ?>media/images/categorias/<?= $categoria?>.jpg"/></td>
           <td>
               <b>Nom :</b><?= $nom_servei; ?><br />
               <b>Descripció :</b><?= $descripcio_servei; ?><br />
