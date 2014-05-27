@@ -449,11 +449,48 @@ class User_settings extends CI_Controller {
 	$motiu = $this->input->post("motiu");
 	$estat = 0;
 	
-	if ($this->user->fer_denuncia($denunciat, $denunciant, $motiu, $estat))
+	if ($this->user->fer_denuncia($denunciat, $denunciant, $motiu, $estat)) {
+		$nom = $this->user->get_user_by_email($this->input->post("usuari_denunciat"))->nom;
+		$email = $this->input->post("usuari_denunciat");
+		$this->correuAdminAvisDenuncia($nom, $motiu, $email);
 		echo "Reclamació feta";
-	else
+	} else {
 		echo "Hi ha hagut un error, prova-ho més tard!";
+	}
   }
+  function correuAdminAvisDenuncia($nom, $motiu, $email_denunciat) {
+  //Enviem correu confirmacio compte
+		$config = array(
+			'charset' => 'utf-8',
+			'newline' => '\r\n',
+			'mailtype' => 'html',
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'gcbtv0@gmail.com',
+			'smtp_pass' => 'pepe123456',
+			'charset' => 'iso-8859-1',
+			'wordwrap' => TRUE
+		);
+		
+		$this->load->library('email', $config);
+		
+		//$this->email->initialize($config);
+		//$this->email->clear();
+		$this->email->set_newline("\r\n");
+		$this->email->from('gcbtv0@gmail.com', 'Admin banc del temps');
+		$this->email->to($email_denunciat);
+		//$this->email->cc($);
+		//$this->email->bcc($);
+		$this->email->subject('Has rebut una denuncia | Banc del temps');
+		$this->email->message(
+			"<h1>Avis denuncia</h1><p>Hola ".$nom.",</p><p>Aquest missatge es un avis per tal de ferte saber que hem rebut una denuncia/reclamaci&oacute contre tu.<br/>Aquesta sera estudiada pel administradors, que decidiran com resoldre. Properament et respondrem la/s mesures preses.</p><p>Si tens algun problema o dubte pots contactar amb el nostre suport tecnic: <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a></p>"
+		);
+		if ($this->email->send())
+			return true;
+		else
+			show_error($this->email->print_debugger());
+	}
   /***************************************************SOLICITUD*************************************************************/
 
 }
