@@ -187,7 +187,22 @@ class Inicio extends CI_Controller {
 			$data_perfil['provincia_usuari'] = $this->user->provincia_user_by_id($ausuari->provincia);
 			$data_perfil['foto_usuari'] = $ausuari->foto;
 			$perfil = $this->load->view('frontend/panel_inici/perfilusuari', $data_perfil, TRUE);
+			
 			$data['contingut'] = $perfil;
+			
+			$data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
+			$data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
+			$historial = "<table border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
+				if (count($historial) > 0) {
+					foreach ($data_historial['consumits_usuari'] as $consumit) {
+						$historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
+					}
+				} else {
+					$historial .= "<tr><td colspan='3'>No hi ha historia</td></tr>";
+				}
+			$historial .= "</table>";
+			$data['contingut'] .= $historial;
+			$data['contingut'] .= "</div>";
 		} else {
 			//$data[]
 			$data['contingut'] = "L'usuari que has solicitat no esta disponible.";

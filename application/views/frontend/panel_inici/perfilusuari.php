@@ -9,4 +9,7 @@
 	<tr><td>
 		<?= $presentacio_usuari?>
 	</td></tr></table>
-</div>
+	<p>&nbsp;</p>
+	<hr width="80%" />
+	<h3><u>Historial</u></h3>
+	<p>&nbsp;</p>

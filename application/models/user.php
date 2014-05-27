@@ -60,6 +60,19 @@ Class User extends CI_Model
 			return;
 		}
 	}
+	public function get_user_consumits($idu){
+		try {
+			$data = $this->db->query(
+				'SELECT  distinct id_consumidor, data_consumit
+				 FROM servei_consumit, servei
+				 WHERE servei_consumit.id_servei=servei.id AND servei.usuari = '.$idu.'
+				 ORDER BY data_consumit DESC
+				');
+			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}
+	}
 	public function provincia_user_by_id($provincia){
 		try {
 			return $this->db->query("SELECT provincia FROM provincia WHERE idprovincia = ".$provincia)->row()->provincia;
