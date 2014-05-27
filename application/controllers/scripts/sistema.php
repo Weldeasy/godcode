@@ -11,13 +11,11 @@ class Sistema extends CI_Controller {
 	
 	
 	/**
-	* Este metodo congela los servicios que no se han consumido nunca pasado cierto tiempo.
-	* Tambien congela los servicios que han superado la data_fi
+	* Este metodo congela los servicios que han superado la data_fi
 	*/
 	function congelar_serveis_caducats() {
 		$servicios = $this->servei->get_serveis(null);
 		$data_actual = date("Y-m-d");
-		echo "<pre>";
 		foreach($servicios as $servicio) {
 			$data_fi = date($servicio->data_fi);
 			if ($data_actual>$data_fi) {
@@ -25,8 +23,20 @@ class Sistema extends CI_Controller {
 			}
 		}
 	}
-		
-		
+	
+	/**
+	* Este metodo elimina los servicios congelados que han superado el tiempo determinado por el admin
+	*/
+	function eliminar_serveis_congelats() {
+		$servicios = $this->servei->get_serveis(null);
+		$data_actual = date("Y-m-d");
+		foreach($servicios as $servicio) {
+			$data_fi = date($servicio->data_fi);
+			if ($data_actual>$data_fi) {
+				$this->servei->congelarServei($servicio->id);
+			}
+		}
+	}	
 
 }
 
