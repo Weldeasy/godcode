@@ -33,18 +33,22 @@ Class Administrador extends CI_Model{
 		$query = $this->db->query('SELECT provincia, COUNT(*) as numero FROM servei s, poblacion p, provincia pr WHERE p.postal=s.cp AND pr.idprovincia=p.idprovincia GROUP BY pr.provincia');
 		return $query->result();
 	}
-	function mitjaServeisPerUsuari(){      
-		$query = $this->db->query('SELECT AVG(COUNT(*)) as media FROM servei s, usuari u WHERE s.usuari=u.id');
-		if($query){
-			$resultat = true;
-		}else{
-			$resultat = false;
-		}
-		return $resultat;
+	
+	function mitjaServeisPerUsuari(){  	     
+		$query1 = $this->db->query('SELECT COUNT(*) as users FROM  usuari ');
+		$query1 = $query1->row();
+		$query2= $this->db->query('SELECT COUNT(*)  as serveis FROM servei');
+		$query2 = $query2->row();
+		$queryFinal=$query2->serveis/$query1->users;
+		return $queryFinal;
+
 	}
 	function numeroServeisConsumits(){      
 		$query = $this->db->query('SELECT COUNT(*) as numero_consumit FROM servei_consumit');
-		return $resultat;
+		$query = $query->row();
+		$queryFinal = $query->numero_consumit;
+		return $queryFinal;
+
 	}
 	/**
 	 * [llistarCategoria description]

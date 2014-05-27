@@ -233,7 +233,7 @@ class Admin extends CI_Controller {
 			$this->configSaldo();
 		}	
 	}
-	function zona(){
+	function estadistiques(){
 		$this->gcharts->load('ColumnChart');
         $zonas= $this->adm->serveisPerProvincia();
         
