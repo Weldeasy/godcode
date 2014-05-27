@@ -53,5 +53,11 @@
 				</tr>
 			</table>
 			de <?=$horas[0]?>:00 a <?=$horas[1]?>:00
+			</div>
+					<div class="servei_actions">
+			<?php if($alert) { ?>
+			<input type="button" value="Solicitar" />
+			<?php } ?>
 		</div>
+
 </div>
