@@ -31,7 +31,6 @@ class Sistema extends CI_Controller {
 		$servicios = $this->servei->get_serveis(null);
 		$data_actual = date("Y-m-d");
 		echo "<pre>";
-		var_dump($servicios);
 		foreach($servicios as $servicio) {
 			$data_fi = date($servicio->data_fi);
 			if($servicio->data_congelacio != null) {
