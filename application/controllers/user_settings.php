@@ -138,7 +138,7 @@ class User_settings extends CI_Controller {
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
 			);
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			$html = $html.$this->load->view('frontend/vista_servicio_user', $data2, true);
 		}
 	} else {
 		$html = "No estas oferint cap servei actualment.";
@@ -318,7 +318,6 @@ class User_settings extends CI_Controller {
 		redirect('user_settings','refresh');
 	}
   }
-
   function canviaContrasenya_control(){
   		$this->form_validation->set_rules('passOriginal', 'Password original', 'required|trim|callback_comprovaPassword[passOriginal]');
 		$this->form_validation->set_rules('passNou', 'Password nou', 'required|min_length[6]|trim');
@@ -349,7 +348,15 @@ class User_settings extends CI_Controller {
 		return false;
 	}
   }
+  //consumir servei
+  
+  function consumirServei(){
+  	$data=$this->data;
+  	//$this->user->totSolicitutAcceptat($data);
+  	$data['panel_user']=$this->load->view('frontend/user_settings/consumir',NULL,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
 
+  }
   /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){
@@ -369,6 +376,8 @@ class User_settings extends CI_Controller {
   	$data2['estatSolicitut']=$estatSolicitut;
   	if($estatSolicitut){
   		$this->user->aceptaSolicitut($id_solicitut);
+  	}else{
+  		$this->user->rebujaSolicitut($id_solicitut);
   	}
 	$data['panel_user']=$this->load->view('frontend/user_settings/actualitzaSolicitut',$data2,TRUE);
 	$this->load->view('frontend/user_settings/inicio', $data);
@@ -383,13 +392,17 @@ class User_settings extends CI_Controller {
    	if($total_solicitut>0){
    			$infoSolicitut=$this->user->getIdSolicitant($email);
    			foreach ($infoSolicitut as $key){ 
-   				 $data2 = array(
-                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
-                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
-                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
-                'id_solicitut' => $key->id,
-            	);
+   				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
+	   				 $data2 = array(
+	                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
+	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
+	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
+	                'user_id' => $key->user_id,
+	                'id_solicitut' => $key->id,
+
+	            	);
             	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
+            	}
             }	
 	        $data['panel_user']=$html;
    	}else{
@@ -397,6 +410,39 @@ class User_settings extends CI_Controller {
    	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
+  function xat(){
+  	$xat=$_POST['missatgeXat'];
+  	$id_solicitut=$_POST['id_solicitut'];
+  	$dataAvui=date('Y-m-d');
+	
+	$id_emisor=$_POST['id_emisor'];
+	$id_receptor=$this->user->get_user_by_email($_POST['email_receptor'])->id;
+	
+	$this->user->enviaMissatge($id_emisor,$id_receptor,$xat,$dataAvui,$id_solicitut);
+
+	$html="";
+	
+	$missatges=$this->user->getXat($id_solicitut);
+
+	if($missatges!=NULL){
+			foreach ($missatges as $key){ 
+   				 $data2 = array(
+                'nom_emisor' => $this->user->get_user_by_Id($key->id_emisor)->nom,
+                'nom_receptor' => $this->user->get_user_by_Id($key->id_receptor)->nom,
+                'data' => $key->data,
+                'missatge' => $key->missatge,
+            	);
+        		$html = $html.$this->load->view('frontend/user_settings/mostraXat',$data2,TRUE);
+        	}
+        
+    }
+    
+	$data=$this->data;
+    $data['table']=$html;
+	$data['panel_user']=$this->load->view('frontend/user_settings/enviatMissatge',$data,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+  }
+
 
 }
 
