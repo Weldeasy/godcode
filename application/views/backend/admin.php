@@ -44,10 +44,9 @@
 			  <li id='congelarUsuaris'><a href="<?= base_url()?>index.php/admin/congelarusuaris"><i class="fa fa-ban"></i> Congelar Usuaris</a></li>
 			  <li><a href="<?= base_url()?>index.php/admin/crearcategories"><i class="fa fa-edit"></i> Gestió de Categoria</a></li>
 			  <li><a href="<?= base_url()?>index.php/admin/configSaldo"><i class="fa fa-cog"></i> Parametritzar el saldo minim</a></li>
-			   <li><a href="<?= base_url()?>index.php/admin/estadistiques"><i class="fa fa-caret-square-o-down"></i> Estadístiques </a></li>
-				
-      </ul>
-          <ul class="nav navbar-nav navbar-right navbar-user">
+			  <li><a href="<?= base_url()?>index.php/admin/estadistiques"><i class="fa fa-caret-square-o-down"></i> Estadístiques </a></li>     
+         </ul>   
+               <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $email; ?><b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -57,7 +56,7 @@
               </ul>
             </li>
           </ul>
-          
+       
         </div><!-- /.navbar-collapse -->
       </nav>
       <?php echo $panel_admin ?>

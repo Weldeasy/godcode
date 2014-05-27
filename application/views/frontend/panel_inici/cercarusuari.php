@@ -4,7 +4,7 @@
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
               <h1>Cercar Usuaris</h1>
-              <h3> Troba els serveis que dispone els usuaris concrets</h3>
+              <h3> Troba els serveis que té els usuaris concrets</h3>
                <hr>
                <br>
                 <div class="contenido_formulario_busqueda">

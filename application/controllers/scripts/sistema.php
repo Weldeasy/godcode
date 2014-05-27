@@ -8,19 +8,35 @@ class Sistema extends CI_Controller {
 		$this->load->model('servei');
 		$this->load->model('administrador');
 	}
-
-	function congelar_serveis() {
-		$servicios = $this->servei->get_serveis_noConsumit(null);
-		$max_dies_congetal = $this->administrador->getMax_dies_congelat()->max_dias_congelado;
+	
+	
+	/**
+	* Este metodo congela los servicios que han superado la data_fi
+	*/
+	function congelar_serveis_caducats() {
+		$servicios = $this->servei->get_serveis(null);
 		$data_actual = date("Y-m-d");
-		echo "<pre>";
 		foreach($servicios as $servicio) {
-			$data_inici = date($servicio->data_inici);
-			$diff = date_diff(date_create($data_inici), date_create($data_actual))->days;
-			var_dump($diff);
+			$data_fi = date($servicio->data_fi);
+			if ($data_actual>$data_fi) {
+				$this->servei->congelarServei($servicio->id);
+			}
 		}
-		echo "</pre>";
 	}
+	
+	/**
+	* Este metodo elimina los servicios congelados que han superado el tiempo determinado por el admin
+	*/
+	function eliminar_serveis_congelats() {
+		$servicios = $this->servei->get_serveis(null);
+		$data_actual = date("Y-m-d");
+		foreach($servicios as $servicio) {
+			$data_fi = date($servicio->data_fi);
+			if ($data_actual>$data_fi) {
+				$this->servei->congelarServei($servicio->id);
+			}
+		}
+	}	
 
 }
 
