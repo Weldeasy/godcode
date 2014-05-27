@@ -38,6 +38,7 @@ class Sistema extends CI_Controller {
 				$data_congelacio = strtotime($data_congelacio);
 				$data_actual = strtotime($data_actual);
 				$diff = $data_congelacio - $data_actual;
+				var_dump($diff);
 			}
 			/*if ($data_actual>$data_fi) {
 				$this->servei->congelarServei($servicio->id);
