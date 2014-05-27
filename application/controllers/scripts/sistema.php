@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Congelar_servicios extends CI_Controller {
+class Sistema extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -9,7 +9,7 @@ class Congelar_servicios extends CI_Controller {
 		$this->load->model('administrador');
 	}
 
-	function index() {
+	function congelar_serveis() {
 		$servicios = $this->servei->get_serveis_noConsumit(null);
 		$max_dies_congetal = $this->administrador->getMax_dies_congelat()->max_dias_congelado;
 		$data_actual = date("Y-m-d");
