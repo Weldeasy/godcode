@@ -42,12 +42,9 @@ class Sistema extends CI_Controller {
 				var_dump($diff);*/
 				$t++;
 			}
-			echo $t;
-			/*if ($data_actual>$data_fi) {
-				$this->servei->congelarServei($servicio->id);
-			}*/
-		echo "</pre>";
 		}
+		echo "</pre>";
+		echo $t;
 	}	
 
 }
