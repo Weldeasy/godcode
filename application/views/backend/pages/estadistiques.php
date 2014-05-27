@@ -6,6 +6,8 @@
 <div id="mitja">
 	<h2>Serveis per usuari: </h2>
 	<p><?php echo $mitja; ?></p>
+</div>
+<div id="mitja">
 	<h2>Serveis consumits: </h2>
 	<p><?php echo $consumits; ?></p>
 </div>
