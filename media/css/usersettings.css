@@ -25,14 +25,14 @@ a::visited {
 a:link {
 	text-decoration:none;
 	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color:white;
+    font-size: 16px;
+    color:white;
 }
 a:active {
 	text-decoration:none;
-font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color:white;
+	font-family: 'Open Sans', sans-serif;
+ 	font-size: 16px;
+  	color:white;
 }
 a:hover {
 	text-decoration:none;
@@ -140,6 +140,7 @@ a:focus {
 	line-height:25px;
 	background-repeat:no-repeat;
 	display:none;
+	color:black;
 }
 #user_nav .option:hover {
 	background-color:gold;
@@ -204,5 +205,8 @@ label > img:hover {
 }
 .checkedd {
 	border-bottom:2px solid #05B5F5;
+}
+#linkMap a{
+	color: grey;
 }
 /*FI PERFIL*/

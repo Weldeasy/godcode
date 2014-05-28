@@ -136,7 +136,8 @@ class User_settings extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
 			  'cp' => $row->cp,
-			  'poblacion' => $pueblo->poblacion
+			  'poblacion' => $pueblo->poblacion,
+			  'data_congelacio' => $row->data_congelacio
 			);
 			$html = $html.$this->load->view('frontend/vista_servicio_user', $data2, true);
 		}
@@ -192,7 +193,18 @@ class User_settings extends CI_Controller {
 	$data['panel_user']=$this->load->view('frontend/user_settings/eliminat_servei',NULL,TRUE);
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
-  
+  function congelarServei($id_servei){
+  	$this->servei->congelarServei($id_servei);
+  	$data=$this->data;
+	$data['panel_user']=$this->load->view('frontend/user_settings/congelarServeiFet',NULL,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+  }
+  function descongelarServei($id_servei){
+  	$this->servei->descongelarServei($id_servei);
+  	$data=$this->data;
+	$data['panel_user']=$this->load->view('frontend/user_settings/descongelarServeiFet',NULL,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+  }
   
   //function validar_editar_servei() {
 	function validar_alta_servicio() {
