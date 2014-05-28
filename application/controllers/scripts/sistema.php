@@ -71,6 +71,7 @@ class Sistema extends CI_Controller {
 	function enviar_ofertas_mail() {
 		//$usuarios = $this->user->get_inactius();
 		$usuarios = $this->user->get_users();
+		echo "<pre>";
 		var_dump($usuarios);
 		//Enviem correu confirmacio compte
 		/*$config = array(
@@ -103,6 +104,7 @@ class Sistema extends CI_Controller {
 			return true;
 		else
 			show_error($this->email->print_debugger());*/
+		echo "</pre>";
 	}
 	
 }
