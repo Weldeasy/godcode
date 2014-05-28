@@ -67,11 +67,12 @@ class Inicio extends CI_Controller {
                         $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
                 break;
               case '3': //sino 3=congelat
+						$this->session->unset_userdata('logged_in');
                         $login_view = 'login_form';
                         $vista='congelat';
                 break;
               case '4': //4 = ha de verificar el correu
-                
+					  $this->session->unset_userdata('logged_in');
                       $login_view = 'login_form';
                       $vista='verifica';
                 break;
