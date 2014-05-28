@@ -83,8 +83,6 @@ class Inicio extends CI_Controller {
     
         }else{//si no existeix la sessio
           $login_view='login_form';
-		  if (isset($this->session->flashdata('logine')))
-			$this->data['email_login'] = isset($this->session->flashdata('logine')->email_login;
         }
         $this->contingut($login_view,$vista,$data);//si crida la funcio contingut
   }
