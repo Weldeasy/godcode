@@ -59,8 +59,7 @@
 
       <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
             <h3>Missatge:</h3>
-            <textarea id='xatM' name='missatge'>
-            </textarea>
+            <textarea id='xatM' name='missatge'></textarea>
               <input type='hidden' value='<?= $id_servei; ?>' name='id_servei'/>
               <input type='hidden' value='<?= $email; ?>' name='email_user'/>
               <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>
