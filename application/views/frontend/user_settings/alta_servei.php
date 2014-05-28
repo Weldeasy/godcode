@@ -71,7 +71,7 @@
 			<input type="text" name="nom" value="<?php echo set_value('nom'); ?>"  />
 			<?php echo form_error('nom'); ?><br />
 			Descripcion:
-			<input type="text" name="descripcio" value="<?php echo set_value('descripcio'); ?>"  />
+			<input type="text" name="descripcio" rows='30' value="<?php echo set_value('descripcio'); ?>"  />
 			<?php echo form_error('descripcio'); ?><br />
 			Precio:
 			<input type="number" name="preu" value="<?php echo set_value('preu'); ?>"  />
