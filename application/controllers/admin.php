@@ -220,7 +220,7 @@ class Admin extends CI_Controller {
 	}
 	
 	function getMax_dies_noConsumit_control() {
-		$max_dies_noConsumit=$this->adm->getMax_dies_noConsumit()->max_dias_noConsumit ;
+		$max_dies_noConsumit=$this->adm->getMax_dies_noConsumit()->max_dies_noConsumit ;
 		return $max_dies_noConsumit;
 	}
 	/**
