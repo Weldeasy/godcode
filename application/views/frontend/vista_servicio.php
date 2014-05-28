@@ -36,9 +36,8 @@
 			<div class="servei_actions">
 			<?php 
               /*Surtirà butò si usuari està loguejat i el user no pot sol·licitar si mateix i no sigui admin*/
-			  if($logued) {
-				echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-			  }
+			  if(!$logued) {
+			  
 			  //if($logued) {
               if(isset($email) && ($user_oferit_servei!=$email) && $es_admin==0){
           ?>
@@ -46,7 +45,7 @@
               <input type='submit' value='Solicitar' onclick="solicitut()" class="buttonform"/>
           </td>
 
-          <?php } //}?>
+          <?php } }?>
 		</div>
 	</div>
 	<div id="formSolicitut" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
