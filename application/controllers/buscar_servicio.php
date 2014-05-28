@@ -32,6 +32,7 @@ class Buscar_servicio extends CI_Controller {
 			);
 			$data2['alert'] = false;
 			$session_data = $this->session->userdata('logged_in');
+			$data['email'] = $session_data['email'];
 			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
 				$data2['alert'] = true;
 			}
