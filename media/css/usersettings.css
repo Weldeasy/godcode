@@ -95,8 +95,7 @@ a:focus {
 	border-left:1px solid white;
 }
 #user:hover {
-	background-color:white;
-	color:grey;
+	background-color:grey;
 	cursor:pointer;
 }
 #user:focus {
