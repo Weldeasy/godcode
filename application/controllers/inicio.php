@@ -22,10 +22,10 @@ class Inicio extends CI_Controller {
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
 	
-	if (!empty($this->session->login('email_login')))
+	/*if (!empty($this->session->login('email_login')))
 		$this->data['email_login'] = $errors_login['email_login'];
 	if (!empty($this->session->login('password_login')))
-		$this->data['password_login'] = $errors_login['password_login'];
+		$this->data['password_login'] = $errors_login['password_login'];*/
 	
     if($session_data){
       $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
