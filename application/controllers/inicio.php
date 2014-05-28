@@ -295,7 +295,7 @@ class Inicio extends CI_Controller {
         }
         
         $servei=$this->user->servei_user($email_user);
-
+        var_dump($servei);
         $html="";
 
         if($servei!=null){
@@ -328,7 +328,7 @@ class Inicio extends CI_Controller {
         }else{
             $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_servei',NULL,TRUE);
         }
-        $this->load->view('frontend/inicio', $data);
+      //  $this->load->view('frontend/inicio', $data);
       }else{
          redirect('inicio', 'refresh');
       }
