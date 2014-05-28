@@ -33,7 +33,8 @@ class Sistema extends CI_Controller {
 			$diff = ($data_actual - $data_inici)/3600/24;
 			if ($diff>=$max_dies_noConsumit) {
 				//$this->servei->congelarServei($servicio->id);
-				echo "<br>".$servicio->id;
+				
+				echo "<br>".$servicio->id."/".$diff;
 			}
 		}
 	}
