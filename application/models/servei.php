@@ -18,7 +18,9 @@ Class Servei extends CI_Model {
 	 }
 	 
 	 public function eliminar_servicio($id) {
-		$query = $this->db->query('DELETE FROM servei WHERE id ='.$id);
+		$this->db->query('DELETE FROM servei WHERE id ='.$id);
+		$this->db->query('DELETE FROM servei_consumit WHERE id_servei ='.$id);
+		$this->db->query('DELETE FROM solicitut_servei WHERE servei_id ='.$id);
 	 }
 	 
 	 
