@@ -9,7 +9,11 @@ class Sistema extends CI_Controller {
 		$this->load->model('administrador');
 	}
 	
-	
+	function index() {
+		$this->congelar_serveis_caducats();
+		$this->congelar_serveis_noConsumits();
+		$this->eliminar_serveis_congelats();
+	}
 	/**
 	* Este metodo congela los servicios que han superado la data_fi
 	*/
