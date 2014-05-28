@@ -26,7 +26,7 @@ h1{
 	background-image:url('../images/frontend/logofinal.png');
 	background-repeat:no-repeat;
 	text-align:right;
-	padding-left:25px;
+	padding-left:45px;
 }
 #cssmenu ul {
   background-color: #05b5f5 ;
@@ -62,6 +62,10 @@ padding-left: 10px;
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
     -webkit-box-sizing:border-box; 
+<<<<<<< HEAD
+=======
+    height: 50px; 
+>>>>>>> 899d8cb1c3c44e342f0e3e6af1f682fce6e395c7
 }  
 #cssmenu a#pull {  
     display: none;

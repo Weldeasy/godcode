@@ -14,7 +14,25 @@ a:visited {
 }
 a::visited {
 	text-decoration:none;
+<<<<<<< HEAD
   color:black;
+=======
+	font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color:white;
+}
+a:link {
+	text-decoration:none;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color:white;
+}
+a:active {
+	text-decoration:none;
+	font-family: 'Open Sans', sans-serif;
+ 	font-size: 16px;
+  	color:white;
+>>>>>>> 899d8cb1c3c44e342f0e3e6af1f682fce6e395c7
 }
 #a_user {
 	text-decoration:none;
@@ -115,6 +133,7 @@ a::visited {
 	line-height:25px;
 	background-repeat:no-repeat;
 	display:none;
+	color:black;
 }
 #user_nav .option:hover {
 	background-color:gold;
@@ -182,5 +201,8 @@ label > img:hover {
 }
 .checkedd {
 	border-bottom:2px solid #05B5F5;
+}
+#linkMap a{
+	color: grey;
 }
 /*FI PERFIL*/
