@@ -22,7 +22,7 @@ class Inicio extends CI_Controller {
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
 
-   // $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
+    $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
   }
   /**
    * [contingut es carrega la pagina principal, amb les vistes i les dades]
