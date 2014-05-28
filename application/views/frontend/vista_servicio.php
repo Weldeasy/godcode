@@ -8,6 +8,7 @@
          of: window
       });
   }
+
 </script>
 <div class="servicio_vista">
 	<div class="foto_servicio">
@@ -53,8 +54,9 @@
           <?php } }?>
 		</div>
 	</div>
-	<div id="formSolicitut2" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
+	<div id="formSolicitut2" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px;">
       <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
+             <h3>Missatge:</h3>
             <textarea size='30' name='missatge'></textarea>
             <input type='hidden' value='<?= $id; ?>' name='id_servei'/>
               <input type='hidden' value='<?= $email; ?>' name='email_user'/>
