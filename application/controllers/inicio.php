@@ -21,8 +21,6 @@ class Inicio extends CI_Controller {
     $this->data['email'] = $session_data['email'];
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
-
-   // $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
   }
   /**
    * [contingut es carrega la pagina principal, amb les vistes i les dades]
@@ -71,13 +69,11 @@ class Inicio extends CI_Controller {
               case '3': //sino 3=congelat
                         $login_view = 'login_form';
                         $vista='congelat';
-                        redirect('logout', 'refresh');
                 break;
               case '4': //4 = ha de verificar el correu
                 
                       $login_view = 'login_form';
                       $vista='verifica';
-                        redirect('logout', 'refresh');
                 break;
             }
     
@@ -351,13 +347,21 @@ class Inicio extends CI_Controller {
           }else{
                 $login_view= 'login_form';
           }
-          $puntsServei=$this->servei->getPreuServei($id_servei)->preu;   
-          $saldoUser=$this->user->getSaldoUser($email_user)->saldo;  
-          $comprovaMinimServeiOfert=$this->servei->comprovaServeiOferts($email_user)->servei_minim_oferit;
+          $puntsServeiBD=$this->servei->getPreuServei($id_servei);   
+          $saldoUserBD=$this->user->getSaldoUser($email_user);  
+          $comprovaMinimServeiOfertBD=$this->servei->comprovaServeiOferts($email_user);
 
           //els punts del servei i els punts del usuari, comparem-les
           //comprova si usuari té un servei oferit
-    
+          foreach($puntsServeiBD as $row) {
+            $puntsServei=$row->preu;
+          }   
+          foreach ($saldoUserBD as $key) {
+            $saldoUser=$key->saldo;
+          }
+          foreach ($comprovaMinimServeiOfertBD as $key) {
+            $comprovaMinimServeiOfert=$key->servei_minim_oferit;
+          } 
 
           //Es solicita
           //Quan es loguejat + no solicitar si mateix //comprovat en altre funcio, serveis_detail(controllador)
