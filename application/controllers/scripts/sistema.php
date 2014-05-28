@@ -94,8 +94,8 @@ class Sistema extends CI_Controller {
 
 			$pueblos = $this->lugares->get_pueblos_by_idProvincia($user->provincia);
 			foreach($pueblos as $pueblo) {
-				$servicios = $servicios.$this->servei->busca_serveis($pueblo->postal, '1970-01-01', '1970-01-01', 0);
-
+				$servicios = $this->servei->busca_serveis($pueblo->postal, '1970-01-01', '1970-01-01', 0);
+				var_dump($servicios);
 			}
 			
 			/*$this->email->set_newline("\r\n");
@@ -111,7 +111,6 @@ class Sistema extends CI_Controller {
 				show_error($this->email->print_debugger());*/
 			
 		}
-		var_dump($servicios);
 		echo "</pre>";
 	}
 	
