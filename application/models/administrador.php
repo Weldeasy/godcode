@@ -150,7 +150,10 @@ Class Administrador extends CI_Model{
 		$query=$this->db->query('SELECT max_dias_congelado  FROM banc_del_temps');
 		return $query->row();	
 	}
-
+	function getMax_dies_noConsumit(){
+		$query=$this->db->query('SELECT max_dies_noConsumit  FROM banc_del_temps');
+		return $query->row();	
+	}
 	/**
 	 * [getLlistarDenuncies total denuncia]
 	 * @return [objecte] [total denuncia]
@@ -176,6 +179,16 @@ Class Administrador extends CI_Model{
 	
 	function setMax_dies_congelat($max_dies_congelat){
 		$query = $this->db->query('UPDATE banc_del_temps SET max_dias_congelado ="'.$max_dies_congelat.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;	
+	}
+	
+	function setMax_dies_noConsumit($max_dies_noConsumit){
+		$query = $this->db->query('UPDATE banc_del_temps SET max_dies_noConsumit ="'.$max_dies_noConsumit.'"');
 		if($query){
 			$resultat=true;
 		}else{

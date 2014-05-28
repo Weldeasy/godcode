@@ -964,6 +964,10 @@ font-family: 'Open Sans', sans-serif;
 }
 #xatM{
   margin: 1.1111111640930176px;
-width: 333px;
-height: 44px;
+  width: 333px;
+  height: 44px;
 }
+.imatge_perfil {border:4px inset #05B5F5; margin-left:20px; margin-top:20px;float:left;}
+.imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
+.imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}
+

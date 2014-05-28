@@ -48,6 +48,7 @@ class Admin extends CI_Controller {
 		if($ruta=='configSaldo'){//quan tenim la vista configsaldo, pasem el saldo minim.
 			$data['saldo_minim_BD']=$this->getSaldoMinim_control();
 			$data['max_dies_congelat']=$this->getMax_dies_congelat_control();
+			$data['max_dies_noConsumit']=$this->getMax_dies_noConsumit_control();
 		}
 
 		$data['panel_admin']=$this->load->view('backend/pages/'.$ruta,$data,TRUE);
@@ -218,6 +219,10 @@ class Admin extends CI_Controller {
 		return $max_dies_congelat;
 	}
 	
+	function getMax_dies_noConsumit_control() {
+		$max_dies_noConsumit=$this->adm->getMax_dies_noConsumit()->max_dies_noConsumit ;
+		return $max_dies_noConsumit;
+	}
 	/**
 	 * [setSaldoMinim_control actualitzat el saldo minim]
 	 */
@@ -230,6 +235,12 @@ class Admin extends CI_Controller {
 	function setMax_dies_congelat() {
 		$max_dies_congelat=mysql_real_escape_string($_POST['max_dies_congelat']);;	
 		if($this->adm->setMax_dies_congelat($max_dies_congelat)){
+			$this->configSaldo();
+		}	
+	}
+	function setMax_dies_noConsumit() {
+		$max_dies_noConsumit=mysql_real_escape_string($_POST['max_dies_noConsumit']);;	
+		if($this->adm->setMax_dies_noConsumit($max_dies_noConsumit)){
 			$this->configSaldo();
 		}	
 	}

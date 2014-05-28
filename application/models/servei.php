@@ -17,6 +17,12 @@ Class Servei extends CI_Model {
 		return $query->result();
 	 }
 	 
+	 public function eliminar_servicio($id) {
+		$this->db->query('DELETE FROM servei WHERE id ='.$id);
+		$this->db->query('DELETE FROM servei_consumit WHERE id_servei ='.$id);
+		$this->db->query('DELETE FROM solicitut_servei WHERE servei_id ='.$id);
+	 }
+	 
 	 
 	 public function get_serveis_noConsumit() {
 		$query = $this->db->query('SELECT * FROM servei s WHERE s.id NOT IN (SELECT s.id FROM servei s, servei_consumit sc WHERE s.id = sc.id_servei)');

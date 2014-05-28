@@ -1,4 +1,3 @@
-
 <div id="contenido_principal">
  <form class="form-container" action="<?= base_url()?>index.php/inicio/validar_contacte" method='post'>
 	<div class="form-title"><h2>Contacte</h2></div>

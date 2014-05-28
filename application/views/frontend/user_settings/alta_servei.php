@@ -17,7 +17,7 @@
 		<script src="<?= base_url()?>media/js/jquery-ui-1.10.4.js"></script>
 		
 		<script>
-		window.onload = function(){
+			window.onload = function(){
 				$("#disp_horaria").ionRangeSlider({
 					min: 0,
 					max: 24,
@@ -31,15 +31,6 @@
 				
 			}
 		</script>
-<style>
-	.page_wrapper {
-		overflow:auto;
-		width:100%;
-	}
-	#slider-hores {
-		width:350px;
-	}
-</style>
 	</head>
 	<body>
 		
@@ -113,14 +104,14 @@
 					<td><input type="checkbox" name="days[]" <?php if ( (isset($_POST['days'])) && (in_array('D', $_POST['days'])) ) print 'checked'; ?> value="D" /></td>
 				</tr>
 			</table>
-			<?php echo form_error('days'); ?><br />
+			<?= form_error('days')?><br />
 			
 				
-			<?php echo form_dropdown('categoria', $categorias, @set_value('categoria')); ?><br />
-			<?php echo form_error('categoria'); ?><br /><br />
+			<?= form_dropdown('categoria', $categorias, @set_value('categoria'))?><br />
+			<?= form_error('categoria')?><br /><br />
 			CP:
-			<input type="text" name="cp" value="<?php echo set_value('cp'); ?>" />
-			<?php echo form_error('cp'); ?><br />
+			<input type="text" name="cp" value="<?= set_value('cp')?>" />
+			<?= form_error('cp')?><br />
 			<input type="submit" name="submit" value="Crear Servicio" />
 		</div>
 		<div id="page-wrapper">

@@ -8,6 +8,13 @@ Class User extends CI_Model
 		$this->load->database();
         $this->load->model(array('banctemps'));
     }
+	
+	function get_users() {
+		$this->db->select('*');
+		$this->db->from('usuari');
+		$query = $this->db->get();
+		return $query->result();
+	}
     function getXat($id_solicitut){
     	try {
 			$data = $this->db->query("SELECT * FROM missatge WHERE id_solicitut='".$id_solicitut."'");
@@ -54,6 +61,8 @@ Class User extends CI_Model
 			return;
 		}
 	}
+	
+	
 	public function enviaMissatge($id_emisor,$id_receptor,$missatge,$dataAvui,$id_solicitut){
 		$this->db->insert("missatge", array(
 			"id"=>NULL,
@@ -211,7 +220,7 @@ Class User extends CI_Model
 	}
 	 
 	 public function add_user($imagen, $code) {
-		//FER TRANSACTION
+		//NO
 		$email_user = $this->input->post("email", TRUE);
 		$this->db->insert("usuari", array(
 			"email"=>$email_user,
