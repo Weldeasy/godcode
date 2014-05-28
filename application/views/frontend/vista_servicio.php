@@ -1,9 +1,3 @@
-<script type="text/javascript">
-
-  function solicitut(){
-        $('#formSolicitut').dialog('open').dialog('setTitle','Solicitut');
-  }
-</script>
 <div class="servicio_vista">
 	<div class="foto_servicio">
 		<img src="<?=base_url()?>media/images/categorias/<?=$categoria?>.jpg" />
