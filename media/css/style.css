@@ -22,6 +22,12 @@ h1{
   height: 53px;
   z-index: 9999; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
+#cssmenu .logo {
+	background-image:url('../images/frontend/logofinal.png');
+	background-repeat:no-repeat;
+	text-align:right;
+	padding-left:25px;
+}
 #cssmenu ul {
   background-color: #05b5f5 ;
   height: 53px;
