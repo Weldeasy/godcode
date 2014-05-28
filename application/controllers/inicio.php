@@ -295,7 +295,7 @@ class Inicio extends CI_Controller {
         }
         
         $servei=$this->user->servei_user($email_user);
-        var_dump($servei);
+
         $html="";
 
         if($servei!=null){
@@ -324,11 +324,11 @@ class Inicio extends CI_Controller {
               $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
             }
             $data3['detail_servei']=$html;
-           // $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailservei',$data3,TRUE);
+            $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailservei',$data3,TRUE);
         }else{
-            //$data['contingut']=$this->load->view('frontend/panel_inici/no_troba_servei',NULL,TRUE);
+            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_servei',NULL,TRUE);
         }
-      //  $this->load->view('frontend/inicio', $data);
+        $this->load->view('frontend/inicio', $data);
       }else{
          redirect('inicio', 'refresh');
       }
