@@ -23,8 +23,10 @@ class Inicio extends CI_Controller {
     $this->data['es_admin'] = $session_data['es_admin'];
 	
 	$errors_login = $this->session->userdata('logine');
-	if ($errors_login)
-		$this->data['email_login'] = $errors_login;
+	if ($errors_login['email_login'])
+		$this->data['email_login'] = $errors_login['email_login'];
+	if ($errors_login['password_login'])
+		$this->data['password_login'] = $errors_login['password_login'];
 	
     if($session_data){
       $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
