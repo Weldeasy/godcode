@@ -1,3 +1,9 @@
+<script type="text/javascript">
+
+  function solicitut(){
+        $('#formSolicitut').dialog('open').dialog('setTitle','Solicitut');
+  }
+</script>
 <div class="servicio_vista">
 	<div class="foto_servicio">
 		<img src="<?=base_url()?>media/images/categorias/<?=$categoria?>.jpg" />
@@ -34,6 +40,16 @@
 			<?php } ?>
 		</div>
 	</div>
+	<div id="formSolicitut" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
+      <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
+            <textarea size='30' name='missatge'>
+            </textarea>
+            <input type='hidden' value='<?= $id; ?>' name='id_servei'/>
+              <input type='hidden' value='<?= $email; ?>' name='email_user'/>
+              <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>
+            <input type='submit' value='Solicitar' class="buttonform"/>
+      </form>
+    </div>
 </div>
 <hr />
 
