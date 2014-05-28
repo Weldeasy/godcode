@@ -34,12 +34,12 @@ class Sistema extends CI_Controller {
 		foreach($servicios as $servicio) {
 			$data_inici = strtotime($servicio->data_inici);
 			$diff = ($data_actual - $data_inici)/3600/24;
-			var_dump($dia_inici);
+			var_dump($data_inici);
 			if ($diff>=$max_dies_noConsumit) {
 				//$this->servei->congelarServei($servicio->id);
 			}
 		}
-				echo "</pre>";
+		echo "</pre>";
 	}
 	
 	
