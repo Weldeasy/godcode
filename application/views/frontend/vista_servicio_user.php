@@ -39,3 +39,4 @@
 		<?php } ?>
 	</div>
 </div>
+<p>&nbsp;</p>
