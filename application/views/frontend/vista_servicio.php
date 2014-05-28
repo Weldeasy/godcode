@@ -1,7 +1,12 @@
 <script type="text/javascript">
 
-  function solicitut(){
-        $('#formSolicitut').dialog('open').dialog('setTitle','Solicitut');
+  function solicitut2(){
+        $('#formSolicitut2').dialog('open').dialog('setTitle','Solicitut');
+		$('#formSolicitut2').position({
+         my: "center",
+         at: "center",
+         of: window
+      });
   }
 </script>
 <div class="servicio_vista">
@@ -42,16 +47,15 @@
               if(isset($email) && ($user_oferit_servei!=$email) && $es_admin==0){
           ?>
           <td>
-              <input type='submit' value='Solicitar' onclick="solicitut()" class="buttonform"/>
+              <input type='submit' value='Solicitar' onclick="solicitut2()" class="buttonform"/>
           </td>
 
           <?php } }?>
 		</div>
 	</div>
-	<div id="formSolicitut" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
+	<div id="formSolicitut2" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
       <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
-            <textarea size='30' name='missatge'>
-            </textarea>
+            <textarea size='30' name='missatge'></textarea>
             <input type='hidden' value='<?= $id; ?>' name='id_servei'/>
               <input type='hidden' value='<?= $email; ?>' name='email_user'/>
               <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>
