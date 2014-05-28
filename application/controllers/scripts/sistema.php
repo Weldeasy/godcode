@@ -24,6 +24,12 @@ class Sistema extends CI_Controller {
 		}
 	}
 	
+	function congelar_serveis_noConsumits() {
+		$servicios = $this->servei->get_serveis_noConsumit();
+		
+	}
+	
+	
 	/**
 	* Este metodo elimina los servicios congelados que han superado el tiempo determinado por el admin
 	*/
@@ -45,7 +51,7 @@ class Sistema extends CI_Controller {
 		}
 		echo "</pre>";
 	}	
-
+	
 }
 
 ?>

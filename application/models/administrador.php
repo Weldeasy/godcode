@@ -185,5 +185,15 @@ Class Administrador extends CI_Model{
 		return $resultat;	
 	}
 	
+	function setMax_dies_noConsumit($max_dies_noConsumit){
+		$query = $this->db->query('UPDATE banc_del_temps SET max_dies_noConsumit ="'.$max_dies_noConsumit.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;	
+	}
+	
 }
 ?>
