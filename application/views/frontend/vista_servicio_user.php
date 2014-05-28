@@ -31,7 +31,7 @@
 		</div>
 		<div class="servei_actions">
 		<a href="<?=base_url()?>index.php/user_settings/editar_servei/<?=$id?>"><input type="button" value="Editar" /></a>
-		<input type="button" value="Eliminar" />
+		<a href="<?=base_url()?>index.php/user_settings/eliminarServei/<?=$id?>"><input type="button" value="Eliminar" /></a>
 		<input type="button" value="Congelar" />
 	</div>
 </div>

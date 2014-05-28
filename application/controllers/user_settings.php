@@ -185,6 +185,13 @@ class User_settings extends CI_Controller {
 	}
 	$this->load->view('frontend/user_settings/alta_servei', $this->data);
   }
+
+  function eliminarServei($id_servei){
+  	$this->servei->eliminar_servicio($id_servei);
+  	$data=$this->data;
+	$data['panel_user']=$this->load->view('frontend/user_settings/eliminat_servei',NULL,TRUE);
+	$this->load->view('frontend/user_settings/inicio', $data);
+  }
   
   
   //function validar_editar_servei() {
