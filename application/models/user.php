@@ -8,6 +8,8 @@ Class User extends CI_Model
 		$this->load->database();
         $this->load->model(array('banctemps'));
     }
+	
+	
     function getXat($id_solicitut){
     	try {
 			$data = $this->db->query("SELECT * FROM missatge WHERE id_solicitut='".$id_solicitut."'");
@@ -45,6 +47,8 @@ Class User extends CI_Model
 			return;
 		}
 	}
+	
+	
 	public function enviaMissatge($id_emisor,$id_receptor,$missatge,$dataAvui,$id_solicitut){
 		$this->db->insert("missatge", array(
 			"id"=>NULL,

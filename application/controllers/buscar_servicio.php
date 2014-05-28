@@ -28,7 +28,7 @@ class Buscar_servicio extends CI_Controller {
 			  'horas' => explode(";", $row->disp_horaria),
 			  'days' => explode(";", $row->disp_dies),
 			  'categoria' => $row->categoria,
-			  'usuari' => $row->usuari,
+			  'id_user' => $row->usuari,
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion,
 			  'user_oferit_servei' => $usuari->email,
