@@ -152,7 +152,7 @@ Class Administrador extends CI_Model{
 		return $query->row();	
 	}
 	function getMax_dies_noConsumit(){
-		$query=$this->db->query('SELECT max_dias_noConsumit  FROM banc_del_temps');
+		$query=$this->db->query('SELECT max_dies_noConsumit  FROM banc_del_temps');
 		return $query->row();	
 	}
 	/**
