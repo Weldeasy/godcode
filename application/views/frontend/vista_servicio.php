@@ -33,12 +33,6 @@
 					<td <?php if ( (isset($days)) && (!in_array('D', $days)) ) print 'style="background-color:#FA5858;"'; ?> value="L" >D</td>
 				</tr>
 			</table>
-
-			<div class="servei_actions">
-			<?php if($alert) { ?>
-			<input type="button" value="Solicitar" />
-			<?php } ?>
-		</div>
 	</div>
 	<div id="formSolicitut" class="easyui-dialog" title="Missatge" data-options="iconCls:'icon-save'" closed="true" style="width:400px;height:200px;padding:10px">
       <form id='formulariservei' method='post' action="<?=base_url()?>index.php/inicio/verifica_solicitut">
