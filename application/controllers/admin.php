@@ -245,7 +245,7 @@ class Admin extends CI_Controller {
 		}	
 	}
 	function estadistiques(){
-		/*$this->gcharts->load('ColumnChart');
+		$this->gcharts->load('ColumnChart');
         $zonas= $this->adm->serveisPerProvincia();
         
         $dataTable = $this->gcharts->DataTable('Provincia');
@@ -267,7 +267,7 @@ class Admin extends CI_Controller {
         $data['grafica'] = $this->gcharts->ColumnChart('Provincia');
         $data['panel_admin'] = $this->load->view('backend/pages/estadistiques', $data, TRUE);
         $data['email'] = $this->session_data['email'];
-        $this->load->view('backend/admin', $data);*/
+        $this->load->view('backend/admin', $data);
         
 }
 
