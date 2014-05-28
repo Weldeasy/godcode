@@ -89,10 +89,14 @@ class Sistema extends CI_Controller {
 		);
 		
 		$this->load->library('email', $config);
+		$servicios = null;
 		foreach($usuarios as $user) {
 
 			$pueblos = $this->lugares->get_pueblos_by_idProvincia($user->provincia);
-			var_dump($pueblos);
+			foreach($pueblos as $pueblo) {
+				$servicios = $servicios.$this->servei->busca_serveis($pueblos->postal, '1970-01-01', '1970-01-01', 0);
+				
+			}
 			
 			/*$this->email->set_newline("\r\n");
 			$this->email->from('gcbtv0@gmail.com', 'Oferta banc del temps');
@@ -107,6 +111,7 @@ class Sistema extends CI_Controller {
 				show_error($this->email->print_debugger());*/
 			
 		}
+		var_dump($servicios);
 		echo "</pre>";
 	}
 	
