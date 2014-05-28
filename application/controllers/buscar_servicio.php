@@ -42,7 +42,7 @@ class Buscar_servicio extends CI_Controller {
 
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
-		$data['saldo'] = $usuario->saldo;
+		$data['saldo'] = $usuari->saldo;
 		
 		$data['html'] = $html;
 		$data['login_form'] = "frontend/login_form";
