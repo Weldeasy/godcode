@@ -91,13 +91,15 @@ class Sistema extends CI_Controller {
 		$this->load->library('email', $config);
 		$servicios = null;
 		foreach($usuarios as $user) {
-
+		$txt = "Esta es la lista de servicios cercanos a ti:<br /><ul>";
 			$pueblos = $this->lugares->get_pueblos_by_idProvincia($user->provincia);
 			foreach($pueblos as $pueblo) {
 				$servicios = $this->servei->busca_serveis($pueblo->postal, '1970-01-01', '1970-01-01', 0);
-				var_dump($servicios);
+				foreach($servicios as $servicio) {
+					$txt .= "<li>test</li>"
+				}
 			}
-			
+			$txt .= "</ul>";
 			/*$this->email->set_newline("\r\n");
 			$this->email->from('gcbtv0@gmail.com', 'Oferta banc del temps');
 			$this->email->to($user->email);
@@ -111,6 +113,7 @@ class Sistema extends CI_Controller {
 				show_error($this->email->print_debugger());*/
 			
 		}
+		echo $txt;
 		echo "</pre>";
 	}
 	
