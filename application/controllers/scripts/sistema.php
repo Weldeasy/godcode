@@ -26,16 +26,16 @@ class Sistema extends CI_Controller {
 	
 	function congelar_serveis_noConsumits() {
 		$servicios = $this->servei->get_serveis_noConsumit();
-		$data_actual = strtotime(date("Y-m-d"));
+		$data_actual = date("Y-m-d");
+		$data_actual = strtotime($data_actual);
 		$max_dies_noConsumit =  $this->administrador->getMax_dies_noConsumit()->max_dies_noConsumit;
 		foreach($servicios as $servicio) {
-			$data_inici = strtotime(date($servicio->data_inici));
+			$data_inici = date($servicio->data_inici);
+			$data_inici = strtotime($data_inici);
 			$diff = ($data_actual - $data_inici)/3600/24;
-			echo $data_actual - $data_inici;
+			echo $diff;
 			if ($diff>=$max_dies_noConsumit) {
 				//$this->servei->congelarServei($servicio->id);
-				
-				echo "<br>".$servicio->id;
 			}
 		}
 	}
