@@ -18,14 +18,14 @@ class Buscar_servicio extends CI_Controller {
 			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
-			  'nom_servei' => $row->nom,
-			  'descripcio_servei' => $row->descripcio,
+			  'nom' => $row->nom,
+			  'descripcio' => $row->descripcio,
 			  'preu' => $row->preu,
 			  'data_inici' => $row->data_inici,
 			  'data_fi' => $row->data_fi,
 			  'horas' => explode(";", $row->disp_horaria),
 			  'days' => explode(";", $row->disp_dies),
-			  'nom_categoria' => $row->categoria,
+			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
@@ -36,7 +36,7 @@ class Buscar_servicio extends CI_Controller {
 				$data2['alert'] = true;
 			}
 
-			$html = $html.$this->load->view('frontend/panel_inici/detailusuari', $data2, true);
+			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 		}
 	
 		
