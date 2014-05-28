@@ -36,7 +36,7 @@ class Buscar_servicio extends CI_Controller {
 				$data2['alert'] = true;
 			}
 
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+			$html = $html.$this->load->view('frontend/panel_inici/detailusuari', $data2, true);
 		}
 	
 		
