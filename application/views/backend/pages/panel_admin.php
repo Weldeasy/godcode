@@ -106,7 +106,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-7">
-                      Parametritzar el saldo minim
+                      Configurar el sistema
                     </div>
                     <div class="col-xs-5 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
