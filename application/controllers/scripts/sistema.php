@@ -96,22 +96,19 @@ class Sistema extends CI_Controller {
 			foreach($pueblos as $pueblo) {
 				$servicios = $this->servei->busca_serveis($pueblo->postal, '1970-01-01', '1970-01-01', 0);
 				foreach($servicios as $servicio) {
-					$txt .= "<li>test</li>";
+					$txt .= "<li>Servicio de ".$servicio->nom." por solo ".$servicio->preu." puntos</li>";
 				}
 			}
 			$txt .= "</ul>";
-			/*$this->email->set_newline("\r\n");
+			$this->email->set_newline("\r\n");
 			$this->email->from('gcbtv0@gmail.com', 'Oferta banc del temps');
 			$this->email->to($user->email);
 			$this->email->subject('Oferta serveis | Banc del temps');
-			$this->email->message(
-				"<h1>Confirmaci&oacute; registre banc del temps</h1><p>Hola ".$this->input->post("nombre", TRUE).",</p><p>Et donem la benvinguda al banc del temps, aquests s&oacute;n els teus identificadors d'acces:</p><p><ul><li><b>Usuari:</b>&nbsp;".$this->input->post("email", TRUE)."</li><li><b>Password:</b>&nbsp;".$this->input->post("pass", TRUE)."</li></ul></p><p>Per confirmar el registre accedeix al seguent link:<br/><a href='".base_url()."index.php/formularioregistro/confirmar/".$code."/".$this->input->post("email", TRUE)."'>CONFIRMAR REGISTRE</a></p><p>Si tens algun problema o dubte pots contactar amb el nostre suport tecnic: <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a></p>"
-			);
+			$this->email->message($txt);
 			if ($this->email->send())
 				return true;
 			else
-				show_error($this->email->print_debugger());*/
-			echo $txt;
+				show_error($this->email->print_debugger());
 		}
 		echo "</pre>";
 	}
