@@ -841,6 +841,19 @@ margin-right: 10px;
   color:red;
   font-size:14px;
 }
+.buttonPunts{
+  position: absolute;
+  margin-top: -17px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12pt;
+  color: #05b5f5;
+  text-align: center;
+  border: 0px;
+  border-radius: 4px;
+  margin-left: -100px;
+  background-color: white; 
+}
 .buttonform{
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -948,4 +961,9 @@ font-family: 'Open Sans', sans-serif;
    -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
    box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
    padding:8px;
+}
+#xatM{
+  margin: 1.1111111640930176px;
+width: 333px;
+height: 44px;
 }

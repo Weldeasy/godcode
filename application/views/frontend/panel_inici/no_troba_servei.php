@@ -3,4 +3,7 @@
 	<div class='un_info_usuari'>
             <p>No s'ha trobat cap servei buscats</p>
     </div>
+    <div class="tornarButo">
+    <a href="<?=base_url()?>index.php/inicio/cercarusuari"><input type='submit' value='Tornar' class="buttonform" /></a>
+    </div>
 </div>

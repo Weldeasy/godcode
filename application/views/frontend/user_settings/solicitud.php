@@ -19,7 +19,7 @@
 
 function xat(){
     $('#formXat').dialog('open').dialog('setTitle','Xat');
-	$('#denuncia').position({
+	$('#formXat').position({
 	   my: "center",
 	   at: "center",
 	   of: window
@@ -70,6 +70,7 @@ function guardarDenuncia() {
 </script>
 <div id="formXat" class="easyui-dialog" title="Xat" closed="true" style="width:800px;min-height:200px;padding:10px">
   <form id='formulariXat' method='post' action="<?=base_url()?>index.php/user_settings/xat">
+		
 		<textarea size='800' name='missatgeXat'></textarea>
 		<input type='hidden' value='<?= $user_id; ?>' name='id_emisor'/>
 		<input type='hidden' value='<?= $id_solicitut; ?>' name='id_solicitut'/>

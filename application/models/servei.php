@@ -33,7 +33,7 @@ Class Servei extends CI_Model {
 	 public function comprovaServeiOferts($email){
 		if($email!=null){
 	 		$query = $this->db->query('SELECT COUNT(*) as servei_minim_oferit from servei,usuari where usuari.id=servei.usuari and usuari.email="'.$email.'"');
-			return $query->result();
+			return $query->row();
 	 	}
 	 }
 
@@ -43,7 +43,7 @@ Class Servei extends CI_Model {
 			$this->db->from('servei');
 			$this->db->where('id', $id); 	
 			$query = $this->db->get();
-			return $query->result();
+			return $query->row();
 	 	}
 	}
 	public function llistarServeis(){

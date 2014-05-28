@@ -55,9 +55,8 @@ Class Administrador extends CI_Model{
 	 * @return [objecte] [retorna les dades del categoria del servei]
 	 */
 	function llistarCategoria(){
-		$this->db->select('*');
-		$this->db->from('categoria_servei');
-		$query=$this->db->get();
+
+		$query = $this->db->query('SELECT * FROM categoria_servei WHERE NOT id=0');
 		return $query->result();
 	}
 	/**

@@ -16,7 +16,7 @@
 			</form>
 			<form id='formulari2' action="<?php echo base_url();?>index.php/admin/setMax_dies_congelat" method="post">
 				<div class="easyui-panel" style="width:400px;padding:20px 100px 60px 100px;">
-			        <label>Maxim de dies que un servei pot estar congelat avans d'esborrar-se: <?php echo  "<b> ".$max_dies_congelat."</b>" ?></label>
+			        <label>Maxim de dies que un servei pot estar congelat abans d'esborrar-se: <?php echo  "<b> ".$max_dies_congelat."</b>" ?></label>
 			        <input class="easyui-numberbox" name="max_dies_congelat" type="number" min="0" max="99" placeholder="0-99"/>
 			        <br />
 					<input type="submit" value='Guardar' />

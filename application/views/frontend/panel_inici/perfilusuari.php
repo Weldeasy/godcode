@@ -11,5 +11,6 @@
 	</td></tr></table>
 	<p>&nbsp;</p>
 	<hr width="80%" />
+
 	<h3><u>Historial</u></h3>
 	<p>&nbsp;</p>

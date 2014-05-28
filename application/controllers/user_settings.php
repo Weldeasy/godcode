@@ -348,16 +348,71 @@ class User_settings extends CI_Controller {
 		return false;
 	}
   }
+ 
+  /***************************************************OPCIONS*************************************************************/
+  
+  /***************************************************CONSUMIR*************************************************************/
   //consumir servei
   
   function consumirServei(){
   	$data=$this->data;
-  	//$this->user->totSolicitutAcceptat($data);
-  	$data['panel_user']=$this->load->view('frontend/user_settings/consumir',NULL,TRUE);
+  	$id_solicitant=$this->user->get_user_by_email($data['email'])->id;
+  	$solicitudsAceptats=$this->user->totSolicitutAcceptat($id_solicitant);
+  	$html="";
+  	if($solicitudsAceptats!=NULL){
+  		foreach ($solicitudsAceptats as $key){ 
+	   				 $data2 = array(
+	                'id_servei' => $key->servei_id,
+	                'servei_nom' => $key->servei_nom,
+	                'preu' => $key->preu,
+	                'usuari' => $key->usuari,
+	                'data_fi' => $key->data_fi,
+	                'id_consumidor' => $id_solicitant,
+	            	);
+            		$html = $html.$this->load->view('frontend/user_settings/llistatConsumirServei',$data2,TRUE);
+	   			
+            	}
+	        $data['panel_user']=$html;
+  	}else{
+		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_consumir',NULL,TRUE);
+  	}
+  	//$data['panel_user']=$this->load->view('frontend/user_settings/consumir',NULL,TRUE);
 	$this->load->view('frontend/user_settings/inicio', $data);
 
   }
-  /***************************************************OPCIONS*************************************************************/
+
+  function consumit(){
+
+  	if(isset($_POST['id_consumidor'])){
+  		$id_consumidor=$this->input->post("id_consumidor");
+  		$id_usuari_servei=$this->input->post("id_usuari_servei");
+  		$id_servei=$this->input->post("id_servei");
+  		$preu=$this->servei->getPreuServei($id_servei)->preu;
+  		
+  		//guardem a servei consumit i després intercanviem els punts
+  		$data_consumit=date('Y-m-d');
+  		$this->user->guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit);
+
+
+	  	$data=$this->data;
+
+	  	//email del consumidor
+  		$saldoConsumidor=$this->user->getSaldoUser($data['email'])->saldo;
+  		$saldoUsuariOferit=$this->user->get_user_by_Id($id_usuari_servei)->saldo;
+  		
+  		$saldoUsuariOferit=$saldoUsuariOferit+$preu;
+  		$saldoConsumidor=$saldoConsumidor-$preu;
+  		$this->user->updateSaldo($saldoUsuariOferit,$id_usuari_servei);
+  		$this->user->updateSaldo($saldoConsumidor,$id_consumidor);
+  		$this->user->esborrarSolicitutAceptada($id_consumidor,$id_servei);//quan consumiex
+
+		$data['panel_user']=$this->load->view('frontend/user_settings/ja_consumit',NULL,TRUE);
+		$this->load->view('frontend/user_settings/inicio', $data);
+  	}
+  }
+
+   /***************************************************CONSUMIR*************************************************************/
+  
   /***************************************************SOLICITUD*************************************************************/
 
   function estatSolicitut(){

@@ -16,27 +16,36 @@ Class User extends CI_Model
 			return;
 		}
     }
-	
+    function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit){
+    	$this->db->insert("servei_consumit", array(
+			"id_consumidor"=>$id_consumidor,
+			"id_servei"=>$id_servei,
+			"data_consumit" => $data_consumit,
+		));
+    }
+    function esborrarSolicitutAceptada($id_consumidor,$id_servei){
+    	
+    	try {
+			$query = $this->db->query('DELETE FROM solicitut_servei WHERE id_solicitant="'.$id_consumidor.'" AND servei_id="'.$id_servei.'" AND estat=1');
+			if($query){
+				$resultat=true;
+			}else{
+				$resultat=false;
+			}
+		return $resultat;
+		} catch (Exception $e) {
+			return;
+		}
+    }
+    
     function totSolicitutAcceptat($id_solicitant){
     	try {
-			$data = $this->db->query('SELECT * FROM solicitut_servei WHERE id_solicitant="'.$id_solicitant.'" and estat=2');
+			$data = $this->db->query('SELECT *,servei.id as id_servei,servei.nom AS servei_nom FROM solicitut_servei s, servei WHERE s.servei_id=servei.id AND id_solicitant="'.$id_solicitant.'" AND estat=1');
 			return $data->result();
 		} catch (Exception $e) {
 			return;
 		}	
     }
-
-    function consumirServei($id_consumidor,$id_servei,$data){
-    	$this->db->insert("missatge", array(
-			"id"=>NULL,
-			"id_consumidor"=>$id_consumidor,
-			"id_servei"=>$id_servei,
-			"data_consumit" => $data,
-		));
-    }
-
-
-	
 	public function get_user_by_email($email) {
 		try {
 			$data = $this->db->query("SELECT * FROM usuari WHERE email='".$email."' LIMIT 1");
@@ -63,13 +72,23 @@ Class User extends CI_Model
 			return;
 		}
 	}
+	public function updateSaldo($saldo,$id_usuari){
+		$query = $this->db->query('UPDATE usuari SET saldo="'.$saldo.'" WHERE id="'.$id_usuari.'"');
+		if($query){
+			$resultat=true;
+		}else{
+			$resultat=false;
+		}
+		return $resultat;
+	}
 	public function comprovaSolicitut($email){
 		if($email!=null){
 	 		$query = $this->db->query('SELECT COUNT(*) as total_solicitut FROM usuari,servei,solicitut_servei
-	 		 where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and  usuari.email="'.$email.'"');
+	 		 where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and solicitut_servei.estat=0 and usuari.email="'.$email.'"');
 			return $query->row();
 	 	}
 	}
+
 	public function getIdSolicitant($email){
 		if($email!=null){
 	 		$query = $this->db->query('SELECT solicitut_servei.id,solicitut_servei.estat,id_solicitant,servei_id,usuari.id as user_id FROM usuari,servei,solicitut_servei where servei.usuari=usuari.id and solicitut_servei.servei_id=servei.id and usuari.email="'.$email.'"');
@@ -149,7 +168,7 @@ Class User extends CI_Model
 		$data = $this->db->query(
 			'SELECT  distinct servei.cp,categoria,data_inici,data_fi,disp_horaria,disp_dies,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
-			 and usuari.email="'.$email.'"');
+			 and usuari.email="'.$email.'" and (servei.data_congelacio=NULL OR servei.data_congelacio=0000-00-00)');
 
 		return $data->result();
 	}
@@ -167,7 +186,7 @@ Class User extends CI_Model
 			$this->db->from('usuari');
 			$this->db->where('email', $email); 	
 			$query = $this->db->get();
-			return $query->result();
+			return $query->row();
 	 	}
 	 }
 	
