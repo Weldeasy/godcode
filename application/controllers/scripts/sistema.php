@@ -38,9 +38,10 @@ class Sistema extends CI_Controller {
 				$data_congelacio = strtotime($data_congelacio);
 				$data_actual = strtotime($data_actual);
 				$diff = ($data_actual - $data_congelacio)/3600/24; // Dividir por segundos*horas para conseguir dias.
-				if ($diff>=$max_dies_congelat) {
+				echo $diff;
+				/*if ($diff>=$max_dies_congelat) {
 					$this->servei->eliminar_servicio($servicio->id);
-				}
+				}*/
 			}
 		}
 		echo "</pre>";
