@@ -16,6 +16,7 @@
 	<body>
 		<div id='cssmenu'>
 			<ul>
+				<img src="<?= base_url()?>media/images/frontend/logofinal.png" heigth="20px" align="left" style="padding-left:5px;padding-top:5px;"/>
 				<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
 				<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
 				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
