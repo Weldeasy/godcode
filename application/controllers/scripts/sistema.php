@@ -96,7 +96,7 @@ class Sistema extends CI_Controller {
 			foreach($pueblos as $pueblo) {
 				$servicios = $this->servei->busca_serveis($pueblo->postal, '1970-01-01', '1970-01-01', 0);
 				foreach($servicios as $servicio) {
-					$txt .= "<li>test</li>"
+					$txt .= "<li>test</li>";
 				}
 			}
 			$txt .= "</ul>";
