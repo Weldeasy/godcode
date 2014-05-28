@@ -24,7 +24,7 @@ class Inicio extends CI_Controller {
     if($session_data){
       $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
     }
-	if (isset($this->session->flashdata('logine')->email_login))
+	if (isset($this->session->flashdata('logine')))
 		$this->data['email_login'] = isset($this->session->flashdata('logine')->email_login;
   }
   /**
