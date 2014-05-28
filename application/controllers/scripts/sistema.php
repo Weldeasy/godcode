@@ -111,9 +111,8 @@ class Sistema extends CI_Controller {
 				return true;
 			else
 				show_error($this->email->print_debugger());*/
-			
+			echo $txt;
 		}
-		echo $txt;
 		echo "</pre>";
 	}
 	
