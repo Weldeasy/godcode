@@ -177,7 +177,7 @@ Class User extends CI_Model
 		$data = $this->db->query(
 			'SELECT  distinct servei.cp,categoria,data_inici,data_fi,disp_horaria,disp_dies,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
-			 and usuari.email="'.$email.'" and servei.data_congelacio=NULL ');
+			 and usuari.email="'.$email.'" and servei.data_congelacio is NULL ');
 
 		return $data->result();
 	}
