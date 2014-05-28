@@ -62,7 +62,6 @@ padding-left: 10px;
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
     -webkit-box-sizing:border-box; 
-    height: 50px; 
 }
 #cssmenu a#pull {  
     display: none;
