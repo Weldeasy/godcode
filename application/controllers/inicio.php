@@ -21,6 +21,10 @@ class Inicio extends CI_Controller {
     $this->data['email'] = $session_data['email'];
     $this->data['foto'] = $session_data['foto'];
     $this->data['es_admin'] = $session_data['es_admin'];
+	
+	$errors_login = $this->session->userdata('logine');
+	
+	
     if($session_data){
       $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
     }
