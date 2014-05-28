@@ -9,7 +9,7 @@ echo form_open('verifylogin',array('class'=>'login_form'));
 </li>
 <div id="login_errors">
 	<ul>
-		<li><?php if (isset($this->session->userdata)) print $this->session->email_login;?></li>
+		<li><?php if (isset($this->session->userdata('logine')->email_login)) print $this->session->userdata('logine')->email_login;?></li>
 		<li><?php $password_login?></li>
 	</ul>
 </div>
