@@ -63,7 +63,8 @@ class Inicio extends CI_Controller {
       }
       $vista='panel_principal';
 		if (isset($this->session->userdata('logine')))
-			$this->data['email_login'] = isset($this->session->userdata('logine')->email_login;
+			$this->data['email_login'] = isset($this->session->userdata('logine');
+	print_r($this->data['email_login']);
       if($this->es_autentificat()) {
             switch($estat) {
               case '1':
@@ -85,7 +86,7 @@ class Inicio extends CI_Controller {
         }else{//si no existeix la sessio
           $login_view='login_form';
         }
-        $this->contingut($login_view,$vista,$data);//si crida la funcio contingut
+        //$this->contingut($login_view,$vista,$data);//si crida la funcio contingut
   }
   /**
    * [mostraContingut ]
