@@ -23,6 +23,7 @@ class Inicio extends CI_Controller {
     $this->data['es_admin'] = $session_data['es_admin'];
 
     $this->data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
+
   }
   /**
    * [contingut es carrega la pagina principal, amb les vistes i les dades]
@@ -69,15 +70,14 @@ class Inicio extends CI_Controller {
                         $login_view = 'panel_inici/logued'; //si el estat és 1 o 2, vol dir que està loguejat
                 break;
               case '3': //sino 3=congelat
-                        /*$login_view = 'login_form';
-                        $vista='congelat';*/
-                        redirect('logout', 'refresh');
+						$this->session->unset_userdata('logged_in');
+                        $login_view = 'login_form';
+                        $vista='congelat';
                 break;
               case '4': //4 = ha de verificar el correu
-                
-                    /*  $login_view = 'login_form';
-                      $vista='verifica';*/
-                        redirect('logout', 'refresh');
+					  $this->session->unset_userdata('logged_in');
+                      $login_view = 'login_form';
+                      $vista='verifica';
                 break;
             }
     
@@ -354,6 +354,7 @@ class Inicio extends CI_Controller {
           $puntsServei=$this->servei->getPreuServei($id_servei)->preu;   
           $saldoUser=$this->user->getSaldoUser($email_user)->saldo;  
           $comprovaMinimServeiOfert=$this->servei->comprovaServeiOferts($email_user)->servei_minim_oferit;
+
 
           //els punts del servei i els punts del usuari, comparem-les
           //comprova si usuari té un servei oferit

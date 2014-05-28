@@ -27,8 +27,8 @@
 		<script type="text/javascript" src="<?php echo base_url();?>media/js/frontend_inicio.js"></script>
 		<script>
 			$(function() {
-				$("#datepicker1").datepicker();
-				$("#datepicker2").datepicker();
+				$("#datepicker1").datepicker({ dateFormat: 'yy-mm-dd' });
+				$("#datepicker2").datepicker({ dateFormat: 'yy-mm-dd' });
 			});
 		</script>
 		<title>Time Bank</title>
