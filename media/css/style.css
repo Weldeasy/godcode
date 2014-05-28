@@ -54,7 +54,7 @@ h1{
 	clear: both;  
 }  
 #cssmenu {  
-	*zoom: 1;  
+	zoom: 1;  
 }
 #cssmenu li a { 
 padding-left: 10px; 
@@ -62,18 +62,15 @@ padding-left: 10px;
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
     -webkit-box-sizing:border-box; 
-<<<<<<< HEAD
-=======
     height: 50px; 
->>>>>>> 899d8cb1c3c44e342f0e3e6af1f682fce6e395c7
-}  
+}
 #cssmenu a#pull {  
     display: none;
-		height:44px;
-		color:white;
-		text-decoration:none;
-		line-height:44px;
-		font-size:15px;
+    height:44px;
+    color:white;
+    text-decoration:none;
+    line-height:44px;
+    font-size:15px;
 }
 @media screen and (max-width: 1062px) {  
     #cssmenu {   
