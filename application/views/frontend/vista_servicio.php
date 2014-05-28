@@ -2,11 +2,6 @@
 
   function solicitut2(){
         $('#formSolicitut2').dialog('open').dialog('setTitle','Solicitut');
-		$('#formSolicitut2').position({
-         my: "center",
-         at: "center",
-         of: window
-      });
   }
 
 </script>

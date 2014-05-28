@@ -2,12 +2,6 @@
 
   function solicitut(){
         $('#formSolicitut').dialog('open').dialog('setTitle','Solicitut');
-        $('#formSolicitut').position({
-         my: "center",
-         at: "center",
-         of: window
-      });
-  
   }
 </script>
 <div class="servicio_vista">
