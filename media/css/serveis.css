@@ -48,8 +48,8 @@
 	padding-top: 10px;
 }
 .descripcion_servicio {
-	/*min-height:128px;*/
-	margin-left: 150px;
+	padding-bottom: 20px;
+
 }
 .descripcion_servicio_vista {
 	/*min-height:128px;*/
@@ -63,6 +63,7 @@
 	width: 20%;
 	height: auto;
 	margin-top: 5px;
+	padding-left: 10px;
 }
 .descripcion_servicio_vista p{
 	/*word-wrap: break-word;
