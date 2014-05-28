@@ -33,6 +33,7 @@ h1{
   height: 53px;
   list-style: none;
   margin: 0;
+  padding-left: 10px;
   padding: 0;
   padding-right: 20px;
 }
@@ -55,12 +56,12 @@ h1{
 #cssmenu {  
 	*zoom: 1;  
 }
-#cssmenu li a {  
+#cssmenu li a { 
+padding-left: 10px; 
     border-right: 1px solid #576979;  
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
     -webkit-box-sizing:border-box; 
-    height: 30px; 
 }  
 #cssmenu a#pull {  
     display: none;
@@ -758,6 +759,7 @@ margin-right: 10px;
 }
 #page-wrapper {
 	margin-left:225px;
+  
 }
 .perfil_historial table:nth-child(2) {
 	margin-left:auto;

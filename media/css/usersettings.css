@@ -6,47 +6,22 @@ body, html {
 }
 a {
 	text-decoration:none;
-	color:white;
-	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+	color:black;
 }
 a:visited {
 	text-decoration:none;
-	color:white;
-	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+	color:black;
 }
 a::visited {
 	text-decoration:none;
-	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color:white;
+  color:black;
 }
-a:link {
-	text-decoration:none;
-	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color:white;
-}
-a:active {
-	text-decoration:none;
-font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color:white;
-}
-a:hover {
+#a_user {
 	text-decoration:none;
 	font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color:black;
 }
-a:focus {
-	font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-	text-decoration:none;
-	color:white;
-}
-
 #up-bar {
 	width:100%;
 	height:50px;
@@ -178,9 +153,12 @@ a:focus {
 	background-image:url(../images/frontend/sidebar_icon_mini.png);
 	background-repeat:no-repeat;
 	background-position:10% 16px;
+	font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: white;
 }
 .sidebar-option:hover {
-	background-color:white;
+	background-color:black;
 	cursor:pointer;
 	border-right:2px solid #05B5F5;
 }
