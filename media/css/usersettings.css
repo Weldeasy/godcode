@@ -96,6 +96,7 @@ a:focus {
 }
 #user:hover {
 	background-color:white;
+	color:grey;
 	cursor:pointer;
 }
 #user:focus {
