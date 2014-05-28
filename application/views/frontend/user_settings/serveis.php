@@ -9,7 +9,6 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		
 		<div id="up-bar">
 			<div id="user">
 				<img src="<?= base_url()?>media/images/frontend/user_icon_mini2.png" />
@@ -25,18 +24,17 @@
 		</div>
 		
 		<div id="sidebar">
-			<a class="back" href="<?= base_url()?>index.php/user_settings">
+			<a class="back" href="<?= base_url()?>">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
-				<span>TORNAR</span>
+				<span>Tornar</span>
 			</div>
 			</a>
 			<div class="sidebar-option-none">
 			</div>
-			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">SOLICITUDS</div></a>
-			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir Servei</div></a></a>
-	
+			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts pendents</div></a>
+			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir un Servei</div></a></a>
 		</div>
 
 		<div id="page-wrapper">

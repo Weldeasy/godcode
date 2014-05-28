@@ -42,7 +42,7 @@
 			<div class="sidebar-option-none">
 			</div>
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts pendients</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts pendents</div></a>
 			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir un Servei</div></a></a>
 		</div>
 

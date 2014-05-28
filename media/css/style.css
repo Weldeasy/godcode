@@ -60,7 +60,7 @@ h1{
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
     -webkit-box-sizing:border-box; 
-    height: 53px; 
+    height: 30px; 
 }  
 #cssmenu a#pull {  
     display: none;
