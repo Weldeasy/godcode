@@ -31,7 +31,8 @@ class Buscar_servicio extends CI_Controller {
 			  'usuari' => $row->usuari,
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion,
-			  'user_oferit_servei' => $usuari->email
+			  'user_oferit_servei' => $usuari->email,
+			  'es_admin' => $usuari->es_admin
 			);
 			$session_data = $this->session->userdata('logged_in');
 			$data2['email'] = $session_data['email'];
