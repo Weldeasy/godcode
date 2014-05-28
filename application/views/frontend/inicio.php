@@ -11,20 +11,26 @@
 		<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
 
 		<link href="<?= base_url()?>media/css/serveis.css" rel="stylesheet">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="<?= base_url()?>media/js/jquery.js"></script>
+		<link href="<?= base_url()?>media/css/jquery-ui-1.10.4.css" rel="stylesheet">
+		<script src="<?= base_url()?>media/js/jquery-ui-1.10.4.js"></script>
+		
 		<!-- JEASYUI-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/default/easyui.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/icon.css">
-		<script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.min.js"></script>
+		
 		<script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.easyui.min.js"></script>
-
 		<script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>
-		
+		<!-- FI JEASYUI-->
 		<script type="text/javascript" src="<?php echo base_url();?>media/js/frontend_inicio.js"></script>
-		
+		<script>
+			$(function() {
+				$("#datepicker1").datepicker();
+				$("#datepicker2").datepicker();
+			});
+		</script>
 		<title>Time Bank</title>
 	</head>
 	<body>
