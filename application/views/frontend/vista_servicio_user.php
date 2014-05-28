@@ -8,7 +8,7 @@
 			<span class="data_caducitat" id='linkMap' >en <a  href="https://www.google.es/maps/place/<?=$poblacion?>"  target='_blank'><?=$poblacion?></a></span>
 		</div>
 		<div class="descripcion_servicio">
-			<p><?=$descripcio?></p>
+			<p><b>Descripcio: </b><?=$descripcio?></p>
 		</div>
 		<div class="precio_servicio">
 			<?=$preu?> punts
