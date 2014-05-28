@@ -36,7 +36,7 @@
 			<div class="servei_actions">
 			<?php 
               /*Surtirà butò si usuari està loguejat i el user no pot sol·licitar si mateix i no sigui admin*/
-              if(isset($email) && ($user_oferit_servei!=$email) && ($es_admin==0)){
+              if(isset($email) && ($user_oferit_servei!=$email) && ($es_admin==0 && $logued)){
           ?>
           <td>
               <input type='submit' value='Solicitar' onclick="solicitut()" class="buttonform"/>

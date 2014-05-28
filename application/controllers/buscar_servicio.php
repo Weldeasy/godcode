@@ -36,8 +36,9 @@ class Buscar_servicio extends CI_Controller {
 			);
 			$session_data = $this->session->userdata('logged_in');
 			$data2['email'] = $session_data['email'];
+			$data2['logued'] = false;
 			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
-				$data2['alert'] = true;
+				$data2['logued'] = true;
 			}
 
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
