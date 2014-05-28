@@ -32,7 +32,8 @@ class Buscar_servicio extends CI_Controller {
 			);
 			$data2['alert'] = false;
 			$session_data = $this->session->userdata('logged_in');
-			$data['email'] = $session_data['email'];
+			$data2['email'] = $session_data['email'];
+			var_dump($data2['email']);
 			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
 				$data2['alert'] = true;
 			}
@@ -50,7 +51,7 @@ class Buscar_servicio extends CI_Controller {
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
 		}
-		$this->load->view('frontend/resultado_servicios', $data);
+		//$this->load->view('frontend/resultado_servicios', $data);
 		/*echo "<pre>";
 		var_dump($data);
 		echo "<pre>";*/
