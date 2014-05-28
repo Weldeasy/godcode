@@ -18,14 +18,14 @@ class Buscar_servicio extends CI_Controller {
 			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
-			  'nom' => $row->nom,
-			  'descripcio' => $row->descripcio,
+			  'nom_servei' => $row->nom,
+			  'descripcio_servei' => $row->descripcio,
 			  'preu' => $row->preu,
 			  'data_inici' => $row->data_inici,
 			  'data_fi' => $row->data_fi,
 			  'horas' => explode(";", $row->disp_horaria),
 			  'days' => explode(";", $row->disp_dies),
-			  'categoria' => $row->categoria,
+			  'nom_categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
 			  'cp' => $row->cp,
 			  'poblacion' => $pueblo->poblacion
