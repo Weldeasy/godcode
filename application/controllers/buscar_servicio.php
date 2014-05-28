@@ -6,6 +6,7 @@ class Buscar_servicio extends CI_Controller {
 		parent::__construct();
 		$this->load->model('servei');
 		$this->load->model('lugares');
+		$this->load->model('user');
 		$this->load->helper(array('form', 'url'));
 	}
 	
@@ -15,6 +16,7 @@ class Buscar_servicio extends CI_Controller {
 		$html = "";
 
 		foreach($serveis as $row) {
+			$usuari = $this->user->get_user_by_Id($row->usuari);
 			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
 			$data2 = array(
 			  'id' => $row->id,
@@ -28,9 +30,9 @@ class Buscar_servicio extends CI_Controller {
 			  'categoria' => $row->categoria,
 			  'usuari' => $row->usuari,
 			  'cp' => $row->cp,
-			  'poblacion' => $pueblo->poblacion
+			  'poblacion' => $pueblo->poblacion,
+			  'user_oferit_servei' => $usuari->email
 			);
-			$data2['alert'] = false;
 			$session_data = $this->session->userdata('logged_in');
 			$data2['email'] = $session_data['email'];
 			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
