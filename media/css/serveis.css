@@ -21,6 +21,7 @@
 
 .foto_servicio {
 	float:left;
+	padding-left: 10px;
 }
 .foto_servicio>img{
 	height:150px;
