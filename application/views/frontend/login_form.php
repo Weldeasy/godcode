@@ -9,7 +9,7 @@ echo form_open('verifylogin',array('class'=>'login_form'));
 </li>
 <div id="login_errors">
 	<ul>
-		<li><?= form_error("email_login"); ?></li>
-		<li><?= form_error("password_login"); ?></li>
+		<li><?= $email_login?></li>
+		<li><?= $password_login?></li>
 	</ul>
 </div>
