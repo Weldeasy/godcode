@@ -19,12 +19,12 @@ h1{
   position: relative;
   font-size: 15px;
   float:middle;
-  height: 45px;
+  height: 53px;
   z-index: 9999; left: 0; top: 0; width: 100%; /*Esto hace tu menu fijo*/
 }
 #cssmenu ul {
   background-color: #05b5f5 ;
-  height: 44px;
+  height: 53px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ h1{
 #cssmenu li {
   float: left;
   padding: 0px;
-  height:43px;
+  height:53px;
   display: inline; 
   background-color: #05b5f5 ;
 }
@@ -53,7 +53,8 @@ h1{
     border-right: 1px solid #576979;  
     box-sizing:border-box;  
     -moz-box-sizing:border-box;  
-    -webkit-box-sizing:border-box;  
+    -webkit-box-sizing:border-box; 
+    height: 53px; 
 }  
 #cssmenu a#pull {  
     display: none;
@@ -248,7 +249,7 @@ h1{
   line-height: 45px;
   font-family: 'Droid Sans', sans-serif;
   margin: 0px;
-  padding: 0px 25px;
+  padding: 5px 25px;
   text-align: center;
   text-decoration: none;
 }

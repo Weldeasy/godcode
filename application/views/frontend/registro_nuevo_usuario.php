@@ -19,7 +19,8 @@
 <body onLoad="loadPoblacions()">
 	<div id='cssmenu'>
 	<ul>
-		<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
+	<img src="<?= base_url()?>media/images/frontend/logofinal.png" heigth="20px" align="left" style="padding-left:5px;padding-top:5px;"/>
+	<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
     <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
 	<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
