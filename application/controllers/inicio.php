@@ -62,7 +62,8 @@ class Inicio extends CI_Controller {
         $data['categorias'][$row['id']] = $row['nom'];
       }
       $vista='panel_principal';
-
+		if (isset($this->session->userdata('logine')))
+			$this->data['email_login'] = isset($this->session->userdata('logine')->email_login;
       if($this->es_autentificat()) {
             switch($estat) {
               case '1':
