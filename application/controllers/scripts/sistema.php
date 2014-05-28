@@ -90,10 +90,9 @@ class Sistema extends CI_Controller {
 		
 		$this->load->library('email', $config);
 		foreach($usuarios as $user) {
-			
-			$idprovincia = $this->lugares->get_provincia_by_cp($user->cp);
-			//$pueblos = $this->lugares->get_pueblos_by_idProvincia($idprovincia->idprovincia);
-			var_dump($idprovincia->idprovincia);
+
+			$pueblos = $this->lugares->get_pueblos_by_idProvincia($user->provincia);
+			var_dump($pueblos->poblacion);
 			
 			/*$this->email->set_newline("\r\n");
 			$this->email->from('gcbtv0@gmail.com', 'Oferta banc del temps');
