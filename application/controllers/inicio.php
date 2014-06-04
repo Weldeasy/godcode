@@ -237,10 +237,13 @@ class Inicio extends CI_Controller {
 						switch ($consumit->valoracio) {
 							case 1:
 								$historial .= $this->load->view('frontend/panel_inici/historialusuari1', $consumit, TRUE);
+								break;
 							case 2:
 								$historial .= $this->load->view('frontend/panel_inici/historialusuari2', $consumit, TRUE);
+								break;
 							case 3:
 								$historial .= $this->load->view('frontend/panel_inici/historialusuari3', $consumit, TRUE);
+								break;
 						}
                     }
                 } else {
