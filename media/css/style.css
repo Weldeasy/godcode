@@ -1002,3 +1002,7 @@ font-family: 'Open Sans', sans-serif;
 	color:black;
 	text-decoration:none;
 }
+.moltbe:hover, .be :hover, .malament:hover{
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
