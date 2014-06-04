@@ -983,19 +983,19 @@ font-family: 'Open Sans', sans-serif;
 .moltbe {
 	background-color:#39FE0D;
 	padding:5px;
+	border-bottom:1px solid grey;
 }
 .be {
 	background-color:#22880B;
 	padding:5px;
+	border-bottom:1px solid grey;
 }
 .malament {
 	background-color:#F73015;
 	padding:5px;
+	border-bottom:1px solid grey;
 }
 .moltbe a, .be a, .malament a {
 	color:black;
 	text-decoration:none;
-}
-.moltbe td, .be td, .malament td {
-	margin:0px;
 }
