@@ -223,14 +223,17 @@ class Inicio extends CI_Controller {
             
             $data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
             $data_historial['consumits_usuari'] = $this->user->get_user_consumits_perfil($data_historial['id_usuari']);
-			if (!empty($data_historial['consumits_usuari']))
+			if (!empty($data_historial['consumits_usuari'])) {
 				$data_historial['consumits_usuari'][0]->email_usuari = $uemail;//echo $data_historial['id_usuari'];
+				$data_historial['consumits_usuari'][0]->email_consumidor = "";
+			}
 			//print_r($data_historial['consumits_usuari']);
             $historial = "<table class='history' border='1'><tr><th>Servei</th><th>Consumidor</th><th>Data</th><th>Valoracio</th></tr>";
                 if (count($data_historial['consumits_usuari']) > 0) {
                     foreach ($data_historial['consumits_usuari'] as $consumit) {
 						$data_temp = array();
                         $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
+						$consumit->email_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->email;
                         $historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
                     }
                 } else {
