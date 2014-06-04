@@ -406,11 +406,12 @@ class User_settings extends CI_Controller {
   		$id_consumidor=$this->input->post("id_consumidor");
   		$id_usuari_servei=$this->input->post("id_usuari_servei");
   		$id_servei=$this->input->post("id_servei");
+		$valoracio_servei=$this->input->post("valoracio");
   		$preu=$this->servei->getPreuServei($id_servei)->preu;
-  		
+  		print $valoracio_servei;
   		//guardem a servei consumit i després intercanviem els punts
   		$data_consumit=date('Y-m-d');
-  		$this->user->guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit);
+  		/*$this->user->guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit);
 
 
 	  	$data=$this->data;
@@ -426,7 +427,7 @@ class User_settings extends CI_Controller {
   		$this->user->esborrarSolicitutAceptada($id_consumidor,$id_servei);//quan consumiex
 
 		$data['panel_user']=$this->load->view('frontend/user_settings/ja_consumit',NULL,TRUE);
-		$this->load->view('frontend/user_settings/inicio', $data);
+		$this->load->view('frontend/user_settings/inicio', $data);*/
   	}
   }
 
