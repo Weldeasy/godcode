@@ -222,15 +222,19 @@ class Inicio extends CI_Controller {
             $data['contingut'] = $perfil;
             
             $data_historial['id_usuari'] = $this->user->get_user_by_email($uemail)->id;
-            $data_historial['consumits_usuari'] = $this->user->get_user_consumits($data_historial['id_usuari']);
-            $historial = "<table class='history' border='1'><tr><th>Nom consumidor</th><th>Data</th><th>Valoracio</th></tr>";
+            $data_historial['consumits_usuari'] = $this->user->get_user_consumits_perfil($data_historial['id_usuari']);
+			if (!empty($data_historial['consumits_usuari']))
+				$data_historial['consumits_usuari'][0]->email_usuari = $uemail;//echo $data_historial['id_usuari'];
+			//print_r($data_historial['consumits_usuari']);
+            $historial = "<table class='history' border='1'><tr><th>Servei</th><th>Consumidor</th><th>Data</th><th>Valoracio</th></tr>";
                 if (count($data_historial['consumits_usuari']) > 0) {
                     foreach ($data_historial['consumits_usuari'] as $consumit) {
+						$data_temp = array();
                         $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
                         $historial .= $this->load->view('frontend/panel_inici/historialusuari', $consumit, TRUE);
                     }
                 } else {
-                    $historial .= "<tr><td colspan='3'>No hi ha historia</td></tr>";
+                    $historial .= "<tr><td colspan='4' align='center'>No hi ha historia</td></tr>";
                 }
             $historial .= "</table><p>&nbsp;</p>";
             $data['contingut'] .= $historial;
@@ -244,7 +248,57 @@ class Inicio extends CI_Controller {
     }
     $this->load->view('frontend/inicio', $data);
    }
-   
+   /**
+   * [servei_perfil_detail mostra caracteristiques servei]
+   * @return [type] [description]
+   */
+  function servei_perfil_detail($email_user = NULL, $id_servei = NULL){
+     if ( ($email_user != NULL) && ($id_servei != NULL) ){
+		
+        if($this->es_autentificat()) {
+            $data=$this->data;
+            $data['login_form'] = 'frontend/panel_inici/logued';
+        }else{
+            $data['login_form'] = 'frontend/login_form';
+        }
+        
+        $servei=$this->user->servei_perfil_user($id_servei);
+
+        $html="";
+		
+        if($servei!=null){
+		  $pueblo = $this->lugares->get_poblacion_by_cp($servei[0]->cp);
+		  $data2 = array(
+			'id_servei' => $servei[0]->id_servei,
+			'nom_servei' => $servei[0]->nom_servei,
+			'categoria' => $servei[0]->categoria,
+			'descripcio_servei' => $servei[0]->descripcio_servei,
+			'nom_categoria' => $servei[0]->nom_categoria,
+			'data_inici' => $servei[0]->data_inici,
+			'data_fi' => $servei[0]->data_fi,
+			'horas' => explode(";", $servei[0]->disp_horaria),
+			'days' => explode(";", $servei[0]->disp_dies),
+			'preu' => $servei[0]->preu,
+			'user_oferit_servei' => $servei[0]->email, //email del users que oferit el servei
+			'poblacion' => $pueblo->poblacion,
+		  );
+		  //email del session passem al vista,per poder solicitar servei;
+		  if(isset($data['email'])){
+			  $data2['email']=$data['email'];
+			  $data2['id_user']=$this->user->get_user_by_email($data2['email'])->id;
+			  $data2['es_admin']=$data['es_admin'];                 
+		  }
+		  $html = $html.$this->load->view('frontend/panel_inici/detailservei',$data2,TRUE);
+            $data3['detail_servei']=$html;
+            $data['contingut']=$this->load->view('frontend/panel_inici/mostra_detailservei',$data3,TRUE);
+        }else{
+            $data['contingut']=$this->load->view('frontend/panel_inici/no_troba_servei',NULL,TRUE);
+        }
+        $this->load->view('frontend/inicio', $data);
+      }else{
+         redirect('inicio', 'refresh');
+      }
+  }
   /**
    * [detailusuari informació del usuari cercat]
    * @return [void] [description]

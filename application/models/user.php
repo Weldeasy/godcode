@@ -156,9 +156,23 @@ Class User extends CI_Model
 	public function get_user_consumits($idu){
         try {
             $data = $this->db->query(
-                'SELECT  distinct id_consumidor, data_consumit
-                 FROM servei_consumit, servei
-                 WHERE servei_consumit.id_servei=servei.id AND servei.usuari = '.$idu.'
+                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei
+                 FROM servei_consumit as sc, servei as s
+                 WHERE sc.id_servei=s.id AND s.usuari = '.$idu.'
+                 ORDER BY data_consumit DESC
+                ');
+            return $data->result();
+        } catch (Exception $e) {
+            return;
+        }
+    }
+	public function get_user_consumits_perfil($idu) {
+		//tramampa agafan un camp al azar, s.preu i despres li canviem el valor al controlador
+        try {
+            $data = $this->db->query(
+                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei, s.id as id_servei, s.preu as email_usuari
+                 FROM servei_consumit as sc, servei as s
+                 WHERE sc.id_servei=s.id AND s.usuari = '.$idu.'
                  ORDER BY data_consumit DESC
                 ');
             return $data->result();
@@ -178,6 +192,14 @@ Class User extends CI_Model
 			'SELECT  distinct servei.cp,categoria,data_inici,data_fi,disp_horaria,disp_dies,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
 			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
 			 and usuari.email="'.$email.'" and servei.data_congelacio is NULL ');
+
+		return $data->result();
+	}
+	function servei_perfil_user($id_servei){
+		$data = $this->db->query(
+			'SELECT  distinct servei.cp,categoria,data_inici,data_fi,disp_horaria,disp_dies,preu,usuari.id as id_user,usuari.email,servei.id as id_servei,categoria_servei.id as id_categoria,servei.nom as nom_servei,servei.descripcio as descripcio_servei,categoria_servei.nom as nom_categoria 
+			 FROM usuari,servei,categoria_servei where usuari.id=servei.usuari and categoria_servei.id=servei.categoria 
+			 and servei.id='.$id_servei.' LIMIT 1 ');
 
 		return $data->result();
 	}
