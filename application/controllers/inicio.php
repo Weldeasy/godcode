@@ -228,10 +228,9 @@ class Inicio extends CI_Controller {
 				$data_historial['consumits_usuari'][0]->email_consumidor = "";
 			}
 			//print_r($data_historial['consumits_usuari']);
-            $historial = "<table class='history'><tr><th>Servei</th><th>Consumidor</th><th>Data</th><th>Valoracio</th></tr>";
+            $historial = "<table class='history'><tr><th>Servei</th><th>Consumidor</th><th>Data</th></tr>";
                 if (count($data_historial['consumits_usuari']) > 0) {
                     foreach ($data_historial['consumits_usuari'] as $consumit) {
-						$data_temp = array();
                         $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
 						$consumit->email_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->email;
 						if ($consumit->valoracio == 1) {
