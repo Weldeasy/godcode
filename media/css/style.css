@@ -980,15 +980,15 @@ font-family: 'Open Sans', sans-serif;
 .imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
 .imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}
 
-#moltbe {
+.moltbe {
 	background-color:#39FE0D;
 	padding:5px;
 }
-#be {
+.be {
 	background-color:#22880B;
 	padding:5px;
 }
-#malament {
+.malament {
 	background-color:#F73015;
 	padding:5px;
 }
