@@ -10,7 +10,7 @@
 				<input type="hidden" value="<?= $id_servei ?>" name='id_servei'/>
 				<p>&nbsp;</p>
 				<b>Valora el servei</b><br/><select name="valoracio" id="valoracio"><option value="0">Selecciona opcio..</option><option value="1">Molt b&eacute;</option><option value="2">B&eacute;</option><option value="3">Molt Malament</option></select>
-                <input type='submit' value="S'ha Consumit" name='consumir' class="buttonform" />
+                <input type='button' value="S'ha Consumit" name='consumir' id="consumirBtn" class="buttonform" />
 				</td>
 			</tr>
 		</table>
