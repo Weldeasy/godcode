@@ -9,6 +9,8 @@
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/icon.css">
 	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.min.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/jquery.easyui.min.js"></script>
+		
+		<script type="text/javascript" src="<?php echo base_url();?>media/js/valoracio_servei.js"></script>
 
 	    <script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>

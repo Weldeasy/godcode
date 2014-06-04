@@ -15,7 +15,6 @@
 		<script src="<?= base_url()?>media/js/jquery.js"></script>
 		<link href="<?= base_url()?>media/css/jquery-ui-1.10.4.css" rel="stylesheet">
 		<script src="<?= base_url()?>media/js/jquery-ui-1.10.4.js"></script>
-		<script type="text/javascript" src="<?php echo base_url();?>media/js/valoracio_servei.js"></script>
 		
 		<!-- JEASYUI-->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/easyui/themes/default/easyui.css">
