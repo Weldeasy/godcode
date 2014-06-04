@@ -238,7 +238,7 @@ class Inicio extends CI_Controller {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari1', $consumit, TRUE);
 						} else if ($consumit->valoracio == 2) {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari2', $consumit, TRUE);
-						} else ($consumit->valoracio == 3) {
+						} else {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari3', $consumit, TRUE);
 						}
                     }
