@@ -234,16 +234,12 @@ class Inicio extends CI_Controller {
 						$data_temp = array();
                         $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
 						$consumit->email_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->email;
-						switch ($consumit->valoracio) {
-							case 1:
-								$historial .= $this->load->view('frontend/panel_inici/historialusuari1', $consumit, TRUE);
-								break;
-							case 2:
-								$historial .= $this->load->view('frontend/panel_inici/historialusuari2', $consumit, TRUE);
-								break;
-							case 3:
-								$historial .= $this->load->view('frontend/panel_inici/historialusuari3', $consumit, TRUE);
-								break;
+						if ($consumit->valoracio == 1) {
+							$historial .= $this->load->view('frontend/panel_inici/historialusuari1', $consumit, TRUE);
+						} else if ($consumit->valoracio == 2) {
+							$historial .= $this->load->view('frontend/panel_inici/historialusuari2', $consumit, TRUE);
+						} else ($consumit->valoracio == 3) {
+							$historial .= $this->load->view('frontend/panel_inici/historialusuari3', $consumit, TRUE);
 						}
                     }
                 } else {
