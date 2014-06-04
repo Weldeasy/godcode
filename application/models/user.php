@@ -171,7 +171,7 @@ Class User extends CI_Model
 		//tramampa agafan un camp al azar, s.preu i despres li canviem el valor al controlador
         try {
             $data = $this->db->query(
-                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei, s.id as id_servei, s.preu as email_usuari
+                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei, s.id as id_servei, s.preu as email_usuari, sc.valoracio
                  FROM servei_consumit as sc, servei as s
                  WHERE sc.id_servei=s.id AND s.usuari = '.$idu.'
                  ORDER BY data_consumit DESC
