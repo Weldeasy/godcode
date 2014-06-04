@@ -23,11 +23,12 @@ Class User extends CI_Model
 			return;
 		}
     }
-    function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit){
+    function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio){
     	$this->db->insert("servei_consumit", array(
 			"id_consumidor"=>$id_consumidor,
 			"id_servei"=>$id_servei,
 			"data_consumit" => $data_consumit,
+			"valoracio"=>$valoracio
 		));
     }
     function esborrarSolicitutAceptada($id_consumidor,$id_servei){
