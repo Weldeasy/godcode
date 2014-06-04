@@ -980,20 +980,23 @@ font-family: 'Open Sans', sans-serif;
 .imatge_perfil:hover {border:4px inset #000000; cursor:pointer;}
 .imatge_perfil_canviada {border:5px inset green; margin-left:20px; margin-top:20px;float:left;}
 
+.history {
+	border-collapse:collapse;
+}
 .moltbe {
 	background-color:#39FE0D;
 	padding:5px;
-	border-bottom:1px solid grey;
+	border-bottom:3px solid grey;
 }
 .be {
 	background-color:#22880B;
 	padding:5px;
-	border-bottom:1px solid grey;
+	border-bottom:3px solid grey;
 }
 .malament {
 	background-color:#F73015;
 	padding:5px;
-	border-bottom:1px solid grey;
+	border-bottom:3px solid grey;
 }
 .moltbe a, .be a, .malament a {
 	color:black;
