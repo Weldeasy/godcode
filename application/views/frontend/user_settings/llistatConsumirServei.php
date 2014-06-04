@@ -8,7 +8,7 @@
 				<input type="hidden" value="<?= $usuari ?>" name='id_usuari_servei'/>
 				<input type="hidden" value="<?= $id_consumidor ?>" name='id_consumidor'/>
 				<input type="hidden" value="<?= $id_servei ?>" name='id_servei'/>
-				<b>Valora el servei</b>&nbsp;<select name="valoracio" id="valoracio"><option value="0">Selecciona opcio..</option><option value="1">Molt bé</option><option value="2">B&eacute;</option><option value="3">Molt Malament</option></select>
+				<b>Valora el servei</b>&nbsp;<select name="valoracio" id="valoracio"><option value="0">Selecciona opcio..</option><option value="1">Molt b&eacute;</option><option value="2">B&eacute;</option><option value="3">Molt Malament</option></select>
                 <input type='submit' value='Consumir' name='consumir' class="buttonform" />
 				</td>
 			</tr>
