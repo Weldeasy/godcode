@@ -486,6 +486,39 @@ class User_settings extends CI_Controller {
    	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
+  
+  function my_solicitud(){
+	$data=$this->data;
+  	$email=$data['email'];
+	echo "<pre>";
+	var_dump($thia->user->get_solicituts($data['id']));
+	echo "</pre>";
+   	/*$html="";
+   	
+   	$total_solicitut=$this->user->comprovaSolicitut($email)->total_solicitut;
+   	if($total_solicitut>0){
+   			$infoSolicitut=$this->user->getIdSolicitant($email);
+   			foreach ($infoSolicitut as $key){ 
+   				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
+	   				 $data2 = array(
+	                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
+	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
+	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
+	                'user_id' => $key->user_id,
+	                'id_solicitut' => $key->id,
+
+	            	);
+            	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
+            	}
+            }	
+	        $data['panel_user']=$html;
+   	}else{
+		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
+   	}
+	$this->load->view('frontend/user_settings/inicio', $data);*/
+  }
+  
+  
   function xat(){
   	$xat=$_POST['missatgeXat'];
   	$id_solicitut=$_POST['id_solicitut'];

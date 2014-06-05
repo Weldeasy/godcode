@@ -167,6 +167,16 @@ Class User extends CI_Model
             return;
         }
     }
+	
+	public function get_solicituts($id_user) {
+		try {
+			$data=$this->db->query('SELECT * FROM solicitut_servei where id_solicitant="'.$id_usuri.' AND estat=0');
+			return $data->result();
+		} catch (Exception $e) {
+			return;
+		}
+	}
+	
 	public function get_user_consumits_perfil($idu) {
 		//tramampa agafan un camp al azar, s.preu i despres li canviem el valor al controlador
         try {
