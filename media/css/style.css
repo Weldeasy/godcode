@@ -1005,6 +1005,5 @@ font-family: 'Open Sans', sans-serif;
 	text-decoration:none;
 }
 .moltbe a:hover, .be a:hover, .malament a:hover {
-	opacity:0.8;
-	filter:alpha(opacity=80);
+	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
