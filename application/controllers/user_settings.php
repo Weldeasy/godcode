@@ -495,7 +495,7 @@ class User_settings extends CI_Controller {
    	if(count($solicitudes)>0){
    			foreach ($solicitudes as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
-					$servicio = $his->servei->get_servei($key->servei_id);
+					$servicio = $this->servei->get_servei($key->servei_id);
 	   				 /*$data2 = array(
 	                'nom_servei' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
 	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
