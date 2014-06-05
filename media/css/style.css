@@ -1004,15 +1004,11 @@ font-family: 'Open Sans', sans-serif;
 	color:black;
 	text-decoration:none;
 }
+.moltbe a:hover, .be a:hover, .malament a:hover {
+	opacity:1.0;
+	filter:alpha(opacity=100);
+}
 .moltbe:hover, .be :hover, .malament:hover{
 	opacity:0.4;
 	filter:alpha(opacity=40);
-}
-.moltbe > tbody:nth-child(1):hover, .be > tbody:nth-child(1):hover, .malament > tbody:nth-child(1):hover{
-	opacity:1;
-	filter:alpha(opacity=100);
-}
-.moltbe > tbody:nth-child(2):hover, .be > tbody:nth-child(2):hover, .malament > tbody:nth-child(2):hover{
-	opacity:1;
-	filter:alpha(opacity=100);
 }
