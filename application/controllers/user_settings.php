@@ -11,8 +11,7 @@ class User_settings extends CI_Controller {
 		$this->load->helper(array('url', 'form'));
 		$this->load->model(array('user', 'categorias', 'servei', 'lugares'));
 		$this->load->library(array('form_validation', 'grocery_CRUD'));
-		$session_data = $this->session->userdata('logged_in');
-		$this->data['email'] = $session_data['email'];
+		$this->data = $this->session->userdata('logged_in');
   }
 	
   function index() {
