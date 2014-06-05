@@ -496,15 +496,14 @@ class User_settings extends CI_Controller {
    			foreach ($solicitudes as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
 					$servicio = $this->servei->get_servei($key->servei_id);
-	   				 /*$data2 = array(
-	                'nom_servei' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
-	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
-	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
+	   				 $data2 = array(
+	                'nom_servei' => $servicio->nom,
+	                'email_solicitant' => $this->data['email'],
 	                'user_id' => $key->user_id,
-	                'id_solicitut' => $key->id,
+	                'id_solicitut' => $key->id
 
 	            	);
-            	$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);*/
+            	$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);
 					echo "<pre>";
 					var_dump($servicio);
 					echo "</pre>";
@@ -512,9 +511,9 @@ class User_settings extends CI_Controller {
             }	
 	        $data['panel_user']=$html;
    	}else{
-		//$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
+		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
    	}
-	//$this->load->view('frontend/user_settings/inicio', $data);
+	$this->load->view('frontend/user_settings/inicio', $data);
   }
   
   
