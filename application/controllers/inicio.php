@@ -16,9 +16,11 @@ class Inicio extends CI_Controller {
     $this->load->library(array('form_validation'));
     $this->load->helper(array('form', 'url'));
     $this->load->model(array('categorias', 'user', 'servei','lugares'));
-	$session_data = $this->session->userdata('logged_in');
-    $this->data = $this->session->userdata('logged_in');
-
+    
+    $session_data = $this->session->userdata('logged_in');
+    $this->data['email'] = $session_data['email'];
+    $this->data['foto'] = $session_data['foto'];
+    $this->data['es_admin'] = $session_data['es_admin'];
 	
 	/*if (!empty($this->session->login('email_login')))
 		$this->data['email_login'] = $errors_login['email_login'];
@@ -434,7 +436,7 @@ class Inicio extends CI_Controller {
             if($puntsServei<=$saldoUser){
               //comprovo si abans  ha enviat el mateix usuari amb el mateix servei
                if($this->user->unic_solicitut($id_user,$id_servei)->total_solicitut_user_servei==0){   
-                  $this->user->enviarSolicitut($this->data['id'],$id_servei);  
+                  $this->user->enviarSolicitut($id_user,$id_servei);  
                   $id_solictut=$this->user->getIdSolictut($id_user,$id_servei)->id;
                   $dataAvui=date('Y-m-d'); 
                   $id_emisor=$id_user;
