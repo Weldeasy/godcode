@@ -406,11 +406,12 @@ class User_settings extends CI_Controller {
   		$id_usuari_servei=$this->input->post("id_usuari_servei");
   		$id_servei=$this->input->post("id_servei");
 		$valoracio_servei=$this->input->post("valoracio");
+		$comentari_servei=$this->input->post("comentari");
   		$preu=$this->servei->getPreuServei($id_servei)->preu;
   		
   		//guardem a servei consumit i després intercanviem els punts
   		$data_consumit=date('Y-m-d');
-  		$this->user->guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio_servei);
+  		$this->user->guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio_servei,$comentari_servei);
 
 
 	  	$data=$this->data;

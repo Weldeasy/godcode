@@ -14,3 +14,4 @@
 
 	<h3><u>Historial</u></h3>
 	<p>&nbsp;</p>
+	<div style="text-align:center;">

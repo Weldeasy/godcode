@@ -229,14 +229,14 @@ class Inicio extends CI_Controller {
 				$data_historial['consumits_usuari'][0]->email_consumidor = "";
 			}
 			//print_r($data_historial['consumits_usuari']);
-            $historial = "<table class='history'><tr><th>Servei</th><th>Consumidor</th><th>Data</th></tr>";
+            $historial = "<table class='history'><tr><th>Servei</th><th>Consumidor</th><th>Data</th><th>Valoració</th><th>Puntuació</th></tr>";
                 if (count($data_historial['consumits_usuari']) > 0) {
                     foreach ($data_historial['consumits_usuari'] as $consumit) {
                         $consumit->nom_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->nom;
 						$consumit->email_consumidor = $this->user->get_user_by_Id($consumit->id_consumidor)->email;
-						if ($consumit->valoracio == 1) {
+						if ($consumit->valoracio >= 7) {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari1', $consumit, TRUE);
-						} else if ($consumit->valoracio == 2) {
+						} else if ($consumit->valoracio < 5) {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari2', $consumit, TRUE);
 						} else {
 							$historial .= $this->load->view('frontend/panel_inici/historialusuari3', $consumit, TRUE);
@@ -247,7 +247,7 @@ class Inicio extends CI_Controller {
                 }
             $historial .= "</table><p>&nbsp;</p>";
             $data['contingut'] .= $historial;
-            $data['contingut'] .= "</div>";
+            $data['contingut'] .= "</div></div>";
         } else {
             //$data[]
             $data['contingut'] = "L'usuari que has solicitat no esta disponible.";

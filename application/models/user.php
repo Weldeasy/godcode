@@ -23,12 +23,13 @@ Class User extends CI_Model
 			return;
 		}
     }
-    function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio){
+    function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio,$comentari){
     	$this->db->insert("servei_consumit", array(
 			"id_consumidor"=>$id_consumidor,
 			"id_servei"=>$id_servei,
 			"data_consumit" => $data_consumit,
-			"valoracio"=>$valoracio
+			"valoracio"=>$valoracio,
+			"comentari"=>$comentari
 		));
     }
     function esborrarSolicitutAceptada($id_consumidor,$id_servei){
@@ -181,7 +182,7 @@ Class User extends CI_Model
 		//tramampa agafan un camp al azar, s.preu i despres li canviem el valor al controlador
         try {
             $data = $this->db->query(
-                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei, s.id as id_servei, s.preu as email_usuari, sc.valoracio
+                'SELECT  distinct sc.id_consumidor, sc.data_consumit, s.nom as nom_servei, s.id as id_servei, s.preu as email_usuari, sc.valoracio, sc.comentari as comentari
                  FROM servei_consumit as sc, servei as s
                  WHERE sc.id_servei=s.id AND s.usuari = '.$idu.'
                  ORDER BY data_consumit DESC

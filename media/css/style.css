@@ -764,7 +764,7 @@ margin-right: 10px;
 .perfil_historial table:nth-child(2) {
 	margin-left:auto;
 	margin-right:auto;
-	width:400px;
+	width:80%;
 }
 .perfil_historial h3{
 	text-align:center;
@@ -982,6 +982,8 @@ font-family: 'Open Sans', sans-serif;
 
 .history {
 	border-collapse:collapse;
+	margin-left:auto;
+	margin-right:auto;
 }
 .moltbe {
 	background-color:#39FE0D;

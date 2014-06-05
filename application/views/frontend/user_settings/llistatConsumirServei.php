@@ -9,8 +9,14 @@
 				<input type="hidden" value="<?= $id_consumidor ?>" name='id_consumidor'/>
 				<input type="hidden" value="<?= $id_servei ?>" name='id_servei'/>
 				<p>&nbsp;</p>
-				<b>Valora el servei</b><br/><select name="valoracio" id="valoracio"><option value="0">Selecciona opcio..</option><option value="1">Molt b&eacute;</option><option value="2">B&eacute;</option><option value="3">Molt Malament</option></select>
-                <input type='button' value="S'ha Consumit" name='consumir' id="consumirBtn" class="buttonform" />
+				<b>Si esta consumit, valora el servei:</b><br /><br />
+				Puntuaci&oacute;:
+				<br/>0&nbsp;<input id="valoracio" name="valoracio" type="range" min="0" max="10" step="1" />&nbsp;10
+				<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" value="5" name="valoracioTxt" id="valoracioTxt" style="text-align:center;" size="1" />
+				<br/>Comentari:
+				<br /><textarea cols="25" rows="10" name="comentari" id="comentari"></textarea>
+                <br /><br /><input type='button' value="Valorar el servei" name='consumir' id="consumirBtn" class="buttonform" />
 				</td>
 			</tr>
 		</table>
