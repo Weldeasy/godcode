@@ -1008,3 +1008,11 @@ font-family: 'Open Sans', sans-serif;
 	opacity:0.4;
 	filter:alpha(opacity=40);
 }
+.moltbe:nth-child(1):hover, .be :nth-child(1):hover, .malament:nth-child(1):hover{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.moltbe:nth-child(2):hover, .be :nth-child(2):hover, .malament:nth-child(2):hover{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
