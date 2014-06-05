@@ -16,6 +16,7 @@ class Inicio extends CI_Controller {
     $this->load->library(array('form_validation'));
     $this->load->helper(array('form', 'url'));
     $this->load->model(array('categorias', 'user', 'servei','lugares'));
+	$session_data = $this->session->userdata('logged_in');
     $this->data = $this->session->userdata('logged_in');
 
 	
