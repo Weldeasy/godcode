@@ -504,9 +504,6 @@ class User_settings extends CI_Controller {
 
 	            	);
             	$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);
-					echo "<pre>";
-					var_dump($servicio);
-					echo "</pre>";
             	}
             }	
 	        $data['panel_user']=$html;
