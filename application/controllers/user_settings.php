@@ -489,9 +489,9 @@ class User_settings extends CI_Controller {
   function my_solicitud(){
 	$data=$this->data;
   	$email=$data['email'];
-	/*echo "<pre>";
+	echo "<pre>";
 	var_dump($this->user->get_solicituts($this->data['id']));
-	echo "</pre>";*/
+	echo "</pre>";
    	$html="";
 	$solicitudes = $this->user->get_solicituts($this->data['id']);
    	if(count($solicitudes)>0){
