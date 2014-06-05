@@ -497,7 +497,7 @@ class User_settings extends CI_Controller {
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
 					$servicio = $this->servei->get_servei($key->servei_id);
 	   				 $data2 = array(
-	                'nom_servei' => $servicio->nom,
+	                'nom_servicio' => $servicio->nom,
 	                'email_solicitant' => $this->data['email'],
 	                'user_id' => $key->user_id,
 	                'id_solicitut' => $key->id
