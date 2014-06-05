@@ -499,7 +499,7 @@ class User_settings extends CI_Controller {
 	   				 $data2 = array(
 	                'nom_servicio' => $servicio->nom,
 	                'email_solicitant' => $this->data['email'],
-	                'user_id' => $key->user_id,
+	                'user_id' => $servicio->usuari,
 	                'id_solicitut' => $key->id
 
 	            	);
