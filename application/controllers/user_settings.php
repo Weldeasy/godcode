@@ -495,6 +495,7 @@ class User_settings extends CI_Controller {
    	$html="";
 	$solicitudes = $this->user->get_solicituts($this->data['id']);
    	if(count($solicitudes)>0){
+			echo "yes"; } else { echo "no"; }/*
    			$infoSolicitut=$this->user->getIdSolicitant($email);
    			foreach ($infoSolicitut as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
