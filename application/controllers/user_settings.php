@@ -491,7 +491,7 @@ class User_settings extends CI_Controller {
 	$data=$this->data;
   	$email=$data['email'];
 	echo "<pre>";
-	var_dump($this->user->get_solicituts($session_data['id']));
+	var_dump($this->user->get_solicituts($this->session_data['id']));
 	echo "</pre>";
    	/*$html="";
    	
