@@ -170,7 +170,7 @@ Class User extends CI_Model
 	
 	public function get_solicituts($id_user) {
 		try {
-			$data=$this->db->query('SELECT * FROM solicitut_servei where id_solicitant="'.$id_usuri.' AND estat=0');
+			$data=$this->db->query('SELECT * FROM solicitut_servei where id_solicitant="'.$id_user.' AND estat=0');
 			return $data->result();
 		} catch (Exception $e) {
 			return;
