@@ -489,32 +489,32 @@ class User_settings extends CI_Controller {
   function my_solicitud(){
 	$data=$this->data;
   	$email=$data['email'];
-	echo "<pre>";
-	var_dump($this->user->get_solicituts($this->data['id']));
-	echo "</pre>";
+
    	$html="";
 	$solicitudes = $this->user->get_solicituts($this->data['id']);
    	if(count($solicitudes)>0){
-			echo "yes"; } else { echo "no"; }/*
-   			$infoSolicitut=$this->user->getIdSolicitant($email);
-   			foreach ($infoSolicitut as $key){ 
+   			foreach ($solicitudes as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
-	   				 $data2 = array(
-	                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
+					$servicio = $his->servei->get_servei($key->servei_id);
+	   				 /*$data2 = array(
+	                'nom_servei' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
 	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
 	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
 	                'user_id' => $key->user_id,
 	                'id_solicitut' => $key->id,
 
 	            	);
-            	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
+            	$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);*/
+					echo "<pre>";
+					var_dump($servicio);
+					echo "</pre>";
             	}
             }	
 	        $data['panel_user']=$html;
    	}else{
-		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
+		//$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
    	}
-	$this->load->view('frontend/user_settings/inicio', $data);*/
+	//$this->load->view('frontend/user_settings/inicio', $data);
   }
   
   
