@@ -1,9 +1,9 @@
 <div class="solicitud">
 		<span>
-			La solicitut que has fet per el servei: <b><?php echo $nom_servicio ?></b>
+			La solicitut que has fet per el servei: <b><?php echo $nom_servicio ?></b><br />
+			encara esta en espera de ser acceptada o rebutjada.
 		</span>
 	<input type='button' value='Xat' onclick="xat()" name='xat' class="buttonform"/>
-	<span id="denuncia_span"><input type="button" onClick="denuncia()" value="Denunciar" name="denunciar" class="buttonform" /></span>
 </div>
 
 <script type="text/javascript" src="<?= base_url()?>media/js/solicitud.js"></script>
