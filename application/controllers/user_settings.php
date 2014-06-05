@@ -489,13 +489,12 @@ class User_settings extends CI_Controller {
   function my_solicitud(){
 	$data=$this->data;
   	$email=$data['email'];
-	echo "<pre>";
+	/*echo "<pre>";
 	var_dump($this->user->get_solicituts($this->data['id']));
-	echo "</pre>";
-   	/*$html="";
-   	
-   	$total_solicitut=$this->user->comprovaSolicitut($email)->total_solicitut;
-   	if($total_solicitut>0){
+	echo "</pre>";*/
+   	$html="";
+	$solicitudes = $this->user->get_solicituts($this->data['id']);
+   	if(count($solicitudes)>0){
    			$infoSolicitut=$this->user->getIdSolicitant($email);
    			foreach ($infoSolicitut as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
