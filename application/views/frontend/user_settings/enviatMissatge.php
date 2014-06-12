@@ -1,15 +1,21 @@
 <div class="solicitud">
-	<h3>XAT</h3>
-	<table border="2" style="text-align:center;">
-		<tr>
-			<td>Emisor</td>
-			<td>Receptor</td>
-			<td>Data</td>
-			<td>Missatge</td>
-		</tr>
-		<?= $table ?>
-	</table>
-
+	<div class="wrapper">
+		<h2>XAT</h2>
+		<div class="tableXAT">
+			<div class="row header green">
+				<div class="cell">
+				Emisor
+				</div>
+				<div class="cell">
+				Missatge
+				</div>
+				<div class="cell">
+				Data
+				</div>
+			</div>
+				<?= $table ?>
+		</div>
+	</div>
 	<input type='button' value='Xat' onclick="xat()" name='xat' class="buttonform"/>
 </div>
 

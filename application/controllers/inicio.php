@@ -439,7 +439,7 @@ class Inicio extends CI_Controller {
                if($this->user->unic_solicitut($this->data['id'],$id_servei)->total_solicitut_user_servei==0){   
                   $this->user->enviarSolicitut($this->data['id'],$id_servei);  
                   $id_solictut=$this->user->getIdSolictut($this->data['id'],$id_servei)->id;
-                  $dataAvui=date('Y-m-d'); 
+                  $dataAvui=date('Y-m-d H:i:s'); 
                   $id_emisor=$this->data['id'];
                   $id_receptor=$this->servei->get_servei($id_servei)->usuari;
                   $this->user->enviaMissatge($id_emisor,$id_receptor,$missatge,$dataAvui,$id_solictut);

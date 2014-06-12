@@ -6,7 +6,7 @@
 
 function Vistaxat(){
 	var id_solicitut=$("#id_solicitut").val();//id solicitut
-	window.open(urlGlobal+"/xat?idSol="+id_solicitut);
+	window.open(urlGlobal+"/xat?idSol="+id_solicitut,"_self");
 }
 
 function xat(){
