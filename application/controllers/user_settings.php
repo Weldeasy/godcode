@@ -534,12 +534,23 @@ class User_settings extends CI_Controller {
 
 	if($missatges!=NULL){
 			foreach ($missatges as $key){ 
+   				if($this->data['email']==$this->user->get_user_by_Id($key->id_emisor)->email){
+   					$nom_emisorXat=$this->user->get_user_by_Id($key->id_emisor)->nom;
+   					$nom_receptorXat=$this->user->get_user_by_Id($key->id_receptor)->nom;
+   					$id_emisorXat=$key->id_emisor;
+   					$id_receptorXat=$key->id_receptor;
+   				}else{
+   					$nom_receptorXat=$this->user->get_user_by_Id($key->id_emisor)->nom;
+   					$nom_emisorXat=$this->user->get_user_by_Id($key->id_receptor)->nom;
+   					$id_receptorXat=$key->id_emisor;
+   					$id_emisorXat=$key->id_receptor;
+   				}	
    				 $data2 = array(
    				'id_solicitut'=> $id_solicitut,
-                'id_emisor' => $key->id_emisor,
-                'id_receptor' => $key->id_receptor,
-                'nom_emisor' => $this->user->get_user_by_Id($key->id_emisor)->nom,
-                'nom_receptor' =>  $this->user->get_user_by_Id($key->id_receptor)->nom,
+                'id_emisor' => $id_emisorXat,
+                'id_receptor' => $id_receptorXat,
+                'nom_emisor' => $nom_emisorXat,
+                'nom_receptor' =>  $nom_receptorXat,
                 'data' => $key->data,
                 'missatge' => $key->missatge,
             	);

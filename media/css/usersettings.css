@@ -242,5 +242,12 @@ label > img:hover {
   padding: 6px 12px;
   display: table-cell;
 }
+.nom_emisor{
+	padding: 6px 12px;
+  	display: table-cell;
+	font-family: "Helvetica Neue", Helvetica, Arial; 
+	font-weight: bold;
+	color: #6A5ACD;
+}
 
 /*FI PERFIL*/

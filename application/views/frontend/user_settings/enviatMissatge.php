@@ -7,6 +7,9 @@
 				Emisor
 				</div>
 				<div class="cell">
+				Receptor
+				</div>
+				<div class="cell">
 				Missatge
 				</div>
 				<div class="cell">
