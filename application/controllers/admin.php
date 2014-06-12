@@ -253,8 +253,8 @@ class Admin extends CI_Controller {
         $dataTable->addColumn('string', 'Provincia', 'provincias');
         $dataTable->addColumn('number', 'Provincia', 'population');
         foreach ($zonas as $row) {
-        	echo $row ->provincia;
-        	echo $row ->numero;
+        	//echo $row ->provincia;
+        	//echo $row ->numero;
         	$dataTable->addRow(array($row->provincia, $row->numero));
         } 
 

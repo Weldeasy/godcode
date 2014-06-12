@@ -516,14 +516,17 @@ class User_settings extends CI_Controller {
   
   
   function xat(){
-  	$xat=$_POST['missatgeXat'];
-  	$id_solicitut=$_POST['id_solicitut'];
-  	$dataAvui=date('Y-m-d');
-	
-	$id_emisor=$_POST['id_emisor'];
-	$id_receptor=$this->user->get_user_by_email($_POST['email_receptor'])->id;
-	
-	$this->user->enviaMissatge($id_emisor,$id_receptor,$xat,$dataAvui,$id_solicitut);
+  	//$xat=$_POST['missatgeXat'];
+  	if(isset($_GET['idSol']))
+	  	$id_solicitut=$_GET['idSol'];
+	if(isset($_POST['id_solicitut']) && isset($_POST['id_emisor']) && isset($_POST['id_receptor'])){
+		$id_solicitut=$_POST['id_solicitut'];
+  		$dataAvui=date('Y-m-d');
+		$xat=$_POST['missatgeXat'];
+		$id_emisor=$_POST['id_emisor'];
+		$id_receptor=$_POST['id_receptor'];
+		$this->user->enviaMissatge($id_emisor,$id_receptor,$xat,$dataAvui,$id_solicitut);
+  	}
 
 	$html="";
 	
@@ -532,14 +535,16 @@ class User_settings extends CI_Controller {
 	if($missatges!=NULL){
 			foreach ($missatges as $key){ 
    				 $data2 = array(
-                'nom_emisor' => $this->user->get_user_by_Id($key->id_emisor)->nom,
-                'nom_receptor' => $this->user->get_user_by_Id($key->id_receptor)->nom,
+   				'id_solicitut'=> $id_solicitut,
+                'id_emisor' => $key->id_emisor,
+                'id_receptor' => $key->id_receptor,
+                'nom_emisor' => $this->user->get_user_by_Id($key->id_emisor)->id,
+                'nom_receptor' =>  $this->user->get_user_by_Id($key->id_receptor)->id,
                 'data' => $key->data,
                 'missatge' => $key->missatge,
             	);
         		$html = $html.$this->load->view('frontend/user_settings/mostraXat',$data2,TRUE);
-        	}
-        
+        	}   
     }
     
 	$data=$this->data;

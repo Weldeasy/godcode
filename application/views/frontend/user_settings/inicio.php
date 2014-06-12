@@ -14,7 +14,7 @@
 
 	    <script id="script-lang" type="text/javascript" src="<?php echo base_url();?>media/easyui/locale/easyui-lang-ca.js"></script>
 	    <script type="text/javascript" src="<?php echo base_url();?>media/easyui/datagrid-detailview.js"></script>
- 
+		<script type="text/javascript" src="<?= base_url()?>media/js/solicitud.js"></script>
 		
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 	</head>
