@@ -509,7 +509,7 @@ class User_settings extends CI_Controller {
             }	
 	        $data['panel_user']=$html;
    	}else{
-		$data['panel_user']=$this->load->view('frontend/user_settings/error_cap_solicitut',NULL,TRUE);
+		$data['panel_user']=$this->load->view('frontend/user_settings/error_my_solicitut',NULL,TRUE);
    	}
 	$this->load->view('frontend/user_settings/inicio', $data);
   }
