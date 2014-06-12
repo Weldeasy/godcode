@@ -1,3 +1,3 @@
 <div class="solicitud">
-	<h3>No tinc cap la meva solicitut</h3>
+	<h3>No tinc cap les meves solicituts</h3>
 </div>
