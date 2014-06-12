@@ -525,7 +525,7 @@ class User_settings extends CI_Controller {
 		$xat=$_POST['missatgeXat'];
 		$id_emisor=$_POST['id_emisor'];
 		$id_receptor=$_POST['id_receptor'];
-		$this->user->enviaMissatge($id_emisor,$id_receptor,$xat,$dataAvui,$id_solicitut);
+		$this->user->enviaMissatge($id_emisor,$id_receptor,utf8_encode($xat),$dataAvui,$id_solicitut);
   	}
 
 	$html="";
