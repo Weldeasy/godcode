@@ -35,8 +35,12 @@ class Buscar_servicio extends CI_Controller {
 				);
 				$session_data = $this->session->userdata('logged_in');
 				$data2['email'] = $session_data['email'];
-				$data2['user_oferit_servei']=$usuari->email;
-				$data2['es_admin']=$usuari->es_admin;
+				$i=0;
+				if($i==0){
+					$data2['user_oferit_servei']=$usuari->email;
+				}
+				$i++;
+				$data2['es_admin']=$session_data['es_admin'];
 				$data2['logued'] = false;
 				if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
 					$data2['logued'] = true;
