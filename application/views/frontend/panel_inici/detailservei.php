@@ -44,7 +44,7 @@
         	      <input type='hidden' value='<?= $id_servei; ?>' name='id_servei'/>
 	              <input type='hidden' value='<?= $email; ?>' name='email_user'/>
 	              <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>	
-	              <input type='hidden' value='Te envio la meva solicitut' name='missatge'/>	
+	              <input type='hidden' value='Solicito el teu servei,espero la teva resposta aviat possible.' name='missatge'/>	
 	              <input type='submit' value='Solicitar' class="buttonform"/>
 	           	</form>   
           	</div>
