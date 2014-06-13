@@ -31,12 +31,12 @@ class Buscar_servicio extends CI_Controller {
 				  'categoria' => $row->categoria,
 				  'id_user' => $row->usuari,
 				  'cp' => $row->cp,
-				  'poblacion' => $pueblo->poblacion,
-				  'user_oferit_servei' => $usuari->email,
-				  'es_admin' => $usuari->es_admin
+				  'poblacion' => $pueblo->poblacion
 				);
 				$session_data = $this->session->userdata('logged_in');
 				$data2['email'] = $session_data['email'];
+				$data2['user_oferit_servei']=$usuari->email;
+				$data2['es_admin']=$usuari->es_admin;
 				$data2['logued'] = false;
 				if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
 					$data2['logued'] = true;
