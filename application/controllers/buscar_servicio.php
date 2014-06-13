@@ -43,7 +43,7 @@ class Buscar_servicio extends CI_Controller {
 
 			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
 			
-			$data['saldo'] = $usuari->saldo;
+			//$data['saldo'] = $usuari->saldo;
 		}
 		
 		$data['html'] = $html;
@@ -54,6 +54,7 @@ class Buscar_servicio extends CI_Controller {
 			$data['email'] = $session_data['email'];
 			$data['foto'] = $session_data['foto'];
 			$data['es_admin'] = $session_data['es_admin'];
+     		$data['saldo']=$this->user->getSaldoUser($session_data['email'])->saldo;
 		}
 		$this->load->view('frontend/resultado_servicios', $data);
 		/*echo "<pre>";
