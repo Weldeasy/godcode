@@ -3,8 +3,8 @@
       <center>
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
-              <h1>Búsqueda servicios</h1>
-              <h3>Encuentra los servicios que hay disponibles en tu zona</h3>
+              <h1>Búsqueda serveis</h1>
+              <h3>Troba els serveis que hi ha disponible a la teva zona</h3>
               <hr>
               <br>
               <div class="contenido_formulario_busqueda">

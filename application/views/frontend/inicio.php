@@ -37,7 +37,7 @@
 		<div id='cssmenu'>
 			<ul>
 				<li class='active logo'><a href='<?= base_url()?>'><span>Inici</span></a></li>
-				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
 				<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 					<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
 				<?php } ?>
@@ -54,7 +54,7 @@
 		<div id="footer">
 			<div id="separador_degradado"></div>
 			<div class="contenido_footer">
-				<p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto, Alex Martin.<a href='<?= base_url()?>index.php/politica_privacidad/'>Política privacitat</a> <a href='<?= base_url()?>index.php/inicio/aboutus/'><span>Sobre GODCODE.</span></a></p>
+				<p>Projecte DAW M12. Producte desenvolupat per Oscar Marcos, Oriol Antón, Wilson Pinto, Alex Martin.<a href='<?= base_url()?>index.php/inicio/aboutus/'><span>Sobre GODCODE.</span></a></p>
 			</div>
 		</div>
 	</body>

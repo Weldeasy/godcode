@@ -48,14 +48,14 @@ class Formularioregistro extends CI_Controller {
 	
 	function alpha_dash_space($str)
 	{
-		return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+		return (!preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
 	}
 	public function validar()
 	{
 	   
         $this->form_validation->set_error_delimiters('<span class="error_formulario_registro">','</span>');  
 		$this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|callback__alpha_dash_space|alpha');
-        $this->form_validation->set_rules('apellidos', 'Apellidos', 'callback_alpha_dash_space');
+        $this->form_validation->set_rules('apellidos', 'Apellidos','alpha');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[usuari.email]');
 		$this->form_validation->set_rules('pass', 'Contrasenya', 'trim|required|min_length[6]');
 		$this->form_validation->set_rules('confirm_pass', 'Confimar contrasenya', 'trim|required|matches[pass]');
