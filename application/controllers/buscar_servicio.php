@@ -15,37 +15,41 @@ class Buscar_servicio extends CI_Controller {
 		$serveis = $this->buscar();
 		$html = "";
 
-		foreach($serveis as $row) {
-			$usuari = $this->user->get_user_by_Id($row->usuari);
-			$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
-			$data2 = array(
-			  'id' => $row->id,
-			  'nom' => $row->nom,
-			  'descripcio' => $row->descripcio,
-			  'preu' => $row->preu,
-			  'data_inici' => $row->data_inici,
-			  'data_fi' => $row->data_fi,
-			  'horas' => explode(";", $row->disp_horaria),
-			  'days' => explode(";", $row->disp_dies),
-			  'categoria' => $row->categoria,
-			  'id_user' => $row->usuari,
-			  'cp' => $row->cp,
-			  'poblacion' => $pueblo->poblacion,
-			  'user_oferit_servei' => $usuari->email,
-			  'es_admin' => $usuari->es_admin
-			);
-			$session_data = $this->session->userdata('logged_in');
-			$data2['email'] = $session_data['email'];
-			$data2['logued'] = false;
-			if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
-				$data2['logued'] = true;
-			}
+		if($serveis!=null){
+			foreach($serveis as $row) {
+				$usuari = $this->user->get_user_by_Id($row->usuari);
+				$pueblo = $this->lugares->get_poblacion_by_cp($row->cp);
+				$data2 = array(
+				  'id' => $row->id,
+				  'nom' => $row->nom,
+				  'descripcio' => $row->descripcio,
+				  'preu' => $row->preu,
+				  'data_inici' => $row->data_inici,
+				  'data_fi' => $row->data_fi,
+				  'horas' => explode(";", $row->disp_horaria),
+				  'days' => explode(";", $row->disp_dies),
+				  'categoria' => $row->categoria,
+				  'id_user' => $row->usuari,
+				  'cp' => $row->cp,
+				  'poblacion' => $pueblo->poblacion,
+				  'user_oferit_servei' => $usuari->email,
+				  'es_admin' => $usuari->es_admin
+				);
+				$session_data = $this->session->userdata('logged_in');
+				$data2['email'] = $session_data['email'];
+				$data2['logued'] = false;
+				if($session_data && $session_data['es_admin'] == 0 && $session_data['esta_congelat'] == 0) {
+					$data2['logued'] = true;
+				}
 
-			$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
-			
-			//$data['saldo'] = $usuari->saldo;
+				$html = $html.$this->load->view('frontend/vista_servicio', $data2, true);
+				//$data['saldo'] = $usuari->saldo;
+			}
+		}else{
+			$html="";
+			$html = $html.$this->load->view('frontend/panel_inici/cap_vista_servicio',NULL, true);
 		}
-		
+
 		$data['html'] = $html;
 		$data['login_form'] = "frontend/login_form";
 		if($this->session->userdata('logged_in')) {
