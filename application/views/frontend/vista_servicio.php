@@ -48,8 +48,7 @@
 	              <input type='submit' value='Solicitar' class="buttonform"/>
 	           	</form> 
           	</div>
-          <?php } 
-          	}
+          <?php }}
           	?>
 			</td>
 		</tr>
