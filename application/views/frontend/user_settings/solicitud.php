@@ -14,8 +14,12 @@
 			</tr>
 		</table>
 	</form>
+	<!--Formulari XAT-->
+	<form id="formXat" method="post" action="<?=base_url()?>index.php/user_settings/xat/">
+			<input type="hidden" value="<?= $id_solicitut ?>" name='id_solicitut' id='id_solicitut'/>	
+			<input type="submit" value='XAT' class="buttonform" />
+	</form>
 
-	<input type="button" value='XAT' onclick="Vistaxat()" class="buttonform" />
 	<span id="denuncia_span"><input type="button" onClick="denuncia()" value="Denunciar" name="denunciar" class="buttonform" /></span>
 </div>
 

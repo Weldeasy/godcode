@@ -517,8 +517,8 @@ class User_settings extends CI_Controller {
   
   function xat(){
   	//$xat=$_POST['missatgeXat'];
-  	if(isset($_GET['idSol']))
-	  	$id_solicitut=$_GET['idSol'];
+  	if(isset($_POST['id_solicitut']))
+	  	$id_solicitut=$_POST['id_solicitut'];
 	if(isset($_POST['id_solicitut']) && isset($_POST['id_emisor']) && isset($_POST['id_receptor'])){
 		$id_solicitut=$_POST['id_solicitut'];
   		$dataAvui=date('Y-m-d H:i:s');
