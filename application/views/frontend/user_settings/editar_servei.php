@@ -77,9 +77,9 @@
 			<div class="sidebar-option-none">
 			</div>
 			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Sol·licituds rebudes</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/my_solicitud"><div class="sidebar-option">Sol·licituds enviades</div></a>
-			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir Sol·licituds</div></a></a>
+			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">sol&middot;licituds rebudes</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/my_solicitud"><div class="sidebar-option">sol&middot;licituds enviades</div></a>
+			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir sol&middot;licituds</div></a></a>
 	
 		</div>
 		<div id="page-wrapper">

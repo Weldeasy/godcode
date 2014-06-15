@@ -1,6 +1,6 @@
 <div class="solicitud">
 		<span>
-			La sol·licitud que has realitzat sobre el servei: <b><?php echo $nom_servicio ?></b>
+			La sol&middot;licitud que has realitzat sobre el servei: <b><?php echo $nom_servicio ?></b>
 			encara esta pendent de ser acceptada o rebutjada.
 		</span>
 		<form method="post" action="<?=base_url()?>index.php/user_settings/xat/">

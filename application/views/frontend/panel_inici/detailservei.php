@@ -34,7 +34,7 @@
 			</td>
 			<td>
 				<?php 
-             	 /*Surtirà butò si usuari està loguejat i el user no pot sol·licitar si mateix i no sigui admin*/
+             	 /*Surtirà butò si usuari està loguejat i el user no pot sol&middot;licitar si mateix i no sigui admin*/
 		
     	         	 if(isset($email) && ($user_oferit_servei!=$email) && $es_admin==0){
                 ?>
@@ -45,7 +45,7 @@
 	              <input type='hidden' value='<?= $email; ?>' name='email_user'/>
 	              <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>	
 	              <textarea form='formulariservei' name='missatge' required rows="6" >M'agradaria consumir el teu servei, espero la teva resposta el més aviat possible.</textarea>
-	              <input type='submit' value='Sol·licitar' class="buttonform"/>
+	              <input type='submit' value='sol&middot;licitar' class="buttonform"/>
 	           	</form>   
           	</div>
           <?php } 

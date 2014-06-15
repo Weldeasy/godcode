@@ -34,7 +34,7 @@
 			</td>
 			<td>
 				<?php 
-             	 /*Surtirà butò si usuari està loguejat i el user no pot sol·licitar si mateix i no sigui admin*/
+             	 /*Surtirà butò si usuari està loguejat i el user no pot sol&middot;licitar si mateix i no sigui admin*/
 			  	 if($logued) {
     	         	 if(isset($email) && ($user_oferit_servei!=$email) && $es_admin==0){
                 ?>
