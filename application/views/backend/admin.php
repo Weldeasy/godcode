@@ -39,19 +39,19 @@
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
      	<ul class="nav navbar-nav side-nav">
-			  <li id='inici'><a href="<?= base_url()?>index.php/admin/"><i class="fa fa-dashboard"></i> Panel Admin</a></li> 
-			  <li id='llistarDenuncies'><a href="<?= base_url()?>index.php/admin/denuncies"><i class="fa fa-bar-chart-o"></i> Llistar Denúnices</a></li>
-			  <li id='congelarUsuaris'><a href="<?= base_url()?>index.php/admin/congelarusuaris"><i class="fa fa-ban"></i> Congelar Usuaris</a></li>
-			  <li><a href="<?= base_url()?>index.php/admin/crearcategories"><i class="fa fa-edit"></i> Gestió de Categoria</a></li>
-			  <li><a href="<?= base_url()?>index.php/admin/configSaldo"><i class="fa fa-cog"></i> Configurar el sistema</a></li>
+			  <li id='inici'><a href="<?= base_url()?>index.php/admin/"><i class="fa fa-dashboard"></i> Panell d'administraci&oacute;</a></li> 
+			  <li id='llistarDenuncies'><a href="<?= base_url()?>index.php/admin/denuncies"><i class="fa fa-bar-chart-o"></i> Llistar denúnices</a></li>
+			  <li id='congelarUsuaris'><a href="<?= base_url()?>index.php/admin/congelarusuaris"><i class="fa fa-ban"></i> Congelar usuaris</a></li>
+			  <li><a href="<?= base_url()?>index.php/admin/crearcategories"><i class="fa fa-edit"></i> Gestió de categories</a></li>
+			  <li><a href="<?= base_url()?>index.php/admin/configSaldo"><i class="fa fa-cog"></i> Configuracions del sistema</a></li>
 			  <li><a href="<?= base_url()?>index.php/admin/estadistiques"><i class="fa fa-caret-square-o-down"></i> Estadístiques </a></li>     
          </ul>   
                <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $email; ?><b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $email; ?><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                 <li> <a  href="<?= base_url()?>index.php/inicio"><i class="fa fa-bar-chart-o"></i> Inici</a></li>
-                 <li> <a  href="<?= base_url()?>index.php/admin"><i class="fa fa-dashboard"></i> Panel Admin</a></li>
+                 <li> <a  href="<?= base_url()?>index.php/inicio"><i class="fa fa-bar-chart-o"></i> Tornar</a></li>
+                 <li> <a  href="<?= base_url()?>index.php/admin"><i class="fa fa-dashboard"></i> Panell d'administració</a></li>
                  <li><a class="logout_b" title="Tancar sessio" href="<?= base_url()?>index.php/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
               </ul>
             </li>

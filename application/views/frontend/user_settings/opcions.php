@@ -1,5 +1,5 @@
 <form id='formulariUser' method="post" action="<?=base_url()?>index.php/user_settings/donarBaixaUser_control">
-	<h3>Donar de baixa el compte</h3>
+	<h3>Donar de baixa el meu compte</h3>
 	<table>
 		<tr>
 			<td>
@@ -11,7 +11,7 @@
 </form>
 <hr />
 <form id='formulariUser' method="post" action="<?=base_url()?>index.php/user_settings/canviaContrasenya_control">
-	<h3>Canvi&iuml; la contrsenya</h3>
+	<h3>Canvi&iuml; la contrasenya</h3>
 	<?php 
 		if(isset($mensaje)){
 			print $mensaje[0];

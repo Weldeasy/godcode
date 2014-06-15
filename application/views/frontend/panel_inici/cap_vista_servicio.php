@@ -1,3 +1,3 @@
-<h1 class="label_title">Serveis</h1>
-<p>No s'ha trobat cap servei buscats</p>
+<h1 class="label_title">Busqueda serveis</h1>
+<p>La busqueda no ha produit ningún resultat.</p>
    

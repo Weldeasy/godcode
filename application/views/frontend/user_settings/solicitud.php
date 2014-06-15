@@ -17,10 +17,13 @@
 	<!--Formulari XAT-->
 	<form id="formXat" method="post" action="<?=base_url()?>index.php/user_settings/xat/">
 			<input type="hidden" value="<?= $id_solicitut ?>" name='id_solicitut' id='id_solicitut'/>	
-			<input type="submit" value='XAT' class="buttonform" />
+			<input type="submit" value='CHAT' class="buttonform" />
 	</form>
-
+	
 	<span id="denuncia_span"><input type="button" onClick="denuncia()" value="Denunciar" name="denunciar" class="buttonform" /></span>
+	
+	<!-- Ultim missatge <p style="margin-top:-15px;margin-left:5px;padding-bottom:5px;"><b>&Uacute;ltim missatge:</b>&nbsp; utf8_decode($ultim_misatge->missatge)</p>-->
+	
 </div>
 
 <script type="text/javascript" src="<?= base_url()?>media/js/solicitud.js"></script>

@@ -12,6 +12,6 @@
 	<p>&nbsp;</p>
 	<hr width="80%" />
 
-	<h3><u>Historial</u></h3>
+	<h3><u>Historial serveis oferts</u></h3>
 	<p>&nbsp;</p>
 	<div style="text-align:center;">

@@ -5,17 +5,17 @@
 	<div class="cuerpo_servicio">
 		<div class="titulo_servicio">
 			<span class="nom_servei"><?=$nom?></span>
-			<span class="data_caducitat" id='linkMap' >en <a  href="https://www.google.es/maps/place/<?=$poblacion?>"  target='_blank'><?=$poblacion?></a></span>
+			<span class="data_caducitat" id='linkMap' >a <a  href="https://www.google.es/maps/place/<?=$poblacion?>"  target='_blank'><?=$poblacion?></a></span>
 		</div>
 		<div class="descripcion_servicio">
-			<p><b>Descripcio: </b><?=$descripcio?></p>
+			<p><b>Descripci&oacute;: </b><?=$descripcio?></p>
 		</div>
 		<div class="precio_servicio">
 			<?=$preu?> punts
 		</div>
 	</div>
 	<div class="dispo_servicio">
-			Disponible hasta el <?=$data_fi?> los 
+			Disponible fins el <?=$data_fi?> els 
 			<table class="disp_dias">
 				<tr>
 					<td <?php if ( (isset($days)) && (!in_array('L', $days)) ) print 'style="background-color:#FA5858;"'; ?> value="L" >L</td>

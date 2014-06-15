@@ -1,8 +1,8 @@
 <div class="tablaDatagrid">
-	<h1> <b>Usuaris</b></h1>
+	<h1> <b>Gestió usuaris</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
-	      		<i class="fa fa-bar-chart-o"></i> Coneglar Usuaris
+	      		<i class="fa fa-bar-chart-o"></i> Coneglar usuaris
 	      	</li>
 	    </ol>  
 		<center>
@@ -20,10 +20,10 @@
 		<!--FORMULARI PER USUARI-->
 		<div id="finestraUsuari" class="easyui-dialog" style="width:300px;height:250px;padding:10px 20px" 
 	closed="true" buttons="#finestraUsuari-buttons">
-	    	<div class="ftitle">Usuari</div>
+	    	<div class="ftitle">Estat usuari</div>
 	        <form id="formulariUsuari" method="post" novalidate>
 	            <div class="fitem">
-	                <label>Esta_Congelat:</label>
+	                <label>Esta congelat:</label>
 	                <select id="esta_congelat_user"  name="esta_congelat_user">
 					    <option value="1">Sí</option>
 					    <option value="0">No</option>
@@ -42,7 +42,7 @@
     <div class="info_estat">
 			<b>* Congelat: </b>
 			<div class="estat_adm" style="background-color:red;"></div>
-			<b>* Pendent per verificar: </b>
+			<b>* Pendent per verificar correu: </b>
 			<div class="estat_adm" style="background-color:yellow;"></div>
 			<b>* No està congelat: </b>
 			<div class="estat_adm" style="background-color:green;"></div>
