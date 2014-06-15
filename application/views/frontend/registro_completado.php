@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Registro completado</title>
+		<title>Registre completat</title>
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 		<link href='<?= base_url()?>media/css/login.css' rel='stylesheet' type='text/css'>
@@ -12,7 +12,7 @@
 			<ul>
 				<img src="<?= base_url()?>media/images/frontend/logofinal.png" heigth="20px" align="left" style="padding-left:5px;padding-top:5px;"/>
 				<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
-				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
+				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Cercar usuaris</span></a></li>
 				<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 					<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
 				<?php } ?>
@@ -29,7 +29,7 @@
 				if (isset($mensaje)) {
 					print_r($mensaje);
 				} else {
-					print "A ocurregut algun error, torna a provar-ho, si continua contacta amb <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a>";
+					print "A ocurregut algun error, torna a provar-ho, si continua el error contacta amb <a href='mailto:gcbtv0@gmail.com'><b>gcbtv0@gmail.com</b></a>";
 				}
 				?>
 				<a href="<?= base_url(); ?>">Sortir</a>

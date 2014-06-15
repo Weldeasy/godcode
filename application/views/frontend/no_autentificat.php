@@ -19,7 +19,7 @@
 				<img src="<?= base_url()?>media/images/frontend/logofinal.png" heigth="20px" align="left" style="padding-left:5px;padding-top:5px;"/>
 				<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
 				<li class='active'><a href='<?= base_url()?>index.php/inicio/introduccio'><span>Què és un banc del temps?</span></a></li>
-				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Buscar usuaris</span></a></li>
+				<li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Cercar usuaris</span></a></li>
 				<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
 				<li class='active'><a href='<?= base_url()?>index.php/inicio/contacte/'><span>Contacte</span></a></li>
 				<?php echo $this->load->view($login_form); ?>
@@ -27,10 +27,10 @@
 		</div>
 		<div id="contenido_principal">
 			<div id="about_us">
-				<h1>NO AUTENTIFICAT</h1>
+				<h1>NO ESTAS AUTENTIFICAT</h1>
 				<hr />
 				<br />
-				<p> Sis plau, intenteu feu altre vegada, sino posi al contacte al admin </p>
+				<p> Sisuplau, intententifica't i torna a provar altre vegada, sino posi's amb contacte amb l'administrador del lloc.</p>
 			</div>
 		</div>
 		<div id="footer">

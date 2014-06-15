@@ -2,7 +2,7 @@
 <table  class="tabla_servei">
 	<tr>
 		<th><div class="nom_servei"><?=$nom?></div></th>
-		<th colspan="2" style="text-align: right;">en <a href="https://www.google.es/maps/place/<?=$poblacion?>" target='_blank'><?=$poblacion?></a></th>
+		<th colspan="2" style="text-align: right;">a <a href="https://www.google.es/maps/place/<?=$poblacion?>" target='_blank'><?=$poblacion?></a></th>
 	</tr>
 	<tr>
 		<td>
@@ -16,7 +16,7 @@
 		<tr>
 			<td>
 				<div class="dispo_servicio_vista">
-					<p>Disponible hasta el <?=$data_fi?> de <?=$horas[0]?>:00 a <?=$horas[1]?>:00</p>
+					<p>Disponible fins el <?=$data_fi?> de <?=$horas[0]?>:00 a <?=$horas[1]?>:00</p>
 				</div>
 			</td>
 			<td>

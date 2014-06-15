@@ -1,8 +1,8 @@
 <div class="tablaDatagrid">
-	<h1> <b>Denúncies</b></h1>
+	<h1> <b>Gestió de denúncies</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
-	      		<i class="fa fa-bar-chart-o"></i> Llistar Denúncies
+	      		<i class="fa fa-bar-chart-o"></i> Llistat denúncies
 	      	</li>
 	    </ol>  
 		<center>
@@ -24,8 +24,8 @@
 		                <label>Estat:</label>
 		                <select id="estat_denuncia"  name="estat_denuncia">
 						    <option value="0">Pendent</option>
-						    <option value="1">Resolt</option>
-						    <option value="2">Rebujat</option>
+						    <option value="1">Resolta</option>
+						    <option value="2">Rebujada</option>
 						</select>
 		            </div>
 		        </form>
@@ -37,11 +37,11 @@
 	        <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#finestraDenuncia').dialog('close')">Cancel·lar</a>
 	    </div>
 		<div class="info_estat">
-			<b>* Rebujat: </b>
+			<b>* Rebujada: </b>
 			<div class="estat_adm" style="background-color:red;"></div>
 			<b>* Pendent: </b>
 			<div class="estat_adm" style="background-color:yellow;"></div>
-			<b>* Resolt: </b>
+			<b>* Resolta: </b>
 			<div class="estat_adm" style="background-color:green;"></div>
 		</div>
 </div>

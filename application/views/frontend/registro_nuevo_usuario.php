@@ -21,7 +21,7 @@
 	<ul>
 	<img src="<?= base_url()?>media/images/frontend/logofinal.png" heigth="20px" align="left" style="padding-left:5px;padding-top:5px;"/>
 	<li class='active'><a href='<?= base_url()?>'><span>Inici</span></a></li>
-    <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Usuaris</span></a></li>
+    <li class='active'><a href='<?= base_url()?>index.php/inicio/cercarusuari'><span>Cercar usuaris</span></a></li>
 	<?php if ($this->session->userdata('logged_in') == FALSE) { ?>
 		<li class='active'><a href='<?= base_url()?>index.php/formularioregistro/'><span>Registre</span></a></li>
 	<?php } ?>
@@ -34,7 +34,7 @@
  </div>
 	<div id="container">
 		<?= form_open_multipart(base_url().'index.php/formularioregistro/validar', array('name'=>$form_name, 'id'=>$form_name, 'class'=>$form_name)); ?>
-		<center><h1><u>Formulari nou usuari</u></h1></center>
+		<center><h1><u>Formulari registre nou usuari</u></h1></center>
 		<table>
 		
             <tr><td colspan="3">

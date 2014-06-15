@@ -1,8 +1,8 @@
 <div class="tablaDatagrid">
-	<h1><b>Gestió de Categories</b></h1>
+	<h1><b>Gestió de categories</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
-	      		<i class="fa fa-bar-chart-o"></i> Crear Categories
+	      		<i class="fa fa-bar-chart-o"></i> Crear / Eliminar / Modificar les categories
 	      	</li>
 	    </ol>  
 
@@ -28,11 +28,11 @@
 	        <form id="formulariCategoria" method="post" novalidate>
 	            <div class="fitem">
 	                <label>Nom:</label>
-	                <input name="nom_cat" id="nom_cat" class="easyui-validatebox" required="true">
+	                <input name="nom_cat" id="nom_cat" class="easyui-validatebox" required>
 	            </div>
 	            <div class="fitem">
 	                <label>Descripció:</label>
-	                <input name="descripcio_cat" id="descripcio_cat" class="easyui-validatebox" required="true">
+	                <input name="descripcio_cat" id="descripcio_cat" class="easyui-validatebox" required>
 	            </div>
 	        </form>
 	    </div>

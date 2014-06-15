@@ -2,7 +2,7 @@
 	<h1> <b>Banc de Temps</b></h1>
 	    <ol class="breadcrumb">
 	      	<li class="active">
-	      		<i class="fa fa-bar-chart-o"></i> Saldo
+	      		<i class="fa fa-bar-chart-o"></i> Configuracions sistema
 	      	</li>
 	    </ol>  
 		<center>

@@ -2,7 +2,7 @@
 <table  class="tabla_servei">
 	<tr>
 		<th><div class="nom_servei"><?=$nom_servei ?></div></th>
-		<th colspan="2" style="text-align: right;">en <a href="https://www.google.es/maps/place/<?=$poblacion?>" target='_blank'><?=$poblacion?></a></th>
+		<th colspan="2" style="text-align: right;">a <a href="https://www.google.es/maps/place/<?=$poblacion?>" target='_blank'><?=$poblacion?></a></th>
 	</tr>
 	<tr>
 		<td>
@@ -16,7 +16,7 @@
 		<tr>
 			<td>
 				<div class="dispo_servicio_vista">
-					<p>Disponible hasta el <?=$data_fi?> de <?=$horas[0]?>:00 a <?=$horas[1]?>:00</p>
+					<p>Disponible fins el <?=$data_fi?> de <?=$horas[0]?>:00 a <?=$horas[1]?>:00</p>
 				</div>
 			</td>
 			<td>
@@ -44,8 +44,8 @@
         	      <input type='hidden' value='<?= $id_servei; ?>' name='id_servei'/>
 	              <input type='hidden' value='<?= $email; ?>' name='email_user'/>
 	              <input type='hidden' value='<?= $id_user; ?>' name='id_user'/>	
-	              <input type='hidden' value='Solicito el teu servei,espero la teva resposta aviat possible.' name='missatge'/>	
-	              <input type='submit' value='Solicitar' class="buttonform"/>
+	              <textarea form='formulariservei' name='missatge' required rows="6" >M'agradaria consumir el teu servei, espero la teva resposta el més aviat possible.</textarea>
+	              <input type='submit' value='Sol·licitar' class="buttonform"/>
 	           	</form>   
           	</div>
           <?php } 

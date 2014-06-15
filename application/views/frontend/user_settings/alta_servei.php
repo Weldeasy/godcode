@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Time Banking | Editar el meu servei</title>
+		<title>Time Banking | Oferir un servei nou</title>
 		<link href="<?= base_url()?>media/css/usersettings.css" rel="stylesheet" type="text/css">
 		<link href="<?= base_url()?>media/css/style.css" rel="stylesheet">
 		<link href="<?= base_url()?>media/css/normalize.min.css" rel="stylesheet">
@@ -52,14 +52,15 @@
 			<a class="back" href="<?= base_url()?>index.php/user_settings">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
-				<span>TORNAR</span>
+				<span>Tornar</span>
 			</div>
 			</a>
 			<div class="sidebar-option-none">
 			</div>
-			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">SERVEIS</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">SOLICITUDS</div></a>
-			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir Servei</div></a></a>
+			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts rebudes</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/my_solicitud"><div class="sidebar-option">Solicituts enviades</div></a>
+			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir solicituts</div></a></a>
 	
 		</div>
 		<div style="margin-left:450px; margin-top:50px;">
@@ -67,23 +68,23 @@
 			$attributes = array('class' => 'formX', 'id' => 'altaServicio');
 			echo form_open('user_settings/validar_alta_servicio', $attributes);
 		?>	
-			Nombre:
+			Nom:
 			<input type="text" name="nom" value="<?php echo set_value('nom'); ?>"  />
 			<?php echo form_error('nom'); ?><br />
-			Descripcion:
+			Descripci&oacute;:
 			<textarea name="descripcio" ><?php echo set_value('descripcio'); ?></textarea>
 			<?php echo form_error('descripcio'); ?><br />
-			Precio:
+			Preu:
 			<input type="number" name="preu" value="<?php echo set_value('preu'); ?>"  />
 			<?php echo form_error('preu'); ?><br />
-			Data_fi:
+			Data finalitzaci&oacute;:
 			<input type="text" name="data_fi" id="datepicker1" value="<?php echo set_value('data_fi'); ?>" />
 			<?php echo form_error('data_fi'); ?><br />
-			Disponibilidad Horaria:
+			Disponibilitat horaria:
 			<div id="slider-hores">
 			<input type="text" id="disp_horaria" name="disp_horaria" value="" value="<?php echo set_value('disp_horaria'); ?>"  /></div>
 			<?php echo form_error('disp_horaria'); ?><br />
-			Disponibilidad Dias semana:
+			Disponibilitat dies:
 			<table id="disp_dias">
 				<tr>
 					<td>L</td>
@@ -112,7 +113,7 @@
 			CP:
 			<input type="text" name="cp" value="<?= set_value('cp')?>" />
 			<?= form_error('cp')?><br />
-			<input type="submit" name="submit" value="Crear Servicio" />
+			<input type="submit" name="submit" value="Crear servei" />
 		</div>
 		<div id="page-wrapper">
 		</div>
