@@ -23,14 +23,6 @@ Class User extends CI_Model
 			return;
 		}
     }
-	function getUltimXat($id_solicitut){
-    	try {
-			$data = $this->db->query("SELECT missatge FROM missatge WHERE id_solicitut='".$id_solicitut."' ORDER BY data DESC LIMIT 1");
-			return $data->result();
-		} catch (Exception $e) {
-			return;
-		}
-    }
     function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio,$comentari){
     	$this->db->insert("servei_consumit", array(
 			"id_consumidor"=>$id_consumidor,

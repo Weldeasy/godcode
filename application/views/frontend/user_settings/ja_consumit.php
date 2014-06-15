@@ -1,3 +1,3 @@
 <div class="solicitud">
-	<h3>Servei consumit.</h3>
+	<h3>Ja pot consumir-lo</h3>
 </div>

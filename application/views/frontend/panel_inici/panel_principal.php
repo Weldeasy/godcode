@@ -3,8 +3,8 @@
       <center>
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
-              <h1>Búsqueda de serveis</h1>
-              <h3>Troba els serveis que hi ha disponibles filtran per ciutat, datas i categories</h3>
+              <h1>Búsqueda serveis</h1>
+              <h3>Troba els serveis que hi ha disponible a la teva zona</h3>
               <hr>
               <br>
               <div class="contenido_formulario_busqueda">
@@ -13,7 +13,7 @@
           					<input type="text" name="datainici" id="datepicker1" placeholder="disponibles desde: ">
           					<input type="text" name="datafi" id="datepicker2" placeholder="disponibles fins el: ">
           					<?php echo form_dropdown('categorias', $categorias, 'name="categories" id="categorias"'); ?>
-                    <input type="submit" value="Buscar serveis" class="bt_ver_coches">
+                    <input type="submit" value="Buscar servicios" class="bt_ver_coches">
                 </form>
               </div>
             </div>

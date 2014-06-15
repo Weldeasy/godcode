@@ -3,13 +3,13 @@
 
   <div class="row">
       <div class="col-lg-12">
-        <h1><b>Panell d'administració<b></h1>
+        <h1><b>Panel Admin<b></h1>
         <ol class="breadcrumb">
-          <li class="active"><i class="fa fa-dashboard"></i> Panell d'administració</li>
+          <li class="active"><i class="fa fa-dashboard"></i> Panel Admin</li>
         </ol>
         <div class="alert alert-success alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-          Benvingut, administrador.
+          Benvingut, com Administrador.
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
-                  Llistar denúnices
+                  Llistar Denúnices
                 </div>
 				
                 <div class="col-xs-6 text-right">
@@ -57,7 +57,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Gestionar usuaris
+                      Congelar Usuaris
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
@@ -82,7 +82,7 @@
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      Gestionar categories
+                      Crear
                     </div>
                     <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>

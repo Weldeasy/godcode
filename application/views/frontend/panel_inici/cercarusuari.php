@@ -3,8 +3,8 @@
       <center>
         <div class="contenido_zona_busqueda">
             <div class="caja_busqueda">
-              <h1>Cerca d'usuaris</h1>
-              <h3>Busca usuaris pe'l seu nom o direcció de correu, per consultar el seu perfil o serveis.</h3>
+              <h1>Cercar Usuaris</h1>
+              <h3> Troba els serveis que té els usuaris concrets</h3>
                <hr>
                <br>
                 <div class="contenido_formulario_busqueda">

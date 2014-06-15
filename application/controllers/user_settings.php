@@ -467,9 +467,7 @@ class User_settings extends CI_Controller {
    	$total_solicitut=$this->user->comprovaSolicitut($email)->total_solicitut;
    	if($total_solicitut>0){
    			$infoSolicitut=$this->user->getIdSolicitant($email);
-   			foreach ($infoSolicitut as $key){
-				$ultim_misatge = $this->user->getUltimXat($key->id);
-				$ultim_misatge = $ultim_misatge[count($ultim_misatge)-1];
+   			foreach ($infoSolicitut as $key){ 
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
 	   				 $data2 = array(
 	                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
@@ -477,7 +475,7 @@ class User_settings extends CI_Controller {
 	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
 	                'user_id' => $key->user_id,
 	                'id_solicitut' => $key->id,
-					'ultim_misatge' => $ultim_misatge
+
 	            	);
             	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
             	}

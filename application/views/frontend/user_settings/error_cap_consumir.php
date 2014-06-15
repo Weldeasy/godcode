@@ -1,3 +1,3 @@
 <div class="solicitud">
-	<h3>No hi ha cap solicitut pendent de consumir o valorar-se.</h3>
+	<h3>No tens cap solicitut aceptada per consumir el servei.</h3>
 </div>

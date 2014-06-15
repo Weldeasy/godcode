@@ -1,3 +1,3 @@
 <div class="solicitud">
-	<h3>S'ha eliminat servei correctament.</h3>
+	<h3>S'ha eliminat servei</h3>
 </div>

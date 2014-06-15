@@ -39,15 +39,15 @@
 			<a class="back" href="<?= base_url()?>index.php/user_settings">
 			<div id="back">
 				<img src="<?= base_url()?>media/images/frontend/volver.png" />
-				<span>Tornar</span>
+				<span>TORNAR</span>
 			</div>
 			</a>
 			<div class="sidebar-option-none">
 			</div>
-			<a href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts rebudes</div></a>
-			<a href="<?= base_url()?>index.php/user_settings/my_solicitud"><div class="sidebar-option">Solicituts enviades</div></a>
-			<a  href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir solicituts</div></a></a>
+			<a id="a_users" href="<?= base_url()?>index.php/user_settings/serveis"><div class="sidebar-option">Els meus serveis</div></a>
+			<a id="a_users" href="<?= base_url()?>index.php/user_settings/solicitud"><div class="sidebar-option">Solicituts pendents</div></a>
+			<a href="<?= base_url()?>index.php/user_settings/my_solicitud"><div class="sidebar-option">Les meves solicituts</div></a>
+			<a  id="a_users" href="<?= base_url()?>index.php/user_settings/consumirServei"><div class="sidebar-option">Consumir un Servei</div></a></a>
 	
 		</div>
 
