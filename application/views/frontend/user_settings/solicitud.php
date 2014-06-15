@@ -2,8 +2,8 @@
 	<form id='formularisolicitud' method="post" action="<?=base_url()?>index.php/user_settings/estatSolicitut">
 		<table>
 			<tr>
-				<td><b>Nom del solicitant:</b> <?= utf8_decode($nom_solicitant) ?><br />
-				<b>Email del solicitant:</b> <?= $email_solicitant ?><br />
+				<td><b>Nom del sol·licitant:</b> <?= utf8_decode($nom_solicitant) ?><br />
+				<b>Email del sol·licitant:</b> <?= $email_solicitant ?><br />
 				<b>Nom del Servei:</b><?= utf8_decode($nom_servei) ?><br />
 				<input type="hidden" value="<?= $id_solicitut ?>" name='id_solicitut' id='id_solicitut'/>
                 <input type="hidden" value="<?= $user_id ?>" name='id_emisor' id='id_emisor'/>
