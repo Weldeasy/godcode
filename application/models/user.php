@@ -31,6 +31,17 @@ Class User extends CI_Model
 			return;
 		}
     }
+	function llegirXat($id_solicitut){
+		$data = array(
+		   'llegit' => 0
+		);
+    	try {
+			$this->db->where('id_solicitut', $id_solicitut);
+			$this->db->update('missatge', $data);
+		} catch (Exception $e) {
+			return;
+		}
+    }
     function guardaServeiConsumit($id_consumidor,$id_servei,$data_consumit,$valoracio,$comentari){
     	$this->db->insert("servei_consumit", array(
 			"id_consumidor"=>$id_consumidor,
@@ -81,6 +92,7 @@ Class User extends CI_Model
 			"missatge" => $missatge,
 			"data"=>$dataAvui,
 			"id_solicitut" => $id_solicitut,
+			"llegit" => 1
 		));
 	}
 	public function get_user_by_Id($id) {
