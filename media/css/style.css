@@ -1006,3 +1006,14 @@ font-family: 'Open Sans', sans-serif;
 .moltbe a:hover, .be a:hover, .malament a:hover {
 	text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
 }
+.missatgeNoLlegit {
+	display:inline;
+	background-color:white;
+	border-radius:50%;
+	border:2px solid red;
+	padding-top:1px;
+	padding-bottom:1px;
+	padding-left:3px;
+	padding-right:3px;
+	height:20px;
+}

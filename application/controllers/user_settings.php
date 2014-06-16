@@ -463,23 +463,34 @@ class User_settings extends CI_Controller {
   	$data=$this->data;
   	$email=$data['email'];
    	$html="";
-   	
+	
    	$total_solicitut=$this->user->comprovaSolicitut($email)->total_solicitut;
    	if($total_solicitut>0){
    			$infoSolicitut=$this->user->getIdSolicitant($email);
    			foreach ($infoSolicitut as $key){
-				$ultim_misatge = $this->user->getUltimXat($key->id);
-				$ultim_misatge = $ultim_misatge[count($ultim_misatge)-1];
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
+						$servicio = $this->servei->get_servei($key->servei_id);
+						 
+					$chats = $this->user->getXat($key->id);
+					$c = 0;
+					foreach ($chats as $chat){
+						if ( ($chat->llegit == 1) && ($this->data['id'] != $chat->id_emisor) ) {
+							$c += 1;
+						}
+					}
 	   				 $data2 = array(
 	                'nom_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->nom,
 	                'email_solicitant' => $this->user->get_user_by_Id($key->id_solicitant)->email,
 	                'nom_servei' => $this->servei->get_servei($key->servei_id)->nom,
 	                'user_id' => $key->user_id,
 	                'id_solicitut' => $key->id,
-					'ultim_misatge' => $ultim_misatge
+					'contador' => $c
 	            	);
-            	$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
+					
+					if ($c > 0)
+						$html = $html.$this->load->view('frontend/user_settings/solicitudchat',$data2,TRUE);
+					else
+						$html = $html.$this->load->view('frontend/user_settings/solicitud',$data2,TRUE);
             	}
             }	
 	        $data['panel_user']=$html;
@@ -496,17 +507,31 @@ class User_settings extends CI_Controller {
    	$html="";
 	$solicitudes = $this->user->get_solicituts($this->data['id']);
    	if(count($solicitudes)>0){
-   			foreach ($solicitudes as $key){ 
+   			foreach ($solicitudes as $key){
    				if($key->estat==0){//estat solicitut sigui 0 , vol dir espera
 					$servicio = $this->servei->get_servei($key->servei_id);
-	   				 $data2 = array(
+	   				 
+				$chats = $this->user->getXat($key->id);
+				$c = 0;
+				foreach ($chats as $chat){
+					if ( ($chat->llegit == 1) && ($this->data['id'] != $chat->id_emisor) ) {
+						$c += 1;
+					}
+				}
+				
+				$data2 = array(
 	                'nom_servicio' => $servicio->nom,
 	                'email_solicitant' => $this->data['email'],
 	                'user_id' => $servicio->usuari,
-	                'id_solicitut' => $key->id
-
+	                'id_solicitut' => $key->id,
+					'contador' => $c
 	            	);
-            	$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);
+				
+				if ($c > 0)
+					$html = $html.$this->load->view('frontend/user_settings/my_solicitudchat',$data2,TRUE);
+				else
+					$html = $html.$this->load->view('frontend/user_settings/my_solicitud',$data2,TRUE);
+					
             	}
             }	
 	        $data['panel_user']=$html;
@@ -529,6 +554,9 @@ class User_settings extends CI_Controller {
 		$id_receptor=$_POST['id_receptor'];
 		$this->user->enviaMissatge($id_emisor,$id_receptor,utf8_encode($xat),$dataAvui,$id_solicitut);
   	}
+	if (isset($_POST['llegir'])) {
+		$this->user->llegirXat($id_solicitut);
+	}
 
 	$html="";
 	
